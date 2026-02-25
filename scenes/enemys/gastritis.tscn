@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c7ygg4mjejy4r"]
+
+[ext_resource type="Texture2D" uid="uid://teadm3g76qul" path="res://assets/enemy/gastritis.png" id="1_ndffv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk00c"]
+atlas = ExtResource("1_ndffv")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsk2h"]
+atlas = ExtResource("1_ndffv")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8l7y"]
+atlas = ExtResource("1_ndffv")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nks1"]
+atlas = ExtResource("1_ndffv")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xy3i"]
+atlas = ExtResource("1_ndffv")
+region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm75f"]
+atlas = ExtResource("1_ndffv")
+region = Rect2(2000, 1000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3xaw2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk00c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsk2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8l7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nks1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xy3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm75f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_puso2"]
+radius = 310.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1607285625]
+motion_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1485172588]
+sprite_frames = SubResource("SpriteFrames_3xaw2")
+frame_progress = 0.07469454
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=888978918]
+position = Vector2(70, -47)
+shape = SubResource("CircleShape2D_puso2")

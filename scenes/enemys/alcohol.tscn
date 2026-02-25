@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://daxg16dotqclg"]
+
+[ext_resource type="Texture2D" uid="uid://dad2u47i1rtfm" path="res://assets/enemy/jefe_alcohol.png" id="1_xeosp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4q8o"]
+atlas = ExtResource("1_xeosp")
+region = Rect2(0, 0, 1000, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qelvh"]
+atlas = ExtResource("1_xeosp")
+region = Rect2(1000, 0, 1000, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrskl"]
+atlas = ExtResource("1_xeosp")
+region = Rect2(2000, 0, 1000, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7gxs"]
+atlas = ExtResource("1_xeosp")
+region = Rect2(0, 1500, 1000, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3jl2"]
+atlas = ExtResource("1_xeosp")
+region = Rect2(1000, 1500, 1000, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj43g"]
+atlas = ExtResource("1_xeosp")
+region = Rect2(2000, 1500, 1000, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k306y"]
+atlas = ExtResource("1_xeosp")
+region = Rect2(0, 3000, 1000, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k5fh"]
+atlas = ExtResource("1_xeosp")
+region = Rect2(1000, 3000, 1000, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqwlk"]
+atlas = ExtResource("1_xeosp")
+region = Rect2(2000, 3000, 1000, 1500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bi6ub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4q8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qelvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrskl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7gxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3jl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj43g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k306y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k5fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqwlk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mwnt"]
+radius = 217.0
+height = 1074.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1522320177]
+motion_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1401683923]
+sprite_frames = SubResource("SpriteFrames_bi6ub")
+frame_progress = 0.34414998
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=872781113]
+position = Vector2(-4, 116)
+shape = SubResource("CapsuleShape2D_3mwnt")

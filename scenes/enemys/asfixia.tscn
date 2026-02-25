@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bnrancttvafqr"]
+
+[ext_resource type="Texture2D" uid="uid://cel2q6co01fde" path="res://assets/enemy/asfixia.png" id="1_20hl2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0p0a"]
+atlas = ExtResource("1_20hl2")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns5u1"]
+atlas = ExtResource("1_20hl2")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuct2"]
+atlas = ExtResource("1_20hl2")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cur1s"]
+atlas = ExtResource("1_20hl2")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64ufp"]
+atlas = ExtResource("1_20hl2")
+region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1on23"]
+atlas = ExtResource("1_20hl2")
+region = Rect2(2000, 1000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_drw66"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0p0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns5u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuct2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cur1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64ufp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1on23")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ueft"]
+radius = 324.0
+height = 658.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1972859500]
+motion_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1033316287]
+sprite_frames = SubResource("SpriteFrames_drw66")
+frame = 4
+frame_progress = 0.18067846
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=375705076]
+position = Vector2(33, -25)
+shape = SubResource("CapsuleShape2D_2ueft")

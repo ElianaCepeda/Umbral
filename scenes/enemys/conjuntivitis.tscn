@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://ds8xfp8lamlns"]
+
+[ext_resource type="Texture2D" uid="uid://dcxmnkxyg7gjm" path="res://assets/enemy/conjuntivitis.png" id="1_mjfvy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eg6e"]
+atlas = ExtResource("1_mjfvy")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23w30"]
+atlas = ExtResource("1_mjfvy")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nnsa"]
+atlas = ExtResource("1_mjfvy")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0natu"]
+atlas = ExtResource("1_mjfvy")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lkv2"]
+atlas = ExtResource("1_mjfvy")
+region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy6bj"]
+atlas = ExtResource("1_mjfvy")
+region = Rect2(2000, 1000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s2mih"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eg6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23w30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nnsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0natu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lkv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy6bj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbjfx"]
+size = Vector2(742, 219)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=543609642]
+motion_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1586834366]
+sprite_frames = SubResource("SpriteFrames_s2mih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=10489007]
+position = Vector2(-2, -3.5)
+shape = SubResource("RectangleShape2D_pbjfx")
