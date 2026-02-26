@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="umbral"
-run/main_scene="uid://dsk43w7achhwy"
+run/main_scene="uid://ebgvj4cuo4ux"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
