@@ -1,19 +1,36 @@
 extends CharacterBody2D
 
-@export var speed = 100
-@export var health = 5
+@export var speed: int = 100
+@export var consciousness: int = 50
 @onready var shoot_timer = $ShootTimer
 @onready var shoot_position = $bullet_pos
+@onready var consciousness_bar = $HUD/ConsciousnessBar
+
 var bullet= preload("res://scenes/bullet.tscn")
+
+func _ready():
+	consciousness_bar.value = consciousness
+
 func recibir_danio(cantidad):
-	health -= cantidad
+	consciousness -= cantidad
+	update_bar()
+	
 	modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
 	modulate = Color.WHITE
 	
-	if health <= 0:
+	if consciousness <= 0:
 		morir()
 
+func increase_consciousness(amount):
+	consciousness += amount
+	if consciousness > 100:
+		consciousness = 100
+	update_bar()
+
+func update_bar():
+	consciousness_bar.value = consciousness
+	
 func morir():
 	queue_free()
 

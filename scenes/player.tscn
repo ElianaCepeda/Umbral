@@ -28,6 +28,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_121kc"]
 size = Vector2(15, 15)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2els"]
+bg_color = Color(0.88575643, 0.45362788, 0.42540243, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
+bg_color = Color(0.16642791, 0.6923337, 0.58923954, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dqkch"]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1786594462 groups=["jugador"]]
 collision_layer = 9
 collision_mask = 9
@@ -48,3 +64,32 @@ one_shot = true
 
 [node name="bullet_pos" type="Node2D" parent="." unique_id=655178492]
 position = Vector2(9, 0)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=589603040]
+
+[node name="ConsciousnessBar" type="ProgressBar" parent="HUD" unique_id=876025860]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -261.5
+offset_top = 50.0
+offset_right = 261.5
+offset_bottom = 78.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+theme_override_styles/background = SubResource("StyleBoxFlat_g2els")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qhqgy")
+value = 50.0
+show_percentage = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HUD" unique_id=1590434535]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.5
+offset_top = 40.0
+offset_right = 250.5
+offset_bottom = 97.0
+grow_horizontal = 2
+texture_under = SubResource("GradientTexture1D_dqkch")

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 150
 @export var bullet_scene = preload("res://scenes/bulletenemy.tscn") 
 @export var salud = 3
+@export var puntos = 10
 
 var direccion_movimiento = Vector2.ZERO
 var player = null
@@ -63,6 +64,8 @@ func recibir_danio(cantidad):
 	modulate = Color.WHITE
 	
 	if salud <= 0:
+		if is_instance_valid(player):
+			player.increase_consciousness(puntos)
 		morir()
 
 func morir():
