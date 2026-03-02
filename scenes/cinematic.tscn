@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d136qkn350f2x"]
+
+[ext_resource type="AudioStream" uid="uid://cl11r1fgtkb0b" path="res://assets/audio/music/Idea 2 parte 1.ogg" id="1_lhrfg"]
+
+[node name="Cinematic" type="Node2D" unique_id=607006998]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1740846607]
+stream = ExtResource("1_lhrfg")
+autoplay = true

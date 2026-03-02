@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b16j6f4yhltaa" path="res://scenes/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://djfxwr2u50fas" path="res://assets/Dungeon_Tileset.png" id="2_ekxnf"]
+[ext_resource type="AudioStream" uid="uid://blx0l4suedwa3" path="res://assets/audio/music/intro.wav" id="3_bqqt6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bqqt6"]
 texture = ExtResource("2_ekxnf")
@@ -186,5 +187,9 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
 text = "Inciar Batalla"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=263846986]
+stream = ExtResource("3_bqqt6")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
