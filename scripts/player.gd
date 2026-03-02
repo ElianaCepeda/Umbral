@@ -10,7 +10,10 @@ var bullet= preload("res://scenes/bullet.tscn")
 
 func _ready():
 	consciousness_bar.value = consciousness
-
+	consciousness_bar.hide()
+func mostrar_interfaz():
+	consciousness_bar.show()
+	
 func recibir_danio(cantidad):
 	consciousness -= cantidad
 	update_bar()
