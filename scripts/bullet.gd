@@ -14,3 +14,7 @@ func _physics_process(delta):
 			objeto_tocado.recibir_danio(danio)
 		
 		queue_free() # La bala desaparece al chocarsd
+
+#Sonido de proyectiles
+func _ready():
+	$AudioStreamPlayer.play()

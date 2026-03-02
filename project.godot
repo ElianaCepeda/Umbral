@@ -47,7 +47,7 @@ directories/dtl_directory={
 "perdidaApetitoDescription": "res://dialogues/illDescription/perdidaApetitoDescription.dtl",
 "retardoDescription": "res://dialogues/illDescription/retardoDescription.dtl",
 "taquicardiaCocainaDescription": "res://dialogues/illDescription/taquicardiaCocainaDescription.dtl",
-"taquicardiaDialogue": "res://dialogues/illDescription/taquicardiaDescription.dtl",
+"taquicardiaDescription": "res://dialogues/illDescription/taquicardiaDescription.dtl",
 "tensionDescription": "res://dialogues/illDescription/tensionDescription.dtl"
 }
 layout/style_directory={}

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cr1hmifyms5x" path="res://scripts/bullet.gd" id="1_dw73b"]
 [ext_resource type="Texture2D" uid="uid://dikrfgtdiv3e3" path="res://assets/579.png" id="2_jp7y0"]
+[ext_resource type="AudioStream" uid="uid://bi610cttln7mt" path="res://assets/audio/sounds/Proyectil.ogg" id="3_jp7y0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y25gk"]
 atlas = ExtResource("2_jp7y0")
@@ -127,3 +128,6 @@ frame_progress = 0.5848159
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=700703920]
 position = Vector2(4.5, 0)
 shape = SubResource("RectangleShape2D_bssuu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=692782749]
+stream = ExtResource("3_jp7y0")
