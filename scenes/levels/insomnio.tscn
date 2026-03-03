@@ -174,4 +174,3 @@ script = ExtResource("6_gpbhb")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1049284930]
 stream = ExtResource("7_odxy6")
 volume_db = -20.0
-autoplay = true
