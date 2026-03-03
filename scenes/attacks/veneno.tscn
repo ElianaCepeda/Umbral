@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://7p08xhy8h8yv"]
+
+[ext_resource type="Script" uid="uid://b0jn38geceyrj" path="res://scenes/attacks/veneno.gd" id="1_fjtcr"]
+[ext_resource type="Shader" uid="uid://bo5u6saqx277k" path="res://scenes/attacks/veneno.gdshader" id="2_fjtcr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5mly"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h5mly"]
+shader = ExtResource("2_fjtcr")
+shader_parameter/speed = 1.0
+shader_parameter/distortion_strength = 0.05
+shader_parameter/liquid_color = Color(0, 1, 0, 1)
+
+[node name="RastroVeneno" type="Area2D" unique_id=1455358700]
+script = ExtResource("1_fjtcr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1887985851]
+scale = Vector2(1, 0.99999994)
+shape = SubResource("CircleShape2D_h5mly")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=599415687]
+zoom = Vector2(6, 6)
+
+[node name="DesaparecerTimer" type="Timer" parent="." unique_id=1518775010]
+wait_time = 3.0
+
+[node name="Line2D" type="Line2D" parent="." unique_id=741881103]
+material = SubResource("ShaderMaterial_h5mly")
+position = Vector2(0, 4)
+points = PackedVector2Array(4, -5, -10, -5, 9, -5)
+closed = true
+default_color = Color(0.56726307, 0.5166997, 1, 1)
+
+[node name="DanioTimer" type="Timer" parent="." unique_id=1453872524]
+wait_time = 0.5

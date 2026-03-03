@@ -71,10 +71,10 @@ position = Vector2(9, 0)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -261.5
-offset_top = 50.0
-offset_right = 261.5
-offset_bottom = 78.0
+offset_left = -542.0
+offset_top = 31.0
+offset_right = -411.0
+offset_bottom = 46.0
 grow_horizontal = 2
 size_flags_horizontal = 6
 theme_override_styles/background = SubResource("StyleBoxFlat_g2els")
@@ -93,3 +93,6 @@ offset_right = 250.5
 offset_bottom = 97.0
 grow_horizontal = 2
 texture_under = SubResource("GradientTexture1D_dqkch")
+
+[node name="DashTimer" type="Timer" parent="." unique_id=1653543775]
+wait_time = 0.1

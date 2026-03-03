@@ -190,6 +190,7 @@ text = "Inciar Batalla"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=263846986]
 stream = ExtResource("3_bqqt6")
+volume_db = -20.0
 autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

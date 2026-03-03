@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 150
-@export var bullet_scene = preload("res://scenes/bulletenemy.tscn") 
+@export var bullet_scene = preload("res://scenes/attacks/bulletenemy.tscn") 
 @export var salud = 3
 @export var puntos = 10
 
