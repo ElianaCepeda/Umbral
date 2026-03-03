@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dfc4rvk0ar4ig" path="res://scenes/enemys/insomnia.tscn" id="3_gldc4"]
 [ext_resource type="Script" uid="uid://cas7hatho5sbn" path="res://scenes/spawner.gd" id="4_0cso3"]
 [ext_resource type="Script" uid="uid://c13gw071yngaw" path="res://scripts/cameramovement.gd" id="6_gpbhb"]
+[ext_resource type="AudioStream" uid="uid://bfks3buc8wlxq" path="res://assets/audio/music/Tension.ogg" id="7_odxy6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paxxb"]
 texture = ExtResource("1_4xfga")
@@ -169,3 +170,8 @@ color = Color(0, 0, 0, 0.7921569)
 position = Vector2(513, 313)
 zoom = Vector2(3, 3)
 script = ExtResource("6_gpbhb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1049284930]
+stream = ExtResource("7_odxy6")
+volume_db = -20.0
+autoplay = true
