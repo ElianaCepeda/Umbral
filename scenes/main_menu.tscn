@@ -169,7 +169,7 @@ grow_vertical = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainerMain" unique_id=1297344597]
+[node name="GameName" type="Label" parent="VBoxContainerMain" unique_id=1297344597]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7486911, 0.00010685027, 0.63051724, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -181,14 +181,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Button" type="Button" parent="VBoxContainerMain" unique_id=1848600827]
+[node name="Start" type="Button" parent="VBoxContainerMain" unique_id=1848600827]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
 text = "Inciar Batalla"
 
-[node name="Button2" type="Button" parent="VBoxContainerMain" unique_id=1828239358]
+[node name="Recover" type="Button" parent="VBoxContainerMain" unique_id=1828239358]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
@@ -198,6 +198,5 @@ text = "Zona de recuperación"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=263846986]
 stream = ExtResource("3_bqqt6")
 volume_db = -20.0
-autoplay = true
 
-[connection signal="pressed" from="VBoxContainerMain/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainerMain/Start" to="." method="_on_button_pressed"]

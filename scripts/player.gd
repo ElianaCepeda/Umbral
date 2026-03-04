@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var esta_muerto: bool = false
 @export var speed: int = 100
 @export var consciousness: int = 50
 @onready var shoot_timer = $ShootTimer
@@ -21,6 +22,8 @@ func mostrar_interfaz():
 	consciousness_bar.show()
 	
 func recibir_danio(cantidad):
+	if esta_muerto or not is_inside_tree():
+		return
 	consciousness -= cantidad
 	update_bar()
 	
@@ -41,7 +44,11 @@ func update_bar():
 	consciousness_bar.value = consciousness
 	
 func morir():
-	queue_free()
+	if esta_muerto:
+		return
+	esta_muerto = true
+
+	GameManager.game_over()
 
 func get_input():
 	# Si estamos haciendo dash, ignoramos el input normal
@@ -93,14 +100,12 @@ func shoot():
 		newBullet.direction = direction
 		newBullet.rotation = direction.angle()
 		
-		get_tree().root.add_child(newBullet)
+		get_parent().add_child(newBullet)
 		shoot_timer.start()
 		
 func _physics_process(delta):
 	dash()
 	
-	# --- CORRECCIÓN DEFINITIVA ---
-	# Si no estamos haciendo dash, pero el timer acaba de terminar
 	if not is_dashing and dash_timer.time_left == 0 and velocity.length() > 0:
 		# Forzamos parada absoluta instantánea
 		velocity = Vector2.ZERO

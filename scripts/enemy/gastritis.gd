@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 @export var speed = 120
 @export var salud = 5
-@export var puntos = 15
-@export var danio_colision = 10 # --- NUEVO: Daño por choque físico ---
+@export var puntos = 10
+@export var danio_colision = 1 # --- Daño por choque físico ---
 
-# --- NUEVO: Escena del rastro de veneno ---
+# --- Escena del rastro de veneno ---
 @export var veneno_scene = preload("res://scenes/attacks/veneno.tscn")
 @onready var veneno_timer = $TimerVeneno
 # ------------------------------------------

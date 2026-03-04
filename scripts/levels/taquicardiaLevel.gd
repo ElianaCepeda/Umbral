@@ -1,39 +1,51 @@
-extends Node2D
+extends LevelState
+class_name TaquicardiaLevel
 
-@export var timeline_name: String = "res://dialogues/illDescription/taquicardiaDescription.dtl"
-@onready var fondo_custom = $FondoDialogo
+var scene_instance: Node2D
+var fondo_custom: Node
+var timeline_name: String = "res://dialogues/illDescription/taquicardiaDescription.dtl"
 
-func _ready():
-	# 1. Iniciamos el diálogo
-	fondo_custom.show()
-	var layout = Dialogic.start(timeline_name)
+func enter():
+	print("Iniciando estado: Nivel Taquicardia")
 	
-	# 2. FORZAR que la interfaz ignore la pausa
+	# Instanciamos la escena visual del nivel
+	scene_instance = preload("res://scenes/levels/taquicardia.tscn").instantiate()
+	add_child(scene_instance)
+	
+	fondo_custom = scene_instance.get_node("FondoDialogo")
+	fondo_custom.show()
+	
+	var layout = Dialogic.start(timeline_name)
 	if layout:
 		layout.process_mode = Node.PROCESS_MODE_ALWAYS
-	
-	# 3. FORZAR que el manejador de inputs de Dialogic ignore la pausa
-	# Esto es vital para que detecte el 'Enter' o el 'Click'
+		
 	Dialogic.Inputs.process_mode = Node.PROCESS_MODE_ALWAYS
 	
-	# 4. Ahora sí, pausamos el juego
 	get_tree().paused = true
-	
-	# 5. Conectamos la señal para reanudar
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	
+	# Configuramos el Spawner para que fabrique enemigos de Taquicardia
+	var spawner = scene_instance.get_node("Spawner")
+	if spawner:
+		spawner.tipo_enemigo_actual = "taquicardia"
+
+func exit():
+	print("Saliendo del nivel Taquicardia...")
+	if scene_instance:
+		scene_instance.queue_free()
 
 func _on_timeline_ended():
-	# 1. Desconectamos y quitamos pausa
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 	get_tree().paused = false
 	fondo_custom.hide()
 	
-	# 2. Buscamos al jugador y le pedimos que muestre la barra
-	# Asegúrate de que el nombre del nodo sea "Player" o como lo tengas en tu árbol
-	if has_node("Player"): 
-		$Player.mostrar_interfaz()
-	
-	print("¡Barra de consciencia activada!")
-	
-	get_tree().paused = false
-	print("¡El diálogo terminó, el juego comienza!")
+	var player = scene_instance.get_node("Player")
+	if player and player.has_method("mostrar_interfaz"): 
+		player.mostrar_interfaz()
+		
+	var spawner = scene_instance.get_node("Spawner")
+	if spawner:
+		spawner.generar_oleada()
+
+func update(_delta):
+	pass

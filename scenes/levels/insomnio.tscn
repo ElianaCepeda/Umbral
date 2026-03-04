@@ -3,9 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://djfxwr2u50fas" path="res://assets/Dungeon_Tileset.png" id="1_4xfga"]
 [ext_resource type="Script" uid="uid://c2j3ksfidoyix" path="res://scripts/levels/insomniaLevel.gd" id="1_ex8ba"]
 [ext_resource type="PackedScene" uid="uid://ctibey8ts4cil" path="res://scenes/player.tscn" id="2_paxxb"]
-[ext_resource type="PackedScene" uid="uid://dfc4rvk0ar4ig" path="res://scenes/enemys/insomnia.tscn" id="3_gldc4"]
 [ext_resource type="Script" uid="uid://cas7hatho5sbn" path="res://scenes/spawner.gd" id="4_0cso3"]
-[ext_resource type="Script" uid="uid://c13gw071yngaw" path="res://scripts/cameramovement.gd" id="6_gpbhb"]
+[ext_resource type="Script" uid="uid://bjv26oyrh3ffy" path="res://scripts/cameramovement.gd" id="6_gpbhb"]
 [ext_resource type="AudioStream" uid="uid://bfks3buc8wlxq" path="res://assets/audio/music/Tension.ogg" id="7_odxy6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paxxb"]
@@ -144,20 +143,20 @@ tile_set = SubResource("TileSet_gldc4")
 top_level = true
 position = Vector2(513, 313)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=2048461648]
+[node name="Spawner" type="Node2D" parent="." unique_id=2048461648 node_paths=PackedStringArray("area")]
 visible = false
 position = Vector2(510, 313)
 script = ExtResource("4_0cso3")
-enemigo_escena = ExtResource("3_gldc4")
+area = NodePath("AreaGeneracion")
 
-[node name="AreaGeneracion" type="ReferenceRect" parent="Node2D" unique_id=581733449]
+[node name="AreaGeneracion" type="ReferenceRect" parent="Spawner" unique_id=581733449]
 visible = false
 offset_left = -175.0
 offset_top = -90.0
 offset_right = 180.0
 offset_bottom = 85.0
 
-[node name="TimerSpawn" type="Timer" parent="Node2D" unique_id=313987649]
+[node name="TimerSpawn" type="Timer" parent="Spawner" unique_id=313987649]
 
 [node name="FondoDialogo" type="ColorRect" parent="." unique_id=864437953]
 visible = false

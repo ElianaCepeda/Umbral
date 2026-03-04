@@ -1,36 +1,52 @@
-extends Node2D
+# scripts/levels/gastritisLevel.gd
+extends LevelState
+class_name GastritisLevel
 
-@export var timeline_name: String = "res://dialogues/illDescription/gastritisDescription.dtl"
-@onready var fondo_custom = $FondoDialogo
+var scene_instance: Node2D
+var fondo_custom: Node
+var timeline_name: String = "res://dialogues/illDescription/gastritisDescription.dtl"
 
-func _ready():
-	# 1. Iniciamos el diálogo
-	fondo_custom.show()
-	var layout = Dialogic.start(timeline_name)
+func enter():
+	print("Iniciando estado: Nivel Gastritis")
 	
-	# 2. FORZAR que la interfaz ignore la pausa
+	scene_instance = preload("res://scenes/levels/gastritis.tscn").instantiate()
+	add_child(scene_instance)
+	
+	fondo_custom = scene_instance.get_node("FondoDialogo")
+	fondo_custom.show()
+	
+	var layout = Dialogic.start(timeline_name)
 	if layout:
 		layout.process_mode = Node.PROCESS_MODE_ALWAYS
-	
-	# 3. FORZAR que el manejador de inputs de Dialogic ignore la pausa
-	# Esto es vital para que detecte el 'Enter' o el 'Click'
+		
 	Dialogic.Inputs.process_mode = Node.PROCESS_MODE_ALWAYS
 	
-	# 4. Ahora sí, pausamos el juego
 	get_tree().paused = true
-	
-	# 5. Conectamos la señal para reanudar
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	
+	# ¡Ruta directa y exacta con mayúscula!
+	var spawner = scene_instance.get_node("Spawner")
+	if spawner:
+		spawner.tipo_enemigo_actual = "gastritis"
+
+func exit():
+	print("Saliendo del nivel Gastritis...")
+	if scene_instance:
+		scene_instance.queue_free()
 
 func _on_timeline_ended():
-	# 1. Desconectamos y quitamos pausa
+	print("--- DIÁLOGO TERMINADO ---")
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 	get_tree().paused = false
 	fondo_custom.hide()
 	
-	# 2. Buscamos al jugador y le pedimos que muestre la barra
-	# Asegúrate de que el nombre del nodo sea "Player" o como lo tengas en tu árbol
-	if has_node("Player"): 
-		$Player.mostrar_interfaz()
+	var player = scene_instance.get_node("Player")
+	if player and player.has_method("mostrar_interfaz"): 
+		player.mostrar_interfaz()
+		
+	# ¡Ruta directa y exacta con mayúscula!
+	var spawner = scene_instance.get_node("Spawner")
 	
-	get_tree().paused = false
+	if spawner:
+		print("¡Spawner encontrado! Generando enemigos...")
+		spawner.generar_oleada()
