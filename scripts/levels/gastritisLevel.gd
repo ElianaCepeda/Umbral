@@ -33,6 +33,11 @@ func exit():
 	print("Saliendo del nivel Gastritis...")
 	if scene_instance:
 		scene_instance.queue_free()
+		scene_instance = null
+		
+	if fondo_custom:
+		fondo_custom.queue_free()
+		fondo_custom = null
 
 func _on_timeline_ended():
 	print("--- DIÁLOGO TERMINADO ---")

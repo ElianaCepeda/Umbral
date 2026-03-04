@@ -1,9 +1,9 @@
 extends CanvasLayer
 
 # Referencias a los botones de la interfaz
-@onready var main_menu_btn = $ColorRect/VBoxContainer/MainMenuBtn
-@onready var restart_phase_btn = $ColorRect/VBoxContainer/RestartPhaseBtn
-@onready var restart_level_btn = $ColorRect/VBoxContainer/RestartLevelBtn
+@onready var main_menu_btn = $ColorRect/PanelContainer/VBoxContainer/MainMenuBtn
+@onready var restart_phase_btn = $ColorRect/PanelContainer/VBoxContainer/RestartPhaseBtn
+@onready var restart_level_btn = $ColorRect/PanelContainer/VBoxContainer/RestartLevelBtn
 
 func _ready():
 	# Nos aseguramos de que el menú empiece oculto
@@ -43,13 +43,25 @@ func _on_restart_phase_pressed():
 	get_tree().paused = false
 	hide()
 	
-	# Reinicia el estado actual en el que se encuentra la fase.
-	# Según tu código, el GameManager guarda el estado actual en 'current_level'.
-	# Volvemos a iniciar ese estado llamando a su función 'enter()'.
-	if GameManager.current_level and GameManager.current_level.has_method("enter"):
-		GameManager.current_level.enter()
+	if GameManager.current_level:
+		# 1. Limpiamos cualquier shader/efecto
+		var efectos = get_tree().get_nodes_in_group("efectos_enemigos")
+		for efecto in efectos:
+			efecto.queue_free()
+			
+		# 2. Le decimos al nivel actual que limpie y borre sus cosas viejas
+		if GameManager.current_level.has_method("exit"):
+			GameManager.current_level.exit()
+			
+		# 3. Esperamos un frame para que Godot termine de destruir al jugador viejo en la memoria
+		await get_tree().process_frame
+		
+		# 4. Volvemos a iniciar el estado limpio
+		if GameManager.current_level.has_method("enter"):
+			GameManager.current_level.enter()
 	else:
-		printerr("No se ha asignado un current_level en GameManager o no tiene función enter()")
+		printerr("No se ha asignado un current_level en GameManager")
+
 
 func _on_restart_level_pressed():
 	# Este botón aún no hace nada, tal como se solicitó

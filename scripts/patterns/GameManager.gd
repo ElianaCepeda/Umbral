@@ -59,3 +59,4 @@ func _realizar_game_over():
 	
 	# 4. Cargamos el menú principal
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	
