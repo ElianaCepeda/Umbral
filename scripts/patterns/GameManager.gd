@@ -43,12 +43,19 @@ func _realizar_game_over():
 	# 3. Nos aseguramos de quitar cualquier pausa
 	get_tree().paused = false
 	
+	# LIMPIAR EFECTOS GENÉRICOS
+	var efectos = get_tree().get_nodes_in_group("efectos_enemigos")
+	for efecto in efectos:
+		efecto.queue_free()
+	
 	# 4. Destruimos el nivel viejo
 	if current_level:
 		current_level.exit()
 		remove_child(current_level)
 		current_level.queue_free()
 		current_level = null
+		
+	await get_tree().process_frame
 	
-	# 5. Cargamos el menú principal
+	# 4. Cargamos el menú principal
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
