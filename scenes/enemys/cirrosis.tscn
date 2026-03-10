@@ -1,29 +1,30 @@
 [gd_scene format=3 uid="uid://4y6dfxagwux8"]
 
-[ext_resource type="Texture2D" uid="uid://pobf6goho50a" path="res://assets/enemy/cirrosis.png" id="1_yyg1u"]
+[ext_resource type="Script" uid="uid://bsymc0vk8roes" path="res://scripts/enemy/cirrosis.gd" id="1_0y1ly"]
+[ext_resource type="Texture2D" uid="uid://pobf6goho50a" path="res://assets/enemy/cirrosis.png" id="2_c2ir5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tavo"]
-atlas = ExtResource("1_yyg1u")
+atlas = ExtResource("2_c2ir5")
 region = Rect2(0, 0, 1000, 1000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t5fhq"]
-atlas = ExtResource("1_yyg1u")
+atlas = ExtResource("2_c2ir5")
 region = Rect2(1000, 0, 1000, 1000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_get6q"]
-atlas = ExtResource("1_yyg1u")
+atlas = ExtResource("2_c2ir5")
 region = Rect2(2000, 0, 1000, 1000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ixkj1"]
-atlas = ExtResource("1_yyg1u")
+atlas = ExtResource("2_c2ir5")
 region = Rect2(0, 1000, 1000, 1000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jybsv"]
-atlas = ExtResource("1_yyg1u")
+atlas = ExtResource("2_c2ir5")
 region = Rect2(1000, 1000, 1000, 1000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eltb8"]
-atlas = ExtResource("1_yyg1u")
+atlas = ExtResource("2_c2ir5")
 region = Rect2(2000, 1000, 1000, 1000)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ybrdn"]
@@ -57,6 +58,7 @@ size = Vector2(589, 395)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1938257301]
 motion_mode = 1
+script = ExtResource("1_0y1ly")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1647502041]
 sprite_frames = SubResource("SpriteFrames_ybrdn")

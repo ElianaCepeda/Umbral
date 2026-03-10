@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ds8xfp8lamlns"]
 
+[ext_resource type="Script" uid="uid://c36ygu174wc4o" path="res://scripts/enemy/conjuntivitis.gd" id="1_5eg6e"]
 [ext_resource type="Texture2D" uid="uid://dcxmnkxyg7gjm" path="res://assets/enemy/conjuntivitis.png" id="1_mjfvy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5eg6e"]
@@ -57,6 +58,7 @@ size = Vector2(742, 219)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=543609642]
 motion_mode = 1
+script = ExtResource("1_5eg6e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1586834366]
 sprite_frames = SubResource("SpriteFrames_s2mih")
