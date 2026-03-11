@@ -43,6 +43,9 @@ func _realizar_game_over():
 	# 3. Nos aseguramos de quitar cualquier pausa
 	get_tree().paused = false
 	
+	if Dialogic.current_timeline != null:
+		Dialogic.end_timeline()
+	
 	# LIMPIAR EFECTOS GENÉRICOS
 	var efectos = get_tree().get_nodes_in_group("efectos_enemigos")
 	for efecto in efectos:

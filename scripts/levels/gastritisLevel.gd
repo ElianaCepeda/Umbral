@@ -24,7 +24,6 @@ func enter():
 	get_tree().paused = true
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
-	# ¡Ruta directa y exacta con mayúscula!
 	var spawner = scene_instance.get_node("Spawner")
 	if spawner:
 		spawner.tipo_enemigo_actual = "gastritis"

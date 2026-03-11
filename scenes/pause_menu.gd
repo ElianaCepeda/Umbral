@@ -15,9 +15,10 @@ func _ready():
 	restart_level_btn.pressed.connect(_on_restart_level_pressed)
 
 func _input(event):
-	# "ui_cancel" es la acción que Godot asocia a la tecla Escape por defecto
 	if event.is_action_pressed("ui_cancel"):
-		toggle_pause()
+	
+		if GameManager.current_level != null:
+			toggle_pause()
 
 func toggle_pause():
 	var is_paused = get_tree().paused

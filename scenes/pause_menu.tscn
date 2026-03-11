@@ -26,6 +26,7 @@ shadow_size = 8
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=233673260]
 process_mode = 3
+layer = 100
 script = ExtResource("1_n87rw")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1479966477]
