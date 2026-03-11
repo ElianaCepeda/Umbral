@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bmswnyqfyvwds"]
 
 [ext_resource type="Texture2D" uid="uid://cbru7kql0ll1h" path="res://assets/enemy/cigarrillo.png" id="1_4qbbb"]
+[ext_resource type="Script" uid="uid://bwf0otvsygfpd" path="res://scripts/enemy/cigarrillo.gd" id="1_jle0v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jle0v"]
 atlas = ExtResource("1_4qbbb")
@@ -86,6 +87,7 @@ height = 1146.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=663758963]
 motion_mode = 1
+script = ExtResource("1_jle0v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=84845185]
 sprite_frames = SubResource("SpriteFrames_xetnl")

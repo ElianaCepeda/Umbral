@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bsmxfoydofb33"]
 
+[ext_resource type="Script" uid="uid://bsesv04jcun84" path="res://scripts/enemy/taquicardia.gd" id="1_px04q"]
 [ext_resource type="Texture2D" uid="uid://drjpwus0ctal" path="res://assets/enemy/taquicardia.png" id="1_xblvc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_px04q"]
@@ -45,6 +46,7 @@ height = 716.0
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=644868039]
 scale = Vector2(0.05, 0.05)
 motion_mode = 1
+script = ExtResource("1_px04q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=507955110]
 sprite_frames = SubResource("SpriteFrames_pgod8")

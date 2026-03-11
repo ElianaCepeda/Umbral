@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://cuv7p40m45df1"]
+
+[ext_resource type="Texture2D" uid="uid://du14iubjv7mdv" path="res://assets/enemy/fatiga.png" id="1_bstfh"]
+[ext_resource type="Script" uid="uid://bfhaefwemkwm6" path="res://scripts/enemy/fatiga.gd" id="1_ydvs6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydvs6"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oixr"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eke0"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufien"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(3000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w3d2"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk340"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tui7"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(2000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsvjk"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(3000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ob45"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(0, 2000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3hsw"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(1000, 2000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b1v5"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(2000, 2000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwi42"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(3000, 2000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s28f1"]
+atlas = ExtResource("1_bstfh")
+region = Rect2(0, 3000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pairx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydvs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oixr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eke0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufien")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w3d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk340")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tui7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsvjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ob45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3hsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b1v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwi42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s28f1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_40y1l"]
+radius = 348.0
+height = 752.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=267650723]
+script = ExtResource("1_ydvs6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1699414071]
+sprite_frames = SubResource("SpriteFrames_pairx")
+frame_progress = 0.21249388
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=898411324]
+position = Vector2(-83, -2)
+shape = SubResource("CapsuleShape2D_40y1l")

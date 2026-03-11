@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://xiiu10m2uhcp"]
 
 [ext_resource type="Texture2D" uid="uid://qs6x3yyqtw7b" path="res://assets/enemy/necrosis.png" id="1_1wh4c"]
+[ext_resource type="Script" uid="uid://bvl34dkwo0yll" path="res://scripts/enemy/necrosis.gd" id="1_6x0it"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6x0it"]
 atlas = ExtResource("1_1wh4c")
@@ -61,6 +62,7 @@ radius = 140.28899
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1289388527]
 motion_mode = 1
+script = ExtResource("1_6x0it")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=32317778]
 sprite_frames = SubResource("SpriteFrames_pqowe")

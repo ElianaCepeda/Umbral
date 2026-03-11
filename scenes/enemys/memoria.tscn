@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://csvqlbjhrl2ma"]
 
+[ext_resource type="Script" uid="uid://bg6wga6i020mj" path="res://scripts/enemy/memoria.gd" id="1_4jgke"]
 [ext_resource type="Texture2D" uid="uid://c0rt10ty22860" path="res://assets/enemy/memoria.png" id="1_xqd2q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4jgke"]
@@ -58,6 +59,7 @@ height = 726.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=64014209]
 motion_mode = 1
+script = ExtResource("1_4jgke")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1742203357]
 sprite_frames = SubResource("SpriteFrames_e7v25")

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bnrancttvafqr"]
 
 [ext_resource type="Texture2D" uid="uid://cel2q6co01fde" path="res://assets/enemy/asfixia.png" id="1_20hl2"]
+[ext_resource type="Script" uid="uid://bsjr4rlg4vgp6" path="res://scripts/enemy/asfixia.gd" id="1_l0p0a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0p0a"]
 atlas = ExtResource("1_20hl2")
@@ -58,6 +59,7 @@ height = 658.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1972859500]
 motion_mode = 1
+script = ExtResource("1_l0p0a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1033316287]
 sprite_frames = SubResource("SpriteFrames_drw66")

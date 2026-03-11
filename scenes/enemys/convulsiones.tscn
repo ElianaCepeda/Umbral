@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c3dofnjcc3tgg"]
 
+[ext_resource type="Script" uid="uid://fgkalust6a8o" path="res://scripts/enemy/convulsiones.gd" id="1_645pp"]
 [ext_resource type="Texture2D" uid="uid://cd3cp6bc8wbnd" path="res://assets/enemy/convulsiones.png" id="1_v7ins"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_645pp"]
@@ -58,6 +59,7 @@ height = 462.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2128963574]
 motion_mode = 1
+script = ExtResource("1_645pp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1072619961]
 sprite_frames = SubResource("SpriteFrames_vvoob")

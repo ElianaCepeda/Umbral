@@ -1,4 +1,4 @@
-# scripts/levels/LevelState.gd
+	# scripts/levels/LevelState.gd
 extends Node
 class_name LevelState
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cr0wq7xr43mxr"]
 
 [ext_resource type="Texture2D" uid="uid://4mh08a8t3y62" path="res://assets/enemy/apetito.png" id="1_jicbd"]
+[ext_resource type="Script" uid="uid://byq5gpt4chgxd" path="res://scripts/enemy/apetito.gd" id="1_uxpen"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxpen"]
 atlas = ExtResource("1_jicbd")
@@ -58,6 +59,7 @@ height = 602.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=187733212]
 motion_mode = 1
+script = ExtResource("1_uxpen")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1600962519]
 position = Vector2(-19, 54)
