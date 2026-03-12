@@ -97,8 +97,8 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gaea
 
 [global_group]
 
-jugador=""
-efectos_enemigos=""
+player=""
+enemy_effects=""
 
 [input]
 

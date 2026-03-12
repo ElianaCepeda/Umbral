@@ -1,90 +1,36 @@
-extends CharacterBody2D
+extends EnemyBase
 
-@export var speed = 120
-@export var salud = 5
-@export var puntos = 10
-@export var danio_colision = 1 # --- Daño por choque físico ---
+@export var poison_scene: PackedScene = preload("res://scenes/attacks/veneno.tscn")
+@onready var poison_timer: Timer = $PoisonTimer
 
-# --- Escena del rastro de veneno ---
-@export var veneno_scene = preload("res://scenes/attacks/veneno.tscn")
-@onready var veneno_timer = $TimerVeneno
-# ------------------------------------------
-@export var tiempo_botando: float = 3.0
-@export var tiempo_espera: float = 2.0
-
-var direccion_movimiento = Vector2.ZERO
-var player = null
+@export var drop_time: float = 3.0
+@export var wait_time: float = 2.0
 
 func _ready():
-	buscar_jugador()
-	elegir_direccion_aleatoria()
-	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING 
+	# Definimos atributos específicos
+	speed = 120
+	health = 5
+	points = 10
+	collision_damage = 1
+	damage_color = Color.GREEN
 	
-	if has_node("TimerVeneno"):
-		veneno_timer.timeout.connect(dejar_rastro)
-		iniciar_ciclo_veneno()
+	super._ready() # Inicializa la lógica base
+	
+	if poison_timer:
+		poison_timer.timeout.connect(leave_trail)
+		start_poison_cycle()
 
-func iniciar_ciclo_veneno():
-	veneno_timer.start(0.005) 
+func start_poison_cycle():
+	poison_timer.start(0.005) 
 	
-	await get_tree().create_timer(tiempo_botando).timeout
-	veneno_timer.stop()
+	await get_tree().create_timer(drop_time).timeout
+	poison_timer.stop()
 	
-	await get_tree().create_timer(tiempo_espera).timeout
-	iniciar_ciclo_veneno()
+	await get_tree().create_timer(wait_time).timeout
+	start_poison_cycle()
 
-func buscar_jugador():
-	var nodos = get_tree().get_nodes_in_group("jugador")
-	for n in nodos:
-		if n is Node2D:
-			player = n
-			break
-
-func _physics_process(delta):
-	if $AnimatedSprite2D:
-		$AnimatedSprite2D.play()
-	
-	velocity = direccion_movimiento * speed
-	
-	# move_and_slide() devuelve true si hubo una colisión
-	move_and_slide()
-	
-	# --- NUEVO: Detectar colisión con el jugador ---
-	# Revisamos todos los choques ocurridos en este frame
-	for i in get_slide_collision_count():
-		var colision = get_slide_collision(i)
-		var objeto_chocado = colision.get_collider()
-		
-		# Si el objeto está en el grupo jugador y tiene el método para recibir daño
-		if objeto_chocado.is_in_group("jugador"):
-			if objeto_chocado.has_method("recibir_danio"):
-				objeto_chocado.recibir_danio(danio_colision)
-				# Opcional: Rebotar al chocar para que no le quite toda la vida en un segundo
-				elegir_direccion_aleatoria() 
-	
-	if is_on_wall():
-		elegir_direccion_aleatoria()
-
-func elegir_direccion_aleatoria():
-	var angulo = randf_range(0, TAU)
-	direccion_movimiento = Vector2.RIGHT.rotated(angulo)
-
-func dejar_rastro():
-	if veneno_scene:
-		var nuevo_veneno = veneno_scene.instantiate()
-		nuevo_veneno.global_position = global_position
-		get_tree().root.add_child(nuevo_veneno)
-
-func recibir_danio(cantidad):
-	salud -= cantidad
-	modulate = Color.GREEN 
-	await get_tree().create_timer(0.1).timeout
-	modulate = Color.WHITE
-	
-	if salud <= 0:
-		if is_instance_valid(player):
-			player.increase_consciousness(puntos)
-		morir()
-
-func morir():
-	queue_free()
+func leave_trail():
+	if poison_scene:
+		var new_poison = poison_scene.instantiate()
+		new_poison.global_position = global_position
+		get_parent().call_deferred("add_child", new_poison)

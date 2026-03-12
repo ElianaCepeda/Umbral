@@ -122,10 +122,10 @@ frame_progress = 0.47126466
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1554130534]
 shape = SubResource("CapsuleShape2D_ama4x")
 
-[node name="TimerMovimiento" type="Timer" parent="." unique_id=507980985]
+[node name="ShootTimer" type="Timer" parent="." unique_id=507980985]
 wait_time = 2.0
 autostart = true
 
-[node name="TimerDisparo" type="Timer" parent="." unique_id=2019478500]
+[node name="MovementTimer" type="Timer" parent="." unique_id=2019478500]
 wait_time = 2.0
 autostart = true

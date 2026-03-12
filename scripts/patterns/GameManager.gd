@@ -7,51 +7,51 @@ var points: int = 0
 func get_points() -> int:
 	return points
 
-func add_points(cantidad: int):
-	points += cantidad
+func add_points(amount: int):
+	points += amount
 
 func reset_points():
 	points = 0
 
 func change_level(new_level: LevelState):
-	# Si ya hay un nivel activo, ejecutamos su lógica de salida y lo borramos
+	# If there is already an active level, execute its exit logic and delete it
 	if current_level:
 		current_level.exit()
 		remove_child(current_level)
 		current_level.queue_free()
 	
-	# Asignamos el nuevo nivel
+	# Assign the new level
 	current_level = new_level
 	add_child(current_level)
 	current_level.level_manager = self
 	
-	# Iniciamos el nuevo nivel
+	# Start the new level
 	current_level.enter()
 
 func game_over():
-	# 1. Apagamos el nivel inmediatamente para que nada más se mueva o haga daño
+	# 1. Turn off the level immediately so nothing else moves or deals damage
 	if current_level:
 		current_level.process_mode = Node.PROCESS_MODE_DISABLED
 	
-	# 2. Le pedimos a Godot que ejecute el cambio de escena de forma SEGURA al final del frame
-	call_deferred("_realizar_game_over")
+	# 2. Ask Godot to execute the scene change SAFELY at the end of the frame
+	call_deferred("_perform_game_over")
 
 
-func _realizar_game_over():
-	print("Iniciando secuencia de Game Over de forma segura...")
+func _perform_game_over():
+	print("Starting Game Over sequence safely...")
 	
-	# 3. Nos aseguramos de quitar cualquier pausa
+	# 3. Make sure to remove any pause
 	get_tree().paused = false
 	
 	if Dialogic.current_timeline != null:
 		Dialogic.end_timeline()
 	
-	# LIMPIAR EFECTOS GENÉRICOS
-	var efectos = get_tree().get_nodes_in_group("efectos_enemigos")
-	for efecto in efectos:
-		efecto.queue_free()
+	# CLEAN GENERIC EFFECTS
+	var effects = get_tree().get_nodes_in_group("enemy_effects")
+	for effect in effects:
+		effect.queue_free()
 	
-	# 4. Destruimos el nivel viejo
+	# 4. Destroy the old level
 	if current_level:
 		current_level.exit()
 		remove_child(current_level)
@@ -60,6 +60,5 @@ func _realizar_game_over():
 		
 	await get_tree().process_frame
 	
-	# 4. Cargamos el menú principal
+	# 5. Load the main menu
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-	

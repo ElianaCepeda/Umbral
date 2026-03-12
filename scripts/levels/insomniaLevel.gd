@@ -40,8 +40,8 @@ func _on_timeline_ended():
 	fondo_custom.hide()
 	
 	var player = scene_instance.get_node("Player")
-	if player and player.has_method("mostrar_interfaz"): 
-		player.mostrar_interfaz()
+	if player and player.has_method("show_ui"): 
+		player.show_ui()
 		
 	var spawner = scene_instance.get_node("Spawner")
 	if spawner:

@@ -1,30 +1,33 @@
 extends CharacterBody2D
 
-var esta_muerto: bool = false
+var is_dead: bool = false
 @export var speed: int = 100
 @export var consciousness: int = 50
+
 @onready var shoot_timer = $ShootTimer
 @onready var shoot_position = $bullet_pos
 @onready var consciousness_bar = $HUD/ConsciousnessBar
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var dash_timer = $DashTimer 
 
-@onready var dash_timer = $DashTimer # Un Timer nuevo en tu escena
-var is_dashing = false
+var is_dashing: bool = false
 @export var dash_speed: int = 400
 @export var dash_duration: float = 0.0001
 
-var bullet= preload("res://scenes/attacks/bullet.tscn")
+var bullet_scene = preload("res://scenes/attacks/bullet.tscn")
 
 func _ready():
 	consciousness_bar.value = consciousness
 	consciousness_bar.hide()
-func mostrar_interfaz():
+
+func show_ui():
 	consciousness_bar.show()
 	
-func recibir_danio(cantidad):
-	if esta_muerto or not is_inside_tree():
+func take_damage(amount: int):
+	if is_dead or not is_inside_tree():
 		return
-	consciousness -= cantidad
+		
+	consciousness -= amount
 	update_bar()
 	
 	modulate = Color.RED
@@ -32,9 +35,9 @@ func recibir_danio(cantidad):
 	modulate = Color.WHITE
 	
 	if consciousness <= 0:
-		morir()
+		die()
 
-func increase_consciousness(amount):
+func increase_consciousness(amount: int):
 	consciousness += amount
 	if consciousness > 100:
 		consciousness = 100
@@ -43,22 +46,19 @@ func increase_consciousness(amount):
 func update_bar():
 	consciousness_bar.value = consciousness
 	
-func morir():
-	if esta_muerto:
+func die():
+	if is_dead:
 		return
-	esta_muerto = true
-
+	is_dead = true
 	GameManager.game_over()
 
 func get_input():
-	# Si estamos haciendo dash, ignoramos el input normal
 	if is_dashing:
 		return
 
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * speed
 	
-	# Rotación hacia el mouse
 	var mouse_pos = get_global_mouse_position()
 	if mouse_pos.x < global_position.x:
 		animated_sprite.flip_h = true
@@ -75,8 +75,6 @@ func get_input():
 func dash():
 	if Input.is_action_just_pressed("dash") and not is_dashing and velocity.length() > 0:
 		is_dashing = true
-		
-		# Aplicar velocidad de dash
 		velocity = velocity.normalized() * dash_speed
 		
 		dash_timer.start()
@@ -84,34 +82,25 @@ func dash():
 		
 		is_dashing = false
 
-
 func shoot():
-	
-	# 1. Detectar si se presionó el clic izquierdo (asegúrate de tener definida esta acción en Project Settings)
 	if Input.is_action_just_pressed("click_disparo") and shoot_timer.is_stopped():
-		
-
 		var target_pos = get_global_mouse_position()
 		var direction = (target_pos - global_position).normalized()
 		
-
-		var newBullet = bullet.instantiate()
-		newBullet.global_position = shoot_position.global_position
-		newBullet.direction = direction
-		newBullet.rotation = direction.angle()
+		var new_bullet = bullet_scene.instantiate()
+		new_bullet.global_position = shoot_position.global_position
+		new_bullet.direction = direction
+		new_bullet.rotation = direction.angle()
 		
-		get_parent().add_child(newBullet)
+		get_parent().add_child(new_bullet)
 		shoot_timer.start()
 		
-func _physics_process(delta):
+func _physics_process(_delta):
 	dash()
 	
 	if not is_dashing and dash_timer.time_left == 0 and velocity.length() > 0:
-		# Forzamos parada absoluta instantánea
 		velocity = Vector2.ZERO
-	# -----------------------------
 		
-	get_input() # Esto debe ir después para que si el jugador presiona una tecla, se mueva inmediatamente después de parar
+	get_input() 
 	move_and_slide()
 	shoot()
-	
