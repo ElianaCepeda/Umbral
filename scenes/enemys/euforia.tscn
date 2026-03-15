@@ -107,6 +107,8 @@ radius = 339.0
 height = 712.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1349405448]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_fmhie")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=730059669]

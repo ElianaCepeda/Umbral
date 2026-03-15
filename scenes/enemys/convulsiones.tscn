@@ -58,6 +58,8 @@ radius = 224.0
 height = 462.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2128963574]
+collision_layer = 3
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_645pp")
 

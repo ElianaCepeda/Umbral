@@ -1,3 +1,4 @@
+# scripts/levels/gastritisLevel.gd
 extends LevelState
 class_name TaquicardiaLevel
 
@@ -6,10 +7,7 @@ var fondo_custom: Node
 var timeline_name: String = "res://dialogues/illDescription/taquicardiaDescription.dtl"
 
 func enter():
-	print("Iniciando estado: Nivel Taquicardia")
-	
-	# Instanciamos la escena visual del nivel
-	scene_instance = preload("res://scenes/levels/taquicardia.tscn").instantiate()
+	scene_instance = preload("res://scenes/levels/gastritis.tscn").instantiate()
 	add_child(scene_instance)
 	
 	fondo_custom = scene_instance.get_node("FondoDialogo")
@@ -24,17 +22,22 @@ func enter():
 	get_tree().paused = true
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
-	# Configuramos el Spawner para que fabrique enemigos de Taquicardia
 	var spawner = scene_instance.get_node("Spawner")
 	if spawner:
 		spawner.tipo_enemigo_actual = "taquicardia"
 
 func exit():
-	print("Saliendo del nivel Taquicardia...")
+	print("Saliendo del nivel Gastritis...")
 	if scene_instance:
 		scene_instance.queue_free()
+		scene_instance = null
+		
+	if fondo_custom:
+		fondo_custom.queue_free()
+		fondo_custom = null
 
 func _on_timeline_ended():
+	print("--- DIÁLOGO TERMINADO ---")
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 	get_tree().paused = false
 	fondo_custom.hide()
@@ -43,9 +46,9 @@ func _on_timeline_ended():
 	if player and player.has_method("show_ui"): 
 		player.show_ui()
 		
+	# ¡Ruta directa y exacta con mayúscula!
 	var spawner = scene_instance.get_node("Spawner")
+	
 	if spawner:
+		print("¡Spawner encontrado! Generando enemigos...")
 		spawner.generar_oleada()
-
-func update(_delta):
-	pass

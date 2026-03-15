@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var area: Control
+@export var area: Control 
 @export var cantidad_minima: int = 3
 @export var cantidad_maxima: int = 6
 @export var tipo_enemigo_actual: String = "" 

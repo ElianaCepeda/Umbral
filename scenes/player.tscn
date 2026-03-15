@@ -44,7 +44,7 @@ corner_radius_bottom_left = 12
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_dqkch"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1786594462 groups=["jugador"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1786594462 groups=["player"]]
 collision_layer = 9
 collision_mask = 9
 motion_mode = 1
@@ -67,7 +67,7 @@ position = Vector2(9, 0)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=589603040]
 
-[node name="ConsciousnessBar" type="ProgressBar" parent="HUD" unique_id=876025860]
+[node name="ConsciousnessBar" type="ProgressBar" parent="HUD" unique_id=876025860 groups=["player"]]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

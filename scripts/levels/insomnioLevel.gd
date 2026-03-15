@@ -1,5 +1,5 @@
 extends LevelState
-class_name InsomniaLevel
+class_name InsomnioLevel
 
 var scene_instance: Node2D
 var fondo_custom: Node
@@ -27,7 +27,7 @@ func enter():
 	# Configuramos el Spawner para que fabrique enemigos de Insomnio
 	var spawner = scene_instance.get_node("Spawner")
 	if spawner:
-		spawner.tipo_enemigo_actual = "insomnia"
+		spawner.tipo_enemigo_actual = "insomnio"
 
 func exit():
 	print("Saliendo del nivel Insomnio...")

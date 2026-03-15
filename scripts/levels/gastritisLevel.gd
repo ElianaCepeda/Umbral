@@ -7,8 +7,6 @@ var fondo_custom: Node
 var timeline_name: String = "res://dialogues/illDescription/gastritisDescription.dtl"
 
 func enter():
-	print("Iniciando estado: Nivel Gastritis")
-	
 	scene_instance = preload("res://scenes/levels/gastritis.tscn").instantiate()
 	add_child(scene_instance)
 	

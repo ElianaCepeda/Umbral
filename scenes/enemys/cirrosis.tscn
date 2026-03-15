@@ -57,6 +57,8 @@ animations = [{
 size = Vector2(589, 395)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1938257301]
+collision_layer = 3
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_0y1ly")
 

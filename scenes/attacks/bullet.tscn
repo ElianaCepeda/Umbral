@@ -130,4 +130,4 @@ shape = SubResource("RectangleShape2D_bssuu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1203220341]
 stream = ExtResource("3_l5glv")
-volume_db = -15.0
+volume_db = -80.0
