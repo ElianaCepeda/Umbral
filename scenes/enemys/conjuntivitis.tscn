@@ -57,6 +57,8 @@ animations = [{
 size = Vector2(742, 219)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=543609642]
+z_index = 1
+scale = Vector2(0.05, 0.05)
 collision_layer = 3
 collision_mask = 3
 motion_mode = 1
@@ -68,3 +70,6 @@ sprite_frames = SubResource("SpriteFrames_s2mih")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=10489007]
 position = Vector2(-2, -3.5)
 shape = SubResource("RectangleShape2D_pbjfx")
+
+[node name="PoisonTimer" type="Timer" parent="." unique_id=637567363]
+wait_time = 0.1
