@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 var is_dead: bool = false
+var controls_inverted: bool = false
+var original_scale = 3
+@onready var vision_light = $PointLight2D
 @export var speed: int = 100
 @export var consciousness: int = 50
 
@@ -29,10 +32,12 @@ func take_damage(amount: int):
 		
 	consciousness -= amount
 	update_bar()
+
+	var previous_color = modulate
 	
 	modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
-	modulate = Color.WHITE
+	modulate = previous_color
 	
 	if consciousness <= 0:
 		die()
@@ -57,6 +62,8 @@ func get_input():
 		return
 
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	if controls_inverted:
+		input_direction = -input_direction
 	velocity = input_direction * speed
 	
 	var mouse_pos = get_global_mouse_position()
@@ -104,3 +111,35 @@ func _physics_process(_delta):
 	get_input() 
 	move_and_slide()
 	shoot()
+
+func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
+	match effect_name:
+		"invert_controls":
+			controls_inverted = true
+			# Cambiamos el color a un morado claro/medio
+			# Puedes usar Color.MEDIUM_PURPLE o un código Hex como Color("9c59ff")
+			modulate = Color(0.6, 0.4, 1.0) 
+			
+			var timer = get_tree().create_timer(duration)
+			timer.timeout.connect(func():
+				# Al terminar el tiempo, volvemos al color normal (blanco)
+				controls_inverted = false
+				modulate = Color.WHITE
+			)
+		"reduce_vision":
+			# 1. Guardamos el tamaño original para volver luego
+			var original_scale = vision_light.texture_scale
+			
+			# 2. Reducimos el radio (el círculo se hace pequeño)
+			vision_light.texture_scale = 0.2
+			 
+			modulate = Color.DARK_GRAY # Feedback en el personaje
+			
+			# 3. Timer para restaurar
+			get_tree().create_timer(duration).timeout.connect(func():
+				if is_instance_valid(self):
+					# Volvemos al tamaño original
+					vision_light.texture_scale = original_scale
+					modulate = Color.WHITE
+			)
+			

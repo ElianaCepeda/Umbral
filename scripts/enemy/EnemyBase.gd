@@ -2,6 +2,8 @@ extends CharacterBody2D
 class_name EnemyBase
 
 # --- SHARED ATTRIBUTES ---
+@export var effect_name: String = ""
+@export var effect_duration: float = 2.0
 @export var speed: int = 120
 @export var health: int = 5
 @export var points: int = 10 # puntos que recibe el jugador cuando muere el enemigoo
@@ -37,6 +39,8 @@ func _physics_process(_delta):
 		if collided_object and collided_object.is_in_group("player"):
 			if collided_object.has_method("take_damage"):
 				collided_object.take_damage(collision_damage)
+				if effect_name != "" and collided_object.has_method("apply_effect"):
+					collided_object.apply_effect(effect_name, 0, effect_duration)
 				choose_random_direction() 
 	
 	if is_on_wall():

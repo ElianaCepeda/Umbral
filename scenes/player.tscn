@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1g7a0nosywfv" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://x1nltbe7cimp" path="res://assets/Dungeon_Character_2.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://cafjvo77fdeun" path="res://assets/luz.png" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1eu8g"]
 atlas = ExtResource("2_qhqgy")
@@ -81,6 +82,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_g2els")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qhqgy")
 value = 50.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="HUD" unique_id=1590434535]
 visible = false
@@ -96,3 +98,11 @@ texture_under = SubResource("GradientTexture1D_dqkch")
 
 [node name="DashTimer" type="Timer" parent="." unique_id=1653543775]
 wait_time = 0.1
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1902501392]
+position = Vector2(-7.0000305, -7)
+scale = Vector2(3, 3)
+texture = ExtResource("3_qhqgy")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=930524085]
+color = Color(0, 0, 0, 1)
