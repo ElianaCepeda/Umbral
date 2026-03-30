@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var is_dead: bool = false
+var is_paralyzed: bool = false
 var controls_inverted: bool = false
 var base_vision_scale: float = 3
 @onready var vision_light = $PointLight2D
@@ -27,6 +28,15 @@ func _ready():
 func show_ui():
 	consciousness_bar.show()
 	
+func get_target_color() -> Color:
+	if is_paralyzed:
+		return Color.YELLOW # La parálisis parpadea, pero esto sirve de base
+	if controls_inverted:
+		return Color(0.6, 0.4, 1.0) # Morado
+	if vision_light.texture_scale < base_vision_scale:
+		return Color.DARK_GRAY # Visión reducida
+	return Color.WHITE # Normal
+
 func take_damage(amount: int):
 	if is_dead or not is_inside_tree():
 		return
@@ -34,11 +44,10 @@ func take_damage(amount: int):
 	consciousness -= amount
 	update_bar()
 
-	var previous_color = modulate
-	
+	# Flash de daño usando un Tween
+	var damage_tween = create_tween()
 	modulate = Color.RED
-	await get_tree().create_timer(0.1).timeout
-	modulate = previous_color
+	damage_tween.tween_property(self, "modulate", get_target_color(), 0.3)
 	
 	if consciousness <= 0:
 		die()
@@ -59,7 +68,7 @@ func die():
 	GameManager.game_over()
 
 func get_input():
-	if is_dashing:
+	if is_dashing or is_paralyzed:
 		return
 
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -139,3 +148,21 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 					vision_light.texture_scale = base_vision_scale
 					modulate = Color.WHITE
 			)
+			
+		"paralyze":
+				if is_paralyzed: return
+				
+				is_paralyzed = true
+				
+				# Creamos un efecto de parpadeo amarillo
+				var blink_tween = create_tween().set_loops()
+				blink_tween.tween_property(self, "modulate", Color.YELLOW, 0.1)
+				blink_tween.tween_property(self, "modulate", Color.WHITE, 0.1)
+				
+				# Timer para la duración de la parálisis
+				get_tree().create_timer(duration).timeout.connect(func():
+					if is_instance_valid(self):
+						is_paralyzed = false
+						blink_tween.kill() # Detenemos el parpadeo
+						modulate = Color.WHITE # Restauramos el color original
+				)

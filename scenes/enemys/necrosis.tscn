@@ -50,7 +50,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 9.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rx3io"]
@@ -61,6 +61,8 @@ height = 642.0
 radius = 140.28899
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1289388527]
+z_index = 1
+scale = Vector2(0.07, 0.07)
 collision_layer = 3
 collision_mask = 3
 motion_mode = 1
@@ -68,7 +70,7 @@ script = ExtResource("1_6x0it")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=32317778]
 sprite_frames = SubResource("SpriteFrames_pqowe")
-frame_progress = 0.6328557
+frame_progress = 0.1025745
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125074065]
 position = Vector2(-151, 17)
@@ -78,3 +80,6 @@ shape = SubResource("CapsuleShape2D_rx3io")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=546393728]
 position = Vector2(251, -218)
 shape = SubResource("CircleShape2D_s410a")
+
+[node name="PoisonTimer" type="Timer" parent="." unique_id=1794289606]
+wait_time = 0.1
