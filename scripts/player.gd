@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var is_dead: bool = false
 var controls_inverted: bool = false
-var original_scale = 3
+var base_vision_scale: float = 3
 @onready var vision_light = $PointLight2D
 @export var speed: int = 100
 @export var consciousness: int = 50
@@ -22,6 +22,7 @@ var bullet_scene = preload("res://scenes/attacks/bullet.tscn")
 func _ready():
 	consciousness_bar.value = consciousness
 	consciousness_bar.hide()
+	base_vision_scale = vision_light.texture_scale
 
 func show_ui():
 	consciousness_bar.show()
@@ -127,19 +128,14 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 				modulate = Color.WHITE
 			)
 		"reduce_vision":
-			# 1. Guardamos el tamaño original para volver luego
-			var original_scale = vision_light.texture_scale
-			
-			# 2. Reducimos el radio (el círculo se hace pequeño)
+			# 1. No guardamos nada localmente, usamos la variable global del script
 			vision_light.texture_scale = 0.2
-			 
-			modulate = Color.DARK_GRAY # Feedback en el personaje
+			modulate = Color.DARK_GRAY 
 			
-			# 3. Timer para restaurar
+			# 2. Creamos el timer para restaurar
 			get_tree().create_timer(duration).timeout.connect(func():
 				if is_instance_valid(self):
-					# Volvemos al tamaño original
-					vision_light.texture_scale = original_scale
+					# 3. Volvemos SIEMPRE al valor original real
+					vision_light.texture_scale = base_vision_scale
 					modulate = Color.WHITE
 			)
-			
