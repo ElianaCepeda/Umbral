@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1g7a0nosywfv" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://x1nltbe7cimp" path="res://assets/Dungeon_Character_2.png" id="2_qhqgy"]
+[ext_resource type="Shader" uid="uid://cqfxtgtaa5exc" path="res://scenes/player.gdshader" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://cafjvo77fdeun" path="res://assets/luz.png" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1eu8g"]
@@ -28,6 +29,10 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_121kc"]
 size = Vector2(15, 15)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qlg0r"]
+shader = ExtResource("3_dqkch")
+shader_parameter/blur_amount = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2els"]
 bg_color = Color(0.88575643, 0.45362788, 0.42540243, 1)
@@ -67,6 +72,16 @@ one_shot = true
 position = Vector2(9, 0)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=589603040]
+
+[node name="EfectoBorroso" type="ColorRect" parent="HUD" unique_id=913854058]
+visible = false
+material = SubResource("ShaderMaterial_qlg0r")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="ConsciousnessBar" type="ProgressBar" parent="HUD" unique_id=876025860 groups=["player"]]
 anchors_preset = 5

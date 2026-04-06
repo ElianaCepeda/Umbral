@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djn0mmiptdl26" path="res://scripts/enemy/borroso.gd" id="1_ooxyw"]
 [ext_resource type="Texture2D" uid="uid://dqwjb3l50rgft" path="res://assets/enemy/borroso.png" id="1_qfha4"]
+[ext_resource type="PackedScene" uid="uid://bosn67df2e0he" path="res://scenes/attacks/borroso_bullet.tscn" id="2_h6mto"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ooxyw"]
 atlas = ExtResource("1_qfha4")
@@ -103,19 +104,20 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7papj"]
-radius = 281.0
-height = 1006.0
+radius = 9.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1187345393]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_ooxyw")
+projectile_scene = ExtResource("2_h6mto")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1116094038]
+scale = Vector2(0.0325, 0.0325)
 sprite_frames = SubResource("SpriteFrames_2ko5j")
 frame_progress = 0.02428444
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=403413101]
-position = Vector2(4, -28)
+position = Vector2(1, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_7papj")

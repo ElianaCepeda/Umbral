@@ -15,7 +15,8 @@ var base_vision_scale: float = 3
 @onready var shoot_position = $bullet_pos
 @onready var consciousness_bar = $HUD/ConsciousnessBar
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var dash_timer = $DashTimer 
+@onready var dash_timer = $DashTimer
+@onready var blur_rect = $HUD/EfectoBorroso
 
 var is_dashing: bool = false
 @export var dash_speed: int = 400
@@ -228,4 +229,24 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 					input_buffer.clear()
 					speed = speed_before_delay # Restauramos tu velocidad normal
 					modulate = Color.WHITE
+			)
+			
+		"blur_vision":
+			if blur_rect == null: return
+			
+			blur_rect.visible = true
+			
+			# Usamos un Tween para que la vista se nuble suavemente, no de golpe
+			var tween_in = create_tween()
+			tween_in.tween_property(blur_rect.material, "shader_parameter/blur_amount", 1.0, 0.5)
+			
+			var timer = get_tree().create_timer(duration)
+			timer.timeout.connect(func():
+				if is_instance_valid(self):
+					# Cuando acaba el efecto, aclaramos la vista suavemente
+					var tween_out = create_tween()
+					tween_out.tween_property(blur_rect.material, "shader_parameter/blur_amount", 0.0, 1.0)
+					
+					# Ocultamos el cuadro cuando termine de aclararse por completo
+					tween_out.finished.connect(func(): blur_rect.visible = false)
 			)
