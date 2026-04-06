@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://cdl6v2jk6kwb"]
+
+[ext_resource type="Script" uid="uid://d3578dmulv1nf" path="res://scripts/enemy/retardo.gd" id="1_8skpd"]
+[ext_resource type="Texture2D" uid="uid://bs75dt0q87ovr" path="res://assets/enemy/retardo.png" id="1_cq01u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8skpd"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt1tb"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_684vg"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52c4c"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(3000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj7gg"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuo3k"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdx1x"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(2000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrhwk"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(3000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wree8"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(0, 2000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg4ve"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(1000, 2000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng76v"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(2000, 2000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y01nn"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(3000, 2000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e5pb"]
+atlas = ExtResource("1_cq01u")
+region = Rect2(0, 3000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8cxip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8skpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt1tb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_684vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52c4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj7gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuo3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdx1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrhwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wree8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg4ve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng76v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y01nn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e5pb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dpnuq"]
+radius = 21.023796
+
+[node name="Retardo" type="CharacterBody2D" unique_id=50708095]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_8skpd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1799276522]
+position = Vector2(-3.0000114, 0.9999924)
+scale = Vector2(0.055749997, 0.055749997)
+sprite_frames = SubResource("SpriteFrames_8cxip")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1695844125]
+shape = SubResource("CircleShape2D_dpnuq")

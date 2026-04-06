@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dh5xg60oauhbg"]
+
+[ext_resource type="PackedScene" uid="uid://doqn4hplyhcbc" path="res://scenes/levels/BaseLevelFase1.tscn" id="1_7gyuy"]
+[ext_resource type="Script" uid="uid://b5chy5bvg85iv" path="res://scripts/levels/retardoLevel.gd" id="2_lh4dp"]
+
+[node name="RetardoLevel" unique_id=1029686040 instance=ExtResource("1_7gyuy")]
+script = ExtResource("2_lh4dp")
+
+[node name="Player" parent="." index="1" unique_id=1786594462]
+speed = 120
+
+[node name="Spawner" parent="." index="2" unique_id=2048461648]
+cantidad_maxima = 4
+tipo_enemigo_actual = "retardo"

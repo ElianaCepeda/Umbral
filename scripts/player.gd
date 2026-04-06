@@ -3,6 +3,9 @@ extends CharacterBody2D
 var is_dead: bool = false
 var is_paralyzed: bool = false
 var controls_inverted: bool = false
+var has_input_delay: bool = false
+var input_buffer: Array[Vector2] = []
+var delay_frames: int = 25 
 var base_vision_scale: float = 3
 @onready var vision_light = $PointLight2D
 @export var speed: int = 100
@@ -71,10 +74,22 @@ func get_input():
 	if is_dashing or is_paralyzed:
 		return
 
-	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var raw_input = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if controls_inverted:
-		input_direction = -input_direction
-	velocity = input_direction * speed
+		raw_input = -raw_input
+		
+	var final_input = raw_input
+	
+	if has_input_delay:
+		input_buffer.push_back(raw_input)
+		if input_buffer.size() > delay_frames:
+			final_input = input_buffer.pop_front()
+		else:
+			final_input = Vector2.ZERO
+	else:
+		input_buffer.clear()
+		
+	velocity = final_input * speed
 	
 	var mouse_pos = get_global_mouse_position()
 	if mouse_pos.x < global_position.x:
@@ -192,3 +207,25 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 						blink_tween.kill() # Detenemos el parpadeo
 						modulate = Color.WHITE # Restauramos el color original
 				)
+				
+		"input_delay":
+			if has_input_delay: 
+				return
+			
+			has_input_delay = true
+			input_buffer.clear()
+			
+			modulate = Color.SLATE_GRAY # Color gris para indicar pesadez
+			
+			# Reducimos tu velocidad a la mitad para que no te salgas de control
+			var speed_before_delay = speed
+			speed = speed / 2 
+			
+			var timer = get_tree().create_timer(duration)
+			timer.timeout.connect(func():
+				if is_instance_valid(self):
+					has_input_delay = false
+					input_buffer.clear()
+					speed = speed_before_delay # Restauramos tu velocidad normal
+					modulate = Color.WHITE
+			)

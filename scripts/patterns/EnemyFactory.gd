@@ -26,6 +26,7 @@ const ENEMY_SCENES = {
 	"paranoide": preload("res://scenes/enemys/paranoide.tscn"),
 	"taquicardia": preload ("res://scenes/enemys/taquicardia.tscn"),
 	"tension": preload ("res://scenes/enemys/tension.tscn"),
+	"retardo": preload ("res://scenes/enemys/retardo.tscn"),
 }
 
 # Esta función estática crea el enemigo y lo devuelve
