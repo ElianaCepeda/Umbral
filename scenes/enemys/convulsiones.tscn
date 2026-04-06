@@ -58,14 +58,17 @@ radius = 224.0
 height = 462.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2128963574]
+scale = Vector2(0.06, 0.06)
 collision_layer = 3
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_645pp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1072619961]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_vvoob")
-frame_progress = 0.38826838
+frame = 4
+frame_progress = 0.32454365
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1454648873]
 shape = SubResource("CapsuleShape2D_4jel4")

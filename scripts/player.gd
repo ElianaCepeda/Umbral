@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 var is_dead: bool = false
+var is_paralyzed: bool = false
 var controls_inverted: bool = false
-var original_scale = 3
+var base_vision_scale: float = 3
 @onready var vision_light = $PointLight2D
 @export var speed: int = 100
 @export var consciousness: int = 50
@@ -22,10 +23,20 @@ var bullet_scene = preload("res://scenes/attacks/bullet.tscn")
 func _ready():
 	consciousness_bar.value = consciousness
 	consciousness_bar.hide()
+	base_vision_scale = vision_light.texture_scale
 
 func show_ui():
 	consciousness_bar.show()
 	
+func get_target_color() -> Color:
+	if is_paralyzed:
+		return Color.YELLOW # La parálisis parpadea, pero esto sirve de base
+	if controls_inverted:
+		return Color(0.6, 0.4, 1.0) # Morado
+	if vision_light.texture_scale < base_vision_scale:
+		return Color.DARK_GRAY # Visión reducida
+	return Color.WHITE # Normal
+
 func take_damage(amount: int):
 	if is_dead or not is_inside_tree():
 		return
@@ -33,11 +44,10 @@ func take_damage(amount: int):
 	consciousness -= amount
 	update_bar()
 
-	var previous_color = modulate
-	
+	# Flash de daño usando un Tween
+	var damage_tween = create_tween()
 	modulate = Color.RED
-	await get_tree().create_timer(0.1).timeout
-	modulate = previous_color
+	damage_tween.tween_property(self, "modulate", get_target_color(), 0.3)
 	
 	if consciousness <= 0:
 		die()
@@ -58,7 +68,7 @@ func die():
 	GameManager.game_over()
 
 func get_input():
-	if is_dashing:
+	if is_dashing or is_paralyzed:
 		return
 
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -127,19 +137,15 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 				modulate = Color.WHITE
 			)
 		"reduce_vision":
-			# 1. Guardamos el tamaño original para volver luego
-			var original_scale = vision_light.texture_scale
-			
-			# 2. Reducimos el radio (el círculo se hace pequeño)
+			# 1. No guardamos nada localmente, usamos la variable global del script
 			vision_light.texture_scale = 0.2
-			 
-			modulate = Color.DARK_GRAY # Feedback en el personaje
+			modulate = Color.DARK_GRAY 
 			
-			# 3. Timer para restaurar
+			# 2. Creamos el timer para restaurar
 			get_tree().create_timer(duration).timeout.connect(func():
 				if is_instance_valid(self):
-					# Volvemos al tamaño original
-					vision_light.texture_scale = original_scale
+					# 3. Volvemos SIEMPRE al valor original real
+					vision_light.texture_scale = base_vision_scale
 					modulate = Color.WHITE
 			)
 		
@@ -169,3 +175,20 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 							modulate = Color.WHITE
 				)
 			
+		"paralyze":
+				if is_paralyzed: return
+				
+				is_paralyzed = true
+				
+				# Creamos un efecto de parpadeo amarillo
+				var blink_tween = create_tween().set_loops()
+				blink_tween.tween_property(self, "modulate", Color.YELLOW, 0.1)
+				blink_tween.tween_property(self, "modulate", Color.WHITE, 0.1)
+				
+				# Timer para la duración de la parálisis
+				get_tree().create_timer(duration).timeout.connect(func():
+					if is_instance_valid(self):
+						is_paralyzed = false
+						blink_tween.kill() # Detenemos el parpadeo
+						modulate = Color.WHITE # Restauramos el color original
+				)
