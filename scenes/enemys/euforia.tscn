@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ccg4q41jtr71r" path="res://scripts/enemy/euforia.gd" id="1_fmhie"]
 [ext_resource type="Texture2D" uid="uid://jwyvdioghx3k" path="res://assets/enemy/euforia.png" id="1_pnxj6"]
+[ext_resource type="PackedScene" uid="uid://cn66tgv8q5fv6" path="res://scenes/attacks/euforia_bullet.tscn" id="2_wjxfc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmhie"]
 atlas = ExtResource("1_pnxj6")
@@ -103,18 +104,20 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_haqs8"]
-radius = 339.0
-height = 712.0
+radius = 24.0
+height = 48.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1349405448]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_fmhie")
+projectile_scene = ExtResource("2_wjxfc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=730059669]
+position = Vector2(0, -4.7683716e-07)
+scale = Vector2(0.0485, 0.0485)
 sprite_frames = SubResource("SpriteFrames_ggmrw")
 frame_progress = 0.7481066
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1250700137]
-position = Vector2(-20, 13)
 shape = SubResource("CapsuleShape2D_haqs8")

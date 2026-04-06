@@ -142,4 +142,30 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 					vision_light.texture_scale = original_scale
 					modulate = Color.WHITE
 			)
+		
+		"random_speed_boost":
+			var random_increase = randi_range(80, 200)
+			var max_speed = 350 
+			
+			var speed_before = speed
+			speed += random_increase
+			
+			if speed > max_speed:
+				speed = max_speed
+				
+			var actual_increase = speed - speed_before
+			
+			if actual_increase > 0:
+				modulate = Color.YELLOW 
+				
+				var timer = get_tree().create_timer(duration)
+				timer.timeout.connect(func():
+					if is_instance_valid(self):
+						# Subtract exactly what we added
+						speed -= actual_increase 
+						
+						# Only return to the default color if we are back to base speed (100)
+						if speed <= 100:
+							modulate = Color.WHITE
+				)
 			
