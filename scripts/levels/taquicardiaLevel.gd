@@ -24,7 +24,7 @@ func enter():
 	
 	var spawner = scene_instance.get_node("Spawner")
 	if spawner:
-		spawner.tipo_enemigo_actual = "taquicardia"
+		spawner.tipo_enemigo_actual = "perdidaApetito"
 
 func exit():
 	print("Saliendo del nivel Gastritis...")
