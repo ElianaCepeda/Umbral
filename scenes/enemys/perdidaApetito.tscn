@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://b0eemnktxkisi"]
+
+[ext_resource type="Texture2D" uid="uid://b4hn0l3gkmsx3" path="res://assets/enemy/perdidaApetito.png" id="1_a3snl"]
+[ext_resource type="Script" uid="uid://r1tt4eccdqh6" path="res://scripts/enemy/perdida_apetito.gd" id="1_rddf6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rddf6"]
+atlas = ExtResource("1_a3snl")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef8vj"]
+atlas = ExtResource("1_a3snl")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r8uh"]
+atlas = ExtResource("1_a3snl")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8q7p"]
+atlas = ExtResource("1_a3snl")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6urx"]
+atlas = ExtResource("1_a3snl")
+region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vosbn"]
+atlas = ExtResource("1_a3snl")
+region = Rect2(2000, 1000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a5rar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rddf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef8vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r8uh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8q7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6urx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vosbn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fxa57"]
+radius = 170.0
+height = 760.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1104369942]
+z_index = 1
+scale = Vector2(0.05, 0.05)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_rddf6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=669477203]
+sprite_frames = SubResource("SpriteFrames_a5rar")
+frame_progress = 0.9507569
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=959197329]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_fxa57")
+
+[node name="PoisonTimer" type="Timer" parent="." unique_id=576699006]
+wait_time = 0.1
