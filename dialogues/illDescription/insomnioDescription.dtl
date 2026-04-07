@@ -1,3 +1,5 @@
 join Doctor left
 Doctor: La cocaína estimula el sistema nervioso central, suprimiendo la necesidad de descanso y alterando los ciclos naturales del sueño.
+join insomnio right
 Doctor: Este personaje se moverán rápidamente en patrones erráticos sin detenerse jamás. Al contacto, provocará un parpadeo agresivo de pantalla y reducirán la visibilidad durante varios segundos.
+leave insomnio

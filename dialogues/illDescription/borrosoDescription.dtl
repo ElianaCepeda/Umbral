@@ -1,4 +1,6 @@
 join Doctor left
 Doctor: A Borroso no le gustan los detalles, prefiere mezclar los bordes de la realidad hasta que no sabes si esquivas un obstáculo o una sombra.
 Doctor: Médicamente, el alcohol debilita la coordinación de los músculos oculares, impidiendo que se alineen correctamente y obligando al cerebro a procesar dos imágenes distintas sin poder enfocarlas.
+join borroso right
 En la mente, esta criatura de múltiples pupilas vibrantes emitirá ondas de neblina translúcida que reducirán drásticamente la nitidez de la pantalla y difuminarán tu visión para desorientarte.
+leave borroso

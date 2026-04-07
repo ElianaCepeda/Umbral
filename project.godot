@@ -36,6 +36,7 @@ directories/dch_directory={
 "euforia": "res://characters/euforia.dch",
 "fatiga": "res://characters/fatiga.dch",
 "gastritis": "res://characters/gastritis.dch",
+"insomnio": "res://characters/insomnio.dch",
 "memoria": "res://characters/memoria.dch",
 "necrosis": "res://characters/necrosis.dch",
 "obstruccion": "res://characters/obstruccion.dch",

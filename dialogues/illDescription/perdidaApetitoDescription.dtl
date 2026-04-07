@@ -1,4 +1,6 @@
 [background arg="#00000085" fade="0.0"]
 join Doctor left
 Doctor: La cocaína suprime el apetito de manera intensa, llevando a pérdida de peso y deterioro físico progresivo.
+join perdidaApetito right
 Doctor: Estas figuras avanzarán lentamente mientras lanzan ácido estomacal. Si impactan, alterarán la barra de conciencia, duplicando el daño recibido durante varios segundos.
+leave perdidaApetito
