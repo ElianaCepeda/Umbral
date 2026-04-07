@@ -24,7 +24,25 @@ PauseMenu="*uid://um62jccpqiew"
 [dialogic]
 
 directories/dch_directory={
-"Doctor": "res://characters/Doctor.dch"
+"Doctor": "res://characters/Doctor.dch",
+"ansiedadConsumo": "res://characters/ansiedadConsumo.dch",
+"apetito": "res://characters/apetito.dch",
+"borroso": "res://characters/borroso.dch",
+"cigarrillo": "res://characters/cigarrillo.dch",
+"cirrosis": "res://characters/cirrosis.dch",
+"conjuntivitis": "res://characters/conjuntivitis.dch",
+"convulsiones": "res://characters/convulsiones.dch",
+"desbalance": "res://characters/desbalance.dch",
+"euforia": "res://characters/euforia.dch",
+"fatiga": "res://characters/fatiga.dch",
+"gastritis": "res://characters/gastritis.dch",
+"memoria": "res://characters/memoria.dch",
+"necrosis": "res://characters/necrosis.dch",
+"obstruccion": "res://characters/obstruccion.dch",
+"paranoide": "res://characters/paranoide.dch",
+"perdidaApetito": "res://characters/perdidaApetito.dch",
+"retardo": "res://characters/retardo.dch",
+"taquicardia": "res://characters/taquicardia.dch"
 }
 directories/dtl_directory={
 "ansiedadConsumoDescription": "res://dialogues/illDescription/ansiedadConsumoDescription.dtl",
@@ -93,7 +111,7 @@ variables={}
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gaea-2.0/addons/gaea/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [global_group]
 
