@@ -14,7 +14,7 @@ func enter():
 		
 	var spawner = scene_instance.get_node("Spawner")
 	if spawner:
-		spawner.tipo_enemigo_actual = "borroso"
+		spawner.tipo_enemigo_actual = "conjuntivitis"
 		spawner.generar_oleada()
 	else:
 		push_error("No se encontró el Spawner en la escena de Borroso")
