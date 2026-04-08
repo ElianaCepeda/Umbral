@@ -24,7 +24,10 @@ PauseMenu="*uid://um62jccpqiew"
 [dialogic]
 
 directories/dch_directory={
+"AndresAlcohol": "res://characters/AndresAlcohol.dch",
 "Doctor": "res://characters/Doctor.dch",
+"LucasMarihuana": "res://characters/LucasMarihuana.dch",
+"SofiaTabaco": "res://characters/SofiaTabaco.dch",
 "ansiedadConsumo": "res://characters/ansiedadConsumo.dch",
 "apetito": "res://characters/apetito.dch",
 "borroso": "res://characters/borroso.dch",
@@ -43,9 +46,22 @@ directories/dch_directory={
 "paranoide": "res://characters/paranoide.dch",
 "perdidaApetito": "res://characters/perdidaApetito.dch",
 "retardo": "res://characters/retardo.dch",
-"taquicardia": "res://characters/taquicardia.dch"
+"taquicardia": "res://characters/taquicardia.dch",
+"yo": "res://characters/yo.dch"
 }
 directories/dtl_directory={
+"AndresTioAlcohol": "res://dialogues/characterStory/AndresTioAlcohol.dtl",
+"AndresTioAlcoholFinalBueno": "res://dialogues/characterStory/AndresTioAlcoholFinalBueno.dtl",
+"AndresTioAlcoholFinalMalo": "res://dialogues/characterStory/AndresTioAlcoholFinalMalo.dtl",
+"AndresTioAlcoholPt2": "res://dialogues/characterStory/AndresTioAlcoholPt2.dtl",
+"LucasPrimoMarihuana": "res://dialogues/characterStory/LucasPrimoMarihuana.dtl",
+"LucasPrimoMarihuanaFinalBueno": "res://dialogues/characterStory/LucasPrimoMarihuanaFinalBueno.dtl",
+"LucasPrimoMarihuanaFinalMalo": "res://dialogues/characterStory/LucasPrimoMarihuanaFinalMalo.dtl",
+"LucasPrimoMarihuanaPt2": "res://dialogues/characterStory/LucasPrimoMarihuanaPt2.dtl",
+"SofiaTiaTabaco": "res://dialogues/characterStory/SofiaTiaTabaco.dtl",
+"SofiaTiaTabacoFinalBueno": "res://dialogues/characterStory/SofiaTiaTabacoFinalBueno.dtl",
+"SofiaTiaTabacoFinalMalo": "res://dialogues/characterStory/SofiaTiaTabacoFinalMalo.dtl",
+"SofiaTiaTabacoPt2": "res://dialogues/characterStory/SofiaTiaTabacoPt2.dtl",
 "ansiedadConsumoDescription": "res://dialogues/illDescription/ansiedadConsumoDescription.dtl",
 "apetitoDescription": "res://dialogues/illDescription/apetitoDescription.dtl",
 "asfixiaCannabisDescription": "res://dialogues/illDescription/asfixiaCannabisDescription.dtl",
