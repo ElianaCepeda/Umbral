@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b0y27vatypr0k"]
+
+[ext_resource type="PackedScene" uid="uid://76illrg3pfo" path="res://scenes/levels/BaseLevelFase2.tscn" id="1_oa80d"]
+[ext_resource type="Script" uid="uid://c55nrk8u20t5j" path="res://scripts/levels/cirrosisLevel.gd" id="2_gedb1"]
+
+[node name="Node2D" unique_id=1029686040 instance=ExtResource("1_oa80d")]
+script = ExtResource("2_gedb1")
