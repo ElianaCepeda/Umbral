@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cjxa0qs8axmq7" path="res://assets/enemy/hipertension.png" id="1_4bpjd"]
 [ext_resource type="Script" uid="uid://upkc7b3inxh4" path="res://scripts/enemy/hipertension.gd" id="1_aquwl"]
+[ext_resource type="PackedScene" uid="uid://cjut4a2pcbo3l" path="res://scenes/attacks/OndaHipertension.tscn" id="2_q0u5s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aquwl"]
 atlas = ExtResource("1_4bpjd")
@@ -54,18 +55,20 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gajwm"]
-radius = 289.6636
+radius = 18.439089
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1249780690]
 collision_layer = 3
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_aquwl")
+wave_scene = ExtResource("2_q0u5s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1155233546]
+position = Vector2(-3.8146973e-06, -3.8146973e-06)
+scale = Vector2(0.052250024, 0.052250024)
 sprite_frames = SubResource("SpriteFrames_y43p8")
 frame_progress = 0.9133173
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1875309954]
-position = Vector2(6, 11)
 shape = SubResource("CircleShape2D_gajwm")

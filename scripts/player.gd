@@ -10,6 +10,7 @@ var base_vision_scale: float = 3
 var base_max_consciousness: int = 100 # El límite máximo original
 var max_consciousness: int = 100      # El límite actual, que Cirrosis va a encoger
 var is_invulnerable: bool = false
+var damage_multiplier: int = 1 # Multiplicador de daño (1 = normal)
 
 
 @onready var vision_light = $PointLight2D
@@ -51,7 +52,8 @@ func take_damage(amount: int, damage_color: Color = Color.RED):
 	if is_dead or is_invulnerable or not is_inside_tree():
 		return
 	is_invulnerable = true 
-	consciousness -= amount
+	var final_damage = amount * damage_multiplier
+	consciousness -= final_damage
 	update_bar()
 
 	var damage_tween = create_tween()
@@ -91,6 +93,7 @@ func die():
 	if is_dead:
 		return
 	is_dead = true
+	Engine.time_scale = 1.0 
 	GameManager.game_over()
 
 func get_input():
@@ -294,3 +297,23 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			
 			update_bar()
 			take_damage(reduction_amount)
+			
+		"hipertension":
+			if damage_multiplier > 1: return 
+			
+			damage_multiplier = 2
+			modulate = Color.ORANGE_RED
+			
+			# Acelera todo el motor del juego un 50%
+			# (1.0 es normal, 1.5 es rápido, 2.0 es el doble de rápido)
+			Engine.time_scale = 1.5 
+			
+			# Como el tiempo del juego va más rápido, un timer normal de 4s duraría menos.
+			# Le agregamos ", false, false, true" para que ignore el time_scale y cuente 4 segundos reales.
+			var timer = get_tree().create_timer(duration, false, false, true)
+			timer.timeout.connect(func():
+				if is_instance_valid(self):
+					damage_multiplier = 1
+					modulate = Color.WHITE
+					Engine.time_scale = 1.0 # Devolvemos el juego a la normalidad
+			)

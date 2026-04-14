@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cjut4a2pcbo3l"]
+
+[ext_resource type="Script" uid="uid://blh1sl71hnyx7" path="res://scenes/attacks/onda_hipertension.gd" id="1_cq15h"]
+[ext_resource type="Texture2D" uid="uid://bbi8g1c3udpuj" path="res://assets/ondaHipertension.png" id="2_4okgb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bn1om"]
+radius = 52.009613
+
+[node name="OndaHipertension" type="Area2D" unique_id=192567325]
+script = ExtResource("1_cq15h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=424664983]
+position = Vector2(0, 0.9999924)
+scale = Vector2(0.34281844, 0.34281844)
+texture = ExtResource("2_4okgb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=59907536]
+shape = SubResource("CircleShape2D_bn1om")

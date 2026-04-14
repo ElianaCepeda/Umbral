@@ -31,7 +31,7 @@ func change_level(new_level: LevelState):
 func game_over():
 	# 1. Turn off the level immediately so nothing else moves or deals damage
 	if current_level:
-		current_level.process_mode = Node.PROCESS_MODE_DISABLED
+		current_level.set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
 	
 	# 2. Ask Godot to execute the scene change SAFELY at the end of the frame
 	call_deferred("_perform_game_over")
