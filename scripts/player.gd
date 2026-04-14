@@ -7,16 +7,22 @@ var has_input_delay: bool = false
 var input_buffer: Array[Vector2] = []
 var delay_frames: int = 25 
 var base_vision_scale: float = 3
+var base_max_consciousness: int = 100 # El límite máximo original
+var max_consciousness: int = 100      # El límite actual, que Cirrosis va a encoger
+var is_invulnerable: bool = false
+
+
 @onready var vision_light = $PointLight2D
 @export var speed: int = 100
 @export var consciousness: int = 50
 
 @onready var shoot_timer = $ShootTimer
 @onready var shoot_position = $bullet_pos
-@onready var consciousness_bar = $HUD/ConsciousnessBar
+@onready var consciousness_bar = $HUD/PanelContainer/ConsciousnessBar
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var dash_timer = $DashTimer
 @onready var blur_rect = $HUD/EfectoBorroso
+@onready var original_bar_width: float = consciousness_bar.size.x
 
 var is_dashing: bool = false
 @export var dash_speed: int = 400
@@ -41,28 +47,44 @@ func get_target_color() -> Color:
 		return Color.DARK_GRAY # Visión reducida
 	return Color.WHITE # Normal
 
-func take_damage(amount: int):
-	if is_dead or not is_inside_tree():
+func take_damage(amount: int, damage_color: Color = Color.RED):
+	if is_dead or is_invulnerable or not is_inside_tree():
 		return
-		
+	is_invulnerable = true 
 	consciousness -= amount
 	update_bar()
 
-	# Flash de daño usando un Tween
 	var damage_tween = create_tween()
-	modulate = Color.RED
+	# ¡Usamos el color que nos pasaron en lugar de Color.RED fijo!
+	modulate = damage_color 
 	damage_tween.tween_property(self, "modulate", get_target_color(), 0.3)
-	
+	get_tree().create_timer(0.5).timeout.connect(func():
+		if is_instance_valid(self):
+			is_invulnerable = false
+	)
 	if consciousness <= 0:
 		die()
 
 func increase_consciousness(amount: int):
 	consciousness += amount
-	if consciousness > 100:
-		consciousness = 100
+	# Ya no lo limitamos a 100, sino al maximo actual(max_consciousness)
+	if consciousness > max_consciousness:
+		consciousness = max_consciousness
 	update_bar()
 
 func update_bar():
+	# 1. Calculamos el nuevo ancho físico de la barra roja/verde
+	# Si max_consciousness es 100, usa el 100%. Si es 60, usa el 60% del ancho.
+	var new_width = (float(max_consciousness) / base_max_consciousness) * original_bar_width
+	
+	# Aplicamos el ancho para que se vea el FondoGris que está detrás.
+	consciousness_bar.custom_minimum_size.x = new_width
+	consciousness_bar.size.x = new_width
+	
+	# Ahora el 100% de esta barra más corta es el nuevo máximo
+	consciousness_bar.max_value = max_consciousness
+	
+	# 3. Ponemos el valor actual
 	consciousness_bar.value = consciousness
 	
 func die():
@@ -137,6 +159,10 @@ func _physics_process(_delta):
 	get_input() 
 	move_and_slide()
 	shoot()
+	
+func restore_max_health():
+	max_consciousness = base_max_consciousness
+	update_bar()
 
 func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 	match effect_name:
@@ -220,7 +246,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			
 			# Reducimos tu velocidad a la mitad para que no te salgas de control
 			var speed_before_delay = speed
-			speed = speed / 2 
+			speed = int(speed / 2) 
 			
 			var timer = get_tree().create_timer(duration)
 			timer.timeout.connect(func():
@@ -250,3 +276,21 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 					# Ocultamos el cuadro cuando termine de aclararse por completo
 					tween_out.finished.connect(func(): blur_rect.visible = false)
 			)
+			
+		"reduce_max_health":
+			var reduction_amount = 5 
+			
+			# Reducimos el límite máximo, pero evitamos que baje de 20
+			max_consciousness = max(30, max_consciousness - reduction_amount)
+			
+			# Si tu vida actual quedó por encima del nuevo límite, te la cortamos
+			if consciousness > max_consciousness:
+				consciousness = max_consciousness
+				
+			# Parpadeo verde para indicar daño por podredumbre
+			var blink_tween = create_tween()
+			blink_tween.tween_property(self, "modulate", Color.DARK_GREEN, 0.2)
+			blink_tween.tween_property(self, "modulate", Color.WHITE, 0.2)
+			
+			update_bar()
+			take_damage(reduction_amount)

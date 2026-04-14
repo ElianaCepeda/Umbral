@@ -49,11 +49,18 @@ func enter():
 
 func exit():
 	print("Saliendo del nivel " + level_name + "...")
+	
+	# RESTAURAMOS LA VIDA MÁXIMA DEL JUGADOR AQUÍ
+	if is_instance_valid(scene_instance):
+		var player = scene_instance.get_node_or_null("Player")
+		if player and player.has_method("restore_max_health"):
+			player.restore_max_health()
+			
 	if scene_instance:
 		scene_instance.queue_free()
 		scene_instance = null
-	# No necesitamos liberar fondo_custom manual, se destruye con scene_instance
-
+		
+		
 func update(_delta: float):
 	pass
 

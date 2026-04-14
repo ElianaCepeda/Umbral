@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0eemnktxkisi"]
 
 [ext_resource type="Texture2D" uid="uid://b4hn0l3gkmsx3" path="res://assets/enemy/perdidaApetito.png" id="1_a3snl"]
-[ext_resource type="Script" uid="uid://r1tt4eccdqh6" path="res://scripts/enemy/perdida_apetito.gd" id="1_rddf6"]
+[ext_resource type="Script" path="res://scripts/enemy/perdida_apetito.gd" id="1_rddf6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rddf6"]
 atlas = ExtResource("1_a3snl")
