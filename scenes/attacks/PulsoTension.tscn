@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cg33g7nag7m3q"]
+
+[ext_resource type="Texture2D" uid="uid://b2mtn0jwmdkdh" path="res://assets/pulso_tension.png" id="1_4tq45"]
+[ext_resource type="Script" uid="uid://c6kxfu4l1r8eq" path="res://scenes/attacks/pulso_tension.gd" id="1_46mxy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46mxy"]
+radius = 16.0
+height = 70.0
+
+[node name="PulsoTension" type="Area2D" unique_id=304178495]
+script = ExtResource("1_46mxy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1923240823]
+position = Vector2(2.9999962, 0)
+scale = Vector2(0.1605691, 0.1605691)
+texture = ExtResource("1_4tq45")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=780014585]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_46mxy")

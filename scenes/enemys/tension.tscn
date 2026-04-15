@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcc8201levrbe" path="res://scripts/enemy/tension.gd" id="1_7do50"]
 [ext_resource type="Texture2D" uid="uid://ci7tk14wqnua4" path="res://assets/enemy/Tension.png" id="1_xydyr"]
+[ext_resource type="PackedScene" uid="uid://cg33g7nag7m3q" path="res://scenes/attacks/PulsoTension.tscn" id="2_b4kq2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7do50"]
 atlas = ExtResource("1_xydyr")
@@ -103,20 +104,23 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cgxjc"]
-radius = 349.0
-height = 904.0
+radius = 14.0
+height = 48.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1082259204]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_7do50")
+pulse_scene = ExtResource("2_b4kq2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=740600612]
-position = Vector2(0, -1)
+position = Vector2(-3.8146973e-06, -1.0000038)
+scale = Vector2(0.052499976, 0.052499976)
 sprite_frames = SubResource("SpriteFrames_foltu")
-frame_progress = 0.07542782
+frame = 1
+frame_progress = 0.7301352
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1033476489]
-position = Vector2(7, 57)
+position = Vector2(-1, 2)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_cgxjc")
