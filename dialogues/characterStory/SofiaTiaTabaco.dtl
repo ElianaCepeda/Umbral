@@ -1,8 +1,11 @@
+[background arg="res://assets/backgrounds/university.jpg" fade="0.0"]
 join Doctor left
 join SofiaTabaco right
 Doctor: Sofía siempre fue la mujer exitosa de la familia, la que "resuelve todo".
 Doctor: Abogada de profesión, comenzó a fumar en la universidad durante las noches de estudio intensivo para mantenerse despierta y concentrada.
+update SofiaTabaco (RelajadaConCigarrillo)
 Doctor: Lo que inició como una herramienta para rendir más, se convirtió en su muleta emocional para soportar la carga laboral y familiar.
 Doctor: Durante años, defendió su hábito diciendo que "es lo único que hago para mí misma" y que "un cigarrillo la ayuda a pensar mejor".
+[background arg="res://assets/backgrounds/_emergency_staircase_4.jpg" fade="0.0"]
 update SofiaTabaco (RelajadaConCigarrillo)
 Doctor: Sofía ya no fuma para concentrarse, fuma para no sentirse mal. Su piel ha perdido brillo, tiene un tono grisáceo y tose con frecuencia, una tos que ella minimiza llamándola "alergia".
