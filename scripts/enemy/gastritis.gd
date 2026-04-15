@@ -12,7 +12,7 @@ func _ready():
 	health = 5
 	points = 10
 	collision_damage = 1
-	damage_color = Color.GREEN
+	damage_color = Color.RED
 	
 	super._ready() # Inicializa la lógica base
 	

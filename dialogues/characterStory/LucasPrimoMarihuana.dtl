@@ -1,8 +1,10 @@
+[background arg="res://assets/backgrounds/bar.png" fade="0.0"]
 join Doctor left
 join LucasMarihuana right
 Doctor: Lucas era un músico talentoso que componía canciones. Tocaba guitarra en bares locales y estaba a punto de firmar con una disquera independiente.
 Doctor: Durante una presentación, el productor le ofreció marihuana para "liberar su creatividad" y "conectar con la música".
 Doctor: Lucas, en busca de la inspiración perfecta, aceptó. Pronto descubrió que la hierba no solo "mejoraba" su música, sino que también quitaba sus dudas sobre su talento y el miedo al fracaso.
 update LucasMarihuana (Disociado)
+[background arg="res://assets/backgrounds/small_cabin_room_night1_flash.png" fade="0.0"]
 Doctor: Ahora, Lucas vive en el sótano de la casa de sus padres, rodeado de instrumentos abandonados y cuadernos con canciones incompletas.
 Doctor: ya no hace música porque dice que esta esperando el momento perfecto buscando inspiración, pasa los dias fumando y viendo a sus músicos favoritos convenciéndose de que mañana será mejor.

@@ -1,5 +1,5 @@
 join Doctor left
 Doctor: Fumar cannabis irrita las vías respiratorias, causando inflamación, tos persistente y producción excesiva de mucosidad.
 Doctor: Este personaje expulsará nubes densas de humo  que se expanden lentamente por el campo de batalla.
-join  center
+join asfixia right
 Doctor: Si el personaje entra en una zona con humo se reducirá la visión y por estar dentro de esa zona habrá un daño constante por segundo.

@@ -1,8 +1,10 @@
+[background arg="res://assets/backgrounds/ofidia.jpg" fade="0.0"]
 join Doctor left
 join MateoCocaina center
 Doctor: Mateo siempre fue el hermano brillante, el que tenía todo el potencial. Estudiante destacado, carismático y lleno de ambiciones.
 Doctor: Trabajaba en una empresa de publicidad donde la presión por cumplir plazos imposibles y la cultura de "trabajo duro, fiesta más dura" lo llevaron a probar cocaína por primera vez en una celebración de la oficina.
+[background arg="res://assets/backgrounds/ofinoche.jpg" fade="0.0"]
 Doctor: Lo que comenzó como uso recreativo ocasional se convirtió rápidamente en una necesidad para mantener el ritmo frenético de su vida.
 update MateoCocaina
-Doctor: Ahora, Mateo es una sombra de quien solía ser. Ha perdido su trabajo, sus amistades se han alejado, y la relación con su familia pende de un hilo.
+[background arg="res://assets/backgrounds/_ruined_room_2.jpg" fade="0.0"]
 Doctor: Vive en un apartamento descuidado, lleno de espejos rotos (no puede soportar verse a sí mismo) y ha perdido la noción del tiempo.

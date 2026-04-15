@@ -1,3 +1,4 @@
+[background arg="res://assets/backgrounds/canteen_day1.png" fade="0.0"]
 join Doctor left
 join AndresAlcohol right
 Doctor: Andrés siempre fue el alma de las reuniones familiares. Extrovertido, bromista y con una\
@@ -7,6 +8,7 @@ Doctor: En celebraciones y encuentros laborales, el alcohol era parte constante 
 Doctor: Con el tiempo, comenzó a usarlo también para manejar el estrés, las frustraciones laborales y las tensiones personales.
 Doctor: Descubrió que con unas copas encima hablaba con más seguridad, olvidaba sus preocupaciones y sentía que recuperaba el control de la situación.
 update AndresAlcohol (Euforico)
+[background arg="res://assets/backgrounds/rooftop_area_night1.png" fade="0.0"]
 Doctor: Actualmente, Andrés sigue siendo el más carismático en las reuniones, pero necesita beber para sostener esa imagen.
 Doctor: Ha normalizado el consumo diario, justificándolo como una forma de relajarse después del trabajo.
 update AndresAlcohol (Agotado)

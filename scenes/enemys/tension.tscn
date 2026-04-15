@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://dcc8201levrbe" path="res://scripts/enemy/tension.gd" id="1_7do50"]
 [ext_resource type="Texture2D" uid="uid://ci7tk14wqnua4" path="res://assets/enemy/Tension.png" id="1_xydyr"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7do50"]
-atlas = ExtResource("1_xydyr")
-region = Rect2(0, 0, 1000, 1000)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4kq2"]
 atlas = ExtResource("1_xydyr")
 region = Rect2(1000, 0, 1000, 1000)
@@ -58,9 +54,6 @@ region = Rect2(0, 3000, 1000, 1000)
 [sub_resource type="SpriteFrames" id="SpriteFrames_foltu"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7do50")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b4kq2")
 }, {
@@ -114,7 +107,7 @@ script = ExtResource("1_7do50")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=740600612]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_foltu")
-frame_progress = 0.07542782
+frame_progress = 0.57393885
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1033476489]
 position = Vector2(7, 57)
