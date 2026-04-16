@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bosn67df2e0he"]
 
-[ext_resource type="Script" uid="uid://ut8yk0vctf6u" path="res://scripts/attacks/borroso_bullet.gd" id="1_lc0qi"]
+[ext_resource type="Script" uid="uid://ut8yk0vctf6u" path="res://scenes/attacks/borroso_bullet.gd" id="1_lc0qi"]
 [ext_resource type="Texture2D" uid="uid://dikrfgtdiv3e3" path="res://assets/579.png" id="2_4mgo8"]
 [ext_resource type="AudioStream" uid="uid://bi610cttln7mt" path="res://assets/audio/sounds/Proyectil.ogg" id="3_alrdk"]
 

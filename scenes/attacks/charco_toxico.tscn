@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://fhxnanpw8gjc"]
+
+[ext_resource type="Texture2D" uid="uid://cn6qomx2i5neq" path="res://assets/mancha cirrosis.png" id="1_5lo4b"]
+[ext_resource type="Script" uid="uid://coyriwl45hs51" path="res://scenes/attacks/charco_toxico.gd" id="1_dl0ej"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dl0ej"]
+radius = 16.552946
+
+[node name="CharcoToxico" type="Area2D" unique_id=1155866543]
+script = ExtResource("1_dl0ej")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1791239168]
+position = Vector2(1, 0)
+scale = Vector2(0.039104287, 0.039104287)
+texture = ExtResource("1_5lo4b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=756580855]
+shape = SubResource("CircleShape2D_dl0ej")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://qddj3yg86ark"]
+
+[ext_resource type="PackedScene" uid="uid://doqn4hplyhcbc" path="res://scenes/levels/BaseLevelFase1.tscn" id="1_1qilg"]
+[ext_resource type="Script" uid="uid://dmro6eqpi1p8y" path="res://scripts/levels/tensionLevel.gd" id="2_lrh6i"]
+
+[node name="NodoBaseFase1" unique_id=1029686040 instance=ExtResource("1_1qilg")]
+script = ExtResource("2_lrh6i")
+
+[node name="ContenedorAtaques" type="Node2D" parent="." index="1" unique_id=115956319]

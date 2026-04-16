@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsymc0vk8roes" path="res://scripts/enemy/cirrosis.gd" id="1_0y1ly"]
 [ext_resource type="Texture2D" uid="uid://pobf6goho50a" path="res://assets/enemy/cirrosis.png" id="2_c2ir5"]
+[ext_resource type="PackedScene" uid="uid://fhxnanpw8gjc" path="res://scenes/attacks/charco_toxico.tscn" id="2_lo5hq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tavo"]
 atlas = ExtResource("2_c2ir5")
@@ -54,18 +55,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40sti"]
-size = Vector2(589, 395)
+size = Vector2(46.46875, 27.09375)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1938257301]
 collision_layer = 3
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_0y1ly")
+puddle_scene = ExtResource("2_lo5hq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1647502041]
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.058374997, 0.058374997)
 sprite_frames = SubResource("SpriteFrames_ybrdn")
 frame_progress = 0.5813283
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1054795357]
-position = Vector2(-39.5, 28.5)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_40sti")
