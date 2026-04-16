@@ -1,6 +1,6 @@
 [background arg="res://assets/backgrounds/ofidia.jpg" fade="0.0"]
 join Doctor left
-join MateoCocaina center
+join MateoCocaina right
 Doctor: Mateo siempre fue el hermano brillante, el que tenía todo el potencial. Estudiante destacado, carismático y lleno de ambiciones.
 Doctor: Trabajaba en una empresa de publicidad donde la presión por cumplir plazos imposibles y la cultura de "trabajo duro, fiesta más dura" lo llevaron a probar cocaína por primera vez en una celebración de la oficina.
 [background arg="res://assets/backgrounds/ofinoche.jpg" fade="0.0"]
