@@ -12,7 +12,7 @@ func _ready():
 	health = 5
 	points = 10
 	collision_damage = 1
-	damage_color = Color.BLUE
+
 	
 	super._ready() # Inicializa la lógica base
 	
@@ -29,8 +29,13 @@ func start_poison_cycle():
 	await get_tree().create_timer(wait_time).timeout
 	start_poison_cycle()
 
-func leave_trail():
+func leave_trail() -> void:
 	if poison_scene:
 		var new_poison = poison_scene.instantiate()
 		new_poison.global_position = global_position
+
+		for child in new_poison.get_children():
+			if child is Sprite2D:
+				child.modulate = Color.SKY_BLUE
+				break
 		get_parent().call_deferred("add_child", new_poison)

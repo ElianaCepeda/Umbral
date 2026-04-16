@@ -24,9 +24,52 @@ PauseMenu="*uid://um62jccpqiew"
 [dialogic]
 
 directories/dch_directory={
-"Doctor": "res://characters/Doctor.dch"
+"AndresAlcohol": "res://characters/AndresAlcohol.dch",
+"Doctor": "res://characters/Doctor.dch",
+"LucasMarihuana": "res://characters/LucasMarihuana.dch",
+"MateoCocaina": "res://characters/MateoCocaina.dch",
+"SofiaTabaco": "res://characters/SofiaTabaco.dch",
+"ansiedadConsumo": "res://characters/ansiedadConsumo.dch",
+"apetito": "res://characters/apetito.dch",
+"asfixia": "res://characters/asfixia.dch",
+"borroso": "res://characters/borroso.dch",
+"cigarrillo": "res://characters/cigarrillo.dch",
+"cirrosis": "res://characters/cirrosis.dch",
+"conjuntivitis": "res://characters/conjuntivitis.dch",
+"convulsiones": "res://characters/convulsiones.dch",
+"desbalance": "res://characters/desbalance.dch",
+"euforia": "res://characters/euforia.dch",
+"fatiga": "res://characters/fatiga.dch",
+"gastritis": "res://characters/gastritis.dch",
+"hipertension": "res://characters/hipertension.dch",
+"insomnio": "res://characters/insomnio.dch",
+"memoria": "res://characters/memoria.dch",
+"necrosis": "res://characters/necrosis.dch",
+"obstruccion": "res://characters/obstruccion.dch",
+"paranoide": "res://characters/paranoide.dch",
+"perdidaApetito": "res://characters/perdidaApetito.dch",
+"retardo": "res://characters/retardo.dch",
+"taquicardia": "res://characters/taquicardia.dch",
+"tension": "res://characters/tension.dch",
+"yo": "res://characters/yo.dch"
 }
 directories/dtl_directory={
+"AndresTioAlcohol": "res://dialogues/characterStory/AndresTioAlcohol.dtl",
+"AndresTioAlcoholFinalBueno": "res://dialogues/characterStory/AndresTioAlcoholFinalBueno.dtl",
+"AndresTioAlcoholFinalMalo": "res://dialogues/characterStory/AndresTioAlcoholFinalMalo.dtl",
+"AndresTioAlcoholPt2": "res://dialogues/characterStory/AndresTioAlcoholPt2.dtl",
+"LucasPrimoMarihuana": "res://dialogues/characterStory/LucasPrimoMarihuana.dtl",
+"LucasPrimoMarihuanaFinalBueno": "res://dialogues/characterStory/LucasPrimoMarihuanaFinalBueno.dtl",
+"LucasPrimoMarihuanaFinalMalo": "res://dialogues/characterStory/LucasPrimoMarihuanaFinalMalo.dtl",
+"LucasPrimoMarihuanaPt2": "res://dialogues/characterStory/LucasPrimoMarihuanaPt2.dtl",
+"MateoHermanoCocaina": "res://dialogues/characterStory/MateoHermanoCocaina.dtl",
+"MateoHermanoCocainaFinalBueno": "res://dialogues/characterStory/MateoHermanoCocainaFinalBueno.dtl",
+"MateoHermanoCocainaFinalMalo": "res://dialogues/characterStory/MateoHermanoCocainaFinalMalo.dtl",
+"MateoHermanoCocainaPt2": "res://dialogues/characterStory/MateoHermanoCocainaPt2.dtl",
+"SofiaTiaTabaco": "res://dialogues/characterStory/SofiaTiaTabaco.dtl",
+"SofiaTiaTabacoFinalBueno": "res://dialogues/characterStory/SofiaTiaTabacoFinalBueno.dtl",
+"SofiaTiaTabacoFinalMalo": "res://dialogues/characterStory/SofiaTiaTabacoFinalMalo.dtl",
+"SofiaTiaTabacoPt2": "res://dialogues/characterStory/SofiaTiaTabacoPt2.dtl",
 "ansiedadConsumoDescription": "res://dialogues/illDescription/ansiedadConsumoDescription.dtl",
 "apetitoDescription": "res://dialogues/illDescription/apetitoDescription.dtl",
 "asfixiaCannabisDescription": "res://dialogues/illDescription/asfixiaCannabisDescription.dtl",
@@ -93,7 +136,7 @@ variables={}
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gaea-2.0/addons/gaea/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [global_group]
 

@@ -1,0 +1,10 @@
+[background arg="res://assets/backgrounds/_emergency_staircase_4.jpg" fade="0.0"]
+join SofiaTabaco (RelajadaConCigarrillo) center
+SofiaTabaco: Empecé a fumar en la universidad, justo una noche antes de un parcial que me tenía muy nerviosa, un compañero de la facultad me ofrecido un cigarrillo y me dijo que eso me ayudaría a concentrarme.
+SofiaTabaco: Y funcionó, o al menos eso creí, pues después de ese día, necesitaba fumar antes de presentar un examen, creía que solo era una etapa y lo dejaría después de la universidad.
+SofiaTabaco: Pero, cuando entre al mundo laboral, empecé a necesitarlo y a consumirlo con mayor frecuencia.
+update SofiaTabaco (Negacion)
+[background arg="res://assets/backgrounds/ofinoche.jpg" fade="0.0"]
+yo: Un día fui a visitarla en su oficina, y la encontré teniendo un fuerte ataque de tos, tan fuerte que tuvo que apoyarse en su escritorio para poder tomar un poco de aire.
+update SofiaTabaco (Default)
+yo: Ella fingió una sonrisa y me dijo que era una alergia, pero yo sabia que no era así, pues su oficina tenia un olor fuerte a tabaco.

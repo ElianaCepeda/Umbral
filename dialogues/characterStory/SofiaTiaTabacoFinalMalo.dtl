@@ -1,0 +1,5 @@
+[background arg="res://assets/backgrounds/_emergency_staircase_4.jpg" fade="0.0"]
+join SofiaTabaco (Negacion) center
+SofiaTabaco: No es tan grave. He funcionado así veinte años. Ahora un cigarrito pal pecho, por lo bien que lo he hecho.
+update SofiaTabaco (RelajadaConCigarrillo)
+yo: El humo que usas para escapar termina siendo la jaula que te atrapa.

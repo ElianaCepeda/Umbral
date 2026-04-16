@@ -4,10 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://ci7tk14wqnua4" path="res://assets/enemy/Tension.png" id="1_xydyr"]
 [ext_resource type="PackedScene" uid="uid://cg33g7nag7m3q" path="res://scenes/attacks/PulsoTension.tscn" id="2_b4kq2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7do50"]
-atlas = ExtResource("1_xydyr")
-region = Rect2(0, 0, 1000, 1000)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4kq2"]
 atlas = ExtResource("1_xydyr")
 region = Rect2(1000, 0, 1000, 1000)
@@ -59,9 +55,6 @@ region = Rect2(0, 3000, 1000, 1000)
 [sub_resource type="SpriteFrames" id="SpriteFrames_foltu"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7do50")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b4kq2")
 }, {

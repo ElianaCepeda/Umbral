@@ -1,3 +1,5 @@
 join Doctor left
 Doctor: El hígado es el filtro principal de tu cuerpo, pero el abuso crónico del alcohol destruye sus células, reemplazándolas por un tejido cicatricial duro e inútil que causa un daño permanente.
+join cirrosis right
 Doctor: Fiel a su naturaleza, pudrirá el suelo que pisa y, si logra alcanzarte, reducirá de forma irreversible una porción de tu barra máxima de conciencia.
+leave cirrosis
