@@ -15,7 +15,7 @@ var damage_multiplier: int = 1 # Multiplicador de daño (1 = normal)
 
 @onready var vision_light = $PointLight2D
 @export var speed: int = 100
-@export var consciousness: int = 50
+@export var consciousness: int = base_max_consciousness
 
 @onready var shoot_timer = $ShootTimer
 @onready var shoot_position = $bullet_pos
