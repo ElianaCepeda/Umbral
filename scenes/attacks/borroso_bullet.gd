@@ -19,6 +19,8 @@ func _ready():
 	# Efecto opcional: hacemos que la neblina crezca lentamente mientras viaja
 	var grow_tween = create_tween()
 	grow_tween.tween_property(self, "scale", Vector2(1.5, 1.5), 2.0)
+	
+	get_tree().create_timer(5.0).timeout.connect(queue_free)
 
 func _process(delta):
 	var current_speed = speed

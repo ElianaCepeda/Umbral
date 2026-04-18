@@ -11,6 +11,8 @@ func _ready():
 	# Conecta la señal automáticamente al iniciar para evitar errores del editor
 	if not body_entered.is_connected(_on_body_entered):
 		body_entered.connect(_on_body_entered)
+	
+	get_tree().create_timer(5.0).timeout.connect(queue_free)
 
 func _process(delta):
 	# Movemos el proyectil en línea recta según la dirección

@@ -21,7 +21,7 @@ func _ready():
 		start_poison_cycle()
 
 func start_poison_cycle():
-	poison_timer.start(0.005) 
+	poison_timer.start(0.05) 
 	
 	await get_tree().create_timer(drop_time).timeout
 	poison_timer.stop()

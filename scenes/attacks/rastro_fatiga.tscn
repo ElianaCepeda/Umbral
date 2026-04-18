@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b7fakf6yulhh7"]
+
+[ext_resource type="Script" uid="uid://ba6phipav4vtb" path="res://scenes/attacks/rastro_fatiga.gd" id="1_e0jd1"]
+[ext_resource type="Texture2D" uid="uid://cafjvo77fdeun" path="res://assets/luz.png" id="2_hqled"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5mly"]
+radius = 9.055386
+
+[node name="RastroFatiga" type="Area2D" unique_id=1455358700 groups=["enemy_effects"]]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_e0jd1")
+
+[node name="Luz" type="Sprite2D" parent="." unique_id=2021267580]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_hqled")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1887985851]
+position = Vector2(0.2, 0)
+scale = Vector2(1, 0.99999994)
+shape = SubResource("CircleShape2D_h5mly")
+
+[node name="DisappearTimer" type="Timer" parent="." unique_id=1518775010 groups=["player"]]
+wait_time = 3.0
+
+[node name="DamageTimer" type="Timer" parent="." unique_id=1453872524]
+wait_time = 0.5

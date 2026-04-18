@@ -14,6 +14,8 @@ func _ready():
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player_ref = players[0]
+		
+	get_tree().create_timer(5.0).timeout.connect(queue_free)
 
 func _physics_process(delta):
 	# Empezamos asumiendo que la velocidad es la normal

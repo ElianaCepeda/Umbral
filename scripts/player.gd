@@ -19,6 +19,9 @@ var anxiety_acceleration: float = 80.0 # Cuesta arrancar
 var anxiety_friction: float = 20.0     # Cuesta MUCHÍSIMO frenar
 var is_anxious: bool = false
 
+var can_shoot: bool = true
+var fatigue_time_left: float = 0.0
+
 @onready var vision_light = $PointLight2D
 @export var speed: int = 100
 @export var consciousness: int = base_max_consciousness
@@ -52,6 +55,13 @@ func get_target_color() -> Color:
 		return Color(0.6, 0.4, 1.0) # Morado
 	if vision_light.texture_scale < base_vision_scale:
 		return Color.DARK_GRAY # Visión reducida
+	if not can_shoot:     # Si no puede disparar, está fatigado
+		return Color.DIM_GRAY 
+	if is_anxious:        # El color de la ansiedad que pusimos antes
+		return Color.PALE_TURQUOISE
+	if vision_light.texture_scale < base_vision_scale:
+		return Color.DARK_GRAY 
+		
 	return Color.WHITE # Normal
 
 func take_damage(amount: int, damage_color: Color = Color.RED):
@@ -149,6 +159,8 @@ func dash():
 		is_dashing = false
 
 func shoot():
+	if not can_shoot: return
+	
 	if Input.is_action_just_pressed("click_disparo") and shoot_timer.is_stopped():
 		var target_pos = get_global_mouse_position()
 		var direction = (target_pos - global_position).normalized()
@@ -166,7 +178,13 @@ func shoot():
 		shoot_timer.start()
 		
 func _physics_process(delta):
-	# ¡Esto es lo que faltaba! Le decimos al juego que escuche tus clics en cada frame
+	if fatigue_time_left > 0:
+		fatigue_time_left -= delta
+		if fatigue_time_left <= 0:
+			can_shoot = true
+			speed = 100
+			modulate = get_target_color()
+	
 	shoot()
 	dash()
 	
@@ -368,3 +386,13 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 					is_anxious = false
 					modulate = Color.WHITE
 			)
+			
+		"fatigue":
+			# Siempre recargamos el cronómetro al máximo (1 segundo extra)
+			fatigue_time_left = duration
+			
+			# Solo aplicamos los cambios si el jugador estaba sano
+			if can_shoot: 
+				can_shoot = false
+				speed = 50
+				modulate = get_target_color()
