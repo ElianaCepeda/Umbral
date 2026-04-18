@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cca2wuo0u4k7n"
-path="res://.godot/imported/Recuperacion.png-d6591227524095b364fb8fba59361d0f.ctex"
+uid="uid://duna6nhv0wywl"
+path="res://.godot/imported/TilesFase1.png-20214c318a71efee72d878eecd260d08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scenarios/Recuperacion.png"
-dest_files=["res://.godot/imported/Recuperacion.png-d6591227524095b364fb8fba59361d0f.ctex"]
+source_file="res://assets/scenario/TilesFase1.png"
+dest_files=["res://.godot/imported/TilesFase1.png-20214c318a71efee72d878eecd260d08.ctex"]
 
 [params]
 

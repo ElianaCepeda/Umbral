@@ -1,0 +1,26 @@
+[gd_resource type="TileSet" format=3 uid="uid://eqkgbua884mu"]
+
+[ext_resource type="Texture2D" uid="uid://db50qyiu4o6hl" path="res://assets/scenario/TilesFase2.png" id="1_6s6fd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbl8v"]
+texture = ExtResource("1_6s6fd")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 43, 64, 42, 64, -32, -64, -33)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -30, 64, -32, 64, 42, -64, 43)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -32, 34, -34, 34, 64, -43, 64, -43, 43, -64, 43)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -33, 64, -33, 64, 44, -64, 43)
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+
+[resource]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_wbl8v")

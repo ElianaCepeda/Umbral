@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbwfv82ji3n88"
-path="res://.godot/imported/MEDIOPlazo.png-df2b25a92c9dbba8f249508dab02ccb1.ctex"
+uid="uid://db50qyiu4o6hl"
+path="res://.godot/imported/TilesFase2.png-30a91239e5bb991f4c44ba67bb31b0c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scenarios/MEDIOPlazo.png"
-dest_files=["res://.godot/imported/MEDIOPlazo.png-df2b25a92c9dbba8f249508dab02ccb1.ctex"]
+source_file="res://assets/scenario/TilesFase2.png"
+dest_files=["res://.godot/imported/TilesFase2.png-30a91239e5bb991f4c44ba67bb31b0c6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc5crnamowlds"
-path="res://.godot/imported/JEFEPlazo.png-dcf3d523502897c067a6baa9d1241067.ctex"
+uid="uid://baqcxq1e5koqi"
+path="res://.godot/imported/TilesBoss.png-c28da0ea75aeedc455e74e48d779e1cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scenarios/JEFEPlazo.png"
-dest_files=["res://.godot/imported/JEFEPlazo.png-dcf3d523502897c067a6baa9d1241067.ctex"]
+source_file="res://assets/scenario/TilesBoss.png"
+dest_files=["res://.godot/imported/TilesBoss.png-c28da0ea75aeedc455e74e48d779e1cd.ctex"]
 
 [params]
 
