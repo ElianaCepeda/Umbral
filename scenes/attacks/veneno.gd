@@ -5,6 +5,7 @@ extends Area2D
 @export var damage = 1
 
 func _ready():
+	scale = Vector2(1.8, 1.8)
 	disappearance_timer.timeout.connect(queue_free)
 	disappearance_timer.start(3.0)
 	damage_timer.timeout.connect(_on_damage_timer_timeout)
