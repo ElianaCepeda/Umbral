@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://diyqydm3jl1lu"]
+
+[ext_resource type="PackedScene" uid="uid://doqn4hplyhcbc" path="res://scenes/levels/BaseLevelFase1.tscn" id="1_mj71u"]
+[ext_resource type="Script" uid="uid://ws0xkedybfuh" path="res://scripts/levels/asfixiaLevel.gd" id="2_ikdv0"]
+
+[node name="NodoBaseFase1" unique_id=1029686040 instance=ExtResource("1_mj71u")]
+script = ExtResource("2_ikdv0")
+
+[node name="Spawner" parent="." index="2" unique_id=2048461648]
+cantidad_maxima = 4

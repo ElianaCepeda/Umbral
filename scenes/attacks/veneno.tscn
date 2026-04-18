@@ -7,6 +7,8 @@
 radius = 9.055386
 
 [node name="RastroVeneno" type="Area2D" unique_id=1455358700 groups=["enemy_effects"]]
+collision_layer = 16
+collision_mask = 3
 script = ExtResource("1_fjtcr")
 
 [node name="Luz" type="Sprite2D" parent="." unique_id=2021267580]

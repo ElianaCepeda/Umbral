@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cel2q6co01fde" path="res://assets/enemy/asfixia.png" id="1_20hl2"]
 [ext_resource type="Script" uid="uid://bsjr4rlg4vgp6" path="res://scripts/enemy/asfixia.gd" id="1_l0p0a"]
+[ext_resource type="Script" uid="uid://bipi6n8yp3smc" path="res://scenes/enemys/nucleo_asfixia.gd" id="3_kuct2"]
+[ext_resource type="Texture2D" uid="uid://bck7u081t8tqa" path="res://assets/remolino.png" id="4_cur1s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0p0a"]
 atlas = ExtResource("1_20hl2")
@@ -54,20 +56,50 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ueft"]
-radius = 324.0
-height = 658.0
+radius = 49.0
+height = 98.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_64ufp"]
+radius = 47.423622
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1on23"]
+radius = 6.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1972859500]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_l0p0a")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1033316287]
+[node name="SpriteHumo" type="AnimatedSprite2D" parent="." unique_id=1033316287]
+modulate = Color(1, 1, 1, 0.6627451)
+position = Vector2(-8, 0)
+scale = Vector2(0.127, 0.127)
 sprite_frames = SubResource("SpriteFrames_drw66")
 frame = 4
 frame_progress = 0.18067846
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=375705076]
-position = Vector2(33, -25)
+position = Vector2(-3, -1)
 shape = SubResource("CapsuleShape2D_2ueft")
+
+[node name="AreaDrenaje" type="Area2D" parent="." unique_id=224207485]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDrenaje" unique_id=440514748]
+position = Vector2(-3, 0)
+shape = SubResource("CircleShape2D_64ufp")
+
+[node name="AreaDanio" type="StaticBody2D" parent="." unique_id=323558538]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("3_kuct2")
+
+[node name="Sprite2D" type="Sprite2D" parent="AreaDanio" unique_id=310233931]
+position = Vector2(-31, 19)
+scale = Vector2(0.03827913, 0.038279127)
+texture = ExtResource("4_cur1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDanio" unique_id=828185589]
+position = Vector2(-30, 19)
+shape = SubResource("CircleShape2D_1on23")

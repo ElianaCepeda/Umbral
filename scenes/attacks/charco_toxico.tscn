@@ -7,6 +7,8 @@
 radius = 16.552946
 
 [node name="CharcoToxico" type="Area2D" unique_id=1155866543]
+collision_layer = 16
+collision_mask = 3
 script = ExtResource("1_dl0ej")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1791239168]

@@ -115,8 +115,8 @@ size = Vector2(49, 14)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=627507027]
 scale = Vector2(0.6, 0.6)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 8
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("2_y25gk")
 

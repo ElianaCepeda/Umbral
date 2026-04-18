@@ -107,7 +107,7 @@ radius = 348.0
 height = 752.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=267650723]
-collision_layer = 3
+collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_ydvs6")
 
