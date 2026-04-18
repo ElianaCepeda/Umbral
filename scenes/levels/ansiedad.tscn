@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bkcobemync3l4"]
+
+[ext_resource type="PackedScene" uid="uid://76illrg3pfo" path="res://scenes/levels/BaseLevelFase2.tscn" id="1_5prmt"]
+[ext_resource type="Script" uid="uid://dmoiry7k8dwin" path="res://scripts/levels/ansiedadLevel.gd" id="2_l6slh"]
+
+[node name="NodoBaseFase2" unique_id=1029686040 instance=ExtResource("1_5prmt")]
+script = ExtResource("2_l6slh")

@@ -12,6 +12,12 @@ var max_consciousness: int = 100      # El límite actual, que Cirrosis va a enc
 var is_invulnerable: bool = false
 var damage_multiplier: int = 1 # Multiplicador de daño (1 = normal)
 
+# Variables de Ansiedad / Abstinencia
+var normal_acceleration: float = 1500.0
+var normal_friction: float = 1500.0
+var anxiety_acceleration: float = 80.0 # Cuesta arrancar
+var anxiety_friction: float = 20.0     # Cuesta MUCHÍSIMO frenar
+var is_anxious: bool = false
 
 @onready var vision_light = $PointLight2D
 @export var speed: int = 100
@@ -96,9 +102,9 @@ func die():
 	Engine.time_scale = 1.0 
 	GameManager.game_over()
 
-func get_input():
-	if is_dashing or is_paralyzed:
-		return
+func get_input() -> Vector2:
+	if is_paralyzed:
+		return Vector2.ZERO
 
 	var raw_input = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if controls_inverted:
@@ -115,8 +121,7 @@ func get_input():
 	else:
 		input_buffer.clear()
 		
-	velocity = final_input * speed
-	
+	# Manejo de animaciones y giro de la pistola
 	var mouse_pos = get_global_mouse_position()
 	if mouse_pos.x < global_position.x:
 		animated_sprite.flip_h = true
@@ -125,10 +130,13 @@ func get_input():
 		animated_sprite.flip_h = false
 		shoot_position.position.x = abs(shoot_position.position.x)
 
-	if velocity.length() > 0:
+	if final_input.length() > 0:
 		animated_sprite.play()
 	else:
 		animated_sprite.stop()
+		
+	# Devolvemos la dirección final calculada
+	return final_input
 
 func dash():
 	if Input.is_action_just_pressed("dash") and not is_dashing and velocity.length() > 0:
@@ -146,22 +154,51 @@ func shoot():
 		var direction = (target_pos - global_position).normalized()
 		
 		var new_bullet = bullet_scene.instantiate()
-		new_bullet.global_position = shoot_position.global_position
+		
+		# AJUSTE PARA PAREDES: 
+		var spawn_offset = direction * 20 # Ajusta este número (distancia desde tu centro)
+		new_bullet.global_position = global_position + spawn_offset
+		
 		new_bullet.direction = direction
 		new_bullet.rotation = direction.angle()
 		
 		get_parent().add_child(new_bullet)
 		shoot_timer.start()
 		
-func _physics_process(_delta):
+func _physics_process(delta):
+	# ¡Esto es lo que faltaba! Le decimos al juego que escuche tus clics en cada frame
+	shoot()
 	dash()
 	
-	if not is_dashing and dash_timer.time_left == 0 and velocity.length() > 0:
-		velocity = Vector2.ZERO
+	if is_dashing:
+		move_and_slide()
+		return
 		
-	get_input() 
+	var target_dir = get_input()
+	
+	var current_accel = normal_acceleration
+	var current_friction = normal_friction
+	
+	if is_anxious:
+		current_accel = anxiety_acceleration
+		current_friction = anxiety_friction
+		
+		# --- EFECTO DE ESCALOFRÍOS/NERVIOSISMO ---
+		# Sacudimos ligeramente el dibujo usando su offset
+		var shake = 3.0
+		animated_sprite.offset = Vector2(randf_range(-shake, shake), randf_range(-shake, shake))
+	else:
+		# Cuando se pasa la ansiedad, el dibujo vuelve a su centro normal
+		animated_sprite.offset = Vector2.ZERO
+	
+	if target_dir != Vector2.ZERO:
+		var target_velocity = target_dir * speed
+		velocity = velocity.move_toward(target_velocity, current_accel * delta)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, current_friction * delta)
+	
 	move_and_slide()
-	shoot()
+	
 	
 func restore_max_health():
 	max_consciousness = base_max_consciousness
@@ -304,8 +341,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			damage_multiplier = 2
 			modulate = Color.ORANGE_RED
 			
-			# Acelera todo el motor del juego un 50%
-			# (1.0 es normal, 1.5 es rápido, 2.0 es el doble de rápido)
+			# Acelera todo el motor del juego
 			Engine.time_scale = 1.5 
 			
 			# Como el tiempo del juego va más rápido, un timer normal de 4s duraría menos.
@@ -316,4 +352,19 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 					damage_multiplier = 1
 					modulate = Color.WHITE
 					Engine.time_scale = 1.0 # Devolvemos el juego a la normalidad
+			)
+			
+		"anxiety":
+			if is_anxious: return # Si ya está ansioso, no reiniciamos el timer de golpe
+			
+			is_anxious = true
+			
+			# Opcional: Un tono pálido o azulado para representar sudor frío / tensión
+			modulate = Color.PALE_TURQUOISE 
+			
+			var timer = get_tree().create_timer(duration)
+			timer.timeout.connect(func():
+				if is_instance_valid(self):
+					is_anxious = false
+					modulate = Color.WHITE
 			)

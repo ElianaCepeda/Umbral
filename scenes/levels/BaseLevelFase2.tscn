@@ -24,6 +24,7 @@ top_level = true
 position = Vector2(693, 437)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=241881858]
+zoom = Vector2(2, 2)
 
 [node name="Spawner" type="Node2D" parent="." unique_id=2048461648 node_paths=PackedStringArray("area")]
 position = Vector2(510, 313)
