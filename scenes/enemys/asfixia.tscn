@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cel2q6co01fde" path="res://assets/enemy/asfixia.png" id="1_20hl2"]
 [ext_resource type="Script" uid="uid://bsjr4rlg4vgp6" path="res://scripts/enemy/asfixia.gd" id="1_l0p0a"]
-[ext_resource type="Script" uid="uid://bipi6n8yp3smc" path="res://scenes/enemys/nucleo_asfixia.gd" id="3_kuct2"]
+[ext_resource type="Script" uid="uid://bipi6n8yp3smc" path="res://scripts/enemy/nucleo_asfixia.gd" id="3_kuct2"]
 [ext_resource type="Texture2D" uid="uid://bck7u081t8tqa" path="res://assets/remolino.png" id="4_cur1s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0p0a"]

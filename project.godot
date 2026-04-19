@@ -212,6 +212,7 @@ dash={
 2d_physics/layer_3="Enemigos"
 2d_physics/layer_4="Balas_jugador"
 2d_physics/layer_5="Ataques_enemigos"
+2d_physics/layer_6="Muros"
 
 [physics]
 

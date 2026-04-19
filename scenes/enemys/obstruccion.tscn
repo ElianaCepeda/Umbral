@@ -103,18 +103,22 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1i8oo"]
-radius = 275.0
-height = 822.0
+radius = 35.0
+height = 108.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1858993548]
+z_index = 1
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_r2djx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=578193884]
+position = Vector2(-1.0000019, 0.9999962)
+scale = Vector2(0.11050006, 0.11050006)
 sprite_frames = SubResource("SpriteFrames_nbaja")
 frame_progress = 0.19484727
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=726521043]
+position = Vector2(-1, 1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_1i8oo")

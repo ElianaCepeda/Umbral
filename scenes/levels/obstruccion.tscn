@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://hqrygogor78o"]
+
+[ext_resource type="PackedScene" uid="uid://76illrg3pfo" path="res://scenes/levels/BaseLevelFase2.tscn" id="1_ql405"]
+[ext_resource type="Script" uid="uid://ddp0d07npxpcb" path="res://scripts/levels/obstruccionlevel.gd" id="2_kb4m3"]
+
+[node name="NodoBaseFase2" unique_id=1029686040 instance=ExtResource("1_ql405")]
+script = ExtResource("2_kb4m3")
+
+[node name="Spawner" parent="." index="4" unique_id=2048461648]
+cantidad_minima = 4
+cantidad_maxima = 4

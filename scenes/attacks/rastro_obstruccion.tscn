@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dtqowfihp4ac7"]
+
+[ext_resource type="Script" uid="uid://bo7df0k3q6cfo" path="res://scenes/attacks/rastro_obstruccion.gd" id="1_asyqx"]
+[ext_resource type="Texture2D" uid="uid://db50qyiu4o6hl" path="res://assets/scenario/TilesFase2.png" id="2_asyqx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asyqx"]
+size = Vector2(24.5, 18.140629)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f02i"]
+size = Vector2(25.25, 20.5)
+
+[node name="RastroOnstruccion" type="StaticBody2D" unique_id=1173039966 groups=["enemy_effects"]]
+collision_layer = 32
+collision_mask = 3
+script = ExtResource("1_asyqx")
+
+[node name="Luz" type="Sprite2D" parent="." unique_id=1549945375]
+position = Vector2(0, 2.3841858e-07)
+scale = Vector2(0.48928788, 0.45175162)
+texture = ExtResource("2_asyqx")
+region_enabled = true
+region_rect = Rect2(0.36846924, 28.966187, 49.263184, 38.067345)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1887985851]
+position = Vector2(-0.25, -0.0703125)
+scale = Vector2(1, 0.99999994)
+shape = SubResource("RectangleShape2D_asyqx")
+
+[node name="DisappearTimer" type="Timer" parent="." unique_id=1518775010 groups=["player"]]
+wait_time = 3.0
+
+[node name="DamageTimer" type="Timer" parent="." unique_id=1453872524]
+wait_time = 0.5
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=253519229]
+collision_layer = 32
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1546704105]
+shape = SubResource("RectangleShape2D_6f02i")
