@@ -28,7 +28,7 @@ func _ready():
 	# --- RELOJ DE TÁCTICA ---
 	# Obliga al enemigo a recalcular su ruta constantemente para hacer zig-zag
 	var turn_timer = Timer.new()
-	turn_timer.wait_time = 1.5 # Cada medio segundo piensa si debe girar
+	turn_timer.wait_time = 1.5
 	turn_timer.autostart = true
 	turn_timer.timeout.connect(choose_random_direction)
 	add_child(turn_timer)
@@ -84,8 +84,8 @@ func _sellar_esquina(direccion_anterior: Vector2):
 func _physics_process(delta):
 	super._physics_process(delta) 
 	
-	# --- 1. AURA DE DAÑO POR PROXIMIDAD (La solución al acorralamiento) ---
-	# En lugar de depender de choques físicos, medimos la distancia matemática
+	# --- 1. DAÑO POR PROXIMIDAD ---
+	# Medimos la distancia matemática
 	if cooldown_dano > 0:
 		cooldown_dano -= delta
 	elif is_instance_valid(player):
@@ -99,7 +99,7 @@ func _physics_process(delta):
 		tiempo_atascado += delta
 		if tiempo_atascado > 0.2:
 			# Si se quedó atascado en una esquina, elige una nueva ruta
-			# PERO no llamamos a _sellar_esquina() para que no se encierre con sus propios muros
+			# No llamamos a _sellar_esquina() para que no se encierre con sus propios muros
 			var direcciones = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
 			movement_direction = direcciones.pick_random()
 			tiempo_atascado = 0.0
