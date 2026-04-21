@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://bi2b8sc45r1j"]
 
 [ext_resource type="Texture2D" uid="uid://djfxwr2u50fas" path="res://assets/Dungeon_Tileset.png" id="1_c5j3g"]
-[ext_resource type="AudioStream" uid="uid://blx0l4suedwa3" path="res://assets/audio/music/intro.wav" id="2_ddalf"]
 [ext_resource type="Script" uid="uid://vooa4i4rj3ll" path="res://scripts/recovery_room.gd" id="3_ddalf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bdixd"]
@@ -214,7 +213,6 @@ offset_bottom = 579.0
 color = Color(0, 0, 0, 0.3019608)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=990829100]
-stream = ExtResource("2_ddalf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1493220947]
 layout_mode = 0
@@ -232,9 +230,17 @@ layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 8
 
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=984111147]
+layout_mode = 2
+text = "Puntos ataque:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1384638314]
+layout_mode = 2
+text = "Puntos defensa 1:"
+
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1192519760]
 layout_mode = 2
-text = "Puntos:"
+text = "Puntos defensa 2:"
 
 [node name="ScoreLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1208344774]
 layout_mode = 2

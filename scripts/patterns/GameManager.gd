@@ -2,16 +2,44 @@
 extends Node
 
 var current_level: LevelState = null
-var points: int = 0
+var attackpoints: int = 0
+var defense1points : int = 0
+var defense2points : int = 0
+var count : int = 1
 
-func get_points() -> int:
-	return points
 
-func add_points(amount: int):
-	points += amount
+func set_attackpoints(value: int) -> void:
+	attackpoints = value
+	print("Attack actualizado a:", value)
+
+func get_attackpoints() -> int:
+	return attackpoints
+
+
+func set_defense1points(value: int) -> void:
+	defense1points = value
+	print("Defense1 actualizado a:", value)
+
+func get_defense1points() -> int:
+	return defense1points
+
+func set_defense2points(value: int) -> void:
+	defense2points = value
+	print("Defense2 actualizado a:", value)
+
+func get_defense2points() -> int:
+	return defense2points
+
+func set_count(value: int) -> void:
+	count = value
+
+func get_count()-> int:
+	return count
 
 func reset_points():
-	points = 0
+	attackpoints = 0
+	defense1points  = 0
+	defense2points  = 0
 
 func change_level(new_level: LevelState):
 	# If there is already an active level, execute its exit logic and delete it
