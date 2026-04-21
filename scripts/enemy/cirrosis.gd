@@ -5,7 +5,7 @@ extends EnemyBase
 func _ready():
 	super._ready()
 	effect_name = "reduce_max_health"
-	speed = 60 
+	speed = 120 
 	
 	var puddle_timer = Timer.new()
 	# Le asignamos un tiempo aleatorio a cada enemigo (ej: entre 1 y 3 segundos)
