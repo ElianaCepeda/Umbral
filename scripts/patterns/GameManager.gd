@@ -5,43 +5,16 @@ var current_level: LevelState = null
 var attackpoints: int = 0
 var defense1points : int = 0
 var defense2points : int = 0
-var count : int = 1
+var preguntas_completadas = false
 
 
-func set_attackpoints(value: int) -> void:
-	attackpoints = value
-	print("Attack actualizado a:", value)
-
-func get_attackpoints() -> int:
-	return attackpoints
-
-
-func set_defense1points(value: int) -> void:
-	defense1points = value
-	print("Defense1 actualizado a:", value)
-
-func get_defense1points() -> int:
-	return defense1points
-
-func set_defense2points(value: int) -> void:
-	defense2points = value
-	print("Defense2 actualizado a:", value)
-
-func get_defense2points() -> int:
-	return defense2points
-
-func set_count(value: int) -> void:
-	count = value
-
-func get_count()-> int:
-	return count
-
-func reset_points():
-	attackpoints = 0
-	defense1points  = 0
-	defense2points  = 0
 
 func change_level(new_level: LevelState):
+	# Le decimos a Godot que ejecute el cambio de nivel de forma diferida (segura)
+	# y le pasamos 'new_level' como argumento para que la siguiente función lo reciba.
+	call_deferred("_perform_change_level", new_level)
+
+func _perform_change_level(new_level: LevelState):
 	# If there is already an active level, execute its exit logic and delete it
 	if current_level:
 		current_level.exit()

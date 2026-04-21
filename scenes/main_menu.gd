@@ -10,4 +10,5 @@ func _go_to_game():
 	GameManager.change_level(TensionLevel.new())
 
 func _go_to_questions():
-	get_tree().change_scene_to_file("res://scenes/recovery/recovery_room.tscn")
+	queue_free()
+	GameManager.change_level(RecoveryState.new())
