@@ -18,7 +18,8 @@ func _go_to_game() -> void:
 	GameManager.change_level(RetardoLevel.new())
 
 func _go_to_recovery() -> void:
-	get_tree().change_scene_to_file("res://scenes/recovery/recovery_room.tscn")
+	queue_free()
+	GameManager.change_level(RecoveryState.new())
 
 func _exit_game() -> void:
 	get_tree().quit()
