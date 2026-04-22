@@ -2,18 +2,19 @@
 extends Node
 
 var current_level: LevelState = null
-var points: int = 0
+var attackpoints: int = 0
+var defense1points : int = 0
+var defense2points : int = 0
+var preguntas_completadas = false
 
-func get_points() -> int:
-	return points
 
-func add_points(amount: int):
-	points += amount
-
-func reset_points():
-	points = 0
 
 func change_level(new_level: LevelState):
+	# Le decimos a Godot que ejecute el cambio de nivel de forma diferida (segura)
+	# y le pasamos 'new_level' como argumento para que la siguiente función lo reciba.
+	call_deferred("_perform_change_level", new_level)
+
+func _perform_change_level(new_level: LevelState):
 	# If there is already an active level, execute its exit logic and delete it
 	if current_level:
 		current_level.exit()
