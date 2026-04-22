@@ -255,52 +255,53 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6)
 theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/shadow_outline_size = 31
-theme_override_font_sizes/font_size = 61
+theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Answer1" type="Button" parent="VBoxContainer/AnswersContainer" unique_id=1709436512]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.8784314, 0.50980395, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_ddalf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_c5j3g")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bdixd")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_7iv0s")
+autowrap_mode = 2
 
 [node name="Answer2" type="Button" parent="VBoxContainer/AnswersContainer" unique_id=553563525]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.8784314, 0.50980395, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_ddalf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_c5j3g")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bdixd")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_7iv0s")
+autowrap_mode = 2
 
 [node name="Answer3" type="Button" parent="VBoxContainer/AnswersContainer" unique_id=440772989]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.8784314, 0.50980395, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_ddalf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_c5j3g")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bdixd")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_7iv0s")
+autowrap_mode = 2
 
 [node name="Answer4" type="Button" parent="VBoxContainer/AnswersContainer" unique_id=1315848396]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.8784314, 0.50980395, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_ddalf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_c5j3g")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bdixd")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_7iv0s")
+autowrap_mode = 2
 
 [node name="Terminado" type="Button" parent="VBoxContainer" unique_id=1747946140]
 layout_mode = 2
