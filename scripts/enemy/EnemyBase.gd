@@ -31,6 +31,7 @@ var is_charging: bool = false
 var charge_probability: float # Probabilidad única para cada enemigo instanciado
 var is_preparing_charge: bool = false 
 
+
 func _ready():
 	find_player()
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING 
@@ -43,7 +44,7 @@ func _ready():
 	wall_penalty = randf_range(200.0, 400.0)    
 	randomness_factor = randf_range(10.0, 40.0) 
 	# Embestida
-	charge_probability = randf_range(0.15, 0.35)
+	charge_probability = randf_range(0.30, 0.45)
 	
 	decide_direction()
 	
@@ -54,6 +55,7 @@ func _ready():
 	add_child(ai_timer)
 
 func _physics_process(_delta):
+	
 	if has_node("AnimatedSprite2D"):
 		$AnimatedSprite2D.play()
 		
@@ -74,7 +76,8 @@ func _physics_process(_delta):
 				collided_object.take_damage(collision_damage)
 				if effect_name != "" and collided_object.has_method("apply_effect"):
 					collided_object.apply_effect(effect_name, 0, effect_duration)
-					trigger_recoil(collided_object.global_position)
+				
+				trigger_recoil(collided_object.global_position)
 				decide_direction() 
 	
 	if is_on_wall():
@@ -101,13 +104,17 @@ func trigger_recoil(target_pos: Vector2):
 	is_recoiling = true
 	is_charging = false # Apaga el turbo de embestida si lo tenía activo
 	
+	is_preparing_charge = false 
+	modulate = Color.WHITE
+	
+	
 	# Calcula la dirección para huir (Vector inverso desde donde golpeó)
 	var repel_dir = (global_position - target_pos).normalized()
 	
 	# Lo forzamos a rebotar respetando tu cuadrícula (Cruz, Diagonales o Libre)
 	movement_direction = snap_direction(repel_dir)
 	
-	# El enemigo queda aturdido y caminando hacia atrás por 0.4 segundos
+	# El enemigo queda aturdido y caminando hacia atrás por 2 segundos
 	await get_tree().create_timer(2).timeout
 	
 	# Se le pasa el aturdimiento y vuelve a pensar qué hacer
@@ -208,6 +215,7 @@ func prepare_charge():
 	
 	# REGLA DE SEGURIDAD: Si el enemigo murió mientras esperaba, abortamos
 	if not is_inside_tree() or not is_instance_valid(player): return
+	if not is_preparing_charge: return
 	
 	# Recalcula la posición exacta hacia ti en este momento, y ¡BAM!
 	var new_to_player = (player.global_position - global_position).normalized()

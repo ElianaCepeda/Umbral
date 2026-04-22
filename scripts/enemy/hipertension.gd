@@ -21,7 +21,7 @@ func shoot_wave():
 		wave.global_position = global_position
 		
 		# Apuntamos hacia el jugador
-		var player = get_tree().get_first_node_in_group("player")
+		player = get_tree().get_first_node_in_group("player")
 		if player:
 			wave.direction = (player.global_position - global_position).normalized()
 		else:

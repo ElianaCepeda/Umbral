@@ -28,7 +28,7 @@ func shoot_pulse():
 		tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.1)
 		
 		# Apuntamos hacia el jugador para que el pulso viaje hacia él
-		var player = get_tree().get_first_node_in_group("player")
+		player = get_tree().get_first_node_in_group("player")
 		if player:
 			var direction = (player.global_position - global_position).normalized()
 			var random_angle = randf_range(-0.4, 0.4) # Aproximadamente 20 grados de error

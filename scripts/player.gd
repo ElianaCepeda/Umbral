@@ -29,6 +29,7 @@ var fatigue_time_left: float = 0.0
 @onready var shoot_timer = $ShootTimer
 @onready var shoot_position = $bullet_pos
 @onready var consciousness_bar = $HUD/PanelContainer/ConsciousnessBar
+@onready var back_consciousness_bar = $HUD/PanelContainer/ColorRect
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var dash_timer = $DashTimer
 @onready var blur_rect = $HUD/EfectoBorroso
@@ -43,10 +44,12 @@ var bullet_scene = preload("res://scenes/attacks/bullet.tscn")
 func _ready():
 	consciousness_bar.value = consciousness
 	consciousness_bar.hide()
+	back_consciousness_bar.hide()
 	base_vision_scale = vision_light.texture_scale
 
 func show_ui():
 	consciousness_bar.show()
+	back_consciousness_bar.show()
 	
 func get_target_color() -> Color:
 	if is_paralyzed:
