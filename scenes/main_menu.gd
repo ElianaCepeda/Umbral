@@ -7,7 +7,7 @@ func _ready():
 func _go_to_game():
 	queue_free()
 	# Le dices al LevelManager (Autoload) que inicie el primer nivel
-	GameManager.change_level(RetardoLevel.new())
+	GameManager.change_level(BorrosoLevel.new())
 
 func _go_to_questions():
 	queue_free()
