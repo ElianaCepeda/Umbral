@@ -1,13 +1,24 @@
 extends Control
-@onready var recover = $VBoxContainerMain/Recover
-@onready var start = $VBoxContainerMain/Start
-func _ready():
-	start.pressed.connect(_go_to_game)
-	recover.pressed.connect(_go_to_questions)
-func _go_to_game():
+
+@onready var door = $VBoxContainer/ContentGroup/Brainholder/Door
+
+@onready var btn_family = $VBoxContainer/ContentGroup/BtnRow/BtnFamily
+@onready var btn_sympt = $VBoxContainer/ContentGroup/BtnRow/BtnSympt
+@onready var btn_exit = $VBoxContainer/ContentGroup/BtnRow/BtnExit
+
+func _ready() -> void:
+	door.door_pressed.connect(_go_to_game)
+
+	btn_family.pressed.connect(_go_to_recovery)
+	btn_sympt.pressed.connect(_go_to_recovery)
+	btn_exit.pressed.connect(_exit_game)
+
+func _go_to_game() -> void:
 	queue_free()
-	# Le dices al LevelManager (Autoload) que inicie el primer nivel
 	GameManager.change_level(RetardoLevel.new())
 
-func _go_to_questions():
+func _go_to_recovery() -> void:
 	get_tree().change_scene_to_file("res://scenes/recovery/recovery_room.tscn")
+
+func _exit_game() -> void:
+	get_tree().quit()
