@@ -72,9 +72,11 @@ frame_progress = 0.3269616
 
 [node name="Player" parent="." unique_id=1786594462 instance=ExtResource("4_c8y2e")]
 top_level = true
-position = Vector2(675, 437)
+position = Vector2(734, 449)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=241881858]
+position = Vector2(-1, 0)
+zoom = Vector2(2, 2)
 
 [node name="Spawner" type="Node2D" parent="." unique_id=2048461648 node_paths=PackedStringArray("area")]
 visible = false
