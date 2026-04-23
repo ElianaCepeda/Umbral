@@ -4,9 +4,9 @@ var min_scale: float = 0.05
 var max_scale: float = 3.5 
 var growth_rate: float = 0.02 
 var can_grow: bool = true 
-var base_damage: int = 1        # Con cuánto daño empieza a asfixiar
+var base_damage: int = 10       # Con cuánto daño empieza a asfixiar
 var current_damage: int = 1     # El daño real que irá subiendo
-var damage_increment: int = 1   # Cuánto daño extra suma cada segundo
+var damage_increment: int = 2   # Cuánto daño extra suma cada segundo
 
 # Conexiones a los nodos de tu escena
 @onready var smoke_sprite = $SpriteHumo
@@ -19,8 +19,6 @@ var damage_timer: Timer
 
 func _ready():
 	super._ready()
-	collision_damage = 10
-	speed = 30 
 	add_to_group("asfixia") 
 	
 	# 1. Configurar el reloj de daño por asfixia
