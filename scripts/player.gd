@@ -339,10 +339,10 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			)
 			
 		"reduce_max_health":
-			var reduction_amount = 5 
+			var reduction_amount = 3 
 			
-			# Reducimos el límite máximo, pero evitamos que baje de 20
-			max_consciousness = max(30, max_consciousness - reduction_amount)
+			# Reducimos el límite máximo, pero evitamos que baje de 50
+			max_consciousness = max(40, max_consciousness - reduction_amount)
 			
 			# Si tu vida actual quedó por encima del nuevo límite, te la cortamos
 			if consciousness > max_consciousness:
@@ -352,9 +352,10 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			var blink_tween = create_tween()
 			blink_tween.tween_property(self, "modulate", Color.DARK_GREEN, 0.2)
 			blink_tween.tween_property(self, "modulate", Color.WHITE, 0.2)
-			
 			update_bar()
-			take_damage(reduction_amount)
+			is_invulnerable = false
+			take_damage(reduction_amount*2)
+			
 			
 		"hipertension":
 			if damage_multiplier > 1: return 
