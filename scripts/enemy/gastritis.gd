@@ -7,13 +7,7 @@ extends EnemyBase
 @export var wait_time: float = 2.0
 
 func _ready():
-	# Definimos atributos específicos
-	speed = 120
-	health = 5
-	points = 10
-	collision_damage = 1
 	damage_color = Color.RED
-	
 	super._ready() # Inicializa la lógica base
 	
 	if poison_timer:
@@ -21,7 +15,7 @@ func _ready():
 		start_poison_cycle()
 
 func start_poison_cycle():
-	poison_timer.start(0.05) 
+	poison_timer.start(0.01) 
 	
 	await get_tree().create_timer(drop_time).timeout
 	poison_timer.stop()
@@ -40,3 +34,16 @@ func leave_trail() -> void:
 				break 
 				
 		get_parent().call_deferred("add_child", new_poison)
+		
+func decide_direction():
+	# Si está rebotando por un golpe o tomando impulso morado, no lo dejamos pensar
+	if is_recoiling or is_preparing_charge: return
+	
+	# Tiramos el dado: ¿Es hora de perder la paciencia y embestir?
+	if randf() < charge_probability:
+		comportamiento = 1 # ¡Engañamos al EnemyBase para que nos de la velocidad x4!
+		prepare_charge()   # Llama al brillo morado y a la embestida heredada del padre
+	else:
+		is_charging = false
+		comportamiento = 0 # Vuelve a ser un Constructor calmado
+		movement_direction = calculate_heuristic_direction() # Sigue el rastro matemático

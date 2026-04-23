@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _go_to_game() -> void:
 	queue_free()
-	GameManager.change_level(HipertensionLevel.new())
+	GameManager.change_level(GastritisLevel.new())
 
 func _go_to_recovery() -> void:
 	queue_free()

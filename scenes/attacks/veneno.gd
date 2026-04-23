@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var disappearance_timer = $DisappearTimer
 @onready var damage_timer = $DamageTimer
-@export var damage = 1
+@export var damage = 5
 
 func _ready():
 	scale = Vector2(1.8, 1.8)
