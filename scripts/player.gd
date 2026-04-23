@@ -254,7 +254,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 		
 		"random_speed_boost":
 			var random_increase = randi_range(80, 200)
-			var max_speed = 350 
+			var max_speed = 500 
 			
 			var speed_before = speed
 			speed += random_increase

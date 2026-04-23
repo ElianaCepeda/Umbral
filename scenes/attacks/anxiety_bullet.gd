@@ -2,6 +2,7 @@ extends Area2D
 
 var speed: float = 300.0
 var direction: Vector2 = Vector2.ZERO
+var damage: int = 10
 
 func _ready():
 	get_tree().create_timer(5.0).timeout.connect(queue_free)
@@ -15,7 +16,7 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		# 1. Le hacemos daño
 		if body.has_method("take_damage"):
-			body.take_damage(5, Color.PALE_TURQUOISE) # Daño y color de impacto
+			body.take_damage(damage, Color.PALE_TURQUOISE) # Daño y color de impacto
 			
 		# 2. Le aplicamos la ansiedad (temblor y controles resbaladizos)
 		if body.has_method("apply_effect"):
