@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ebgvj4cuo4ux"]
 
 [ext_resource type="Script" uid="uid://b16j6f4yhltaa" path="res://scenes/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://db68g7mi5dd7e" path="res://assets/backgrounds/fondoMenu.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://tm5kknnndtxq" path="res://assets/ui/background2.png" id="2_tbmy8"]
 [ext_resource type="FontFile" uid="uid://d0u6kv0akue8f" path="res://assets/fonts/Ruler 9.ttf" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://bex5aaoq07chx" path="res://assets/ui/bord.png" id="3_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://c41uglnxkbud8" path="res://assets/ui/Brain.png" id="3_wu84c"]
@@ -87,7 +87,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_bqqt6")
+texture = ExtResource("2_tbmy8")
 expand_mode = 1
 
 [node name="CornerTL" type="TextureRect" parent="." unique_id=1532773269]
@@ -160,9 +160,11 @@ alignment = 1
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=1403035265]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.972549, 0.9098039, 0.7137255, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8352941)
+theme_override_colors/font_shadow_color = Color(0.24313726, 0.007843138, 0.02745098, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 7
 theme_override_constants/shadow_offset_y = 9
+theme_override_constants/outline_size = 12
 theme_override_fonts/font = SubResource("FontVariation_oa1go")
 theme_override_font_sizes/font_size = 130
 text = "UMBRAL"
