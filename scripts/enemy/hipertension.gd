@@ -4,7 +4,6 @@ extends EnemyBase
 
 func _ready():
 	super._ready()
-	speed = 80 # Velocidad normal
 	z_index = 5
 	
 	var shoot_timer = Timer.new()
@@ -13,19 +12,21 @@ func _ready():
 	add_child(shoot_timer)
 	
 	# Desfase aleatorio para que no todos disparen al mismo tiempo
-	get_tree().create_timer(randf_range(0.5, 1.5)).timeout.connect(shoot_timer.start)
-
+	var initial_delay = randf_range(0.2, 0.6)
+	get_tree().create_timer(initial_delay).timeout.connect(func():
+		# Nos aseguramos de que el enemigo no haya muerto en esa fracción de segundo
+		if is_instance_valid(self) and is_instance_valid(shoot_timer):
+			shoot_wave() # ¡Dispara la primera onda rápido!
+			shoot_timer.start() # Empieza el ciclo normal para los siguientes disparos
+	)
+	
+	
 func shoot_wave():
 	if wave_scene and is_instance_valid(self):
 		var wave = wave_scene.instantiate()
 		wave.global_position = global_position
 		
-		# Apuntamos hacia el jugador
-		player = get_tree().get_first_node_in_group("player")
-		if player:
-			wave.direction = (player.global_position - global_position).normalized()
-		else:
-			wave.direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+		wave.direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 			
 		var contenedor = get_parent().get_node_or_null("ContenedorAtaques")
 		if contenedor:

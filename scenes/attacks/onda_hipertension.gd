@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed: float = 150.0
+var speed: float = 130.0
 var direction: Vector2 = Vector2.ZERO
 var max_scale: Vector2 = Vector2(4.0, 4.0) # Hasta qué tamaño va a crecer
 
@@ -8,7 +8,7 @@ func _ready():
 	body_entered.connect(_on_body_entered)
 	
 	# La onda desaparece sola después de 3 segundos
-	get_tree().create_timer(3.0).timeout.connect(queue_free)
+	get_tree().create_timer(2.0).timeout.connect(queue_free)
 
 func _process(delta):
 	# 1. Se mueve hacia adelante
