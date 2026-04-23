@@ -113,7 +113,6 @@ effect_name = "input_delay"
 effect_duration = 3.0
 speed = 100
 health = 10
-points = 5
 collision_damage = 10
 tipo_movimiento = 1
 
