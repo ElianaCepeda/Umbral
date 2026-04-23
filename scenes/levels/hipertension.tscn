@@ -1,9 +1,7 @@
-[gd_scene format=3 uid="uid://cag8ecc4d5ja7"]
+[gd_scene format=3 uid="uid://cpyj6txdh6kyq"]
 
-[ext_resource type="PackedScene" uid="uid://76illrg3pfo" path="res://scenes/levels/BaseLevelFase2.tscn" id="1_8afil"]
+[ext_resource type="PackedScene" uid="uid://doqn4hplyhcbc" path="res://scenes/levels/BaseLevelFase1.tscn" id="1_8afil"]
 [ext_resource type="Script" uid="uid://dgu7yisalpoh8" path="res://scripts/levels/hipertensionLevel.gd" id="2_ios13"]
 
-[node name="NodoBaseFase2" unique_id=1029686040 instance=ExtResource("1_8afil")]
+[node name="NodoBaseFase1" unique_id=1029686040 instance=ExtResource("1_8afil")]
 script = ExtResource("2_ios13")
-
-[node name="ContenedorAtaques" type="Node2D" parent="." index="1" unique_id=2075359442]
