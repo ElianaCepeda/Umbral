@@ -6,9 +6,13 @@
 texture = ExtResource("1_ahnom")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -32.428, 64, -30.492004, 64, 29.523994, -64, 30.491997)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -32.428, 64, -30.492004, 64, 29.523994, -64, 30.491997)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 31.46, -29.524002, 28.556007, -28.556007, 64, 32.427994, 64, 30.492004, -30.492004, -64, -29.524002)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -32.428, 64, -30.492004, 64, 29.523994, -64, 30.491997)
 1:1/0 = 0
 2:1/0 = 0
 0:2/0 = 0
@@ -22,4 +26,5 @@ texture_region_size = Vector2i(128, 128)
 
 [resource]
 tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ahnom")
