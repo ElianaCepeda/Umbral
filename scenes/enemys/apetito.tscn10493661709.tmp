@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cr0wq7xr43mxr"]
+
+[ext_resource type="Texture2D" uid="uid://4mh08a8t3y62" path="res://assets/enemy/apetito.png" id="1_jicbd"]
+[ext_resource type="Script" uid="uid://byq5gpt4chgxd" path="res://scripts/enemy/apetito.gd" id="1_uxpen"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxpen"]
+atlas = ExtResource("1_jicbd")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyg6j"]
+atlas = ExtResource("1_jicbd")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uayi"]
+atlas = ExtResource("1_jicbd")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24q1y"]
+atlas = ExtResource("1_jicbd")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2tq0"]
+atlas = ExtResource("1_jicbd")
+region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drabp"]
+atlas = ExtResource("1_jicbd")
+region = Rect2(2000, 1000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6751v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxpen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyg6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uayi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24q1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2tq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drabp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ufbe"]
+radius = 269.0
+height = 602.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=187733212]
+scale = Vector2(0.2, 0.2)
+collision_layer = 4
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_uxpen")
+damage_color = Color(0, 0, 0, 1)
+comportamiento = 3
+tipo_movimiento = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1600962519]
+position = Vector2(-19, 54)
+sprite_frames = SubResource("SpriteFrames_6751v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=852420506]
+position = Vector2(3, 108)
+shape = SubResource("CapsuleShape2D_8ufbe")
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=243001131]
+autostart = true
+
+[node name="ShootPosition" type="Marker2D" parent="." unique_id=871080364]
+position = Vector2(22, 0)

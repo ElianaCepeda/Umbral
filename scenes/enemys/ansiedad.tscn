@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bb005s5msynri" path="res://assets/enemy/ansiedad.png" id="1_aa18m"]
 [ext_resource type="Script" uid="uid://wtrbyyapo76r" path="res://scripts/enemy/ansiedad.gd" id="1_jrcbc"]
-[ext_resource type="PackedScene" uid="uid://8vaw4tas74ck" path="res://scenes/attacks/anxiety_bullet.tscn" id="2_e3wbb"]
+[ext_resource type="PackedScene" uid="uid://kna33f4l17pt" path="res://scenes/attacks/apetito_bullet.tscn" id="2_e3wbb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrcbc"]
 atlas = ExtResource("1_aa18m")

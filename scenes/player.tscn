@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://mltutdo1n1ba" path="res://assets/character/HEAL/heal_left.png" id="20_487ah"]
 [ext_resource type="Texture2D" uid="uid://b6vb0pvtxc8j8" path="res://assets/character/HEAL/heal_right.png" id="21_md1ol"]
 [ext_resource type="Texture2D" uid="uid://dp4ydue0p7dxl" path="res://assets/character/HEAL/heal_up.png" id="22_bj30b"]
+[ext_resource type="Texture2D" uid="uid://7n1ertr6mggd" path="res://assets/shield.png" id="29_dt7fs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
 atlas = ExtResource("2_oprun")
@@ -1620,13 +1621,10 @@ collision_layer = 2
 collision_mask = 53
 motion_mode = 1
 script = ExtResource("1_g2els")
-speed = null
-dash_speed = null
-dash_duration = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=516426972]
 sprite_frames = SubResource("SpriteFrames_8pj6w")
-animation = &"hurt_down"
+animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=580605276]
 position = Vector2(-0.5, 2.5)
@@ -1685,3 +1683,7 @@ texture_scale = 4.74
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=930524085]
 color = Color(0, 0, 0, 1)
+
+[node name="Shield" type="Sprite2D" parent="." unique_id=670143489]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("29_dt7fs")

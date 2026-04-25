@@ -1,6 +1,6 @@
 extends EnemyBase
 
-@export var bullet_scene: PackedScene # Arrastra tu escena anxiety_bullet.tscn aquí en el Inspector
+@export var bullet_scene: PackedScene
 @onready var shoot_position = $ShootPosition
 
 func _ready():
