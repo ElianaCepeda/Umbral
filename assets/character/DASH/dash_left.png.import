@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bavpdupg8tiuk"
-path="res://.godot/imported/Spritesheetpequeniokk.png-99af5e35054a82d67fde075c5c40c299.ctex"
+uid="uid://buwowy01wc8le"
+path="res://.godot/imported/dash_left.png-fba5a1fdbb728551ae8ab24a48afc905.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Spritesheetpequeniokk.png"
-dest_files=["res://.godot/imported/Spritesheetpequeniokk.png-99af5e35054a82d67fde075c5c40c299.ctex"]
+source_file="res://assets/character/DASH/dash_left.png"
+dest_files=["res://.godot/imported/dash_left.png-fba5a1fdbb728551ae8ab24a48afc905.ctex"]
 
 [params]
 

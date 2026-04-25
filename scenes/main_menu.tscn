@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c41uglnxkbud8" path="res://assets/ui/Brain.png" id="3_wu84c"]
 [ext_resource type="Texture2D" uid="uid://cdnyyt55yg0vn" path="res://assets/ui/Door 7_spritesheet.png" id="5_oa1go"]
 [ext_resource type="Texture2D" uid="uid://d1ut4unr3msif" path="res://assets/ui/btn.png" id="5_rtw2f"]
-[ext_resource type="Script" uid="uid://drxebsvcycp3k" path="res://scenes/door.gd" id="5_tbmy8"]
+[ext_resource type="Script" path="res://scenes/door.gd" id="5_tbmy8"]
 
 [sub_resource type="FontVariation" id="FontVariation_oa1go"]
 base_font = ExtResource("3_8ln24")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be7red4eotv0e"
-path="res://.godot/imported/Spritesheetnuevo.png-364fdcb2eedd0603edb3aceb6989dd32.ctex"
+uid="uid://bh0jsopcwbfi7"
+path="res://.godot/imported/hurt_left.png-b74d496365abb339d3ef982fba93aefa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Spritesheetnuevo.png"
-dest_files=["res://.godot/imported/Spritesheetnuevo.png-364fdcb2eedd0603edb3aceb6989dd32.ctex"]
+source_file="res://assets/character/HURT/hurt_left.png"
+dest_files=["res://.godot/imported/hurt_left.png-b74d496365abb339d3ef982fba93aefa.ctex"]
 
 [params]
 

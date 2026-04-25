@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+
+var last_direction: Vector2 = Vector2.DOWN
+
 var is_dead: bool = false
 var is_paralyzed: bool = false
 var controls_inverted: bool = false
@@ -18,7 +21,7 @@ var normal_friction: float = 1500.0
 var anxiety_acceleration: float = 80.0 # Cuesta arrancar
 var anxiety_friction: float = 20.0     # Cuesta MUCHÍSIMO frenar
 var is_anxious: bool = false
-
+var is_attacking: bool = false
 var can_shoot: bool = true
 var fatigue_time_left: float = 0.0
 
@@ -36,6 +39,8 @@ var fatigue_time_left: float = 0.0
 @onready var original_bar_width: float = consciousness_bar.size.x
 
 var is_dashing: bool = false
+var is_hurt: bool = false
+
 @export var dash_speed: int = 400
 @export var dash_duration: float = 0.0001
 
@@ -43,6 +48,7 @@ var bullet_scene = preload("res://scenes/attacks/bullet.tscn")
 
 func _ready():
 	consciousness_bar.value = consciousness
+	animated_sprite.animation_finished.connect(_on_animation_finished)
 	consciousness_bar.hide()
 	back_consciousness_bar.hide()
 	base_vision_scale = vision_light.texture_scale
@@ -70,21 +76,39 @@ func get_target_color() -> Color:
 func take_damage(amount: int, damage_color: Color = Color.RED):
 	if is_dead or is_invulnerable or not is_inside_tree():
 		return
+	
 	is_invulnerable = true 
+	is_hurt = true
+	is_attacking = false
+	
 	var final_damage = amount * damage_multiplier
 	consciousness -= final_damage
 	update_bar()
 
+
+	var anim_dir = "down"
+	if abs(last_direction.x) > abs(last_direction.y):
+		anim_dir = "right" if last_direction.x > 0 else "left"
+	else:
+		anim_dir = "down" if last_direction.y > 0 else "up"
+
+	animated_sprite.stop()
+	animated_sprite.play("hurt_" + anim_dir)
+
+	# Color de daño
 	var damage_tween = create_tween()
-	# ¡Usamos el color que nos pasaron en lugar de Color.RED fijo!
 	modulate = damage_color 
 	damage_tween.tween_property(self, "modulate", get_target_color(), 0.3)
+
+	# Invulnerabilidad temporal
 	get_tree().create_timer(0.5).timeout.connect(func():
 		if is_instance_valid(self):
 			is_invulnerable = false
 	)
+
 	if consciousness <= 0:
 		die()
+
 
 func increase_consciousness(amount: int):
 	consciousness += amount
@@ -93,6 +117,13 @@ func increase_consciousness(amount: int):
 		consciousness = max_consciousness
 	update_bar()
 
+func update_shoot_position(dir: String):
+	match dir:
+		"right": shoot_position.position = Vector2(20, 0)
+		"left": shoot_position.position = Vector2(-20, 0)
+		"up": shoot_position.position = Vector2(0, -20)
+		"down": shoot_position.position = Vector2(0, 20)
+		
 func update_bar():
 	# 1. Calculamos el nuevo ancho físico de la barra roja/verde
 	# Si max_consciousness es 100, usa el 100%. Si es 60, usa el 60% del ancho.
@@ -116,6 +147,7 @@ func die():
 	GameManager.game_over()
 
 func get_input() -> Vector2:
+	
 	if is_paralyzed:
 		return Vector2.ZERO
 
@@ -134,51 +166,98 @@ func get_input() -> Vector2:
 	else:
 		input_buffer.clear()
 		
-	# Manejo de animaciones y giro de la pistola
-	var mouse_pos = get_global_mouse_position()
-	if mouse_pos.x < global_position.x:
-		animated_sprite.flip_h = true
-		shoot_position.position.x = -abs(shoot_position.position.x)
-	else:
-		animated_sprite.flip_h = false
-		shoot_position.position.x = abs(shoot_position.position.x)
-
-	if final_input.length() > 0:
-		animated_sprite.play()
-	else:
-		animated_sprite.stop()
+		if is_attacking:
+			return final_input
 		
-	# Devolvemos la dirección final calculada
+		if is_hurt:
+			return final_input
+		
+		var anim_direction = "down" # Por defecto
+	
+		if final_input != Vector2.ZERO:
+			last_direction = final_input # Guardamos la última dirección
+			
+			# Determinamos si el movimiento es más horizontal o vertical
+			if abs(final_input.x) > abs(final_input.y):
+				anim_direction = "right" if final_input.x > 0 else "left"
+			else:
+				anim_direction = "down" if final_input.y > 0 else "up"
+			
+			animated_sprite.play("run_" + anim_direction)
+		else:
+			# Si está quieto, usamos la última dirección para el Idle
+			if abs(last_direction.x) > abs(last_direction.y):
+				anim_direction = "right" if last_direction.x > 0 else "left"
+			else:
+				anim_direction = "down" if last_direction.y > 0 else "up"
+			
+			animated_sprite.play("idle_" + anim_direction)
+
+		# Actualizar posición del spawn de balas según dirección (opcional)
+		update_shoot_position(anim_direction)
+
 	return final_input
+	
 
 func dash():
 	if Input.is_action_just_pressed("dash") and not is_dashing and velocity.length() > 0:
 		is_dashing = true
+		
+		# 1. Determinar dirección de la animación del dash
+		var anim_dir = "down"
+		# Usamos velocity porque es la dirección actual del movimiento
+		if abs(velocity.x) > abs(velocity.y):
+			anim_dir = "right" if velocity.x > 0 else "left"
+		else:
+			anim_dir = "down" if velocity.y > 0 else "up"
+		
+		# 2. Reproducir animación (ej: "dash_right")
+		animated_sprite.play("dash_" + anim_dir)
+		
+		# 3. Lógica física del dash
 		velocity = velocity.normalized() * dash_speed
 		
 		dash_timer.start()
+		# Usamos el timeout para terminar el estado de dash
 		await dash_timer.timeout
-		
 		is_dashing = false
 
+
+func _on_animation_finished():
+	if animated_sprite.animation.begins_with("attack"):
+		is_attacking = false
+	if animated_sprite.animation.begins_with("hurt"):
+		is_hurt = false
+	
 func shoot():
-	if not can_shoot: return
+	if not can_shoot:
+		return
 	
 	if Input.is_action_just_pressed("click_disparo") and shoot_timer.is_stopped():
+		is_attacking = true
+		
 		var target_pos = get_global_mouse_position()
 		var direction = (target_pos - global_position).normalized()
 		
+		var anim_dir = "down"
+		if abs(direction.x) > abs(direction.y):
+			anim_dir = "right" if direction.x > 0 else "left"
+		else:
+			anim_dir = "down" if direction.y > 0 else "up"
+		
+		animated_sprite.stop()
+		animated_sprite.play("attack_" + anim_dir)
+		animated_sprite.frame = 0
+		
 		var new_bullet = bullet_scene.instantiate()
-		
-		# AJUSTE PARA PAREDES: 
-		var spawn_offset = direction * 20 # Ajusta este número (distancia desde tu centro)
+		var spawn_offset = direction * 25 
 		new_bullet.global_position = global_position + spawn_offset
-		
 		new_bullet.direction = direction
 		new_bullet.rotation = direction.angle()
 		
 		get_parent().add_child(new_bullet)
 		shoot_timer.start()
+
 		
 func _physics_process(delta):
 	if fatigue_time_left > 0:
@@ -194,7 +273,8 @@ func _physics_process(delta):
 	if is_dashing:
 		move_and_slide()
 		return
-		
+	
+	
 	var target_dir = get_input()
 	
 	var current_accel = normal_acceleration
