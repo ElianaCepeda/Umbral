@@ -1,6 +1,8 @@
 extends LevelState
 class_name RecoveryQuestions
-
+var permitir_hover := true
+var pergamino_anim: AnimatedSprite2D
+var ui_content: VBoxContainer
 var question_label: Label
 var answer1: Button
 var answer2: Button
@@ -465,38 +467,118 @@ func _init():
 
 func enter():
 	print("Entrando al minijuego de recuperación...")
-	
-	# 1. HACEMOS EL TRABAJO DEL PADRE: Instanciar y añadir la escena
+
 	scene_instance = load(scene_path).instantiate()
 	add_child(scene_instance)
-	
-	# 2. VINCULAMOS NUESTROS NODOS (ahora que scene_instance ya existe)
-	question_label = scene_instance.get_node("VBoxContainer/AnswersContainer/QuestionLabel")
-	answer1 = scene_instance.get_node("VBoxContainer/AnswersContainer/Answer1")
-	answer2 = scene_instance.get_node("VBoxContainer/AnswersContainer/Answer2")
-	answer3 = scene_instance.get_node("VBoxContainer/AnswersContainer/Answer3")
-	answer4 = scene_instance.get_node("VBoxContainer/AnswersContainer/Answer4")
-	scoreattack_label = scene_instance.get_node("VBoxContainer/HBoxContainer/LabelAtack")
-	scoredefense1_label = scene_instance.get_node("VBoxContainer/HBoxContainer/LabelDefense1")
-	scoredefense2_label = scene_instance.get_node("VBoxContainer/HBoxContainer/LabelDefense2")
-	mensaje_feedback = scene_instance.get_node("VBoxContainer/LabelFeedback")
-	boton_terminado = scene_instance.get_node("VBoxContainer/Terminado")
-	
-	# 3. LÓGICA DE PREGUNTAS
-	boton_terminado.pressed.connect(_on_boton_terminado_pressed)
+
+	var holder = scene_instance.get_node("CenterContainer/QuestionsHolder")
+	var ui_root = holder.get_node("VBoxContainer")
+	var answers_root = ui_root.get_node("AnswersContainer")
+	var buttons_root = answers_root.get_node("AnswersContainer")
+
+	pergamino_anim = holder.get_node("Animation")
+	ui_content = ui_root
+
+	question_label = answers_root.get_node("MarginContainer/QuestionLabel")
+
+	var answer1_row = buttons_root.get_node("Answer1Row")
+	var answer2_row = buttons_root.get_node("Answer2Row")
+	var answer3_row = buttons_root.get_node("Answer3Row")
+	var answer4_row = buttons_root.get_node("Answer4Row")
+
+	answer1 = answer1_row.get_node("Answer1")
+	answer2 = answer2_row.get_node("Answer2")
+	answer3 = answer3_row.get_node("Answer3")
+	answer4 = answer4_row.get_node("Answer4")
+
+	scoreattack_label = ui_root.get_node("HBoxContainer/LabelAtack")
+	scoredefense1_label = ui_root.get_node("HBoxContainer/LabelDefense1")
+	scoredefense2_label = ui_root.get_node("HBoxContainer/LabelDefense2")
+
+	mensaje_feedback = ui_root.get_node("LabelFeedback")
+	boton_terminado = ui_root.get_node("Terminado")
+
+	ui_content.hide()
 	boton_terminado.hide()
+	mensaje_feedback.text = ""
+
+	await get_tree().create_timer(1.0).timeout
+
+	pergamino_anim.play("open")
+	await pergamino_anim.animation_finished
+
+	ui_content.show()
+	answer1.mouse_entered.connect(func(): show_hover_btn(answer1))
+	answer1.mouse_exited.connect(func(): hide_hover_btn(answer1))
+
+	answer2.mouse_entered.connect(func(): show_hover_btn(answer2))
+	answer2.mouse_exited.connect(func(): hide_hover_btn(answer2))
+
+	answer3.mouse_entered.connect(func(): show_hover_btn(answer3))
+	answer3.mouse_exited.connect(func(): hide_hover_btn(answer3))
+
+	answer4.mouse_entered.connect(func(): show_hover_btn(answer4))
+	answer4.mouse_exited.connect(func(): hide_hover_btn(answer4))
 	
+	answer1.mouse_entered.connect(func():show_arrow(answer1))
+	answer1.mouse_exited.connect(func(): hide_arrow(answer1))
+
+	answer2.mouse_entered.connect(func(): show_arrow(answer2))
+	answer2.mouse_exited.connect(func(): hide_arrow(answer2))
+
+	answer3.mouse_entered.connect(func():show_arrow(answer3))
+	answer3.mouse_exited.connect(func(): hide_arrow(answer3))
+
+	answer4.mouse_entered.connect(func(): show_arrow(answer4))
+	answer4.mouse_exited.connect(func(): hide_arrow(answer4))
+
 	scoreattack_label.text = str("Ataque: ", attackpoints)
 	scoredefense1_label.text = str("Defensa1: ", defense1points)
 	scoredefense2_label.text = str("Defensa2: ", defense2points)
-	
+
 	answer1.pressed.connect(check_answer.bind(1))
 	answer2.pressed.connect(check_answer.bind(2))
 	answer3.pressed.connect(check_answer.bind(3))
 	answer4.pressed.connect(check_answer.bind(4))
-	
+	boton_terminado.pressed.connect(_on_boton_terminado_pressed)
+	var arrow1 = answer1_row.get_node("Arrow")
+	var arrow2 = answer2_row.get_node("Arrow")
+	var arrow3 = answer3_row.get_node("Arrow")
+	var arrow4 = answer4_row.get_node("Arrow")
+
+	arrow1.hide()
+	arrow2.hide()
+	arrow3.hide()
+	arrow4.hide()
+
 	current_question_index = first_question
 	load_question(current_question_index)
+	
+
+
+func hide_arrows() -> void:
+	for boton in [answer1, answer2, answer3, answer4]:
+		var row = boton.get_parent()
+		row.get_node("Arrow").hide()
+
+func show_hover_btn(boton: Button) -> void:
+	boton.get_node("NinePatchRect").modulate = Color(0.7, 0.9, 1.2)
+
+func hide_hover_btn(boton: Button) -> void:
+	boton.get_node("NinePatchRect").modulate = Color(1, 1, 1)
+
+func show_arrow(boton: Button) -> void:
+	if not permitir_hover:
+		return
+	
+	var arrow = boton.get_parent().get_node("Arrow")
+	arrow.show()
+	arrow.position.x = -12
+	arrow.create_tween().tween_property(arrow, "position:x", -6, 0.1)
+	
+func hide_arrow(boton: Button) -> void:
+	var row = boton.get_parent()
+	row.get_node("Arrow").hide()
 
 func setup(gm_first_question: int, gm_last_question: int):
 	first_question = gm_first_question
@@ -504,20 +586,26 @@ func setup(gm_first_question: int, gm_last_question: int):
 	
 
 func load_question(count:int):
+	permitir_hover = true
 	var q = questions[count]
 	correct_answer = q["correct"]
+
+	# Pregunta principal
 	question_label.text = q["question"]
-	answer1.text = q["answers"][0]
-	answer2.text = q["answers"][1]
-	answer3.text = q["answers"][2]
-	answer4.text = q["answers"][3]
-	type = q["type"]
-	correct_answer= q["correct"]
+
 	
+	answer1.get_node("MarginContainer/Label").text = q["answers"][0]
+	answer2.get_node("MarginContainer/Label").text = q["answers"][1]
+	answer3.get_node("MarginContainer/Label").text = q["answers"][2]
+	answer4.get_node("MarginContainer/Label").text = q["answers"][3]
+
+	type = q["type"]
+
 	cambiar_estado_botones(false)
 	
 
 func check_answer(answer):
+	permitir_hover = false   
 	cambiar_estado_botones(true)
 	
 	if answer == correct_answer:
@@ -537,6 +625,9 @@ func check_answer(answer):
 		GameManager.attackpoints = attackpoints
 		GameManager.defense1points = defense1points
 		GameManager.defense2points = defense2points
+		
+		hide_arrows()
+		cambiar_estado_botones(true)
 		boton_terminado.show()
 
 func add_points ():
@@ -573,15 +664,12 @@ func sub_points ():
 
 
 func mostrar_feedback_temporal(texto_mensaje: String, color: Color) -> void:
-	# 1. Configuramos el texto y el color
 	mensaje_feedback.text = texto_mensaje
 	mensaje_feedback.add_theme_color_override("font_color", color)
-	# 2. Hacemos visible el mensaje
-	mensaje_feedback.show()
-	# 3. Esperamos 2 segundos exactos
+
 	await get_tree().create_timer(2.0).timeout
-	# 4. Volvemos a ocultar el mensaje
-	mensaje_feedback.hide()
+
+	mensaje_feedback.text = ""
 	
 func cambiar_estado_botones(deshabilitados: bool):
 	answer1.disabled = deshabilitados
@@ -590,6 +678,12 @@ func cambiar_estado_botones(deshabilitados: bool):
 	answer4.disabled = deshabilitados
 
 func _on_boton_terminado_pressed():
+	ui_content.hide()
+	await get_tree().create_timer(0.5).timeout
+	pergamino_anim.play_backwards("open")
+	await pergamino_anim.animation_finished
+	await get_tree().create_timer(0.3).timeout
 	# Guardamos el estado globalmente antes de irnos
 	GameManager.preguntas_completadas = true
 	GameManager.change_level(RecoveryState.new())
+	
