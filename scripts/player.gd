@@ -25,6 +25,16 @@ var is_attacking: bool = false
 var can_shoot: bool = true
 var fatigue_time_left: float = 0.0
 
+var skill1_used := false
+var skill2_used := false
+
+@onready var skill1_sprite = $HUD/ComidaAlcohol
+@onready var skill2_sprite = $HUD/MedicinaAlcohol
+@onready var key1_sprite = $HUD/key1
+@onready var key2_sprite = $HUD/key2
+@onready var mouse_sprite = $HUD/mouse
+@onready var shield = $Shield
+
 @onready var vision_light = $PointLight2D
 @export var speed: int = 100
 @export var consciousness: int = base_max_consciousness
@@ -33,6 +43,7 @@ var fatigue_time_left: float = 0.0
 @onready var shoot_position = $bullet_pos
 @onready var consciousness_bar = $HUD/PanelContainer/ConsciousnessBar
 @onready var back_consciousness_bar = $HUD/PanelContainer/ColorRect
+@onready var hud = $HUD
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var dash_timer = $DashTimer
 @onready var blur_rect = $HUD/EfectoBorroso
@@ -49,13 +60,16 @@ var bullet_scene = preload("res://scenes/attacks/bullet.tscn")
 func _ready():
 	consciousness_bar.value = consciousness
 	animated_sprite.animation_finished.connect(_on_animation_finished)
-	consciousness_bar.hide()
-	back_consciousness_bar.hide()
+	hud.hide()
 	base_vision_scale = vision_light.texture_scale
+	shield.visible = false
+	key1_sprite.play("not_pressed")
+	key2_sprite.play("not_pressed")
+	mouse_sprite.play()
+	
 
 func show_ui():
-	consciousness_bar.show()
-	back_consciousness_bar.show()
+	hud.show()
 	
 func get_target_color() -> Color:
 	if is_paralyzed:
@@ -73,6 +87,28 @@ func get_target_color() -> Color:
 		
 	return Color.WHITE # Normal
 
+func activate_shield():
+	shield.visible = true
+	
+	# opcional: duración
+	await get_tree().create_timer(2.0).timeout
+	
+	if is_instance_valid(self):
+		shield.visible = false
+
+func handle_skills():
+	if Input.is_action_just_pressed("skill_1") and not skill1_used:
+		skill1_used = true
+		skill1_sprite.modulate = Color(0, 0, 0, 0.6)
+		key1_sprite.play("pressed")
+		activate_shield()
+		
+	if Input.is_action_just_pressed("skill_2") and not skill2_used:
+		skill2_used = true
+		skill2_sprite.modulate = Color(0, 0, 0, 0.6)
+		key2_sprite.play("pressed")
+		activate_shield()
+		
 func take_damage(amount: int, damage_color: Color = Color.RED):
 	if is_dead or is_invulnerable or not is_inside_tree():
 		return
@@ -269,7 +305,7 @@ func _physics_process(delta):
 	
 	shoot()
 	dash()
-	
+	handle_skills()
 	if is_dashing:
 		move_and_slide()
 		return

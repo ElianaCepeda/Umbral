@@ -28,7 +28,15 @@
 [ext_resource type="Texture2D" uid="uid://mltutdo1n1ba" path="res://assets/character/HEAL/heal_left.png" id="20_487ah"]
 [ext_resource type="Texture2D" uid="uid://b6vb0pvtxc8j8" path="res://assets/character/HEAL/heal_right.png" id="21_md1ol"]
 [ext_resource type="Texture2D" uid="uid://dp4ydue0p7dxl" path="res://assets/character/HEAL/heal_up.png" id="22_bj30b"]
+[ext_resource type="Texture2D" uid="uid://ck0bw4gmnpxcp" path="res://assets/defenses/Barra.png" id="28_wqfne"]
 [ext_resource type="Texture2D" uid="uid://7n1ertr6mggd" path="res://assets/shield.png" id="29_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://wcjulgg8o2yr" path="res://assets/keys/normal/2.png" id="29_md1ol"]
+[ext_resource type="Texture2D" uid="uid://duu8aibwexa65" path="res://assets/keys/pressed/2.png" id="30_bj30b"]
+[ext_resource type="Texture2D" uid="uid://bx27w7etx1mqx" path="res://assets/keys/normal/1.png" id="31_jc3p3"]
+[ext_resource type="Texture2D" uid="uid://bmgsm1fv40j87" path="res://assets/keys/pressed/1.png" id="32_hax0n"]
+[ext_resource type="Texture2D" uid="uid://be2etxjmvyalf" path="res://assets/defenses/Comida-Alcohol.png" id="33_hax0n"]
+[ext_resource type="Texture2D" uid="uid://dgysvab07hdou" path="res://assets/defenses/Medicina-Alcohol.png" id="34_t4otl"]
+[ext_resource type="Texture2D" uid="uid://7itg5vun3o65" path="res://assets/keys/normal/left.png" id="35_j2b1d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
 atlas = ExtResource("2_oprun")
@@ -1615,6 +1623,130 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uixd"]
+atlas = ExtResource("29_md1ol")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6pc0"]
+atlas = ExtResource("29_md1ol")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_god42"]
+atlas = ExtResource("29_md1ol")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4v07"]
+atlas = ExtResource("29_md1ol")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rsyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uixd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6pc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_god42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4v07")
+}],
+"loop": true,
+"name": &"not_pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_bj30b")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lhw1"]
+atlas = ExtResource("31_jc3p3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwl8n"]
+atlas = ExtResource("31_jc3p3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtpuy"]
+atlas = ExtResource("31_jc3p3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp546"]
+atlas = ExtResource("31_jc3p3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ddhv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lhw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwl8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtpuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kp546")
+}],
+"loop": true,
+"name": &"not_pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_hax0n")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rsyo"]
+atlas = ExtResource("35_j2b1d")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ddhv"]
+atlas = ExtResource("35_j2b1d")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypfsk"]
+atlas = ExtResource("35_j2b1d")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8fhv"]
+atlas = ExtResource("35_j2b1d")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1776x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rsyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ddhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypfsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8fhv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1786594462 groups=["player"]]
 scale = Vector2(1.5, 1.5)
 collision_layer = 2
@@ -1672,11 +1804,45 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dqkch")
 
+[node name="Sprite2D" type="Sprite2D" parent="HUD" unique_id=716075460]
+position = Vector2(95.999985, 84)
+scale = Vector2(0.25543478, 0.25543478)
+texture = ExtResource("28_wqfne")
+
+[node name="key2" type="AnimatedSprite2D" parent="HUD" unique_id=333776003]
+z_index = 3
+position = Vector2(142, 96)
+sprite_frames = SubResource("SpriteFrames_3rsyo")
+animation = &"not_pressed"
+frame_progress = 0.54547733
+
+[node name="key1" type="AnimatedSprite2D" parent="HUD" unique_id=1169591107]
+z_index = 3
+position = Vector2(107, 95)
+sprite_frames = SubResource("SpriteFrames_8ddhv")
+animation = &"not_pressed"
+frame_progress = 0.92419714
+
+[node name="ComidaAlcohol" type="Sprite2D" parent="HUD" unique_id=1193523757]
+position = Vector2(96, 84)
+scale = Vector2(0.116935484, 0.11693546)
+texture = ExtResource("33_hax0n")
+
+[node name="MedicinaAlcohol" type="Sprite2D" parent="HUD" unique_id=1715966105]
+position = Vector2(134, 85)
+scale = Vector2(0.11962362, 0.1196236)
+texture = ExtResource("34_t4otl")
+
+[node name="mouse" type="AnimatedSprite2D" parent="HUD" unique_id=843458031]
+position = Vector2(70, 95)
+sprite_frames = SubResource("SpriteFrames_1776x")
+frame_progress = 0.75551873
+
 [node name="DashTimer" type="Timer" parent="." unique_id=1653543775]
 wait_time = 0.1
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1902501392]
-position = Vector2(0, -2.3841858e-07)
+position = Vector2(34.000004, -2)
 scale = Vector2(3, 3)
 texture = ExtResource("3_qhqgy")
 texture_scale = 4.74
@@ -1685,5 +1851,6 @@ texture_scale = 4.74
 color = Color(0, 0, 0, 1)
 
 [node name="Shield" type="Sprite2D" parent="." unique_id=670143489]
+visible = false
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("29_dt7fs")
