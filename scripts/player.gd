@@ -12,6 +12,9 @@ var skill_icons = {
 	"nasalcare_cocaina": preload("res://assets/defenses/Nasal-Cocaina.png"), 
 	"noexcercise_cocaina": preload("res://assets/defenses/SinEjercicio-Cocaina.png"), 
 }
+var skill1_name: String = ""
+var skill2_name: String = ""
+var skill3_name: String = ""
 
 @onready var skill1_icon = $HUD/TextureRect
 @onready var skill2_icon = $HUD/TextureRect2
@@ -72,6 +75,16 @@ var is_hurt: bool = false
 
 var bullet_scene = preload("res://scenes/attacks/bullet.tscn")
 
+func apply_level_skills(level):
+	skill1_name = level.skill1
+	skill2_name = level.skill2
+	skill3_name = level.skill3
+	
+	set_skill(1, skill1_name)
+	set_skill(2, skill2_name)
+	set_skill(3, skill3_name)
+	update_skill_keys()
+	
 func set_skill(slot: int, skill_name: String):
 	var target_icon = get("skill%d_icon" % slot)
 	
@@ -93,14 +106,24 @@ func _ready():
 	key1_sprite.play("not_pressed")
 	key2_sprite.play("not_pressed")
 	mouse_sprite.play()
-	set_skill(1, "food_alcohol")
-	set_skill(2, "medicine_alcohol")
-	set_skill(3, "water_attack")
-	
+	add_to_group("player")
 
 func show_ui():
 	hud.show()
 	
+
+func update_skill_keys():
+	if skill1_name == "" or skill1_name == null:
+		key1_sprite.play("pressed")
+	else:
+		key1_sprite.play("not_pressed")
+
+	if skill2_name == "" or skill2_name == null:
+		key2_sprite.play("pressed")
+	else:
+		key2_sprite.play("not_pressed")
+
+
 func get_target_color() -> Color:
 	if is_paralyzed:
 		return Color.YELLOW # La parálisis parpadea, pero esto sirve de base
@@ -127,17 +150,29 @@ func activate_shield():
 		shield.visible = false
 
 func handle_skills():
-	if Input.is_action_just_pressed("skill_1") and not skill1_used:
-		skill1_used = true
-		skill1_icon.modulate = Color(0, 0, 0, 0.6)
-		key1_sprite.play("pressed")
-		activate_shield()
+	
+	if Input.is_action_just_pressed("skill_1"):
+		if skill1_name == "" or skill1_name == null:
+			key1_sprite.play("pressed")
+			return
+		if not skill1_used:
+			skill1_used = true
+			skill1_icon.modulate = Color(0, 0, 0, 0.6)
+			key1_sprite.play("pressed")
+			activate_shield()
+	
+	if Input.is_action_just_pressed("skill_2"):
 		
-	if Input.is_action_just_pressed("skill_2") and not skill2_used:
-		skill2_used = true
-		skill2_icon.modulate = Color(0, 0, 0, 0.6)
-		key2_sprite.play("pressed")
-		activate_shield()
+		if skill2_name == "" or skill2_name == null:
+			key2_sprite.play("pressed")
+			return
+		
+		if not skill2_used:
+			skill2_used = true
+			skill2_icon.modulate = Color(0, 0, 0, 0.6)
+			key2_sprite.play("pressed")
+			activate_shield()
+
 		
 func take_damage(amount: int, damage_color: Color = Color.RED):
 	if is_dead or is_invulnerable or not is_inside_tree():

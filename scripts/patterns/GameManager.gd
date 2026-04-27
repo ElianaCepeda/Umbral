@@ -26,8 +26,14 @@ func _perform_change_level(new_level: LevelState):
 	add_child(current_level)
 	current_level.level_manager = self
 	
-	# Start the new level
 	current_level.enter()
+	
+	await get_tree().process_frame
+	
+	var player = get_tree().get_first_node_in_group("player")
+
+	if player:
+		player.apply_level_skills(current_level)
 
 func game_over():
 	# 1. Turn off the level immediately so nothing else moves or deals damage

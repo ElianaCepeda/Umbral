@@ -10,6 +10,9 @@ var scene_path: String = ""
 var timeline_name: String = ""
 var enemy_type: String = ""
 var level_name: String = "Base" # Útil para los prints de depuración
+var skill1: String
+var skill2: String
+var skill3: String
 
 func enter():
 	print("Entrando al nivel de " + level_name + "...")
