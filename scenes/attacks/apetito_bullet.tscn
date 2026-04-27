@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://kna33f4l17pt"]
+
+[ext_resource type="Script" uid="uid://dagnhhhjljius" path="res://scenes/attacks/apetito_bullet.gd" id="1_be62k"]
+[ext_resource type="Texture2D" uid="uid://58ad82tb3ee7" path="res://assets/16_burger_dish.png" id="2_be62k"]
+[ext_resource type="AudioStream" uid="uid://bi610cttln7mt" path="res://assets/audio/sounds/Proyectil.ogg" id="3_w5x35"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1nag1"]
+radius = 15.092308
+
+[node name="borroso_bullet" type="Area2D" unique_id=1998799738 groups=["enemy_effects"]]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_be62k")
+
+[node name="16BurgerDish" type="Sprite2D" parent="." unique_id=1014390017]
+texture = ExtResource("2_be62k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=700703920]
+position = Vector2(7.947286e-07, -1.6666654)
+shape = SubResource("CircleShape2D_1nag1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=692782749]
+stream = ExtResource("3_w5x35")
+volume_db = -15.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
