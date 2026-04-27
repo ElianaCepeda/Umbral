@@ -64,7 +64,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ybd1y")
 }],
 "loop": true,
-"name": &"chewing_gum",
+"name": &"gum_attack",
 "speed": 16.0
 }, {
 "frames": [{
@@ -84,7 +84,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_8ygm4")
 }],
 "loop": true,
-"name": &"water",
+"name": &"water_attack",
 "speed": 16.0
 }]
 
@@ -101,8 +101,8 @@ script = ExtResource("2_y25gk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=776582878]
 sprite_frames = SubResource("SpriteFrames_ofblt")
-animation = &"chewing_gum"
-frame_progress = 0.47418404
+animation = &"gum_attack"
+frame_progress = 0.96834314
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=700703920]
 shape = SubResource("CapsuleShape2D_t07gf")

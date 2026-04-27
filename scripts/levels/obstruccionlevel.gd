@@ -8,4 +8,4 @@ func _init():
 	enemy_type = "obstruccion"
 	skill1 = "food_alcohol"
 	skill2 = ""
-	skill3 = "gum_attack"
+	skill3 = "water_attack"

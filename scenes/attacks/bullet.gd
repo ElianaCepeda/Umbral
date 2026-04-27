@@ -2,14 +2,21 @@ extends CharacterBody2D
 
 @export var speed = 800
 @export var damage = 2
+var bullet_type: String = "default"
 var direction = Vector2.ZERO # Esta variable la llenará el jugador
 
 # Nueva variable para guardar quién es el jugador
 var player_ref: Node2D = null
 
 func _ready():
-	$AnimatedSprite2D.play("water")
-	$AudioStreamPlayer.play() # Sonido de proyectiles
+	if bullet_type == "" or bullet_type == null:
+		$AnimatedSprite2D.play("default")
+	else:
+		if $AnimatedSprite2D.sprite_frames.has_animation(bullet_type):
+			$AnimatedSprite2D.play(bullet_type)
+		else:
+			$AnimatedSprite2D.play("default")
+	$AudioStreamPlayer.play()
 	
 	# Buscamos al jugador una sola vez al disparar
 	var players = get_tree().get_nodes_in_group("player")
@@ -17,7 +24,10 @@ func _ready():
 		player_ref = players[0]
 		
 	get_tree().create_timer(5.0).timeout.connect(queue_free)
-
+	
+func set_bullet_type(type: String):
+	bullet_type = type
+	
 func _physics_process(delta):
 	# Empezamos asumiendo que la velocidad es la normal
 	var current_speed = speed 

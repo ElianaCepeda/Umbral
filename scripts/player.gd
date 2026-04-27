@@ -355,7 +355,7 @@ func shoot():
 		new_bullet.global_position = global_position + spawn_offset
 		new_bullet.direction = direction
 		new_bullet.rotation = direction.angle()
-		
+		new_bullet.set_bullet_type(skill3_name)
 		get_parent().add_child(new_bullet)
 		shoot_timer.start()
 
