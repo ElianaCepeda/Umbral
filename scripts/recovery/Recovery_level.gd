@@ -1,6 +1,5 @@
 extends LevelState
 class_name RecoveryState
-
 	
 func enter():
 	print("Entrando al Nivel de Recuperación (Base)...")
