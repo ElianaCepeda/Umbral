@@ -1,5 +1,22 @@
 extends CharacterBody2D
 
+var skill_icons = {
+	"water_attack": preload("res://assets/characterAttacks/waterAttack_single.png"),
+	"gum_attack": preload("res://assets/characterAttacks/gumAttack_single.png"),
+	"food_alcohol": preload("res://assets/defenses/Comida-Alcohol.png"),
+	"medicine_alcohol": preload("res://assets/defenses/Medicina-Alcohol.png"), 
+	"exercise_tabaco": preload("res://assets/defenses/Ejercicio-Tabaco.png"), 
+	"patch_tabaco": preload("res://assets/defenses/Parche-Tabaco.png"), 
+	"dosis_measure_marihuana": preload("res://assets/defenses/Dosis-Marihuana.png"),
+	"nodrink_marihuana": preload("res://assets/defenses/SinAlcohol-Marihuana.png"), 
+	"nasalcare_cocaina": preload("res://assets/defenses/Nasal-Cocaina.png"), 
+	"noexcercise_cocaina": preload("res://assets/defenses/SinEjercicio-Cocaina.png"), 
+}
+
+@onready var skill1_icon = $HUD/TextureRect
+@onready var skill2_icon = $HUD/TextureRect2
+@onready var skill3_icon = $HUD/TextureRect3
+@export var default_icon: Texture2D
 
 var last_direction: Vector2 = Vector2.DOWN
 
@@ -28,8 +45,6 @@ var fatigue_time_left: float = 0.0
 var skill1_used := false
 var skill2_used := false
 
-@onready var skill1_sprite = $HUD/ComidaAlcohol
-@onready var skill2_sprite = $HUD/MedicinaAlcohol
 @onready var key1_sprite = $HUD/key1
 @onready var key2_sprite = $HUD/key2
 @onready var mouse_sprite = $HUD/mouse
@@ -57,6 +72,18 @@ var is_hurt: bool = false
 
 var bullet_scene = preload("res://scenes/attacks/bullet.tscn")
 
+func set_skill(slot: int, skill_name: String):
+	var target_icon = get("skill%d_icon" % slot)
+	
+	if target_icon == null:
+		return
+	
+	if skill_icons.has(skill_name):
+		target_icon.texture = skill_icons[skill_name]
+	else:
+		target_icon.texture = default_icon
+
+		
 func _ready():
 	consciousness_bar.value = consciousness
 	animated_sprite.animation_finished.connect(_on_animation_finished)
@@ -66,6 +93,9 @@ func _ready():
 	key1_sprite.play("not_pressed")
 	key2_sprite.play("not_pressed")
 	mouse_sprite.play()
+	set_skill(1, "food_alcohol")
+	set_skill(2, "medicine_alcohol")
+	set_skill(3, "water_attack")
 	
 
 func show_ui():
@@ -99,13 +129,13 @@ func activate_shield():
 func handle_skills():
 	if Input.is_action_just_pressed("skill_1") and not skill1_used:
 		skill1_used = true
-		skill1_sprite.modulate = Color(0, 0, 0, 0.6)
+		skill1_icon.modulate = Color(0, 0, 0, 0.6)
 		key1_sprite.play("pressed")
 		activate_shield()
 		
 	if Input.is_action_just_pressed("skill_2") and not skill2_used:
 		skill2_used = true
-		skill2_sprite.modulate = Color(0, 0, 0, 0.6)
+		skill2_icon.modulate = Color(0, 0, 0, 0.6)
 		key2_sprite.play("pressed")
 		activate_shield()
 		
