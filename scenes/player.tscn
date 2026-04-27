@@ -1805,36 +1805,39 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dqkch")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD" unique_id=716075460]
-position = Vector2(95.999985, 84)
-scale = Vector2(0.25543478, 0.25543478)
+position = Vector2(127.548904, 95.25)
+scale = Vector2(0.37771738, 0.37771738)
 texture = ExtResource("28_wqfne")
 
 [node name="key2" type="AnimatedSprite2D" parent="HUD" unique_id=333776003]
 z_index = 3
-position = Vector2(142, 96)
+position = Vector2(197, 112)
+scale = Vector2(1.3125, 1.3125)
 sprite_frames = SubResource("SpriteFrames_3rsyo")
 animation = &"not_pressed"
 frame_progress = 0.54547733
 
 [node name="key1" type="AnimatedSprite2D" parent="HUD" unique_id=1169591107]
 z_index = 3
-position = Vector2(107, 95)
+position = Vector2(147, 113)
+scale = Vector2(1.3125, 1.3125)
 sprite_frames = SubResource("SpriteFrames_8ddhv")
 animation = &"not_pressed"
 frame_progress = 0.92419714
 
 [node name="ComidaAlcohol" type="Sprite2D" parent="HUD" unique_id=1193523757]
-position = Vector2(96, 84)
-scale = Vector2(0.116935484, 0.11693546)
+position = Vector2(128, 96.99999)
+scale = Vector2(0.1875, 0.18749994)
 texture = ExtResource("33_hax0n")
 
 [node name="MedicinaAlcohol" type="Sprite2D" parent="HUD" unique_id=1715966105]
-position = Vector2(134, 85)
-scale = Vector2(0.11962362, 0.1196236)
+position = Vector2(183, 96)
+scale = Vector2(0.18313166, 0.18313164)
 texture = ExtResource("34_t4otl")
 
 [node name="mouse" type="AnimatedSprite2D" parent="HUD" unique_id=843458031]
-position = Vector2(70, 95)
+position = Vector2(86, 111)
+scale = Vector2(1.5625, 1.5625)
 sprite_frames = SubResource("SpriteFrames_1776x")
 frame_progress = 0.75551873
 

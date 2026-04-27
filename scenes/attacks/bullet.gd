@@ -8,6 +8,7 @@ var direction = Vector2.ZERO # Esta variable la llenará el jugador
 var player_ref: Node2D = null
 
 func _ready():
+	$AnimatedSprite2D.play("water")
 	$AudioStreamPlayer.play() # Sonido de proyectiles
 	
 	# Buscamos al jugador una sola vez al disparar
