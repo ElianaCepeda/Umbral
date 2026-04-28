@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dydpw6td1x1fi"]
+
+[ext_resource type="PackedScene" uid="uid://doqn4hplyhcbc" path="res://scenes/levels/BaseLevelFase1.tscn" id="1_pww5j"]
+[ext_resource type="Script" uid="uid://bygdnb05iww5a" path="res://scripts/levels/asfixiaLevel2.gd" id="2_xep8x"]
+
+[node name="NodoBaseFase1" unique_id=1029686040 instance=ExtResource("1_pww5j")]
+script = ExtResource("2_xep8x")

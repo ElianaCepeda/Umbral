@@ -73,11 +73,11 @@ func _setup_skills_by_macro_level() -> void:
 		"marihuana":
 			skill1 = "dosis_measure_marihuana"
 			skill2 = "nodrink_marihuana"
-			skill3 = "water_attack" # TODO cambiar por el real
+			skill3 = "sleep_attack" 
 		"cocaina":
 			skill1 = "nasalcare_cocaina"
 			skill2 = "noexcercise_cocaina"
-			skill3 = "gum_attack"  # TODO cambiar por el real
+			skill3 = "temperature_attack" 
 		_:
 			# Si un nivel no tiene macro_level (ej. Sala de Recuperación), 
 			# se ignoran o se dejan vacíos.

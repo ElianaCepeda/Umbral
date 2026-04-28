@@ -6,6 +6,4 @@ func _init():
 	scene_path = "res://scenes/levels/obstruccion.tscn"
 	timeline_name = "res://dialogues/illDescription/obstruccionDescription.dtl"
 	enemy_type = "obstruccion"
-	skill1 = "food_alcohol"
-	skill2 = ""
-	skill3 = "water_attack"
+	macro_level = "tabaco"

@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bm7icffj1uly2" path="res://assets/characterAttacks/gumAttack.png" id="2_0ksst"]
 [ext_resource type="Script" uid="uid://cr1hmifyms5x" path="res://scenes/attacks/bullet.gd" id="2_y25gk"]
 [ext_resource type="AudioStream" uid="uid://bi610cttln7mt" path="res://assets/audio/sounds/Proyectil.ogg" id="3_l5glv"]
+[ext_resource type="Texture2D" uid="uid://dk04wopmmjbx3" path="res://assets/characterAttacks/Dormir.png" id="3_qb0m8"]
 [ext_resource type="Texture2D" uid="uid://bnebd5by245ep" path="res://assets/characterAttacks/waterAttack.png" id="3_vchiy"]
+[ext_resource type="Texture2D" uid="uid://dn5dotimx2p6u" path="res://assets/characterAttacks/Temperatura.png" id="4_jksvp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qb0m8"]
 atlas = ExtResource("2_0ksst")
@@ -69,6 +71,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_qb0m8")
+}],
+"loop": true,
+"name": &"sleep_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jksvp")
+}],
+"loop": true,
+"name": &"temperature_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_xxykh")
 }, {
 "duration": 1.0,
@@ -101,8 +119,7 @@ script = ExtResource("2_y25gk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=776582878]
 sprite_frames = SubResource("SpriteFrames_ofblt")
-animation = &"gum_attack"
-frame_progress = 0.96834314
+animation = &"sleep_attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=700703920]
 shape = SubResource("CapsuleShape2D_t07gf")

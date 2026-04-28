@@ -6,3 +6,4 @@ func _init():
 	scene_path = "res://scenes/levels/paranoide.tscn"
 	timeline_name = "res://dialogues/illDescription/paranoideDescription.dtl"
 	enemy_type = "paranoide"
+	macro_level = "marihuana"

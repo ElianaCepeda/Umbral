@@ -6,3 +6,4 @@ func _init():
 	scene_path = "res://scenes/levels/borroso.tscn"
 	timeline_name = "res://dialogues/illDescription/borrosoDescription.dtl"
 	enemy_type = "borroso"
+	macro_level = "alcohol"
