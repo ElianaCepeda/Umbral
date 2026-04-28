@@ -43,7 +43,7 @@ var damage_multiplier: int = 1 # Multiplicador de daño (1 = normal)
 var normal_acceleration: float = 1500.0
 var normal_friction: float = 1500.0
 var anxiety_acceleration: float = 80.0 # Cuesta arrancar
-var anxiety_friction: float = 20.0     # Cuesta MUCHÍSIMO frenar
+var anxiety_friction: float = 20.0     # Cuesta frenar
 var is_anxious: bool = false
 var is_attacking: bool = false
 var can_shoot: bool = true
@@ -80,10 +80,13 @@ var is_hurt: bool = false
 var bullet_scene = preload("res://scenes/attacks/bullet.tscn")
 
 func apply_level_skills(level):
-	skill1_name = level.skill1
-	skill2_name = level.skill2
-	skill3_name = level.skill3
 	
+	# --- INTEGRACIÓN CON SAVEMANAGER ---
+	skill1_name = level.skill1 if SaveManager.has_defense1() else ""
+	skill2_name = level.skill2 if SaveManager.has_defense2() else ""
+	skill3_name = level.skill3
+	# -----------------------------------
+
 	set_skill(1, skill1_name)
 	set_skill(2, skill2_name)
 	set_skill(3, skill3_name)
@@ -103,7 +106,14 @@ func set_skill(slot: int, skill_name: String):
 
 		
 func _ready():
+	# --- INTEGRACIÓN CON SAVEMANAGER ---
+	consciousness = SaveManager.get_consciousness()
+	max_consciousness = SaveManager.get_max_consciousness()
+	
+	consciousness_bar.max_value = max_consciousness
 	consciousness_bar.value = consciousness
+	# -----------------------------------
+	
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	hud.hide()
 	base_vision_scale = vision_light.texture_scale
@@ -112,6 +122,7 @@ func _ready():
 	key2_sprite.play("not_pressed")
 	mouse_sprite.play()
 	add_to_group("player")
+	update_bar()
 
 func show_ui():
 	hud.show()
@@ -391,7 +402,12 @@ func shoot():
 		new_bullet.direction = direction
 		new_bullet.rotation = direction.angle()
 		new_bullet.set_bullet_type(skill3_name)
-		new_bullet.damage = int(new_bullet.damage * damage_boost)
+		
+		# --- INTEGRACIÓN CON SAVEMANAGER ---
+		# Sumamos los puntos de ataque guardados al daño base de la bala
+		new_bullet.damage = int(new_bullet.damage * damage_boost) + SaveManager.get_attack()
+		# -----------------------------------
+		
 		get_parent().add_child(new_bullet)
 		shoot_timer.start()
 
@@ -559,7 +575,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 		"reduce_max_health":
 			var reduction_amount = 3 
 			
-			# Reducimos el límite máximo, pero evitamos que baje de 50
+			# Reducimos el límite máximo, pero evitamos que baje de 40
 			max_consciousness = max(40, max_consciousness - reduction_amount)
 			
 			# Si tu vida actual quedó por encima del nuevo límite, te la cortamos

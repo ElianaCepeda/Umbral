@@ -468,8 +468,12 @@ func _init():
 func enter():
 	print("Entrando al minijuego de recuperación...")
 
-	scene_instance = load(scene_path).instantiate()
-	add_child(scene_instance)
+	if preloaded_scene:
+		scene_instance = preloaded_scene.instantiate()
+		add_child(scene_instance)
+	else:
+		push_error("CRÍTICO: No hay escena precargada en RecoveryState")
+		return
 
 	var holder = scene_instance.get_node("CenterContainer/QuestionsHolder")
 	var ui_root = holder.get_node("VBoxContainer")
@@ -622,9 +626,6 @@ func check_answer(answer):
 		load_question(current_question_index)
 	else:
 		print("¡Se acabaron las preguntas de esta ronda!")
-		GameManager.attackpoints = attackpoints
-		GameManager.defense1points = defense1points
-		GameManager.defense2points = defense2points
 		
 		hide_arrows()
 		cambiar_estado_botones(true)
@@ -680,6 +681,19 @@ func cambiar_estado_botones(deshabilitados: bool):
 func _on_boton_terminado_pressed():
 	ui_content.hide()
 	await get_tree().create_timer(0.5).timeout
+	
+	var final_attack = 1 + attackpoints
+	var unlock_def1 = 1 if defense1points > 0 else 0
+	var unlock_def2 = 1 if defense2points > 0 else 0
+	
+	SaveManager.sync_and_save_player_state(
+		100, 
+		100,                             
+		final_attack,                
+		unlock_def1,
+		unlock_def2
+	)
+	
 	pergamino_anim.play_backwards("open")
 	await pergamino_anim.animation_finished
 	await get_tree().create_timer(0.3).timeout
