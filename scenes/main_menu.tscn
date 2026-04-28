@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://b16j6f4yhltaa" path="res://scenes/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://tm5kknnndtxq" path="res://assets/ui/background2.png" id="2_tbmy8"]
 [ext_resource type="FontFile" uid="uid://d0u6kv0akue8f" path="res://assets/fonts/Ruler 9.ttf" id="3_8ln24"]
-[ext_resource type="Texture2D" uid="uid://bex5aaoq07chx" path="res://assets/ui/bord.png" id="3_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://bo2jnvmnumcix" path="res://assets/ui/bordd.png" id="3_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://c41uglnxkbud8" path="res://assets/ui/Brain.png" id="3_wu84c"]
 [ext_resource type="Texture2D" uid="uid://cdnyyt55yg0vn" path="res://assets/ui/Door 7_spritesheet.png" id="5_oa1go"]
 [ext_resource type="Texture2D" uid="uid://d1ut4unr3msif" path="res://assets/ui/btn.png" id="5_rtw2f"]
-[ext_resource type="Script" path="res://scenes/door.gd" id="5_tbmy8"]
+[ext_resource type="Script" uid="uid://drxebsvcycp3k" path="res://scenes/door.gd" id="5_tbmy8"]
 
 [sub_resource type="FontVariation" id="FontVariation_oa1go"]
 base_font = ExtResource("3_8ln24")
