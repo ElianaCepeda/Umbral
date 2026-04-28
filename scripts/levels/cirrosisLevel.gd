@@ -6,3 +6,4 @@ func _init():
 	scene_path = "res://scenes/levels/cirrosis.tscn"
 	timeline_name = "res://dialogues/illDescription/cirrosisDescription.dtl"
 	enemy_type = "cirrosis"
+	macro_level = "alcohol"

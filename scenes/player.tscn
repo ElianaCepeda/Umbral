@@ -34,8 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://duu8aibwexa65" path="res://assets/keys/pressed/2.png" id="30_bj30b"]
 [ext_resource type="Texture2D" uid="uid://bx27w7etx1mqx" path="res://assets/keys/normal/1.png" id="31_jc3p3"]
 [ext_resource type="Texture2D" uid="uid://bmgsm1fv40j87" path="res://assets/keys/pressed/1.png" id="32_hax0n"]
-[ext_resource type="Texture2D" uid="uid://be2etxjmvyalf" path="res://assets/defenses/Comida-Alcohol.png" id="33_hax0n"]
-[ext_resource type="Texture2D" uid="uid://dgysvab07hdou" path="res://assets/defenses/Medicina-Alcohol.png" id="34_t4otl"]
 [ext_resource type="Texture2D" uid="uid://7itg5vun3o65" path="res://assets/keys/normal/left.png" id="35_j2b1d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
@@ -1805,36 +1803,53 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dqkch")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD" unique_id=716075460]
-position = Vector2(95.999985, 84)
-scale = Vector2(0.25543478, 0.25543478)
+position = Vector2(127.548904, 95.25)
+scale = Vector2(0.37771738, 0.37771738)
 texture = ExtResource("28_wqfne")
+
+[node name="TextureRect2" type="TextureRect" parent="HUD" unique_id=301551369]
+offset_left = 165.0
+offset_top = 74.0
+offset_right = 206.0
+offset_bottom = 118.0
+expand_mode = 4
+stretch_mode = 4
 
 [node name="key2" type="AnimatedSprite2D" parent="HUD" unique_id=333776003]
 z_index = 3
-position = Vector2(142, 96)
+position = Vector2(197, 112)
+scale = Vector2(1.3125, 1.3125)
 sprite_frames = SubResource("SpriteFrames_3rsyo")
 animation = &"not_pressed"
 frame_progress = 0.54547733
 
+[node name="TextureRect" type="TextureRect" parent="HUD" unique_id=276899150]
+offset_left = 109.0
+offset_top = 74.0
+offset_right = 150.0
+offset_bottom = 119.0
+expand_mode = 4
+stretch_mode = 4
+
 [node name="key1" type="AnimatedSprite2D" parent="HUD" unique_id=1169591107]
 z_index = 3
-position = Vector2(107, 95)
+position = Vector2(147, 113)
+scale = Vector2(1.3125, 1.3125)
 sprite_frames = SubResource("SpriteFrames_8ddhv")
 animation = &"not_pressed"
 frame_progress = 0.92419714
 
-[node name="ComidaAlcohol" type="Sprite2D" parent="HUD" unique_id=1193523757]
-position = Vector2(96, 84)
-scale = Vector2(0.116935484, 0.11693546)
-texture = ExtResource("33_hax0n")
-
-[node name="MedicinaAlcohol" type="Sprite2D" parent="HUD" unique_id=1715966105]
-position = Vector2(134, 85)
-scale = Vector2(0.11962362, 0.1196236)
-texture = ExtResource("34_t4otl")
+[node name="TextureRect3" type="TextureRect" parent="HUD" unique_id=113237576]
+offset_left = 53.0
+offset_top = 75.0
+offset_right = 93.0
+offset_bottom = 115.0
+expand_mode = 4
+stretch_mode = 4
 
 [node name="mouse" type="AnimatedSprite2D" parent="HUD" unique_id=843458031]
-position = Vector2(70, 95)
+position = Vector2(86, 111)
+scale = Vector2(1.5625, 1.5625)
 sprite_frames = SubResource("SpriteFrames_1776x")
 frame_progress = 0.75551873
 

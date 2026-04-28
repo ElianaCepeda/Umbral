@@ -1,7 +1,31 @@
 extends CharacterBody2D
 
+var skill_icons = {
+	"water_attack": preload("res://assets/characterAttacks/waterAttack_single.png"),
+	"gum_attack": preload("res://assets/characterAttacks/gumAttack_single.png"),
+	"food_alcohol": preload("res://assets/defenses/Comida-Alcohol.png"),
+	"medicine_alcohol": preload("res://assets/defenses/Medicina-Alcohol.png"), 
+	"exercise_tabaco": preload("res://assets/defenses/Ejercicio-Tabaco.png"), 
+	"patch_tabaco": preload("res://assets/defenses/Parche-Tabaco.png"), 
+	"dosis_measure_marihuana": preload("res://assets/defenses/Dosis-Marihuana.png"),
+	"nodrink_marihuana": preload("res://assets/defenses/SinAlcohol-Marihuana.png"), 
+	"nasalcare_cocaina": preload("res://assets/defenses/Nasal-Cocaina.png"), 
+	"noexcercise_cocaina": preload("res://assets/defenses/SinEjercicio-Cocaina.png"), 
+}
+var skill1_name: String = ""
+var skill2_name: String = ""
+var skill3_name: String = ""
+
+@onready var skill1_icon = $HUD/TextureRect
+@onready var skill2_icon = $HUD/TextureRect2
+@onready var skill3_icon = $HUD/TextureRect3
+@export var default_icon: Texture2D
 
 var last_direction: Vector2 = Vector2.DOWN
+
+var damage_reduction := 0.0      # 0.15 = 15% menos daño
+var effect_resistance := 0.0     # 0.15 = 15% menos duración
+var damage_boost := 1.0          # 1.2 = +20% daño
 
 var is_dead: bool = false
 var is_paralyzed: bool = false
@@ -19,7 +43,7 @@ var damage_multiplier: int = 1 # Multiplicador de daño (1 = normal)
 var normal_acceleration: float = 1500.0
 var normal_friction: float = 1500.0
 var anxiety_acceleration: float = 80.0 # Cuesta arrancar
-var anxiety_friction: float = 20.0     # Cuesta MUCHÍSIMO frenar
+var anxiety_friction: float = 20.0     # Cuesta frenar
 var is_anxious: bool = false
 var is_attacking: bool = false
 var can_shoot: bool = true
@@ -28,8 +52,6 @@ var fatigue_time_left: float = 0.0
 var skill1_used := false
 var skill2_used := false
 
-@onready var skill1_sprite = $HUD/ComidaAlcohol
-@onready var skill2_sprite = $HUD/MedicinaAlcohol
 @onready var key1_sprite = $HUD/key1
 @onready var key2_sprite = $HUD/key2
 @onready var mouse_sprite = $HUD/mouse
@@ -57,8 +79,41 @@ var is_hurt: bool = false
 
 var bullet_scene = preload("res://scenes/attacks/bullet.tscn")
 
+func apply_level_skills(level):
+	
+	# --- INTEGRACIÓN CON SAVEMANAGER ---
+	skill1_name = level.skill1 if SaveManager.has_defense1() else ""
+	skill2_name = level.skill2 if SaveManager.has_defense2() else ""
+	skill3_name = level.skill3
+	# -----------------------------------
+
+	set_skill(1, skill1_name)
+	set_skill(2, skill2_name)
+	set_skill(3, skill3_name)
+	update_skill_keys()
+	
+
+func set_skill(slot: int, skill_name: String):
+	var target_icon = get("skill%d_icon" % slot)
+	
+	if target_icon == null:
+		return
+	
+	if skill_icons.has(skill_name):
+		target_icon.texture = skill_icons[skill_name]
+	else:
+		target_icon.texture = default_icon
+
+		
 func _ready():
+	# --- INTEGRACIÓN CON SAVEMANAGER ---
+	consciousness = SaveManager.get_consciousness()
+	max_consciousness = SaveManager.get_max_consciousness()
+	
+	consciousness_bar.max_value = max_consciousness
 	consciousness_bar.value = consciousness
+	# -----------------------------------
+	
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	hud.hide()
 	base_vision_scale = vision_light.texture_scale
@@ -66,11 +121,25 @@ func _ready():
 	key1_sprite.play("not_pressed")
 	key2_sprite.play("not_pressed")
 	mouse_sprite.play()
-	
+	add_to_group("player")
+	update_bar()
 
 func show_ui():
 	hud.show()
 	
+
+func update_skill_keys():
+	if skill1_name == "" or skill1_name == null:
+		key1_sprite.play("pressed")
+	else:
+		key1_sprite.play("not_pressed")
+
+	if skill2_name == "" or skill2_name == null:
+		key2_sprite.play("pressed")
+	else:
+		key2_sprite.play("not_pressed")
+
+
 func get_target_color() -> Color:
 	if is_paralyzed:
 		return Color.YELLOW # La parálisis parpadea, pero esto sirve de base
@@ -97,17 +166,57 @@ func activate_shield():
 		shield.visible = false
 
 func handle_skills():
-	if Input.is_action_just_pressed("skill_1") and not skill1_used:
-		skill1_used = true
-		skill1_sprite.modulate = Color(0, 0, 0, 0.6)
-		key1_sprite.play("pressed")
-		activate_shield()
+	# SKILL 1 → REDUCE DAÑO
+	if Input.is_action_just_pressed("skill_1"):
+		if skill1_name == "" or skill1_name == null:
+			key1_sprite.play("pressed")
+			return
 		
-	if Input.is_action_just_pressed("skill_2") and not skill2_used:
-		skill2_used = true
-		skill2_sprite.modulate = Color(0, 0, 0, 0.6)
-		key2_sprite.play("pressed")
-		activate_shield()
+		if not skill1_used:
+			skill1_used = true
+			damage_reduction = 0.15
+			
+			skill1_icon.modulate = Color(0, 0, 0, 0.6)
+			key1_sprite.play("pressed")
+			activate_shield()
+			
+			# ⏱ duración
+			get_tree().create_timer(5.0).timeout.connect(func():
+				if is_instance_valid(self):
+					damage_reduction = 0.0
+					skill1_used = false
+					
+					# reset UI
+					key1_sprite.play("not_pressed")
+					skill1_icon.modulate = Color(1,1,1,1)
+			)
+	# SKILL 2 → REDUCE EFECTOS
+	if Input.is_action_just_pressed("skill_2"):
+		
+		if skill2_name == "" or skill2_name == null:
+			key2_sprite.play("pressed")
+			return
+		
+		if not skill2_used:
+			skill2_used = true
+			effect_resistance = 0.15
+			
+			skill2_icon.modulate = Color(0, 0, 0, 0.6)
+			key2_sprite.play("pressed")
+			activate_shield()
+			
+			# ⏱ duración
+			get_tree().create_timer(5.0).timeout.connect(func():
+				if is_instance_valid(self):
+					effect_resistance = 0.0
+					skill2_used = false
+					
+					# reset UI
+					key2_sprite.play("not_pressed")
+					skill2_icon.modulate = Color(1,1,1,1)
+			)
+
+
 		
 func take_damage(amount: int, damage_color: Color = Color.RED):
 	if is_dead or is_invulnerable or not is_inside_tree():
@@ -117,8 +226,10 @@ func take_damage(amount: int, damage_color: Color = Color.RED):
 	is_hurt = true
 	is_attacking = false
 	
-	var final_damage = amount * damage_multiplier
+	var reduced_amount = amount * (1.0 - damage_reduction)
+	var final_damage = reduced_amount * damage_multiplier
 	consciousness -= final_damage
+	print(final_damage)
 	update_bar()
 
 
@@ -290,6 +401,12 @@ func shoot():
 		new_bullet.global_position = global_position + spawn_offset
 		new_bullet.direction = direction
 		new_bullet.rotation = direction.angle()
+		new_bullet.set_bullet_type(skill3_name)
+		
+		# --- INTEGRACIÓN CON SAVEMANAGER ---
+		# Sumamos los puntos de ataque guardados al daño base de la bala
+		new_bullet.damage = int(new_bullet.damage * damage_boost) + SaveManager.get_attack()
+		# -----------------------------------
 		
 		get_parent().add_child(new_bullet)
 		shoot_timer.start()
@@ -342,6 +459,7 @@ func restore_max_health():
 	update_bar()
 
 func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
+	var final_duration = duration * (1.0 - effect_resistance)
 	match effect_name:
 		"invert_controls":
 			controls_inverted = true
@@ -349,7 +467,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			# Puedes usar Color.MEDIUM_PURPLE o un código Hex como Color("9c59ff")
 			modulate = Color(0.6, 0.4, 1.0) 
 			
-			var timer = get_tree().create_timer(duration)
+			var timer = get_tree().create_timer(final_duration)
 			timer.timeout.connect(func():
 				# Al terminar el tiempo, volvemos al color normal (blanco)
 				controls_inverted = false
@@ -361,7 +479,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			modulate = Color.DARK_GRAY 
 			
 			# 2. Creamos el timer para restaurar
-			get_tree().create_timer(duration).timeout.connect(func():
+			get_tree().create_timer(final_duration).timeout.connect(func():
 				if is_instance_valid(self):
 					# 3. Volvemos SIEMPRE al valor original real
 					vision_light.texture_scale = base_vision_scale
@@ -383,7 +501,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			if actual_increase > 0:
 				modulate = Color.YELLOW 
 				
-				var timer = get_tree().create_timer(duration)
+				var timer = get_tree().create_timer(final_duration)
 				timer.timeout.connect(func():
 					if is_instance_valid(self):
 						# Subtract exactly what we added
@@ -405,7 +523,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 				blink_tween.tween_property(self, "modulate", Color.WHITE, 0.1)
 				
 				# Timer para la duración de la parálisis
-				get_tree().create_timer(duration).timeout.connect(func():
+				get_tree().create_timer(final_duration).timeout.connect(func():
 					if is_instance_valid(self):
 						is_paralyzed = false
 						blink_tween.kill() # Detenemos el parpadeo
@@ -425,7 +543,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			var speed_before_delay = speed
 			speed = int(speed / 2) 
 			
-			var timer = get_tree().create_timer(duration)
+			var timer = get_tree().create_timer(final_duration)
 			timer.timeout.connect(func():
 				if is_instance_valid(self):
 					has_input_delay = false
@@ -443,7 +561,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			var tween_in = create_tween()
 			tween_in.tween_property(blur_rect.material, "shader_parameter/blur_amount", 1.0, 0.5)
 			
-			var timer = get_tree().create_timer(duration)
+			var timer = get_tree().create_timer(final_duration)
 			timer.timeout.connect(func():
 				if is_instance_valid(self):
 					# Cuando acaba el efecto, aclaramos la vista suavemente
@@ -457,7 +575,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 		"reduce_max_health":
 			var reduction_amount = 3 
 			
-			# Reducimos el límite máximo, pero evitamos que baje de 50
+			# Reducimos el límite máximo, pero evitamos que baje de 40
 			max_consciousness = max(40, max_consciousness - reduction_amount)
 			
 			# Si tu vida actual quedó por encima del nuevo límite, te la cortamos
@@ -484,7 +602,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			
 			# Como el tiempo del juego va más rápido, un timer normal de 4s duraría menos.
 			# Le agregamos ", false, false, true" para que ignore el time_scale y cuente 4 segundos reales.
-			var timer = get_tree().create_timer(duration, false, false, true)
+			var timer = get_tree().create_timer(final_duration, false, false, true)
 			timer.timeout.connect(func():
 				if is_instance_valid(self):
 					damage_multiplier = 1
@@ -500,7 +618,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			# Opcional: Un tono pálido o azulado para representar sudor frío / tensión
 			modulate = Color.PALE_TURQUOISE 
 			
-			var timer = get_tree().create_timer(duration)
+			var timer = get_tree().create_timer(final_duration)
 			timer.timeout.connect(func():
 				if is_instance_valid(self):
 					is_anxious = false
@@ -509,7 +627,7 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			
 		"fatigue":
 			# Siempre recargamos el cronómetro al máximo (1 segundo extra)
-			fatigue_time_left = duration
+			fatigue_time_left = final_duration
 			
 			# Solo aplicamos los cambios si el jugador estaba sano
 			if can_shoot: 
