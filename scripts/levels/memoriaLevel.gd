@@ -6,3 +6,4 @@ func _init():
 	scene_path = "res://scenes/levels/memoria.tscn"
 	timeline_name = "res://dialogues/illDescription/memoriaDescription.dtl"
 	enemy_type = "memoria"
+	macro_level = "marihuana"

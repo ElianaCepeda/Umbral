@@ -6,3 +6,4 @@ func _init():
 	scene_path = "res://scenes/levels/fatiga.tscn"
 	timeline_name = "res://dialogues/illDescription/fatigaDescription.dtl"
 	enemy_type = "fatiga"
+	macro_level = "tabaco"

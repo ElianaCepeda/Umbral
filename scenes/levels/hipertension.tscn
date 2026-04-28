@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cpyj6txdh6kyq"]
+[gd_scene format=3 uid="uid://cag8ecc4d5ja7"]
 
 [ext_resource type="PackedScene" uid="uid://doqn4hplyhcbc" path="res://scenes/levels/BaseLevelFase1.tscn" id="1_8afil"]
 [ext_resource type="Script" uid="uid://dgu7yisalpoh8" path="res://scripts/levels/hipertensionLevel.gd" id="2_ios13"]

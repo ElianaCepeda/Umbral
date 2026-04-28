@@ -3,6 +3,8 @@ extends CharacterBody2D
 var skill_icons = {
 	"water_attack": preload("res://assets/characterAttacks/waterAttack_single.png"),
 	"gum_attack": preload("res://assets/characterAttacks/gumAttack_single.png"),
+	"sleep_attack": preload("res://assets/characterAttacks/Dormir.png"),
+	"temperature_attack": preload("res://assets/characterAttacks/Temperatura.png"),
 	"food_alcohol": preload("res://assets/defenses/Comida-Alcohol.png"),
 	"medicine_alcohol": preload("res://assets/defenses/Medicina-Alcohol.png"), 
 	"exercise_tabaco": preload("res://assets/defenses/Ejercicio-Tabaco.png"), 
@@ -80,12 +82,9 @@ var is_hurt: bool = false
 var bullet_scene = preload("res://scenes/attacks/bullet.tscn")
 
 func apply_level_skills(level):
-	
-	# --- INTEGRACIÓN CON SAVEMANAGER ---
 	skill1_name = level.skill1 if SaveManager.has_defense1() else ""
 	skill2_name = level.skill2 if SaveManager.has_defense2() else ""
 	skill3_name = level.skill3
-	# -----------------------------------
 
 	set_skill(1, skill1_name)
 	set_skill(2, skill2_name)
@@ -171,7 +170,7 @@ func handle_skills():
 		if skill1_name == "" or skill1_name == null:
 			key1_sprite.play("pressed")
 			return
-		
+	
 		if not skill1_used:
 			skill1_used = true
 			damage_reduction = 0.15
@@ -180,23 +179,18 @@ func handle_skills():
 			key1_sprite.play("pressed")
 			activate_shield()
 			
-			# ⏱ duración
+			# ⏱ SOLO quitamos el efecto, NO reseteamos la skill
 			get_tree().create_timer(5.0).timeout.connect(func():
 				if is_instance_valid(self):
 					damage_reduction = 0.0
-					skill1_used = false
-					
-					# reset UI
-					key1_sprite.play("not_pressed")
-					skill1_icon.modulate = Color(1,1,1,1)
 			)
+
 	# SKILL 2 → REDUCE EFECTOS
 	if Input.is_action_just_pressed("skill_2"):
-		
 		if skill2_name == "" or skill2_name == null:
 			key2_sprite.play("pressed")
 			return
-		
+	
 		if not skill2_used:
 			skill2_used = true
 			effect_resistance = 0.15
@@ -205,16 +199,12 @@ func handle_skills():
 			key2_sprite.play("pressed")
 			activate_shield()
 			
-			# ⏱ duración
+			# ⏱ SOLO quitamos el efecto
 			get_tree().create_timer(5.0).timeout.connect(func():
 				if is_instance_valid(self):
 					effect_resistance = 0.0
-					skill2_used = false
-					
-					# reset UI
-					key2_sprite.play("not_pressed")
-					skill2_icon.modulate = Color(1,1,1,1)
 			)
+
 
 
 		
@@ -229,7 +219,7 @@ func take_damage(amount: int, damage_color: Color = Color.RED):
 	var reduced_amount = amount * (1.0 - damage_reduction)
 	var final_damage = reduced_amount * damage_multiplier
 	consciousness -= final_damage
-	print(final_damage)
+	print("daniorecibido: ", final_damage)
 	update_bar()
 
 

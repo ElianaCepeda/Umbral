@@ -6,3 +6,4 @@ func _init():
 	scene_path = "res://scenes/levels/taquicardia.tscn" 
 	timeline_name = "res://dialogues/illDescription/taquicardiaDescription.dtl"
 	enemy_type = "taquicardia"
+	macro_level = "tabaco"

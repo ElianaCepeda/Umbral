@@ -35,7 +35,7 @@ func _hover_off(btn: TextureButton) -> void:
 
 func _go_to_game() -> void:
 	queue_free()
-	GameManager.change_level(CirrosisLevel.new())
+	GameManager.change_level(ConjuntivitisLevel.new())
 
 
 func _go_to_recovery() -> void:
