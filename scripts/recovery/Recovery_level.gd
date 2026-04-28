@@ -1,14 +1,24 @@
 extends LevelState
 class_name RecoveryState
 	
+	
+func _init() -> void:
+	level_name = "Recovery"
+	scene_path = "res://scenes/recovery/BaseLevelRecovery.tscn"
+
 func enter():
 	print("Entrando al Nivel de Recuperación (Base)...")
 	
-	# 1. Definimos las variables y creamos la escena visual
-	level_name = "Recovery"
-	scene_path = "res://scenes/recovery/BaseLevelRecovery.tscn"
-	scene_instance = load(scene_path).instantiate()
-	add_child(scene_instance)
+	if not GameManager.preguntas_completadas:
+		SaveManager.reset_phase_state()
+	
+	# 1. Usamos la escena que se cargó de forma asincrona
+	if preloaded_scene:
+		scene_instance = preloaded_scene.instantiate()
+		add_child(scene_instance)
+	else:
+		push_error("CRÍTICO: No hay escena precargada en RecoveryState")
+		return
 	
 	# 2. Buscamos la fuente DENTRO de la escena que acabamos de crear
 	var fountain = scene_instance.get_node_or_null("Fountain")

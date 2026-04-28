@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _go_to_game() -> void:
 	queue_free()
-	GameManager.change_level(ObstruccionLevel.new())
+	GameManager.change_level(CirrosisLevel.new())
 
 func _go_to_recovery() -> void:
 	queue_free()

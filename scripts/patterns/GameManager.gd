@@ -1,39 +1,33 @@
-# scripts/GameManager.gd 
+# scripts/patterns/GameManager.gd 
 extends Node
 
 var current_level: LevelState = null
-var attackpoints: int = 0
-var defense1points : int = 0
-var defense2points : int = 0
 var preguntas_completadas = false
 
-
+func _ready() -> void:
+	# Nos suscribimos al evento de carga asíncrona exitosa
+	TransitionManager.load_completed.connect(_on_level_loaded)
 
 func change_level(new_level: LevelState):
 	# Le decimos a Godot que ejecute el cambio de nivel de forma diferida (segura)
 	# y le pasamos 'new_level' como argumento para que la siguiente función lo reciba.
+	TransitionManager.load_level_async(new_level)
+	
+func _on_level_loaded(packed_scene: PackedScene, new_level: LevelState) -> void:
+	# Cuando la escena está lista en la memoria RAM, inyectamos y cambiamos
+	new_level.preloaded_scene = packed_scene
 	call_deferred("_perform_change_level", new_level)
 
-func _perform_change_level(new_level: LevelState):
-	# If there is already an active level, execute its exit logic and delete it
+func _perform_change_level(new_level: LevelState) -> void:
 	if current_level:
 		current_level.exit()
 		remove_child(current_level)
 		current_level.queue_free()
 	
-	# Assign the new level
 	current_level = new_level
 	add_child(current_level)
 	current_level.level_manager = self
-	
 	current_level.enter()
-	
-	await get_tree().process_frame
-	
-	var player = get_tree().get_first_node_in_group("player")
-
-	if player:
-		player.apply_level_skills(current_level)
 
 func game_over():
 	# 1. Turn off the level immediately so nothing else moves or deals damage
