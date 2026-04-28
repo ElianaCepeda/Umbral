@@ -6,5 +6,5 @@
 [node name="euforiaLevel" unique_id=1029686040 instance=ExtResource("1_6s3lb")]
 script = ExtResource("1_4ndgs")
 
-[node name="Spawner" parent="." index="2" unique_id=2048461648]
+[node name="Spawner" parent="." index="4" unique_id=2048461648]
 tipo_enemigo_actual = "euforia"
