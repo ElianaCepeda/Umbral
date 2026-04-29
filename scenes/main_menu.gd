@@ -14,8 +14,9 @@ func _ready() -> void:
 	btn_exit.pressed.connect(_exit_game)
 
 func _go_to_game() -> void:
-	queue_free()
-	GameManager.change_level(ConjuntivitisLevel.new())
+	print("1. Botón de inicio presionado en el menú.")
+	GameManager.start_campaign("alcohol")
+	hide()
 
 func _go_to_recovery() -> void:
 	queue_free()

@@ -1,9 +1,16 @@
 [gd_scene format=4 uid="uid://cd7evawnkk5sr"]
 
 [ext_resource type="TileSet" uid="uid://nyted02p711e" path="res://assets/tilesetFaseBoss.tres" id="1_cor7n"]
+[ext_resource type="Texture2D" uid="uid://baqcxq1e5koqi" path="res://assets/scenario/TilesBoss.png" id="2_2hmje"]
 [ext_resource type="PackedScene" uid="uid://ctibey8ts4cil" path="res://scenes/player.tscn" id="2_wt436"]
 [ext_resource type="Script" uid="uid://cas7hatho5sbn" path="res://scenes/spawner.gd" id="3_2hmje"]
 [ext_resource type="AudioStream" uid="uid://bfks3buc8wlxq" path="res://assets/audio/music/Tension.ogg" id="4_ekqps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekqps"]
+size = Vector2(60, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wt436"]
+size = Vector2(122, 68)
 
 [node name="NodoBaseBoss" type="Node2D" unique_id=1029686040]
 
@@ -16,8 +23,35 @@ tile_map_data = PackedByteArray("AAADAAEAAAAAAAMAAAAEAAEAAAACAAIAAAAFAAEAAAACAAI
 tile_set = ExtResource("1_cor7n")
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=1512529063]
-tile_map_data = PackedByteArray("AAAGAAEAAAABAAAAAAADAAEAAAACAAAAAGAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAACAAAAAAAHAAEAAAAAAAAAAAADAAUAAAACAAAAADAEAAUAAAAAAAAAADAFAAUAAAAAAAAAADAGAAUAAAAAAAAAADAHAAUAAAAAAAAAADAIAAUAAAAAAAAAADAJAAUAAAACAAAAAFADAAIAAAAAAAAAAGADAAMAAAAAAAAAAGADAAQAAAAAAAAAAGAJAAIAAAAAAAAAAFAJAAMAAAAAAAAAAFAJAAQAAAAAAAAAAFA=")
+tile_map_data = PackedByteArray("AAADAAEAAAACAAAAAGAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAACAAAAAAAHAAEAAAAAAAAAAAADAAUAAAACAAAAADAEAAUAAAAAAAAAADAFAAUAAAAAAAAAADAGAAUAAAAAAAAAADAHAAUAAAAAAAAAADAIAAUAAAAAAAAAADAJAAUAAAACAAAAAFADAAIAAAAAAAAAAGADAAMAAAAAAAAAAGADAAQAAAAAAAAAAGAJAAIAAAAAAAAAAFAJAAMAAAAAAAAAAFAJAAQAAAAAAAAAAFA=")
 tile_set = ExtResource("1_cor7n")
+
+[node name="ExitDoor" type="Area2D" parent="." unique_id=40666863]
+position = Vector2(829, 203)
+collision_mask = 2
+
+[node name="PuertaCerrada" type="Sprite2D" parent="ExitDoor" unique_id=324960809]
+position = Vector2(3, -14)
+texture = ExtResource("2_2hmje")
+region_enabled = true
+region_rect = Rect2(126.69474, 24.843414, 131.1257, 72.32412)
+
+[node name="PuertaAbierta" type="Sprite2D" parent="ExitDoor" unique_id=1556965387]
+visible = false
+position = Vector2(3, -14)
+texture = ExtResource("2_2hmje")
+region_enabled = true
+region_rect = Rect2(0.37855625, 152.98093, 127.55577, 71.84097)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor" unique_id=54877591]
+position = Vector2(3, -8.5)
+shape = SubResource("RectangleShape2D_ekqps")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ExitDoor" unique_id=999104044]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor/StaticBody2D" unique_id=1940021095]
+position = Vector2(4, -13)
+shape = SubResource("RectangleShape2D_wt436")
 
 [node name="Player" parent="." unique_id=1786594462 instance=ExtResource("2_wt436")]
 top_level = true

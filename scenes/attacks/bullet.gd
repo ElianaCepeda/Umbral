@@ -9,15 +9,7 @@ var direction = Vector2.ZERO # Esta variable la llenará el jugador
 var player_ref: Node2D = null
 
 func _ready():
-	if bullet_type == "" or bullet_type == null:
-		$AnimatedSprite2D.play("default")
-	else:
-		if $AnimatedSprite2D.sprite_frames.has_animation(bullet_type):
-			$AnimatedSprite2D.play(bullet_type)
-		else:
-			$AnimatedSprite2D.play("default")
-	$AudioStreamPlayer.play()
-	
+
 	# Buscamos al jugador una sola vez al disparar
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:

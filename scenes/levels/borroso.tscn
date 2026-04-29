@@ -6,6 +6,6 @@
 [node name="BorrosoLevel" unique_id=1029686040 instance=ExtResource("1_taurh")]
 script = ExtResource("2_8n4yk")
 
-[node name="Spawner" parent="." index="4" unique_id=2048461648]
+[node name="Spawner" parent="." index="5" unique_id=2048461648]
 cantidad_minima = 4
 tipo_enemigo_actual = "Borroso"

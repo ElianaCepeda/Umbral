@@ -17,8 +17,8 @@ var boton_terminado: Button
 var attackpoints: int = 0
 var defense1points : int = 0
 var defense2points : int = 0
-var first_question: int = 0 
-var last_question: int = 6
+var first_question: int = 1
+var last_question: int = 9
 var current_question_index: int = 0
 
 var type:String
@@ -459,11 +459,13 @@ var questions = [
 	}
 ]
 
-func _init():
+func _init(min_val: int = 1, max_val: int = 9):
 	level_name = "Recovery"
 	scene_path = "res://scenes/recovery/question_room.tscn"
 	timeline_name = ""
 	enemy_type = ""
+	first_question = min_val
+	last_question = max_val
 
 func enter():
 	print("Entrando al minijuego de recuperación...")
@@ -584,10 +586,6 @@ func hide_arrow(boton: Button) -> void:
 	var row = boton.get_parent()
 	row.get_node("Arrow").hide()
 
-func setup(gm_first_question: int, gm_last_question: int):
-	first_question = gm_first_question
-	last_question = gm_last_question
-	
 
 func load_question(count:int):
 	permitir_hover = true

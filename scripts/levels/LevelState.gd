@@ -6,6 +6,10 @@ var scene_instance: Node2D
 var fondo_custom: Node
 var preloaded_scene: PackedScene = null
 
+var is_gameplay_active: bool = false
+var _win_check_timer: float = 0.0
+var is_door_open: bool = false
+
 # --- VARIABLES DE CONFIGURACIÓN (Los hijos deben llenarlas) ---
 var scene_path: String = ""
 var timeline_name: String = ""
@@ -123,3 +127,63 @@ func _start_gameplay():
 	if spawner:
 		print("¡" + level_name + " listo! Generando enemigos...")
 		spawner.generar_oleada()
+		
+	var exit_door = scene_instance.find_child("ExitDoor", true, false)
+	if exit_door:
+		exit_door.body_entered.connect(_on_exit_door_body_entered)
+		
+		# Forzamos visualmente que empiece cerrada
+		var puerta_cerrada = exit_door.get_node_or_null("PuertaCerrada")
+		var puerta_abierta = exit_door.get_node_or_null("PuertaAbierta")
+		if puerta_cerrada: puerta_cerrada.show()
+		if puerta_abierta: puerta_abierta.hide()
+		
+	await get_tree().create_timer(0.5).timeout
+	is_gameplay_active = true
+
+
+func _process(delta: float) -> void:
+	if not is_gameplay_active:
+		return
+		
+	_win_check_timer += delta
+	# Verificamos cada 0.5 segundos para no saturar la CPU innecesariamente
+	if _win_check_timer >= 0.5:
+		_win_check_timer = 0.0
+		_check_win_condition()
+
+func _check_win_condition() -> void:
+	# Buscamos cuántos enemigos quedan vivos en la escena
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	
+	if enemies.size() == 0:
+		# ¡Ya no quedan enemigos! Apagamos el monitoreo y ejecutamos la victoria
+		is_gameplay_active = false
+		print("¡Nivel completado! Todos los enemigos (" + level_name + ") fueron derrotados.")
+		_on_level_won()
+
+func _on_level_won() -> void:
+	is_gameplay_active = false
+	is_door_open = true # Activamos la bandera para poder salir
+	
+	print("¡Nivel superado! La puerta se ha abierto.")
+	
+	var exit_door = scene_instance.find_child("ExitDoor", true, false)
+	if exit_door:
+		var puerta_cerrada = exit_door.get_node_or_null("PuertaCerrada")
+		var puerta_abierta = exit_door.get_node_or_null("PuertaAbierta")
+		var bloqueo = exit_door.get_node_or_null("BloqueoPuerta")
+		
+		# Cambiamos las imágenes
+		if puerta_cerrada: puerta_cerrada.hide()
+		if puerta_abierta: puerta_abierta.show()
+		
+		# ¡Destruimos la pared invisible para dejar pasar al jugador!
+		if bloqueo: bloqueo.queue_free()
+
+
+func _on_exit_door_body_entered(body: Node2D) -> void:
+	# El jugador solo puede salir si la puerta ya está abierta
+	if body.name == "Player" and is_door_open:
+		print("El jugador escapó del nivel de combate. Avanzando...")
+		GameManager.advance_campaign_flow()

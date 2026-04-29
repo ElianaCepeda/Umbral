@@ -33,6 +33,7 @@ var is_preparing_charge: bool = false
 
 
 func _ready():
+	add_to_group("enemy")
 	find_player()
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING 
 	
