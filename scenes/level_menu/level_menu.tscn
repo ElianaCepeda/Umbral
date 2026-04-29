@@ -100,19 +100,16 @@ base_font = ExtResource("4_4yaje")
 [sub_resource type="FontVariation" id="FontVariation_hf2qt"]
 base_font = ExtResource("4_4yaje")
 
-[node name="LevelMenu" type="Control" unique_id=1139276807]
-layout_mode = 3
-anchors_preset = 0
+[node name="LevelMenu" type="Node2D" unique_id=705565814]
 script = ExtResource("1_wt4pq")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=603228421]
-layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+mouse_filter = 2
 texture = ExtResource("2_8xmkv")
 
 [node name="Backbutton" type="Button" parent="." unique_id=1671354898]
-layout_mode = 0
 offset_left = 40.08
 offset_top = 41.0
 offset_right = 191.08
@@ -146,11 +143,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TitleControl" type="Control" parent="." unique_id=998375802]
-layout_mode = 1
+layout_mode = 3
+anchors_preset = 10
 anchor_right = 1.0
 offset_top = 28.0
 offset_right = 1152.0
 offset_bottom = 107.0
+grow_horizontal = 2
 size_flags_vertical = 4
 
 [node name="TitleLabel" type="Label" parent="TitleControl" unique_id=1924674229]
@@ -175,7 +174,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="BookArea" type="CenterContainer" parent="." unique_id=770118712]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -946,7 +944,6 @@ text = "BLOQUEADO"
 
 [node name="ColorAlcohol" type="ColorRect" parent="." unique_id=1561302469]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 0
 offset_left = 145.0
 offset_top = 137.0
 offset_right = 557.0
@@ -957,7 +954,6 @@ color = Color(0.6392157, 0.50980395, 0.3137255, 0.19607843)
 
 [node name="ColorTabaco" type="ColorRect" parent="." unique_id=123383948]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 0
 offset_left = 144.0
 offset_top = 347.0
 offset_right = 557.0
@@ -968,7 +964,6 @@ color = Color(0.6392157, 0.50980395, 0.3137255, 0.19607843)
 
 [node name="ColorMarihuana" type="ColorRect" parent="." unique_id=331394514]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 0
 offset_left = 597.0
 offset_top = 137.0
 offset_right = 1009.0
@@ -979,7 +974,6 @@ color = Color(0.6392157, 0.50980395, 0.3137255, 0.19607843)
 
 [node name="ColorCocaina" type="ColorRect" parent="." unique_id=1965067859]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 0
 offset_left = 598.0
 offset_top = 348.0
 offset_right = 1010.0

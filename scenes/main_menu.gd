@@ -8,9 +8,8 @@ extends Control
 
 func _ready() -> void:
 	door.door_pressed.connect(_go_to_game)
-
 	btn_family.pressed.connect(_go_to_recovery)
-	btn_sympt.pressed.connect(_go_to_recovery)
+	btn_sympt.pressed.connect(_go_to_levels)
 	btn_exit.pressed.connect(_exit_game)
 
 	_config_hover(btn_family)
@@ -41,6 +40,10 @@ func _go_to_game() -> void:
 func _go_to_recovery() -> void:
 	queue_free()
 	GameManager.change_level(RecoveryState.new())
+	
+func _go_to_levels() -> void:
+	queue_free()
+	GameManager.change_level(LevelMenuState.new())
 
 
 func _exit_game() -> void:
