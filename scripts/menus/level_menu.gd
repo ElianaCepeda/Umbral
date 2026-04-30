@@ -26,7 +26,7 @@ var play_cocaina = Button
 # TODO traerlo desde la persistencia de datos 
 var alcohol_unlocked := true
 var tobacco_unlocked := true
-var marijuana_unlocked := false
+var marijuana_unlocked := true
 var cocaine_unlocked := true
 
 

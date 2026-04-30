@@ -25,8 +25,8 @@ var campaign_database = {
 		"good_ending": "AndresTioAlcoholFinalBueno",
 		"bad_ending": "AndresTioAlcoholFinalMalo",
 		"next_unlock": "tabaco",
-		"phase1_q": [1, 9],    # Rango de preguntas Fase 1
-		"phase2_q": [10, 18]   # Rango de preguntas Fase 2
+		"phase1_q": [1, 5],    # Rango de preguntas Fase 1
+		"phase2_q": [6, 10]   # Rango de preguntas Fase 2
 	},
 	"tabaco": {
 		"intro": "SofiaTiaTabaco",
@@ -36,8 +36,8 @@ var campaign_database = {
 		"good_ending": "SofiaTiaTabacoFinalBueno",
 		"bad_ending": "SofiaTiaTabacoFinalMalo",
 		"next_unlock": "marihuana",
-		"phase1_q": [19, 27],
-		"phase2_q": [28, 36]
+		"phase1_q": [11, 15],
+		"phase2_q": [16, 20]
 	},
 	"marihuana": {
 		"intro": "LucasPrimoMarihuana",
@@ -47,8 +47,8 @@ var campaign_database = {
 		"good_ending": "LucasPrimoMarihuanaFinalBueno",
 		"bad_ending": "LucasPrimoMarihuanaFinalMalo",
 		"next_unlock": "cocaina",
-		"phase1_q": [37, 45],
-		"phase2_q": [46, 54]
+		"phase1_q": [21, 25],
+		"phase2_q": [26, 30]
 	},
 	"cocaina": {
 		"intro": "MateoHermanoCocaina",
@@ -58,8 +58,8 @@ var campaign_database = {
 		"good_ending": "MateoHermanoCocainaFinalBueno",
 		"bad_ending": "MateoHermanoCocainaFinalMalo",
 		"next_unlock": "fin", # Puedes cambiar esto por una pantalla de victoria final
-		"phase1_q": [55, 63],
-		"phase2_q": [64, 72]
+		"phase1_q": [31, 36],
+		"phase2_q": [36, 40]
 	}
 }
 
