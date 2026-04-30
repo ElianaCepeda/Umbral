@@ -1,0 +1,983 @@
+[gd_scene format=3 uid="uid://cot4uhwikqklh"]
+
+[ext_resource type="Script" uid="uid://yafenvaajx2f" path="res://scripts/level_menu/level_menu.gd" id="1_wt4pq"]
+[ext_resource type="Texture2D" uid="uid://tm5kknnndtxq" path="res://assets/ui/background2.png" id="2_8xmkv"]
+[ext_resource type="Texture2D" uid="uid://bo2jnvmnumcix" path="res://assets/ui/bordd.png" id="3_bvllw"]
+[ext_resource type="FontFile" uid="uid://d0u6kv0akue8f" path="res://assets/fonts/Ruler 9.ttf" id="4_4yaje"]
+[ext_resource type="Texture2D" uid="uid://boqtuyvxvunys" path="res://assets/ui/Book.png" id="4_jw3qw"]
+[ext_resource type="FontFile" uid="uid://742lnsa0da1j" path="res://assets/fonts/pixelated-times-new-roman.ttf" id="6_qqymp"]
+[ext_resource type="Texture2D" uid="uid://dkr2fcmowmooa" path="res://assets/questions/AnwersHolder.png" id="7_fv47d"]
+[ext_resource type="FontFile" uid="uid://b0aw82t50urpw" path="res://assets/fonts/Silver.ttf" id="8_35u8t"]
+[ext_resource type="Texture2D" uid="uid://bo7j3habp3mnv" path="res://assets/ui/Beer.png" id="9_1r5c8"]
+[ext_resource type="Texture2D" uid="uid://cmngi0ea5hlmy" path="res://assets/ui/PadLock.png" id="10_4jois"]
+[ext_resource type="Texture2D" uid="uid://ciivh3cfyhval" path="res://assets/ui/Separator.png" id="11_ho8ji"]
+[ext_resource type="Texture2D" uid="uid://boaor7jnuvatl" path="res://assets/ui/pixel-cig64x.png" id="12_a2vxr"]
+[ext_resource type="Texture2D" uid="uid://be8yvdpxdfqe0" path="res://assets/ui/Marijuana.png" id="13_2x002"]
+[ext_resource type="Texture2D" uid="uid://dcfmqntuyei3t" path="res://assets/ui/Cocaine.png" id="14_xdurn"]
+
+[sub_resource type="FontVariation" id="FontVariation_jicxw"]
+base_font = ExtResource("4_4yaje")
+
+[sub_resource type="FontVariation" id="FontVariation_fu625"]
+base_font = ExtResource("4_4yaje")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gure"]
+atlas = ExtResource("4_jw3qw")
+region = Rect2(0, 0, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmhxk"]
+atlas = ExtResource("4_jw3qw")
+region = Rect2(501, 0, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsnhl"]
+atlas = ExtResource("4_jw3qw")
+region = Rect2(1002, 0, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8mn1"]
+atlas = ExtResource("4_jw3qw")
+region = Rect2(0, 554, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri0ji"]
+atlas = ExtResource("4_jw3qw")
+region = Rect2(501, 554, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxs4i"]
+atlas = ExtResource("4_jw3qw")
+region = Rect2(1002, 554, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxshe"]
+atlas = ExtResource("4_jw3qw")
+region = Rect2(0, 1108, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yaje"]
+atlas = ExtResource("4_jw3qw")
+region = Rect2(501, 1108, 501, 554)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqymp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gure")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmhxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsnhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8mn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri0ji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxs4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxshe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yaje")
+}],
+"loop": false,
+"name": &"open",
+"speed": 10.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_dfng4"]
+base_font = ExtResource("6_qqymp")
+
+[sub_resource type="FontVariation" id="FontVariation_nsy7d"]
+base_font = ExtResource("4_4yaje")
+
+[sub_resource type="FontVariation" id="FontVariation_xr8l2"]
+base_font = ExtResource("8_35u8t")
+
+[sub_resource type="FontVariation" id="FontVariation_kvjpb"]
+base_font = ExtResource("4_4yaje")
+
+[sub_resource type="FontVariation" id="FontVariation_hf2qt"]
+base_font = ExtResource("4_4yaje")
+
+[node name="LevelMenu" type="Node2D" unique_id=705565814]
+script = ExtResource("1_wt4pq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=603228421]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("2_8xmkv")
+
+[node name="Backbutton" type="Button" parent="." unique_id=1671354898]
+offset_left = 40.08
+offset_top = 41.0
+offset_right = 191.08
+offset_bottom = 80.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Backbutton" unique_id=1536076331]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bvllw")
+patch_margin_left = 2
+patch_margin_top = 5
+patch_margin_right = 2
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="Backbutton" unique_id=862062789]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9019608, 0.76862746, 0.49411765, 1)
+theme_override_fonts/font = SubResource("FontVariation_jicxw")
+theme_override_font_sizes/font_size = 20
+text = "MENÚ PRINCIPAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleControl" type="Control" parent="." unique_id=998375802]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 28.0
+offset_right = 1152.0
+offset_bottom = 107.0
+grow_horizontal = 2
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="Label" parent="TitleControl" unique_id=1924674229]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -37.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9019608, 0.76862746, 0.49411765, 1)
+theme_override_colors/font_shadow_color = Color(0.38431373, 0.08627451, 0.07058824, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = SubResource("FontVariation_fu625")
+theme_override_font_sizes/font_size = 78
+text = "Selección de nivel"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BookArea" type="CenterContainer" parent="." unique_id=770118712]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BookHolder" type="Control" parent="BookArea" unique_id=1095685920]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BookArea/BookHolder" unique_id=1034969421]
+position = Vector2(578.99994, 394.5)
+scale = Vector2(1.888473, 1.532491)
+sprite_frames = SubResource("SpriteFrames_qqymp")
+animation = &"open"
+frame = 7
+frame_progress = 1.0
+metadata/_edit_lock_ = true
+
+[node name="BookContent" type="Control" parent="BookArea/BookHolder" unique_id=1612158714]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPage" type="VBoxContainer" parent="BookArea/BookHolder/BookContent" unique_id=1709836937]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 141.0
+offset_right = 555.0
+offset_bottom = 566.0
+alignment = 1
+
+[node name="AlcoholPanel" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage" unique_id=1756147322]
+custom_minimum_size = Vector2(320, 200)
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="ChapterLabel" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel" unique_id=969916897]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.21176471, 0.06666667, 1)
+theme_override_fonts/font = SubResource("FontVariation_dfng4")
+theme_override_font_sizes/font_size = 80
+text = "I"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubsNameLabel" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel" unique_id=717046746]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_nsy7d")
+theme_override_font_sizes/font_size = 45
+text = "ALCOHOL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel" unique_id=1377869478]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 27
+
+[node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/BtnRow" unique_id=347874332]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/BtnRow/F1" unique_id=81540192]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fv47d")
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/BtnRow/F1" unique_id=53871778]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_xr8l2")
+theme_override_font_sizes/font_size = 17
+text = "Fase 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/BtnRow" unique_id=1093464374]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/BtnRow/F2" unique_id=1754609585]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fv47d")
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/BtnRow/F2" unique_id=330408160]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_xr8l2")
+theme_override_font_sizes/font_size = 17
+text = "Fase 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/BtnRow" unique_id=1150518219]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/BtnRow/F3" unique_id=953100901]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fv47d")
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/BtnRow/F3" unique_id=358837987]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_xr8l2")
+theme_override_font_sizes/font_size = 17
+text = "Fase 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconsRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel" unique_id=642355188]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/IconsRow" unique_id=1604064784]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("9_1r5c8")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/IconsRow" unique_id=772725945]
+custom_minimum_size = Vector2(80, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+flat = true
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/IconsRow/Button" unique_id=598834034]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = -18.25
+offset_right = 36.5
+offset_bottom = 18.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.2532982, 0.49167782, 0.2629163, 1)
+theme_override_fonts/font = SubResource("FontVariation_kvjpb")
+text = "✦ JUGAR ✦"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pad" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/IconsRow" unique_id=1641818693]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/IconsRow/Pad" unique_id=649851407]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_4jois")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/IconsRow/Pad" unique_id=1592239211]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_hf2qt")
+theme_override_font_sizes/font_size = 13
+text = "BLOQUEADO"
+
+[node name="TextureRect" type="TextureRect" parent="BookArea/BookHolder/BookContent/LeftPage" unique_id=515431041]
+custom_minimum_size = Vector2(120, 4)
+layout_mode = 2
+texture = ExtResource("11_ho8ji")
+expand_mode = 1
+
+[node name="TobaccoPanel" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage" unique_id=711842223]
+custom_minimum_size = Vector2(320, 200)
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="ChapterLabel" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel" unique_id=685110150]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.21176471, 0.06666667, 1)
+theme_override_fonts/font = SubResource("FontVariation_dfng4")
+theme_override_font_sizes/font_size = 80
+text = "II"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubsNameLabel" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel" unique_id=1835828300]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_nsy7d")
+theme_override_font_sizes/font_size = 45
+text = "TABACO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel" unique_id=1412365202]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 27
+
+[node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow" unique_id=2019385137]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow/F1" unique_id=71524626]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fv47d")
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow/F1" unique_id=1322168726]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_xr8l2")
+theme_override_font_sizes/font_size = 17
+text = "Fase 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow" unique_id=92081953]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow/F2" unique_id=851935056]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fv47d")
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow/F2" unique_id=1471986858]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_xr8l2")
+theme_override_font_sizes/font_size = 17
+text = "Fase 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow" unique_id=1841562427]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow/F3" unique_id=642838226]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fv47d")
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow/F3" unique_id=272657382]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_xr8l2")
+theme_override_font_sizes/font_size = 17
+text = "Fase 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconsRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel" unique_id=208657871]
+custom_minimum_size = Vector2(90, 20)
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow" unique_id=741861067]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 14
+
+[node name="TextureRect" type="TextureRect" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow/MarginContainer" unique_id=1808772173]
+custom_minimum_size = Vector2(90, 20)
+layout_mode = 2
+texture = ExtResource("12_a2vxr")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow" unique_id=1100014034]
+custom_minimum_size = Vector2(80, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+flat = true
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow/Button" unique_id=144828836]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = -18.25
+offset_right = 36.5
+offset_bottom = 18.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.2532982, 0.49167782, 0.2629163, 1)
+theme_override_fonts/font = SubResource("FontVariation_kvjpb")
+text = "✦ JUGAR ✦"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pad" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow" unique_id=1567074212]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow/Pad" unique_id=493674913]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_4jois")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow/Pad" unique_id=1718971015]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_hf2qt")
+theme_override_font_sizes/font_size = 13
+text = "BLOQUEADO"
+
+[node name="RightPage" type="VBoxContainer" parent="BookArea/BookHolder/BookContent" unique_id=1558266770]
+layout_mode = 0
+offset_left = 596.0
+offset_top = 141.0
+offset_right = 1010.0
+offset_bottom = 566.0
+alignment = 1
+
+[node name="MarijuanaPanel" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage" unique_id=129137338]
+custom_minimum_size = Vector2(320, 200)
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="ChapterLabel" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel" unique_id=740772168]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.21176471, 0.06666667, 1)
+theme_override_fonts/font = SubResource("FontVariation_dfng4")
+theme_override_font_sizes/font_size = 80
+text = "III"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubsNameLabel" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel" unique_id=1174002277]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_nsy7d")
+theme_override_font_sizes/font_size = 45
+text = "MARIHUANA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel" unique_id=155609038]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 27
+
+[node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow" unique_id=613736626]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow/F1" unique_id=965199133]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fv47d")
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow/F1" unique_id=2058163796]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_xr8l2")
+theme_override_font_sizes/font_size = 17
+text = "Fase 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow" unique_id=22672960]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow/F2" unique_id=1539139112]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fv47d")
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow/F2" unique_id=189594955]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_xr8l2")
+theme_override_font_sizes/font_size = 17
+text = "Fase 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow" unique_id=1238769717]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow/F3" unique_id=1776247585]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fv47d")
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow/F3" unique_id=1614067116]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_xr8l2")
+theme_override_font_sizes/font_size = 17
+text = "Fase 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconsRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel" unique_id=1546173050]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow" unique_id=514947806]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("13_2x002")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow" unique_id=441862919]
+custom_minimum_size = Vector2(80, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+flat = true
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow/Button" unique_id=1510167001]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = -18.25
+offset_right = 36.5
+offset_bottom = 18.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.2532982, 0.49167782, 0.2629163, 1)
+theme_override_fonts/font = SubResource("FontVariation_kvjpb")
+text = "✦ JUGAR ✦"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pad" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow" unique_id=1524957978]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow/Pad" unique_id=871820708]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_4jois")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow/Pad" unique_id=1621949671]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_hf2qt")
+theme_override_font_sizes/font_size = 13
+text = "BLOQUEADO"
+
+[node name="TextureRect" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage" unique_id=640738596]
+custom_minimum_size = Vector2(120, 4)
+layout_mode = 2
+texture = ExtResource("11_ho8ji")
+expand_mode = 1
+
+[node name="CocainePanel" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage" unique_id=106543225]
+custom_minimum_size = Vector2(320, 200)
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="ChapterLabel" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel" unique_id=1495487526]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.21176471, 0.06666667, 1)
+theme_override_fonts/font = SubResource("FontVariation_dfng4")
+theme_override_font_sizes/font_size = 80
+text = "IV"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubsNameLabel" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel" unique_id=568994691]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_nsy7d")
+theme_override_font_sizes/font_size = 45
+text = "COCAÍNA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel" unique_id=655262805]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 27
+
+[node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow" unique_id=1041900359]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow/F1" unique_id=1192189506]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fv47d")
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow/F1" unique_id=1374334242]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_xr8l2")
+theme_override_font_sizes/font_size = 17
+text = "Fase 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow" unique_id=929437409]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow/F2" unique_id=1681738254]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fv47d")
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow/F2" unique_id=820624680]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_xr8l2")
+theme_override_font_sizes/font_size = 17
+text = "Fase 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow" unique_id=695995457]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow/F3" unique_id=757700518]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fv47d")
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow/F3" unique_id=96317846]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_xr8l2")
+theme_override_font_sizes/font_size = 17
+text = "Fase 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconsRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel" unique_id=240307178]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow" unique_id=580006169]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow/MarginContainer" unique_id=589633582]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("14_xdurn")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow" unique_id=1426474098]
+custom_minimum_size = Vector2(80, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+flat = true
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow/Button" unique_id=1352592017]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = -18.25
+offset_right = 36.5
+offset_bottom = 18.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.2532982, 0.49167782, 0.2629163, 1)
+theme_override_fonts/font = SubResource("FontVariation_kvjpb")
+text = "✦ JUGAR ✦"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pad" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow" unique_id=208922914]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow/Pad" unique_id=503475741]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_4jois")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow/Pad" unique_id=1246856020]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
+theme_override_fonts/font = SubResource("FontVariation_hf2qt")
+theme_override_font_sizes/font_size = 13
+text = "BLOQUEADO"
+
+[node name="ColorAlcohol" type="ColorRect" parent="." unique_id=1561302469]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 145.0
+offset_top = 137.0
+offset_right = 557.0
+offset_bottom = 348.0
+size_flags_horizontal = 4
+mouse_filter = 2
+color = Color(0.6392157, 0.50980395, 0.3137255, 0.19607843)
+
+[node name="ColorTabaco" type="ColorRect" parent="." unique_id=123383948]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 144.0
+offset_top = 347.0
+offset_right = 557.0
+offset_bottom = 563.0
+size_flags_horizontal = 4
+mouse_filter = 2
+color = Color(0.6392157, 0.50980395, 0.3137255, 0.19607843)
+
+[node name="ColorMarihuana" type="ColorRect" parent="." unique_id=331394514]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 597.0
+offset_top = 137.0
+offset_right = 1009.0
+offset_bottom = 348.0
+size_flags_horizontal = 4
+mouse_filter = 2
+color = Color(0.6392157, 0.50980395, 0.3137255, 0.19607843)
+
+[node name="ColorCocaina" type="ColorRect" parent="." unique_id=1965067859]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 598.0
+offset_top = 348.0
+offset_right = 1010.0
+offset_bottom = 564.0
+size_flags_horizontal = 4
+mouse_filter = 2
+color = Color(0.6392157, 0.50980395, 0.3137255, 0.19607843)

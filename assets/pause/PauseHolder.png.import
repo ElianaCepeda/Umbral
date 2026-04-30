@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bex5aaoq07chx"
-path="res://.godot/imported/bord.png-e40fdb6a249f20af5c32f8b87a744669.ctex"
+uid="uid://u4qgysik7i8g"
+path="res://.godot/imported/PauseHolder.png-f8388fc1bb9bbdbf7fd98ee1c0d57bb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/bord.png"
-dest_files=["res://.godot/imported/bord.png-e40fdb6a249f20af5c32f8b87a744669.ctex"]
+source_file="res://assets/pause/PauseHolder.png"
+dest_files=["res://.godot/imported/PauseHolder.png-f8388fc1bb9bbdbf7fd98ee1c0d57bb3.ctex"]
 
 [params]
 

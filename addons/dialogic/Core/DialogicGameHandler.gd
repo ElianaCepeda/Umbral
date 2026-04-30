@@ -2,7 +2,6 @@ class_name DialogicGameHandler
 extends Node
 
 ## Class that is used as the Dialogic autoload.
-
 ## Autoload script that allows you to interact with all of Dialogic's systems:[br]
 ## - Holds all important information about the current state of Dialogic.[br]
 ## - Provides access to all the subsystems.[br]
