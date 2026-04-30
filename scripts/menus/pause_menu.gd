@@ -51,8 +51,8 @@ func _on_exit_pressed():
 	get_tree().quit()
 
 func _on_main_menu_pressed():
-	get_tree().paused = false
-	hide()
+	hide() 
+	GameManager.force_exit_to_main_menu()
 
 	
 

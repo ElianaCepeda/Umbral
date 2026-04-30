@@ -90,12 +90,6 @@ func _setup_skills_by_macro_level() -> void:
 func exit():
 	print("Saliendo de la sub-fase (síntoma): " + level_name + "...")
 	
-	if is_instance_valid(scene_instance):
-		var player = scene_instance.get_node_or_null("Player")
-		if player:
-			
-			SaveManager.sync_and_save_player_state(player.consciousness, player.max_consciousness)
-			
 	if scene_instance:
 		scene_instance.queue_free()
 		scene_instance = null
@@ -164,22 +158,57 @@ func _check_win_condition() -> void:
 
 func _on_level_won() -> void:
 	is_gameplay_active = false
-	is_door_open = true # Activamos la bandera para poder salir
 	
-	print("¡Nivel superado! La puerta se ha abierto.")
-	
+	var player = scene_instance.find_child("Player", true, false)
 	var exit_door = scene_instance.find_child("ExitDoor", true, false)
-	if exit_door:
-		var puerta_cerrada = exit_door.get_node_or_null("PuertaCerrada")
-		var puerta_abierta = exit_door.get_node_or_null("PuertaAbierta")
-		var bloqueo = exit_door.get_node_or_null("BloqueoPuerta")
-		
-		# Cambiamos las imágenes
-		if puerta_cerrada: puerta_cerrada.hide()
-		if puerta_abierta: puerta_abierta.show()
-		
-		# ¡Destruimos la pared invisible para dejar pasar al jugador!
-		if bloqueo: bloqueo.queue_free()
+	
+	# Guardamos el progreso SOLO porque el jugador acaba de ganar
+	if player:
+		SaveManager.sync_and_save_player_state(player.consciousness, player.max_consciousness)
+	
+	if player and exit_door:
+		var camera = player.get_node_or_null("Camera2D")
+		if camera:
+			# 1. Congelamos el mundo y preparamos la cámara
+			get_tree().paused = true 
+			camera.top_level = true # Desacopla la cámara del jugador para moverla libremente
+			
+			# Creamos el Tween y le decimos que ignore la pausa del juego
+			var tween = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+			
+			# 2. Paneo hacia la puerta (1.5 segundos, movimiento suave)
+			tween.tween_property(camera, "global_position", exit_door.global_position, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+			
+			# 3. Cuando llega, abrimos la puerta
+			tween.tween_callback(func():
+				var puerta_cerrada = exit_door.get_node_or_null("PuertaCerrada")
+				var puerta_abierta = exit_door.get_node_or_null("PuertaAbierta")
+				var bloqueo = exit_door.get_node_or_null("BloqueoPuerta")
+				
+				if puerta_cerrada: puerta_cerrada.hide()
+				if puerta_abierta: puerta_abierta.show()
+				if bloqueo: bloqueo.queue_free() 
+				
+				is_door_open = true
+				print("¡Puerta abierta visualmente!")
+			)
+			
+			# 4. Esperamos 1 segundo mirando la puerta abierta
+			tween.tween_interval(1.0)
+			
+			# 5. Paneo de regreso al jugador (1.5 segundos)
+			tween.tween_property(camera, "global_position", player.global_position, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+			
+			# 6. Al volver, reconectamos la cámara y quitamos la pausa
+			tween.tween_callback(func():
+				camera.top_level = false
+				camera.position = Vector2.ZERO # Reseteamos su posición local
+				get_tree().paused = false
+			)
+			return
+
+	# (Por si alguna vez haces un nivel sin cámara, forzamos la apertura directa)
+	is_door_open = true
 
 
 func _on_exit_door_body_entered(body: Node2D) -> void:

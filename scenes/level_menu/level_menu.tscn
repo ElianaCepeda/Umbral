@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cot4uhwikqklh"]
 
-[ext_resource type="Script" uid="uid://yafenvaajx2f" path="res://scripts/level_menu/level_menu.gd" id="1_wt4pq"]
+[ext_resource type="Script" uid="uid://yafenvaajx2f" path="res://scripts/menus/level_menu.gd" id="1_wt4pq"]
 [ext_resource type="Texture2D" uid="uid://tm5kknnndtxq" path="res://assets/ui/background2.png" id="2_8xmkv"]
 [ext_resource type="Texture2D" uid="uid://bo2jnvmnumcix" path="res://assets/ui/bordd.png" id="3_bvllw"]
 [ext_resource type="FontFile" uid="uid://d0u6kv0akue8f" path="res://assets/fonts/Ruler 9.ttf" id="4_4yaje"]
@@ -14,9 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://boaor7jnuvatl" path="res://assets/ui/pixel-cig64x.png" id="12_a2vxr"]
 [ext_resource type="Texture2D" uid="uid://be8yvdpxdfqe0" path="res://assets/ui/Marijuana.png" id="13_2x002"]
 [ext_resource type="Texture2D" uid="uid://dcfmqntuyei3t" path="res://assets/ui/Cocaine.png" id="14_xdurn"]
-
-[sub_resource type="FontVariation" id="FontVariation_jicxw"]
-base_font = ExtResource("4_4yaje")
 
 [sub_resource type="FontVariation" id="FontVariation_fu625"]
 base_font = ExtResource("4_4yaje")
@@ -100,6 +97,9 @@ base_font = ExtResource("4_4yaje")
 [sub_resource type="FontVariation" id="FontVariation_hf2qt"]
 base_font = ExtResource("4_4yaje")
 
+[sub_resource type="FontVariation" id="FontVariation_jicxw"]
+base_font = ExtResource("4_4yaje")
+
 [node name="LevelMenu" type="Node2D" unique_id=705565814]
 script = ExtResource("1_wt4pq")
 
@@ -108,39 +108,6 @@ offset_right = 1152.0
 offset_bottom = 648.0
 mouse_filter = 2
 texture = ExtResource("2_8xmkv")
-
-[node name="Backbutton" type="Button" parent="." unique_id=1671354898]
-offset_left = 40.08
-offset_top = 41.0
-offset_right = 191.08
-offset_bottom = 80.0
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Backbutton" unique_id=1536076331]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_bvllw")
-patch_margin_left = 2
-patch_margin_top = 5
-patch_margin_right = 2
-patch_margin_bottom = 5
-
-[node name="Label" type="Label" parent="Backbutton" unique_id=862062789]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.9019608, 0.76862746, 0.49411765, 1)
-theme_override_fonts/font = SubResource("FontVariation_jicxw")
-theme_override_font_sizes/font_size = 20
-text = "MENÚ PRINCIPAL"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="TitleControl" type="Control" parent="." unique_id=998375802]
 layout_mode = 3
@@ -981,3 +948,36 @@ offset_bottom = 564.0
 size_flags_horizontal = 4
 mouse_filter = 2
 color = Color(0.6392157, 0.50980395, 0.3137255, 0.19607843)
+
+[node name="Backbutton" type="Button" parent="." unique_id=1671354898]
+offset_left = 40.08
+offset_top = 41.0
+offset_right = 191.08
+offset_bottom = 80.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Backbutton" unique_id=1536076331]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bvllw")
+patch_margin_left = 2
+patch_margin_top = 5
+patch_margin_right = 2
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="Backbutton" unique_id=862062789]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9019608, 0.76862746, 0.49411765, 1)
+theme_override_fonts/font = SubResource("FontVariation_jicxw")
+theme_override_font_sizes/font_size = 20
+text = "MENÚ PRINCIPAL"
+horizontal_alignment = 1
+vertical_alignment = 1

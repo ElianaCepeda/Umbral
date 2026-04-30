@@ -47,9 +47,9 @@ region_rect = Rect2(0.37855625, 152.98093, 127.55577, 71.84097)
 position = Vector2(3, -8.5)
 shape = SubResource("RectangleShape2D_ekqps")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="ExitDoor" unique_id=999104044]
+[node name="BloqueoPuerta" type="StaticBody2D" parent="ExitDoor" unique_id=999104044]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor/StaticBody2D" unique_id=1940021095]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor/BloqueoPuerta" unique_id=1940021095]
 position = Vector2(4, -13)
 shape = SubResource("RectangleShape2D_wt436")
 

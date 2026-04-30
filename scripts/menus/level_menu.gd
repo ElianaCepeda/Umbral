@@ -17,6 +17,13 @@ var cocaina_color: Control
 
 var color_panels: Array = []
 
+var play_alcohol = Button
+var play_tabaco = Button
+var play_marihuana = Button
+var play_cocaina = Button 
+
+
+# TODO traerlo desde la persistencia de datos 
 var alcohol_unlocked := true
 var tobacco_unlocked := true
 var marijuana_unlocked := false
@@ -51,6 +58,11 @@ func enter() -> void:
 	tabaco_color = scene_instance.get_node("ColorTabaco")
 	marihuana_color = scene_instance.get_node("ColorMarihuana")
 	cocaina_color = scene_instance.get_node("ColorCocaina")
+	
+	play_alcohol = scene_instance.get_node("BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/IconsRow/Button")
+	play_tabaco = scene_instance.get_node("BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow/Button")
+	play_cocaina = scene_instance.get_node("BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow/Button")
+	play_marihuana = scene_instance.get_node("BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow/Button")
 
 	color_panels = [
 		alcohol_color,
@@ -63,7 +75,7 @@ func enter() -> void:
 
 	await _abrir_libro_y_mostrar_contenido()
 
-	_config_back_button()
+	_config_buttons()
 	_config_panel(alcohol_color, alcohol_panel, alcohol_unlocked)
 	_config_panel(tabaco_color, tobacco_panel, tobacco_unlocked)
 	_config_panel(marihuana_color, marijuana_panel, marijuana_unlocked)
@@ -99,10 +111,23 @@ func _abrir_libro_y_mostrar_contenido() -> void:
 	await tween.finished
 
 
-func _config_back_button() -> void:
+func _config_buttons() -> void:
 	back_button.pressed.connect(_go_to_main_menu)
 	back_button.mouse_entered.connect(_hover_back_on)
 	back_button.mouse_exited.connect(_hover_back_off)
+	play_alcohol.pressed.connect(_go_to_Alcohol)
+	play_alcohol.mouse_entered.connect(_hover_back_on)
+	play_alcohol.mouse_exited.connect(_hover_back_off)
+	play_tabaco.pressed.connect(_go_to_Tabaco)
+	play_tabaco.mouse_entered.connect(_hover_back_on)
+	play_tabaco.mouse_exited.connect(_hover_back_off)
+	play_cocaina.pressed.connect(_go_to_Cocaina)
+	play_cocaina.mouse_entered.connect(_hover_back_on)
+	play_cocaina.mouse_exited.connect(_hover_back_off)
+	play_marihuana.pressed.connect(_go_to_Marihuana)
+	play_marihuana.mouse_entered.connect(_hover_back_on)
+	play_marihuana.mouse_exited.connect(_hover_back_off)
+	
 
 
 func _hover_back_on() -> void:
@@ -137,8 +162,8 @@ func _config_panel(color_panel: Control, panel: Control, unlocked: bool) -> void
 	_config_phase_button(f2, Color("#56C67F"))
 	_config_phase_button(f3, Color("#B84A4A"))
 
-	play_button.mouse_entered.connect(func(): _hover_play_on(play_button))
-	play_button.mouse_exited.connect(func(): _hover_play_off(play_button))
+	#play_button.mouse_entered.connect(func(): _hover_play_on(play_button))
+	#play_button.mouse_exited.connect(func(): _hover_play_off(play_button))
 
 	if unlocked:
 		pad.hide()
@@ -184,11 +209,16 @@ func _hover_play_off(btn: Button) -> void:
 
 
 func _go_to_main_menu() -> void:
+	GameManager.force_exit_to_main_menu()
 	
-	if GameManager.current_level:
-		GameManager.current_level.exit()
-		GameManager.remove_child(GameManager.current_level)
-		GameManager.current_level.queue_free()
-		GameManager.current_level = null
+func _go_to_Alcohol () -> void:
+	GameManager.start_campaign("alcohol")
+	
+func _go_to_Tabaco () -> void:
+	GameManager.start_campaign("tabaco")
+	
+func _go_to_Cocaina () -> void:
+	GameManager.start_campaign("cocaina")
 
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+func _go_to_Marihuana () -> void:
+	GameManager.start_campaign("marihuana")
