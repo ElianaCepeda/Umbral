@@ -24,15 +24,19 @@ var play_cocaina = Button
 
 
 # TODO traerlo desde la persistencia de datos 
-var alcohol_unlocked := true
-var tobacco_unlocked := true
-var marijuana_unlocked := true
-var cocaine_unlocked := true
+var alcohol_unlocked : bool 
+var tobacco_unlocked : bool
+var marijuana_unlocked : bool
+var cocaine_unlocked : bool
 
 
 func _init() -> void:
 	level_name = "LevelMenu"
 	scene_path = "res://scenes/level_menu/level_menu.tscn"
+	alcohol_unlocked = SaveManager.is_unlocked("alcohol")
+	tobacco_unlocked = SaveManager.is_unlocked("tabaco")
+	marijuana_unlocked = SaveManager.is_unlocked("marihuana")
+	cocaine_unlocked = SaveManager.is_unlocked("cocaina")
 	
 
 func enter() -> void:
