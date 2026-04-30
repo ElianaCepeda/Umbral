@@ -26,6 +26,10 @@ func get_max_consciousness() -> int: return _current_profile.max_consciousness
 func get_attack() -> int: return _current_profile.attack_points
 func has_defense1() -> bool: return _current_profile.defense1_unlocked
 func has_defense2() -> bool: return _current_profile.defense2_unlocked
+func get_preguntas_completas() -> bool: return _current_profile.preguntas_completadas
+func set_preguntas_completadas(preguntas: bool) -> void: 
+	_current_profile.preguntas_completadas = preguntas
+	_save_disk()
 
 # Actualiza y guarda en un solo paso. Usamos -1 y 2 para ignorar valores que no queramos actualizar.
 func sync_and_save_player_state(health: int, max_health: int = -1, new_attack: int = -1, def1: int = 2, def2: int = 2) -> void:

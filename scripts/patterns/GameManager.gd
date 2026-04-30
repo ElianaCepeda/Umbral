@@ -71,6 +71,7 @@ func start_campaign(substance: String) -> void:
 	current_campaign = substance
 	current_flow = FlowState.NONE
 	current_enemy_index = 0
+	preguntas_completadas = SaveManager.get_preguntas_completas()
 	advance_campaign_flow()
 
 # El "Cerebro" que mueve al jugador por las etapas
@@ -101,7 +102,8 @@ func advance_campaign_flow() -> void:
 				_load_current_phase_enemy(data["phase1"])
 			else:
 				current_flow = FlowState.RECOVERY_2
-				preguntas_completadas = false # Reactivamos la fuente para la fase 2
+				SaveManager.set_preguntas_completadas(false)
+				preguntas_completadas = SaveManager.get_preguntas_completas()
 				change_level(RecoveryState.new())
 				
 		FlowState.RECOVERY_2:
@@ -123,6 +125,7 @@ func advance_campaign_flow() -> void:
 			_evaluate_ending(data)
 			
 		FlowState.GOOD_ENDING:
+			SaveManager.set_preguntas_completadas(false)
 			force_exit_to_main_menu()
 
 func _load_current_phase_enemy(phase_array: Array) -> void:

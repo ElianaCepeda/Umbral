@@ -1,7 +1,7 @@
 extends LevelState
 class_name RecoveryState
 	
-	
+
 func _init() -> void:
 	level_name = "Recovery"
 	scene_path = "res://scenes/recovery/BaseLevelRecovery.tscn"
@@ -50,6 +50,9 @@ func enter():
 			if bloqueo: bloqueo.queue_free() # Destruye la colisión sólida
 	
 	var player = scene_instance.get_node_or_null("Player")
+	
+func exit():
+	super.exit()
 	
 
 func _on_exit_door_body_entered(body: Node2D) -> void:

@@ -4,6 +4,7 @@ class_name PlayerProfile
 
 @export var current_consciousness: int = 100
 @export var max_consciousness: int = 100
+@export var preguntas_completadas : bool = false
 
 # Tu nueva estructura de conductas protectoras
 @export var attack_points: int = 0
@@ -19,3 +20,4 @@ func reset_to_default() -> void:
 	attack_points = 0
 	defense1_unlocked = false
 	defense2_unlocked = false
+	preguntas_completadas = false
