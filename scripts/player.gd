@@ -222,7 +222,6 @@ func take_damage(amount: int, damage_color: Color = Color.RED):
 	print("daniorecibido: ", final_damage)
 	update_bar()
 
-
 	var anim_dir = "down"
 	if abs(last_direction.x) > abs(last_direction.y):
 		anim_dir = "right" if last_direction.x > 0 else "left"
@@ -231,6 +230,10 @@ func take_damage(amount: int, damage_color: Color = Color.RED):
 
 	animated_sprite.stop()
 	animated_sprite.play("hurt_" + anim_dir)
+	get_tree().create_timer(0.2).timeout.connect(func():
+		if is_instance_valid(self):
+			is_hurt = false
+	)
 
 	# Color de daño
 	var damage_tween = create_tween()
@@ -238,7 +241,7 @@ func take_damage(amount: int, damage_color: Color = Color.RED):
 	damage_tween.tween_property(self, "modulate", get_target_color(), 0.3)
 
 	# Invulnerabilidad temporal
-	get_tree().create_timer(0.5).timeout.connect(func():
+	get_tree().create_timer(0.15).timeout.connect(func():
 		if is_instance_valid(self):
 			is_invulnerable = false
 	)
