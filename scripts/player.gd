@@ -18,6 +18,9 @@ var skill1_name: String = ""
 var skill2_name: String = ""
 var skill3_name: String = ""
 
+var can_dash: bool = true
+@export var dash_cooldown: float = 1.8
+
 @onready var skill1_icon = $HUD/TextureRect
 @onready var skill2_icon = $HUD/TextureRect2
 @onready var skill3_icon = $HUD/TextureRect3
@@ -340,27 +343,29 @@ func get_input() -> Vector2:
 	
 
 func dash():
-	if Input.is_action_just_pressed("dash") and not is_dashing and velocity.length() > 0:
+	if Input.is_action_just_pressed("dash") and can_dash and not is_dashing and velocity.length() > 0:
+		can_dash = false
 		is_dashing = true
 		
-		# 1. Determinar dirección de la animación del dash
 		var anim_dir = "down"
-		# Usamos velocity porque es la dirección actual del movimiento
 		if abs(velocity.x) > abs(velocity.y):
 			anim_dir = "right" if velocity.x > 0 else "left"
 		else:
 			anim_dir = "down" if velocity.y > 0 else "up"
 		
-		# 2. Reproducir animación (ej: "dash_right")
 		animated_sprite.play("dash_" + anim_dir)
 		
-		# 3. Lógica física del dash
 		velocity = velocity.normalized() * dash_speed
 		
 		dash_timer.start()
-		# Usamos el timeout para terminar el estado de dash
 		await dash_timer.timeout
+		
 		is_dashing = false
+		
+		get_tree().create_timer(dash_cooldown).timeout.connect(func():
+			if is_instance_valid(self):
+				can_dash = true
+		)
 
 
 func _on_animation_finished():
