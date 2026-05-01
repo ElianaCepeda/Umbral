@@ -169,15 +169,29 @@ func _on_level_won() -> void:
 	if player and exit_door:
 		var camera = player.get_node_or_null("Camera2D")
 		if camera:
-			# 1. Congelamos el mundo y preparamos la cámara
-			get_tree().paused = true 
-			camera.top_level = true # Desacopla la cámara del jugador para moverla libremente
+			# Busca la posición real de la puerta desde sus hijos
+			var door_target = Vector2.ZERO
+			for child in exit_door.get_children():
+				if child.global_position != Vector2.ZERO:
+					door_target = child.global_position
+					break
 			
-			# Creamos el Tween y le decimos que ignore la pausa del juego
+			# Fallback si ningún hijo tiene posición válida
+			if door_target == Vector2.ZERO:
+				push_warning("No se encontró posición válida para ExitDoor, usando PuertaCerrada.")
+				var puerta_cerrada = exit_door.get_node_or_null("PuertaCerrada")
+				if puerta_cerrada:
+					door_target = puerta_cerrada.global_position
+
+			get_tree().paused = true
+			camera.top_level = true
+			camera.global_position = player.global_position # Ancla explícita
+			
 			var tween = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 			
-			# 2. Paneo hacia la puerta (1.5 segundos, movimiento suave)
-			tween.tween_property(camera, "global_position", exit_door.global_position, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(camera, "global_position", door_target, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+			
+			
 			
 			# 3. Cuando llega, abrimos la puerta
 			tween.tween_callback(func():
