@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c1g7a0nosywfv" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://d2gy442j827et" path="res://assets/character/ATTACK 1/attack1_down.png" id="2_oprun"]
 [ext_resource type="Texture2D" uid="uid://dqcjnkhupmns5" path="res://assets/character/ATTACK 1/attack1_up.png" id="3_a8ls1"]
-[ext_resource type="Shader" uid="uid://cqfxtgtaa5exc" path="res://scenes/player.gdshader" id="3_dqkch"]
+[ext_resource type="Shader" path="res://scenes/player.gdshader" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://cafjvo77fdeun" path="res://assets/luz.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://dyr2bur3x3g8n" path="res://assets/character/ATTACK 1/attack1_left.png" id="4_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://dledyqkikwutt" path="res://assets/character/ATTACK 1/attack1_right.png" id="5_fulsm"]

@@ -15,6 +15,14 @@ func _ready():
 	if players.size() > 0:
 		player_ref = players[0]
 		
+	# Cambiamos la animacion de la bala segun el tipo recibido del jugador
+	var animated_sprite = get_node_or_null("AnimatedSprite2D")
+	if animated_sprite and bullet_type != "default" and bullet_type != "":
+		if animated_sprite.sprite_frames.has_animation(bullet_type):
+			animated_sprite.play(bullet_type)
+		else:
+			push_warning("No existe animacion para el tipo: " + bullet_type)
+		
 	get_tree().create_timer(5.0).timeout.connect(queue_free)
 	
 func set_bullet_type(type: String):
