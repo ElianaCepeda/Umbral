@@ -287,9 +287,6 @@ func die():
 	if is_dead:
 		return
 	is_dead = true
-	#Reinicio vida
-	consciousness = 100
-	SaveManager.sync_and_save_player_state(consciousness, 100)
 	Engine.time_scale = 1.0 
 	GameManager.game_over()
 
