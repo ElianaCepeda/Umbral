@@ -76,8 +76,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mwnt"]
-radius = 217.0
-height = 1074.0
+radius = 47.0
+height = 168.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1522320177]
 collision_layer = 4
@@ -86,11 +86,13 @@ motion_mode = 1
 script = ExtResource("1_u4q8o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1401683923]
+position = Vector2(5.4999933, 11.74999)
+scale = Vector2(0.12300001, 0.123000026)
 sprite_frames = SubResource("SpriteFrames_bi6ub")
 frame_progress = 0.34414998
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=872781113]
-position = Vector2(-4, 116)
+position = Vector2(4, 15)
 shape = SubResource("CapsuleShape2D_3mwnt")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=722578905]

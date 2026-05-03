@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cha6v1qppwq4k"]
+
+[ext_resource type="PackedScene" uid="uid://cd7evawnkk5sr" path="res://scenes/levels/BaseLevelBoss.tscn" id="1_y3p0n"]
+[ext_resource type="Script" uid="uid://c1bnsfnve2o10" path="res://scripts/levels/tabacoLevel.gd" id="2_uibhj"]
+[ext_resource type="PackedScene" uid="uid://bsmxfoydofb33" path="res://scenes/enemys/taquicardia.tscn" id="3_ape4n"]
+[ext_resource type="PackedScene" uid="uid://bjiulik4lkkkj" path="res://scenes/enemys/ansiedad.tscn" id="3_dliaj"]
+[ext_resource type="PackedScene" uid="uid://bnrancttvafqr" path="res://scenes/enemys/asfixia.tscn" id="6_dliaj"]
+[ext_resource type="PackedScene" uid="uid://bxi863j2kyes7" path="res://scenes/enemys/obstruccion.tscn" id="6_xepq7"]
+
+[node name="NodoBaseBoss" unique_id=1029686040 instance=ExtResource("1_y3p0n")]
+script = ExtResource("2_uibhj")
+
+[node name="BossFightController" parent="." index="8" unique_id=164943435]
+protector_scene = ExtResource("3_dliaj")
+aggressor_scene = ExtResource("3_ape4n")
+stalker_scene = ExtResource("6_xepq7")
+support_scene = ExtResource("6_dliaj")

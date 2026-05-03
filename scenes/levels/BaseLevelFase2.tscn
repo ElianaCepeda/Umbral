@@ -1,10 +1,17 @@
 [gd_scene format=4 uid="uid://76illrg3pfo"]
 
 [ext_resource type="TileSet" uid="uid://eqkgbua884mu" path="res://assets/tilesetFase2.tres" id="1_4m0po"]
+[ext_resource type="Texture2D" uid="uid://db50qyiu4o6hl" path="res://assets/scenario/TilesFase2.png" id="2_un7fv"]
 [ext_resource type="PackedScene" uid="uid://ctibey8ts4cil" path="res://scenes/player.tscn" id="2_wbl8v"]
 [ext_resource type="Script" uid="uid://cas7hatho5sbn" path="res://scenes/spawner.gd" id="3_un7fv"]
 [ext_resource type="AudioStream" uid="uid://bfks3buc8wlxq" path="res://assets/audio/music/Tension.ogg" id="4_kvkrj"]
 [ext_resource type="AudioStream" uid="uid://dmo67k8nqv2ts" path="res://assets/audio/music/batalla.mp3" id="5_wbl8v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvkrj"]
+size = Vector2(62, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbl8v"]
+size = Vector2(198, 89)
 
 [node name="NodoBaseFase2" type="Node2D" unique_id=1029686040]
 
@@ -17,8 +24,34 @@ tile_map_data = PackedByteArray("AAAJAAAAAQACAAEAAAAJAAEAAQACAAEAAAAJAAIAAQACAAE
 tile_set = ExtResource("1_4m0po")
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=1281656188]
-tile_map_data = PackedByteArray("AAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAEAAQABAAAAAAAGAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAIAAQAAAAAAAFAIAAMAAQAAAAAAAFAIAAQAAQAAAAAAAFAIAAUAAQACAAAAAFADAAUAAQAAAAAAADAEAAUAAQAAAAAAADAFAAUAAQAAAAAAADAGAAUAAQAAAAAAADAHAAUAAQAAAAAAADACAAIAAQAAAAAAAGACAAMAAQAAAAAAAGACAAQAAQAAAAAAAGAIAAEAAQACAAAAAAACAAUAAQACAAAAADACAAEAAQACAAAAAGA=")
+tile_map_data = PackedByteArray("AAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAIAAQAAAAAAAFAIAAMAAQAAAAAAAFAIAAQAAQAAAAAAAFAIAAUAAQACAAAAAFADAAUAAQAAAAAAADAEAAUAAQAAAAAAADAFAAUAAQAAAAAAADAGAAUAAQAAAAAAADAHAAUAAQAAAAAAADACAAIAAQAAAAAAAGACAAMAAQAAAAAAAGACAAQAAQAAAAAAAGAIAAEAAQACAAAAAAACAAUAAQACAAAAADACAAEAAQACAAAAAGA=")
 tile_set = ExtResource("1_4m0po")
+
+[node name="ExitDoor" type="Area2D" parent="." unique_id=854677504]
+position = Vector2(704, 208)
+collision_mask = 2
+
+[node name="PuertaCerrada" type="Sprite2D" parent="ExitDoor" unique_id=969197085]
+position = Vector2(-1, -15)
+texture = ExtResource("2_un7fv")
+region_enabled = true
+region_rect = Rect2(124.43381, 19.894764, 133.23459, 89.966965)
+
+[node name="PuertaAbierta" type="Sprite2D" parent="ExitDoor" unique_id=528062695]
+position = Vector2(0, -15)
+texture = ExtResource("2_un7fv")
+region_enabled = true
+region_rect = Rect2(-0.54647064, 146.9277, 128.3808, 91.94443)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor" unique_id=61847085]
+position = Vector2(1, -12.5)
+shape = SubResource("RectangleShape2D_kvkrj")
+
+[node name="BloqueoPuerta" type="StaticBody2D" parent="ExitDoor" unique_id=554815541]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor/BloqueoPuerta" unique_id=1812900161]
+position = Vector2(3, -15.5)
+shape = SubResource("RectangleShape2D_wbl8v")
 
 [node name="Player" parent="." unique_id=1786594462 instance=ExtResource("2_wbl8v")]
 top_level = true

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgkorvno5ys84"]
 
-[ext_resource type="Script" uid="uid://bqftjd4i6qcce" path="res://scripts/enemy/cocaina.gd" id="1_hb218"]
+[ext_resource type="Script" uid="uid://dbotvp70iwf1i" path="res://scripts/enemy/alcohol.gd" id="1_hb218"]
 [ext_resource type="Texture2D" uid="uid://bkt58501f05jy" path="res://assets/enemy/cocaina.png" id="1_xdlm7"]
 [ext_resource type="AudioStream" uid="uid://dpeocct4nikkd" path="res://assets/audio/sounds/death of enemies.mp3" id="3_i78ql"]
 
@@ -48,7 +48,11 @@ region = Rect2(1000, 2000, 1000, 1000)
 atlas = ExtResource("1_xdlm7")
 region = Rect2(2000, 2000, 1000, 1000)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cem4j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cem4j"]
+atlas = ExtResource("1_xdlm7")
+region = Rect2(3000, 2000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bi6ub"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -83,28 +87,34 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bigwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cem4j")
 }],
 "loop": true,
 "name": &"default",
-"speed": 13.0
+"speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ofhj"]
-radius = 276.0
-height = 928.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mwnt"]
+radius = 47.0
+height = 128.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=152348610]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1522320177]
 collision_layer = 4
 collision_mask = 3
+motion_mode = 1
 script = ExtResource("1_hb218")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1227530432]
-sprite_frames = SubResource("SpriteFrames_cem4j")
-frame_progress = 0.72866035
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1401683923]
+position = Vector2(5.4999933, 11.74999)
+scale = Vector2(0.12300001, 0.123000026)
+sprite_frames = SubResource("SpriteFrames_bi6ub")
+frame_progress = 0.34414998
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=312962774]
-position = Vector2(-21, 3)
-shape = SubResource("CapsuleShape2D_2ofhj")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=872781113]
+position = Vector2(4, 15)
+shape = SubResource("CapsuleShape2D_3mwnt")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=257425053]
 stream = ExtResource("3_i78ql")

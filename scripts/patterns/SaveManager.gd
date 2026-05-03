@@ -26,6 +26,10 @@ func get_max_consciousness() -> int: return _current_profile.max_consciousness
 func get_attack() -> int: return _current_profile.attack_points
 func has_defense1() -> bool: return _current_profile.defense1_unlocked
 func has_defense2() -> bool: return _current_profile.defense2_unlocked
+func get_preguntas_completas() -> bool: return _current_profile.preguntas_completadas
+func set_preguntas_completadas(preguntas: bool) -> void: 
+	_current_profile.preguntas_completadas = preguntas
+	_save_disk()
 
 # Actualiza y guarda en un solo paso. Usamos -1 y 2 para ignorar valores que no queramos actualizar.
 func sync_and_save_player_state(health: int, max_health: int = -1, new_attack: int = -1, def1: int = 2, def2: int = 2) -> void:
@@ -43,10 +47,25 @@ func sync_and_save_player_state(health: int, max_health: int = -1, new_attack: i
 	
 	_save_disk()
 
-func unlock_macro_level(level_name: String) -> void:
-	if not _current_profile.unlocked_levels.has(level_name):
-		_current_profile.unlocked_levels.append(level_name)
+func unlock_macro_level(campaign_name: String) -> void:
+	# Verificamos si el arreglo dentro del perfil ya tiene este nivel
+	if not _current_profile.unlocked_levels.has(campaign_name):
+		# Lo agregamos al perfil
+		_current_profile.unlocked_levels.append(campaign_name)
+		print("¡Nueva sustancia desbloqueada y guardada en disco: ", campaign_name, "!")
+		# Ahora sí, al guardar el perfil, el arreglo actualizado se va al disco duro
 		_save_disk()
+		
+func is_unlocked(campaign_name: String) -> bool:
+	# Leemos directamente desde el arreglo del perfil cargado desde el disco
+	return _current_profile.unlocked_levels.has(campaign_name)
+	
+func get_latest_unlocked_campaign() -> String:
+	# Revisamos de la más difícil a la más fácil usando la función de arriba
+	if is_unlocked("cocaina"): return "cocaina"
+	if is_unlocked("marihuana"): return "marihuana"
+	if is_unlocked("tabaco"): return "tabaco"
+	return "alcohol" # Por defecto
 		
 func reset_phase_state() -> void:
 	_current_profile.max_consciousness = 100

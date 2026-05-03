@@ -26,6 +26,7 @@ const ENEMY_SCENES = {
 	"paranoide": preload("res://scenes/enemys/paranoide.tscn"),
 	"perdidaApetito": preload("res://scenes/enemys/perdidaApetito.tscn"),
 	"taquicardia": preload ("res://scenes/enemys/taquicardia.tscn"),
+	"tabaco": preload("res://scenes/enemys/tabaco.tscn"),
 	"tension": preload ("res://scenes/enemys/tension.tscn"),
 	"retardo": preload ("res://scenes/enemys/retardo.tscn"),
 }

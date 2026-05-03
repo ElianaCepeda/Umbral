@@ -33,8 +33,11 @@ func _hover_off(btn: TextureButton) -> void:
 
 
 func _go_to_game() -> void:
-	queue_free()
-	GameManager.change_level(ConjuntivitisLevel.new())
+	var ultima_campana = SaveManager.get_latest_unlocked_campaign()
+	print("1. Botón de inicio presionado. Enviando a: ", ultima_campana)
+	
+	GameManager.start_campaign(ultima_campana)
+	hide()
 
 
 func _go_to_recovery() -> void:
