@@ -48,6 +48,9 @@ func enter():
 			if puerta_abierta: puerta_abierta.show()
 	
 	var player = scene_instance.get_node_or_null("Player")
+	if GameManager.preguntas_completadas and GameManager.player_position_before_questions != Vector2.ZERO:
+		if player:
+			player.global_position = GameManager.player_position_before_questions
 	
 func exit():
 	super.exit()
@@ -61,6 +64,7 @@ func _on_exit_door_body_entered(body: Node2D) -> void:
 			GameManager.advance_campaign_flow()
 
 func _on_fountain_body_entered(body: Node2D) -> void:
+	GameManager.player_position_before_questions = body.global_position
 	# Verificamos que el objeto que entró al área sea el jugador
 	if body.name == "Player":
 		var rango_preguntas = GameManager.get_current_question_range()
