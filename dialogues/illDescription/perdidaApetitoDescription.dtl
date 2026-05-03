@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 [background arg="#00000085" fade="0.0"]
 join Doctor left
 Doctor: La cocaína suprime el apetito de manera intensa, llevando a pérdida de peso y deterioro físico progresivo.

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://djn0mmiptdl26" path="res://scripts/enemy/borroso.gd" id="1_ooxyw"]
 [ext_resource type="Texture2D" uid="uid://dqwjb3l50rgft" path="res://assets/enemy/borroso.png" id="1_qfha4"]
 [ext_resource type="PackedScene" uid="uid://bosn67df2e0he" path="res://scenes/attacks/borroso_bullet.tscn" id="2_h6mto"]
+[ext_resource type="AudioStream" uid="uid://dpeocct4nikkd" path="res://assets/audio/sounds/death of enemies.mp3" id="4_ghcdh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ooxyw"]
 atlas = ExtResource("1_qfha4")
@@ -124,3 +125,7 @@ frame_progress = 0.02428444
 position = Vector2(1, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_7papj")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1455406774]
+stream = ExtResource("4_ghcdh")
+volume_db = -18.562

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ccg4q41jtr71r" path="res://scripts/enemy/euforia.gd" id="1_fmhie"]
 [ext_resource type="Texture2D" uid="uid://jwyvdioghx3k" path="res://assets/enemy/euforia.png" id="1_pnxj6"]
 [ext_resource type="PackedScene" uid="uid://cn66tgv8q5fv6" path="res://scenes/attacks/euforia_bullet.tscn" id="2_wjxfc"]
+[ext_resource type="AudioStream" uid="uid://dpeocct4nikkd" path="res://assets/audio/sounds/death of enemies.mp3" id="4_obvnj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmhie"]
 atlas = ExtResource("1_pnxj6")
@@ -124,3 +125,7 @@ frame_progress = 0.7481066
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1250700137]
 shape = SubResource("CapsuleShape2D_haqs8")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1310407824]
+stream = ExtResource("4_obvnj")
+volume_db = -18.562

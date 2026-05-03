@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bsymc0vk8roes" path="res://scripts/enemy/cirrosis.gd" id="1_0y1ly"]
 [ext_resource type="Texture2D" uid="uid://pobf6goho50a" path="res://assets/enemy/cirrosis.png" id="2_c2ir5"]
 [ext_resource type="PackedScene" uid="uid://fhxnanpw8gjc" path="res://scenes/attacks/charco_toxico.tscn" id="2_lo5hq"]
+[ext_resource type="AudioStream" uid="uid://dpeocct4nikkd" path="res://assets/audio/sounds/death of enemies.mp3" id="4_lo5hq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tavo"]
 atlas = ExtResource("2_c2ir5")
@@ -74,3 +75,7 @@ frame_progress = 0.5813283
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1054795357]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_40sti")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1904275396]
+stream = ExtResource("4_lo5hq")
+volume_db = -18.562

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cjxa0qs8axmq7" path="res://assets/enemy/hipertension.png" id="1_4bpjd"]
 [ext_resource type="Script" uid="uid://upkc7b3inxh4" path="res://scripts/enemy/hipertension.gd" id="1_aquwl"]
 [ext_resource type="PackedScene" uid="uid://cjut4a2pcbo3l" path="res://scenes/attacks/OndaHipertension.tscn" id="2_q0u5s"]
+[ext_resource type="AudioStream" uid="uid://dpeocct4nikkd" path="res://assets/audio/sounds/death of enemies.mp3" id="4_64r81"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aquwl"]
 atlas = ExtResource("1_4bpjd")
@@ -76,3 +77,7 @@ frame_progress = 0.9133173
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1875309954]
 shape = SubResource("CircleShape2D_gajwm")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=335728540]
+stream = ExtResource("4_64r81")
+volume_db = -18.562

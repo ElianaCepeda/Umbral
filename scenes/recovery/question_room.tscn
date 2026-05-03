@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cexjl7ms66xvg" path="res://assets/questions/arrow.png" id="4_swdjc"]
 [ext_resource type="FontFile" uid="uid://b0aw82t50urpw" path="res://assets/fonts/Silver.ttf" id="7_n88l6"]
 [ext_resource type="Texture2D" uid="uid://c7nr8pndk68pb" path="res://assets/questions/Space.png" id="8_r1aac"]
+[ext_resource type="AudioStream" uid="uid://ktybig4yq4n" path="res://assets/audio/music/preguntas.mp3" id="9_ygqfj"]
+[ext_resource type="AudioStream" uid="uid://3rqc5fijo5ln" path="res://assets/audio/sounds/pageFlip.mp3" id="10_7fdu0"]
+[ext_resource type="AudioStream" uid="uid://b20hcl311jn4c" path="res://assets/audio/sounds/correct.mp3" id="11_m88yp"]
+[ext_resource type="AudioStream" uid="uid://hdosr0ioko2c" path="res://assets/audio/sounds/wrong.mp3" id="12_xfulm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swdjc"]
 atlas = ExtResource("2_4d8qx")
@@ -455,4 +459,18 @@ theme_override_fonts/font = SubResource("FontVariation_8i30n")
 theme_override_font_sizes/font_size = 22
 text = "Cerrar"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=990829100]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=990829100]
+stream = ExtResource("9_ygqfj")
+autoplay = true
+parameters/looping = true
+
+[node name="PageFlip" type="AudioStreamPlayer" parent="." unique_id=1512687542]
+stream = ExtResource("10_7fdu0")
+volume_db = 4.239
+
+[node name="WrongSound" type="AudioStreamPlayer" parent="." unique_id=753299748]
+stream = ExtResource("12_xfulm")
+
+[node name="CorrectSound" type="AudioStreamPlayer" parent="." unique_id=1491616803]
+stream = ExtResource("11_m88yp")
+volume_db = 4.239

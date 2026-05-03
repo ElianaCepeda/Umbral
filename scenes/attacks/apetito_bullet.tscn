@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dagnhhhjljius" path="res://scenes/attacks/apetito_bullet.gd" id="1_be62k"]
 [ext_resource type="Texture2D" uid="uid://58ad82tb3ee7" path="res://assets/16_burger_dish.png" id="2_be62k"]
-[ext_resource type="AudioStream" uid="uid://bi610cttln7mt" path="res://assets/audio/sounds/Proyectil.ogg" id="3_w5x35"]
+[ext_resource type="AudioStream" uid="uid://ceegs02dhf0n1" path="res://assets/audio/sounds/proyectil.mp3" id="3_be62k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1nag1"]
 radius = 15.092308
@@ -19,8 +19,9 @@ texture = ExtResource("2_be62k")
 position = Vector2(7.947286e-07, -1.6666654)
 shape = SubResource("CircleShape2D_1nag1")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=692782749]
-stream = ExtResource("3_w5x35")
+[node name="Proyectil" type="AudioStreamPlayer" parent="." unique_id=692782749]
+stream = ExtResource("3_be62k")
 volume_db = -15.0
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

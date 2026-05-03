@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 join Doctor left
 Doctor: A Borroso no le gustan los detalles, prefiere mezclar los bordes de la realidad hasta que no sabes si esquivas un obstáculo o una sombra.
 Doctor: Médicamente, el alcohol debilita la coordinación de los músculos oculares, impidiendo que se alineen correctamente y obligando al cerebro a procesar dos imágenes distintas sin poder enfocarlas.

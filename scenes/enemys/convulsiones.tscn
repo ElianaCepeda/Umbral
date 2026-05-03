@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fgkalust6a8o" path="res://scripts/enemy/convulsiones.gd" id="1_645pp"]
 [ext_resource type="Texture2D" uid="uid://cd3cp6bc8wbnd" path="res://assets/enemy/convulsiones.png" id="1_v7ins"]
+[ext_resource type="AudioStream" uid="uid://dpeocct4nikkd" path="res://assets/audio/sounds/death of enemies.mp3" id="3_etkwv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_645pp"]
 atlas = ExtResource("1_v7ins")
@@ -72,3 +73,7 @@ frame_progress = 0.32454365
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1454648873]
 shape = SubResource("CapsuleShape2D_4jel4")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=420503789]
+stream = ExtResource("3_etkwv")
+volume_db = -18.562

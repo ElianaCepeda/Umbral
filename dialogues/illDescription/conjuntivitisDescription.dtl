@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 join Doctor left
 Doctor: El consumo de cannabis provoca vasodilatación en los vasos sanguíneos de los ojos, generando enrojecimiento e irritación visible casi inmediata.
 join conjuntivitis right

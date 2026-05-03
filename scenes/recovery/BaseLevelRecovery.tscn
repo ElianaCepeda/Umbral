@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c3n7s66eyvvw2" path="res://assets/scenario/fountain-large-2.png" id="3_2erat"]
 [ext_resource type="PackedScene" uid="uid://ctibey8ts4cil" path="res://scenes/player.tscn" id="4_c8y2e"]
 [ext_resource type="Script" uid="uid://cas7hatho5sbn" path="res://scenes/spawner.gd" id="5_mk1d7"]
-[ext_resource type="AudioStream" uid="uid://bfks3buc8wlxq" path="res://assets/audio/music/Tension.ogg" id="6_d3y6p"]
+[ext_resource type="AudioStream" uid="uid://cjxocur0isnu2" path="res://assets/audio/music/pause.mp3" id="6_pjn82"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjn82"]
 radius = 94.0
@@ -106,8 +106,9 @@ offset_right = 1502.0
 offset_bottom = 848.0
 color = Color(0, 0, 0, 0.7921569)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1049284930]
-stream = ExtResource("6_d3y6p")
-volume_db = -20.0
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=687613166]
+stream = ExtResource("6_pjn82")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Fountain" to="." method="_on_fountain_body_entered"]

@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cdnyyt55yg0vn" path="res://assets/ui/Door 7_spritesheet.png" id="5_oa1go"]
 [ext_resource type="Texture2D" uid="uid://d1ut4unr3msif" path="res://assets/ui/btn.png" id="5_rtw2f"]
 [ext_resource type="Script" uid="uid://drxebsvcycp3k" path="res://scenes/door.gd" id="5_tbmy8"]
+[ext_resource type="AudioStream" uid="uid://cw0qk8sfnfiet" path="res://assets/audio/music/menu.mp3" id="9_jk1qb"]
 
 [sub_resource type="FontVariation" id="FontVariation_oa1go"]
 base_font = ExtResource("3_8ln24")
@@ -330,6 +331,11 @@ theme_override_font_sizes/font_size = 25
 text = "SALIR"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=1544335485]
+stream = ExtResource("9_jk1qb")
+autoplay = true
+parameters/looping = true
 
 [connection signal="mouse_entered" from="VBoxContainer/ContentGroup/Brainholder/Door/DoorBtn" to="VBoxContainer/ContentGroup/Brainholder/Door" method="_on_door_btn_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/ContentGroup/Brainholder/Door/DoorBtn" to="VBoxContainer/ContentGroup/Brainholder/Door" method="_on_door_btn_mouse_exited"]

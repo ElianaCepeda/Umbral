@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://doqn4hplyhcbc" path="res://scenes/levels/BaseLevelFase1.tscn" id="1_taurh"]
 [ext_resource type="Script" uid="uid://cwv4yswhei3q" path="res://scripts/levels/borrosoLevel.gd" id="2_8n4yk"]
+[ext_resource type="AudioStream" uid="uid://dmo67k8nqv2ts" path="res://assets/audio/music/batalla.mp3" id="3_3dnaw"]
 
 [node name="BorrosoLevel" unique_id=1029686040 instance=ExtResource("1_taurh")]
 script = ExtResource("2_8n4yk")
@@ -9,3 +10,9 @@ script = ExtResource("2_8n4yk")
 [node name="Spawner" parent="." index="4" unique_id=2048461648]
 cantidad_minima = 4
 tipo_enemigo_actual = "Borroso"
+
+[node name="Batalla2" type="AudioStreamPlayer" parent="." index="7" unique_id=823149326]
+stream = ExtResource("3_3dnaw")
+volume_db = -9.609
+autoplay = true
+parameters/looping = true

@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://dmu6cm2k3fci6" path="res://assets/tilesetFase1.tres" id="1_hw1w3"]
 [ext_resource type="PackedScene" uid="uid://ctibey8ts4cil" path="res://scenes/player.tscn" id="3_es05s"]
 [ext_resource type="Script" uid="uid://cas7hatho5sbn" path="res://scenes/spawner.gd" id="4_q4x0e"]
+[ext_resource type="AudioStream" uid="uid://dmo67k8nqv2ts" path="res://assets/audio/music/batalla.mp3" id="5_p1kh7"]
 [ext_resource type="AudioStream" uid="uid://bfks3buc8wlxq" path="res://assets/audio/music/Tension.ogg" id="5_shqte"]
 
 [node name="NodoBaseFase1" type="Node2D" unique_id=1029686040]
@@ -52,3 +53,9 @@ color = Color(0, 0, 0, 0.7921569)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1049284930]
 stream = ExtResource("5_shqte")
 volume_db = -20.0
+
+[node name="Batalla" type="AudioStreamPlayer" parent="." unique_id=1179727470]
+stream = ExtResource("5_p1kh7")
+volume_db = -9.609
+autoplay = true
+parameters/looping = true

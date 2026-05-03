@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqftjd4i6qcce" path="res://scripts/enemy/cocaina.gd" id="1_hb218"]
 [ext_resource type="Texture2D" uid="uid://bkt58501f05jy" path="res://assets/enemy/cocaina.png" id="1_xdlm7"]
+[ext_resource type="AudioStream" uid="uid://dpeocct4nikkd" path="res://assets/audio/sounds/death of enemies.mp3" id="3_i78ql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hb218"]
 atlas = ExtResource("1_xdlm7")
@@ -104,3 +105,7 @@ frame_progress = 0.72866035
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=312962774]
 position = Vector2(-21, 3)
 shape = SubResource("CapsuleShape2D_2ofhj")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=257425053]
+stream = ExtResource("3_i78ql")
+volume_db = -18.562

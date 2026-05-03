@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 join Doctor left
 Doctor: La cocaína eleva peligrosamente la frecuencia cardíaca y puede desencadenar arritmias letales.
 join taquicardia right

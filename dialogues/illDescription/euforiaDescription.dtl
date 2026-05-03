@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 join Doctor left
 Doctor: Euforia parece tu mejor amigo en la fiesta. Te llena de energía y te hace sentir invencible, pero siempre te pasa factura a escondidas.
 Doctor: Los primeros tragos engañan al cerebro liberando picos artificiales de dopamina, una falsa felicidad que nubla tu juicio crítico y te empuja a tomar decisiones impulsivas.

@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://d0u6kv0akue8f" path="res://assets/fonts/Ruler 9.ttf" id="3_knqa7"]
 [ext_resource type="Texture2D" uid="uid://ciivh3cfyhval" path="res://assets/ui/Separator.png" id="4_71k7c"]
 [ext_resource type="Texture2D" uid="uid://cbj8ck3boihj7" path="res://assets/pause/BotonPause.png" id="5_cmnsq"]
+[ext_resource type="AudioStream" uid="uid://cjxocur0isnu2" path="res://assets/audio/music/pause.mp3" id="6_v4r4p"]
 
 [sub_resource type="FontVariation" id="FontVariation_ofnjo"]
 base_font = ExtResource("3_knqa7")
@@ -246,3 +247,7 @@ theme_override_font_sizes/font_size = 22
 text = "SALIR A ESCRITORIO"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1165514728]
+stream = ExtResource("6_v4r4p")
+parameters/looping = true

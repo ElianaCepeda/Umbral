@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 join Doctor left
 Doctor: La Urgencia es esa voz desesperada que no acepta un "no" por respuesta, convirtiendo la falta de humo en una emergencia absoluta que nubla la razón.
 Doctor: Representa el pico del síndrome de abstinencia\: cuando el cerebro se queda sin nicotina, envía señales de pánico que provocan irritabilidad extrema y temblores incontrolables.

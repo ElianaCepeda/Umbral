@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://boaor7jnuvatl" path="res://assets/ui/pixel-cig64x.png" id="12_a2vxr"]
 [ext_resource type="Texture2D" uid="uid://be8yvdpxdfqe0" path="res://assets/ui/Marijuana.png" id="13_2x002"]
 [ext_resource type="Texture2D" uid="uid://dcfmqntuyei3t" path="res://assets/ui/Cocaine.png" id="14_xdurn"]
+[ext_resource type="AudioStream" uid="uid://cjxocur0isnu2" path="res://assets/audio/music/pause.mp3" id="15_qqymp"]
 
 [sub_resource type="FontVariation" id="FontVariation_jicxw"]
 base_font = ExtResource("4_4yaje")
@@ -981,3 +982,8 @@ offset_bottom = 564.0
 size_flags_horizontal = 4
 mouse_filter = 2
 color = Color(0.6392157, 0.50980395, 0.3137255, 0.19607843)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1763656281]
+stream = ExtResource("15_qqymp")
+autoplay = true
+parameters/looping = true

@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 join Doctor center
 Doctor: El consumo prolongado de cannabis puede afectar la memoria inmediata y la capacidad de retener información reciente, alterando la función del hipocampo.
 join memoria right

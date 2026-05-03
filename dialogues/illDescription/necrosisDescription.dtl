@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 join Doctor center
 Doctor: La cocaína puede provocar vasoconstricción severa, reduciendo el flujo sanguíneo hacia órganos vitales, incluyendo los intestinos, generando necrosis e isquemia.
 join necrosis right

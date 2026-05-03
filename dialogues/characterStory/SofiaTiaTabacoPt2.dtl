@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/inicio2.wav"
 [background arg="res://assets/backgrounds/_emergency_staircase_4.jpg" fade="0.0"]
 join SofiaTabaco (RelajadaConCigarrillo) center
 SofiaTabaco: Empecé a fumar en la universidad, justo una noche antes de un parcial que me tenía muy nerviosa, un compañero de la facultad me ofrecido un cigarrillo y me dijo que eso me ayudaría a concentrarme.

@@ -20,9 +20,16 @@ var defense2points : int = 0
 var first_question: int = 0 
 var last_question: int = 6
 var current_question_index: int = 0
+var correct_sound: AudioStreamPlayer
+var wrong_sound: AudioStreamPlayer
+@onready var page_flip = $PageFlip
 
 var type:String
 var correct_answer: int
+func _ready():
+	await get_tree().create_timer(0.5).timeout
+	if page_flip:
+		page_flip.play()
 
 var questions = [
 	{
@@ -467,6 +474,7 @@ func _init():
 
 func enter():
 	print("Entrando al minijuego de recuperación...")
+	
 
 	if preloaded_scene:
 		scene_instance = preloaded_scene.instantiate()
@@ -474,7 +482,8 @@ func enter():
 	else:
 		push_error("CRÍTICO: No hay escena precargada en RecoveryState")
 		return
-
+	correct_sound = scene_instance.get_node("CorrectSound")
+	wrong_sound = scene_instance.get_node("WrongSound")
 	var holder = scene_instance.get_node("CenterContainer/QuestionsHolder")
 	var ui_root = holder.get_node("VBoxContainer")
 	var answers_root = ui_root.get_node("AnswersContainer")
@@ -613,8 +622,16 @@ func check_answer(answer):
 	cambiar_estado_botones(true)
 	
 	if answer == correct_answer:
+		if correct_sound:
+			print("ENTRA EN CORRECT SOUND")
+			correct_sound.play()
+			await get_tree().create_timer(0.5).timeout
 		add_points()
 	else:
+		if wrong_sound:
+			print("ENTRA EN CORRECT SOUND")
+			wrong_sound.play()
+			await get_tree().create_timer(0.5).timeout
 		sub_points()
 		
 	scoreattack_label.text = str("Ataque: ",attackpoints)

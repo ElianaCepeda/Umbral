@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 join Doctor left
 Doctor: Voraces representa el hambre artificial que no proviene del cuerpo, sino del impulso químico.
 Doctor: El THC estimula los receptores del sistema endocannabinoide responsables del apetito, activando un deseo constante de consumir sin necesidad real.

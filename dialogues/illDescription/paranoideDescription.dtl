@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 join Doctor left
 Doctor: En algunos consumidores, especialmente con dosis altas, el THC puede intensificar pensamientos paranoides o ansiedad aguda.
 join paranoide right

@@ -21,6 +21,8 @@ var skill3_name: String = ""
 @onready var skill1_icon = $HUD/TextureRect
 @onready var skill2_icon = $HUD/TextureRect2
 @onready var skill3_icon = $HUD/TextureRect3
+@onready var hurt_sound = $HurtSound
+@onready var death_sound = $DeathSound
 @export var default_icon: Texture2D
 
 var last_direction: Vector2 = Vector2.DOWN
@@ -211,7 +213,8 @@ func handle_skills():
 func take_damage(amount: int, damage_color: Color = Color.RED):
 	if is_dead or is_invulnerable or not is_inside_tree():
 		return
-	
+	if hurt_sound:
+		hurt_sound.play()
 	is_invulnerable = true 
 	is_hurt = true
 	is_attacking = false
@@ -244,6 +247,10 @@ func take_damage(amount: int, damage_color: Color = Color.RED):
 	)
 
 	if consciousness <= 0:
+		Engine.time_scale = 0.2
+		if death_sound:
+			death_sound.play()
+		await get_tree().create_timer(0.4).timeout
 		die()
 
 
@@ -280,6 +287,9 @@ func die():
 	if is_dead:
 		return
 	is_dead = true
+	#Reinicio vida
+	consciousness = 100
+	SaveManager.sync_and_save_player_state(consciousness, 100)
 	Engine.time_scale = 1.0 
 	GameManager.game_over()
 

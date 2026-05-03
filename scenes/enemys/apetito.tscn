@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://4mh08a8t3y62" path="res://assets/enemy/apetito.png" id="1_jicbd"]
 [ext_resource type="Script" uid="uid://byq5gpt4chgxd" path="res://scripts/enemy/apetito.gd" id="1_uxpen"]
 [ext_resource type="PackedScene" uid="uid://kna33f4l17pt" path="res://scenes/attacks/apetito_bullet.tscn" id="2_yyg6j"]
+[ext_resource type="AudioStream" uid="uid://dpeocct4nikkd" path="res://assets/audio/sounds/death of enemies.mp3" id="4_2uayi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxpen"]
 atlas = ExtResource("1_jicbd")
@@ -82,3 +83,7 @@ autostart = true
 
 [node name="ShootPosition" type="Marker2D" parent="." unique_id=871080364]
 position = Vector2(22, 0)
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1486698068]
+stream = ExtResource("4_2uayi")
+volume_db = -18.562

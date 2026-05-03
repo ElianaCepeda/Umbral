@@ -9,6 +9,7 @@ class_name EnemyBase
 @export var points: int = 10 # puntos que recibe el jugador cuando muere el enemigoo
 @export var collision_damage: int = 1 # puntos que pierde el jugador cuando toca al enemigoo
 @export var damage_color: Color = Color.RED 
+@onready var death_sound = $DeathSound
 
 var movement_direction: Vector2 = Vector2.ZERO
 var player: Node2D = null
@@ -256,6 +257,9 @@ func give_points_and_die():
 	die()
 
 func die():
+	if death_sound:
+		death_sound.reparent(get_tree().root)
+		death_sound.play()
 	queue_free()
 	
 # --- AUXILIARES ---

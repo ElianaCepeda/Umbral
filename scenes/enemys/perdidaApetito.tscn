@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b4hn0l3gkmsx3" path="res://assets/enemy/perdidaApetito.png" id="1_a3snl"]
 [ext_resource type="Script" uid="uid://r1tt4eccdqh6" path="res://scripts/enemy/perdida_apetito.gd" id="1_rddf6"]
+[ext_resource type="AudioStream" uid="uid://dpeocct4nikkd" path="res://assets/audio/sounds/death of enemies.mp3" id="3_ef8vj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rddf6"]
 atlas = ExtResource("1_a3snl")
@@ -74,3 +75,7 @@ shape = SubResource("CapsuleShape2D_fxa57")
 
 [node name="PoisonTimer" type="Timer" parent="." unique_id=576699006]
 wait_time = 0.1
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=831037653]
+stream = ExtResource("3_ef8vj")
+volume_db = -18.562

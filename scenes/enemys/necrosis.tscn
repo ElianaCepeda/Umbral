@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://qs6x3yyqtw7b" path="res://assets/enemy/necrosis.png" id="1_1wh4c"]
 [ext_resource type="Script" uid="uid://bvl34dkwo0yll" path="res://scripts/enemy/necrosis.gd" id="1_6x0it"]
+[ext_resource type="AudioStream" uid="uid://dpeocct4nikkd" path="res://assets/audio/sounds/death of enemies.mp3" id="3_lu016"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6x0it"]
 atlas = ExtResource("1_1wh4c")
@@ -83,3 +84,7 @@ shape = SubResource("CircleShape2D_s410a")
 
 [node name="PoisonTimer" type="Timer" parent="." unique_id=1794289606]
 wait_time = 0.1
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1580839116]
+stream = ExtResource("3_lu016")
+volume_db = -18.562

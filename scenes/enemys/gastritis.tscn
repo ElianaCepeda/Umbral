@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brcfmfk5y6uh0" path="res://scripts/enemy/gastritis.gd" id="1_fk00c"]
 [ext_resource type="Texture2D" uid="uid://teadm3g76qul" path="res://assets/enemy/gastritis.png" id="1_ndffv"]
+[ext_resource type="AudioStream" uid="uid://dpeocct4nikkd" path="res://assets/audio/sounds/death of enemies.mp3" id="3_tsk2h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fk00c"]
 atlas = ExtResource("1_ndffv")
@@ -77,3 +78,7 @@ shape = SubResource("CircleShape2D_puso2")
 
 [node name="PoisonTimer" type="Timer" parent="." unique_id=778921738]
 wait_time = 0.1
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1773607974]
+stream = ExtResource("3_tsk2h")
+volume_db = -18.562

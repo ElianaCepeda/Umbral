@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 join Doctor left
 Doctor: Desaliento es una sombra que pesa toneladas, haciendo que las tareas más simples se sientan como escalar una montaña con los pulmones vacíos.
 Doctor: Tras años de daño pulmonar y falta de oxígeno en la sangre, el cuerpo pierde por completo su resistencia física y vive en un estado de agotamiento crónico.

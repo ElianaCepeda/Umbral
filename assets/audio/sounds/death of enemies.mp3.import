@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpeocct4nikkd"
+path="res://.godot/imported/death of enemies.mp3-0191c48aa79506d4d3a4309bab764345.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/death of enemies.mp3"
+dest_files=["res://.godot/imported/death of enemies.mp3-0191c48aa79506d4d3a4309bab764345.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

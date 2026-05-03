@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 join Doctor left
 Doctor: Fumar cannabis irrita las vías respiratorias, causando inflamación, tos persistente y producción excesiva de mucosidad.
 Doctor: Este personaje expulsará nubes densas de humo  que se expanden lentamente por el campo de batalla.

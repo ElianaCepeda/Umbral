@@ -1,3 +1,4 @@
+audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
 join Doctor left
 Doctor: Ardor es un fuego que quema desde adentro, alimentándose de los excesos para convertir tu propio cuerpo en un terreno hostil.
 Doctor: El consumo prolongado irrita y erosiona gravemente el revestimiento del estómago, causando inflamación crónica, dolor agudo y úlceras sangrantes.

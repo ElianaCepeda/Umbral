@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://du14iubjv7mdv" path="res://assets/enemy/fatiga.png" id="1_bstfh"]
 [ext_resource type="Script" uid="uid://bfhaefwemkwm6" path="res://scripts/enemy/fatiga.gd" id="1_ydvs6"]
+[ext_resource type="AudioStream" uid="uid://dpeocct4nikkd" path="res://assets/audio/sounds/death of enemies.mp3" id="3_5oixr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ydvs6"]
 atlas = ExtResource("1_bstfh")
@@ -121,3 +122,7 @@ frame_progress = 0.21249388
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=898411324]
 position = Vector2(-6, -1)
 shape = SubResource("CapsuleShape2D_40y1l")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=478415360]
+stream = ExtResource("3_5oixr")
+volume_db = -18.562
