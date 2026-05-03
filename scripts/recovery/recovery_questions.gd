@@ -571,8 +571,8 @@ func _init(min_val: int = 1, max_val: int = 9):
 	scene_path = "res://scenes/recovery/question_room.tscn"
 	timeline_name = ""
 	enemy_type = ""
-	first_question = min_val
-	last_question = max_val
+	first_question = min_val-1
+	last_question = max_val-1
 
 func enter():
 	print("Entrando al minijuego de recuperación...")
@@ -695,7 +695,6 @@ func hide_arrow(boton: Button) -> void:
 
 
 func load_question(count:int):
-	print ( "Numero Pregunta:  ", count)
 	permitir_hover = true
 	var q = questions[count]
 	correct_answer = q["correct"]
@@ -728,7 +727,7 @@ func check_answer(answer):
 	scoredefense2_label.text = str("Defensa2: ",defense2points)
 	
 	current_question_index += 1
-	if current_question_index <= last_question:
+	if current_question_index < last_question:
 		load_question(current_question_index)
 	else:
 		print("¡Se acabaron las preguntas de esta ronda!")

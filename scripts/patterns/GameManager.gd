@@ -21,7 +21,7 @@ var campaign_database = {
 		"intro": "AndresTioAlcohol",
 		"phase1": [RetardoLevel, BorrosoLevel, EuforiaLevel],
 		"phase2": [CirrosisLevel, HipertensionLevel2, GastritisLevel],
-		"boss": null, # Reemplazar con BossAlcoholLevel cuando exista
+		"boss": AlcoholLevel,
 		"good_ending": "AndresTioAlcoholFinalBueno",
 		"bad_ending": "AndresTioAlcoholFinalMalo",
 		"next_unlock": "tabaco",
@@ -32,7 +32,7 @@ var campaign_database = {
 		"intro": "SofiaTiaTabaco",
 		"phase1": [HipertensionLevel, AsfixiaLevel, TaquicardiaLevel],
 		"phase2": [AnsiedadLevel, FatigaLevel, ObstruccionLevel],
-		"boss": null,
+		"boss": TabacoLevel,
 		"good_ending": "SofiaTiaTabacoFinalBueno",
 		"bad_ending": "SofiaTiaTabacoFinalMalo",
 		"next_unlock": "marihuana",
@@ -43,7 +43,7 @@ var campaign_database = {
 		"intro": "LucasPrimoMarihuana",
 		"phase1": [ConjuntivitisLevel, ApetitoLevel, AsfixiaLevel],
 		"phase2": [MemoriaLevel, DesbalanceLevel , ParanoideLevel],
-		"boss": null,
+		"boss": MarihuanaLevel,
 		"good_ending": "LucasPrimoMarihuanaFinalBueno",
 		"bad_ending": "LucasPrimoMarihuanaFinalMalo",
 		"next_unlock": "cocaina",
@@ -54,7 +54,7 @@ var campaign_database = {
 		"intro": "MateoHermanoCocaina",
 		"phase1": [ParanoideLevel, InsomnioLevel, ConvulsionesLevel],
 		"phase2": [NecrosisLevel, TaquicardiaLevel2, PerdidaApetitoLevel],
-		"boss": null,
+		"boss": CocainaLevel,
 		"good_ending": "MateoHermanoCocainaFinalBueno",
 		"bad_ending": "MateoHermanoCocainaFinalMalo",
 		"next_unlock": "fin", # Puedes cambiar esto por una pantalla de victoria final
@@ -98,7 +98,7 @@ func advance_campaign_flow() -> void:
 			
 		FlowState.PHASE_1:
 			current_enemy_index += 1
-			if current_enemy_index < 3: # Aún hay enemigos en la Fase 1
+			if current_enemy_index < 0: # Aún hay enemigos en la Fase 1
 				_load_current_phase_enemy(data["phase1"])
 			else:
 				current_flow = FlowState.RECOVERY_2
@@ -113,13 +113,13 @@ func advance_campaign_flow() -> void:
 			
 		FlowState.PHASE_2:
 			current_enemy_index += 1
-			if current_enemy_index < 3:
+			if current_enemy_index < 0:
 				_load_current_phase_enemy(data["phase2"])
 			else:
 				current_flow = FlowState.BOSS
-				# change_level(data["boss"].new()) # Descomentar cuando tengas el jefe
+				change_level(data["boss"].new()) # Descomentar cuando tengas el jefe
 				# POR AHORA, pasamos directo a la evaluación final:
-				_evaluate_ending(data)
+				#_evaluate_ending(data)
 				
 		FlowState.BOSS:
 			_evaluate_ending(data)
@@ -145,7 +145,7 @@ func _evaluate_ending(data: Dictionary) -> void:
 		SaveManager.unlock_macro_level(data["next_unlock"])
 		change_level(StoryState.new(data["good_ending"], false))
 
-# --- FUNCIONES DE CAMBIO (Igual a como las tenías) ---
+# --- FUNCIONES DE CAMBIO ---
 func change_level(new_level: LevelState):
 	TransitionManager.load_level_async(new_level)
 

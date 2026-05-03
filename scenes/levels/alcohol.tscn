@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bfffimds5eipw"]
+
+[ext_resource type="PackedScene" uid="uid://cd7evawnkk5sr" path="res://scenes/levels/BaseLevelBoss.tscn" id="1_qn1ru"]
+[ext_resource type="Script" uid="uid://drl24duagk2py" path="res://scripts/levels/alcoholLevel.gd" id="2_u324c"]
+[ext_resource type="PackedScene" uid="uid://cdl6v2jk6kwb" path="res://scenes/enemys/retardo.tscn" id="3_eqs0g"]
+[ext_resource type="PackedScene" uid="uid://cbs538frsbn2x" path="res://scenes/enemys/euforia.tscn" id="4_tjk0i"]
+[ext_resource type="PackedScene" uid="uid://c7ygg4mjejy4r" path="res://scenes/enemys/gastritis.tscn" id="5_wqkqo"]
+[ext_resource type="PackedScene" uid="uid://5h6p2hx81o27" path="res://scenes/enemys/borroso.tscn" id="6_0eucp"]
+
+[node name="NodoBaseBoss" unique_id=1029686040 instance=ExtResource("1_qn1ru")]
+script = ExtResource("2_u324c")
+
+[node name="BossFightController" parent="." index="8" unique_id=164943435]
+minion_scenes = Array[PackedScene]([ExtResource("3_eqs0g"), ExtResource("4_tjk0i"), ExtResource("5_wqkqo"), ExtResource("6_0eucp")])
