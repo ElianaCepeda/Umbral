@@ -197,11 +197,9 @@ func _on_level_won() -> void:
 			tween.tween_callback(func():
 				var puerta_cerrada = exit_door.get_node_or_null("PuertaCerrada")
 				var puerta_abierta = exit_door.get_node_or_null("PuertaAbierta")
-				var bloqueo = exit_door.get_node_or_null("BloqueoPuerta")
 				
 				if puerta_cerrada: puerta_cerrada.hide()
 				if puerta_abierta: puerta_abierta.show()
-				if bloqueo: bloqueo.queue_free() 
 				
 				is_door_open = true
 				print("¡Puerta abierta visualmente!")

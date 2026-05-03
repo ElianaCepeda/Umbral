@@ -85,6 +85,7 @@ shape = SubResource("RectangleShape2D_pjn82")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor/BloqueoPuerta" unique_id=245242743]
+visible = false
 position = Vector2(835, 187)
 shape = SubResource("RectangleShape2D_2fpio")
 

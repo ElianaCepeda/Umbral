@@ -37,7 +37,6 @@ region_enabled = true
 region_rect = Rect2(126.69474, 24.843414, 131.1257, 72.32412)
 
 [node name="PuertaAbierta" type="Sprite2D" parent="ExitDoor" unique_id=1556965387]
-visible = false
 position = Vector2(3, -14)
 texture = ExtResource("2_2hmje")
 region_enabled = true

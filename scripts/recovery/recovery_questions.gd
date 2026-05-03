@@ -728,7 +728,7 @@ func check_answer(answer):
 	scoredefense2_label.text = str("Defensa2: ",defense2points)
 	
 	current_question_index += 1
-	if current_question_index < last_question:
+	if current_question_index <= last_question:
 		load_question(current_question_index)
 	else:
 		print("¡Se acabaron las preguntas de esta ronda!")
