@@ -5,10 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://b0eemnktxkisi" path="res://scenes/enemys/perdidaApetito.tscn" id="3_c2i16"]
 [ext_resource type="PackedScene" uid="uid://c3dofnjcc3tgg" path="res://scenes/enemys/convulsiones.tscn" id="4_avk50"]
 [ext_resource type="PackedScene" uid="uid://xiiu10m2uhcp" path="res://scenes/enemys/necrosis.tscn" id="5_71ooq"]
-[ext_resource type="PackedScene" uid="uid://dfc4rvk0ar4ig" path="res://scenes/enemys/insomnio.tscn" id="6_sji7b"]
+[ext_resource type="PackedScene" uid="uid://bsmxfoydofb33" path="res://scenes/enemys/taquicardia.tscn" id="6_c2i16"]
 
 [node name="NodoBaseBoss" unique_id=1029686040 instance=ExtResource("1_s35c2")]
 script = ExtResource("2_0r53m")
 
 [node name="BossFightController" parent="." index="8" unique_id=164943435]
-minion_scenes = Array[PackedScene]([ExtResource("3_c2i16"), ExtResource("4_avk50"), ExtResource("5_71ooq"), ExtResource("6_sji7b")])
+protector_scene = ExtResource("3_c2i16")
+aggressor_scene = ExtResource("4_avk50")
+stalker_scene = ExtResource("5_71ooq")
+support_scene = ExtResource("6_c2i16")

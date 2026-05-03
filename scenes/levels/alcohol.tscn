@@ -11,4 +11,7 @@
 script = ExtResource("2_u324c")
 
 [node name="BossFightController" parent="." index="8" unique_id=164943435]
-minion_scenes = Array[PackedScene]([ExtResource("3_eqs0g"), ExtResource("4_tjk0i"), ExtResource("5_wqkqo"), ExtResource("6_0eucp")])
+protector_scene = ExtResource("3_eqs0g")
+aggressor_scene = ExtResource("4_tjk0i")
+stalker_scene = ExtResource("5_wqkqo")
+support_scene = ExtResource("6_0eucp")
