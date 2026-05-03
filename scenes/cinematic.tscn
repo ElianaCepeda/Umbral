@@ -6,4 +6,3 @@
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1740846607]
 stream = ExtResource("1_lhrfg")
-autoplay = true

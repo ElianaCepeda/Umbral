@@ -1,4 +1,3 @@
-audio music "res://assets/audio/music/inicio2.wav"
 [background arg="res://assets/backgrounds/_ruined_room_2.jpg" fade="0.0"]
 join MateoCocaina center
 MateoCocaina: Ana me dijo que era una "fiesta del vicio", que así le decían, que todo el mundo iba. Que me lo merecía después de tanto trabajo.

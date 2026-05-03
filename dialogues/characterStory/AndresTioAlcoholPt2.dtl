@@ -1,4 +1,3 @@
-audio music "res://assets/audio/music/inicio2.wav"
 [background arg="res://assets/backgrounds/rooftop_area_night1.png" fade="0.0"]
 join AndresAlcohol (Agotado) leftmost
 AndresAlcohol: Todo comenzó solo como algo recreativo que hacía cuando estaba en compañía de amigos del trabajo cada vez que teníamos algún evento o venta importante

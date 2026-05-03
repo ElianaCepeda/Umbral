@@ -1,4 +1,3 @@
-audio music "res://assets/audio/music/inicio2.wav"
 [background arg="res://assets/backgrounds/small_cabin_room_night1_flash.png" fade="0.0"]
 join LucasMarihuana (Disociado) center
 LucasMarihuana: Todo empezó en el club donde iba a tocar los fines de semana, ya llevaba varias semanas tocando y sentía que mi creatividad se había agotado
