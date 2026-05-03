@@ -98,7 +98,7 @@ func advance_campaign_flow() -> void:
 			
 		FlowState.PHASE_1:
 			current_enemy_index += 1
-			if current_enemy_index < 0: # Aún hay enemigos en la Fase 1
+			if current_enemy_index < 3: # Aún hay enemigos en la Fase 1
 				_load_current_phase_enemy(data["phase1"])
 			else:
 				current_flow = FlowState.RECOVERY_2
@@ -113,7 +113,7 @@ func advance_campaign_flow() -> void:
 			
 		FlowState.PHASE_2:
 			current_enemy_index += 1
-			if current_enemy_index < 0:
+			if current_enemy_index < 3:
 				_load_current_phase_enemy(data["phase2"])
 			else:
 				current_flow = FlowState.BOSS
