@@ -5,8 +5,10 @@ extends Control
 @onready var btn_family = $VBoxContainer/ContentGroup/BtnRow/BtnFamily
 @onready var btn_sympt = $VBoxContainer/ContentGroup/BtnRow/BtnSympt
 @onready var btn_exit = $VBoxContainer/ContentGroup/BtnRow/BtnExit
-
+@onready var music_menu =$MenuMusic
 func _ready() -> void:
+	if music_menu:
+		music_menu.play()
 	door.door_pressed.connect(_go_to_game)
 	btn_family.pressed.connect(_go_to_recovery)
 	btn_sympt.pressed.connect(_go_to_levels)
@@ -33,6 +35,8 @@ func _hover_off(btn: TextureButton) -> void:
 
 
 func _go_to_game() -> void:
+	if music_menu:
+		music_menu.stop()
 	var ultima_campana = SaveManager.get_latest_unlocked_campaign()
 	print("1. Botón de inicio presionado. Enviando a: ", ultima_campana)
 	
@@ -41,10 +45,14 @@ func _go_to_game() -> void:
 
 
 func _go_to_recovery() -> void:
+	if music_menu:
+		music_menu.stop()
 	queue_free()
 	GameManager.change_level(RecoveryState.new())
 	
 func _go_to_levels() -> void:
+	if music_menu:
+		music_menu.stop()
 	queue_free()
 	GameManager.change_level(LevelMenuState.new())
 

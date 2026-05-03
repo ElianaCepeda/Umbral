@@ -334,7 +334,7 @@ vertical_alignment = 1
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=1544335485]
 stream = ExtResource("9_jk1qb")
-autoplay = true
+parameters/looping = true
 
 [connection signal="mouse_entered" from="VBoxContainer/ContentGroup/Brainholder/Door/DoorBtn" to="VBoxContainer/ContentGroup/Brainholder/Door" method="_on_door_btn_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/ContentGroup/Brainholder/Door/DoorBtn" to="VBoxContainer/ContentGroup/Brainholder/Door" method="_on_door_btn_mouse_exited"]
