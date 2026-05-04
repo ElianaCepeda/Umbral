@@ -1,0 +1,617 @@
+[gd_scene format=3 uid="uid://bnork7ioumeg5"]
+
+[ext_resource type="Texture2D" uid="uid://7itg5vun3o65" path="res://assets/keys/normal/left.png" id="1_et533"]
+[ext_resource type="Script" uid="uid://dkld141neal43" path="res://scripts/menus/keys.gd" id="1_td246"]
+[ext_resource type="FontFile" uid="uid://b0aw82t50urpw" path="res://assets/fonts/Silver.ttf" id="2_e6yi5"]
+[ext_resource type="Texture2D" uid="uid://bx27w7etx1mqx" path="res://assets/keys/normal/1.png" id="3_td246"]
+[ext_resource type="Texture2D" uid="uid://wcjulgg8o2yr" path="res://assets/keys/normal/2.png" id="4_xtdvp"]
+[ext_resource type="Texture2D" uid="uid://b2goruibdqi2x" path="res://assets/keys/normal/w.png" id="5_1y2gj"]
+[ext_resource type="Texture2D" uid="uid://ksfpkacyd7pn" path="res://assets/keys/normal/a.png" id="6_egdrn"]
+[ext_resource type="Texture2D" uid="uid://45sexlbi0up0" path="res://assets/keys/normal/s.png" id="7_vw1v2"]
+[ext_resource type="Texture2D" uid="uid://b1x274gemmpbw" path="res://assets/keys/normal/d.png" id="8_u0slf"]
+[ext_resource type="Texture2D" uid="uid://b3gjewftufpag" path="res://assets/keys/normal/mouse.png" id="9_e6yi5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1y8h"]
+bg_color = Color(0.11, 0.11, 0.11, 0.9607843)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvgby"]
+atlas = ExtResource("1_et533")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cr4dq"]
+atlas = ExtResource("1_et533")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6bkq"]
+atlas = ExtResource("1_et533")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v0o5"]
+atlas = ExtResource("1_et533")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0i4bn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvgby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cr4dq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6bkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v0o5")
+}],
+"loop": false,
+"name": &"MouseClick",
+"speed": 10.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_plug0"]
+base_font = ExtResource("2_e6yi5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwsl2"]
+atlas = ExtResource("3_td246")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq7oo"]
+atlas = ExtResource("3_td246")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3njm"]
+atlas = ExtResource("3_td246")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2emod"]
+atlas = ExtResource("3_td246")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k224h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwsl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq7oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3njm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2emod")
+}],
+"loop": false,
+"name": &"Number1",
+"speed": 10.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_2sqd3"]
+base_font = ExtResource("2_e6yi5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7ona"]
+atlas = ExtResource("4_xtdvp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3bg1"]
+atlas = ExtResource("4_xtdvp")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ihdw"]
+atlas = ExtResource("4_xtdvp")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60uba"]
+atlas = ExtResource("4_xtdvp")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v7s5i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7ona")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3bg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ihdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60uba")
+}],
+"loop": false,
+"name": &"Number2",
+"speed": 10.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_cwvmj"]
+base_font = ExtResource("2_e6yi5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej2fu"]
+atlas = ExtResource("5_1y2gj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsfr4"]
+atlas = ExtResource("5_1y2gj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w06pf"]
+atlas = ExtResource("5_1y2gj")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_182i1"]
+atlas = ExtResource("5_1y2gj")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3o1et"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej2fu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsfr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w06pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_182i1")
+}],
+"loop": false,
+"name": &"W",
+"speed": 10.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_svxx3"]
+base_font = ExtResource("2_e6yi5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qihib"]
+atlas = ExtResource("6_egdrn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssbau"]
+atlas = ExtResource("6_egdrn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxy18"]
+atlas = ExtResource("6_egdrn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4jwf"]
+atlas = ExtResource("6_egdrn")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3wbul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qihib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssbau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxy18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4jwf")
+}],
+"loop": false,
+"name": &"A",
+"speed": 10.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_nglbq"]
+base_font = ExtResource("2_e6yi5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41u5f"]
+atlas = ExtResource("7_vw1v2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqyxm"]
+atlas = ExtResource("7_vw1v2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if1n8"]
+atlas = ExtResource("7_vw1v2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rx5k1"]
+atlas = ExtResource("7_vw1v2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50gym"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41u5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqyxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if1n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rx5k1")
+}],
+"loop": false,
+"name": &"S",
+"speed": 10.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_v54v4"]
+base_font = ExtResource("2_e6yi5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d762n"]
+atlas = ExtResource("8_u0slf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ft4g"]
+atlas = ExtResource("8_u0slf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf4v0"]
+atlas = ExtResource("8_u0slf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yh7a7"]
+atlas = ExtResource("8_u0slf")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14skl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d762n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ft4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf4v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yh7a7")
+}],
+"loop": false,
+"name": &"D",
+"speed": 10.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_t851j"]
+base_font = ExtResource("2_e6yi5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td246"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+draw_center = false
+
+[sub_resource type="FontVariation" id="FontVariation_xtdvp"]
+base_font = ExtResource("2_e6yi5")
+
+[node name="Keys" type="CanvasLayer" unique_id=4580112]
+script = ExtResource("1_td246")
+
+[node name="Control" type="Control" parent="." unique_id=95456427]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 515.0
+offset_top = -307.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="LeftContainer" type="PanelContainer" parent="Control" unique_id=472459343]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47300002
+anchor_top = 0.5
+anchor_right = 0.47300002
+anchor_bottom = 0.5
+offset_left = -153.896
+offset_top = -93.0
+offset_right = 153.104
+offset_bottom = 78.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d1y8h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/LeftContainer" unique_id=753656036]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/LeftContainer/VBoxContainer" unique_id=1744850042]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 20
+
+[node name="NumbersRow" type="HBoxContainer" parent="Control/LeftContainer/VBoxContainer/MarginContainer" unique_id=792701933]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="MouseClick" type="Control" parent="Control/LeftContainer/VBoxContainer/MarginContainer/NumbersRow" unique_id=58844198]
+custom_minimum_size = Vector2(20, 52)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/LeftContainer/VBoxContainer/MarginContainer/NumbersRow/MouseClick" unique_id=1217397923]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/LeftContainer/VBoxContainer/MarginContainer/NumbersRow/MouseClick/VBoxContainer" unique_id=555687653]
+position = Vector2(20, 1)
+sprite_frames = SubResource("SpriteFrames_0i4bn")
+animation = &"MouseClick"
+
+[node name="Label" type="Label" parent="Control/LeftContainer/VBoxContainer/MarginContainer/NumbersRow/MouseClick/VBoxContainer" unique_id=1763531747]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_plug0")
+theme_override_font_sizes/font_size = 16
+text = "ATAQUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Numer1" type="Control" parent="Control/LeftContainer/VBoxContainer/MarginContainer/NumbersRow" unique_id=1553409165]
+custom_minimum_size = Vector2(20, 52)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/LeftContainer/VBoxContainer/MarginContainer/NumbersRow/Numer1" unique_id=86421813]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/LeftContainer/VBoxContainer/MarginContainer/NumbersRow/Numer1/VBoxContainer" unique_id=1668175051]
+position = Vector2(18.87, 1)
+sprite_frames = SubResource("SpriteFrames_k224h")
+animation = &"Number1"
+
+[node name="Label" type="Label" parent="Control/LeftContainer/VBoxContainer/MarginContainer/NumbersRow/Numer1/VBoxContainer" unique_id=954680693]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_2sqd3")
+theme_override_font_sizes/font_size = 16
+text = "DEFENSA 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Numer2" type="Control" parent="Control/LeftContainer/VBoxContainer/MarginContainer/NumbersRow" unique_id=942138403]
+custom_minimum_size = Vector2(15.24, 52)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/LeftContainer/VBoxContainer/MarginContainer/NumbersRow/Numer2" unique_id=1004326482]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/LeftContainer/VBoxContainer/MarginContainer/NumbersRow/Numer2/VBoxContainer" unique_id=1867456671]
+position = Vector2(20, 1)
+sprite_frames = SubResource("SpriteFrames_v7s5i")
+animation = &"Number2"
+
+[node name="Label" type="Label" parent="Control/LeftContainer/VBoxContainer/MarginContainer/NumbersRow/Numer2/VBoxContainer" unique_id=597927731]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_cwvmj")
+theme_override_font_sizes/font_size = 16
+text = "DEFENSA 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/LeftContainer/VBoxContainer" unique_id=1344446653]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 6
+
+[node name="GridContainer" type="GridContainer" parent="Control/LeftContainer/VBoxContainer/MarginContainer2" unique_id=1544453747]
+layout_mode = 2
+theme_override_constants/h_separation = -5
+theme_override_constants/v_separation = -23
+columns = 3
+
+[node name="Empty" type="Control" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=702282735]
+clip_contents = true
+custom_minimum_size = Vector2(53.72, 58)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="W" type="Control" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=76276936]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer/W" unique_id=1090013285]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_right = 51.0
+offset_bottom = -23.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer/W/VBoxContainer" unique_id=867410502]
+position = Vector2(75.57, 0)
+sprite_frames = SubResource("SpriteFrames_3o1et")
+animation = &"W"
+frame = 3
+frame_progress = 1.0
+
+[node name="Label" type="Label" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer/W/VBoxContainer" unique_id=1104052741]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_svxx3")
+theme_override_font_sizes/font_size = 16
+text = "ARRIBA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Empty2" type="Control" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1732535839]
+custom_minimum_size = Vector2(58.775, 64.155)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="A" type="Control" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1756067360]
+custom_minimum_size = Vector2(52, 58)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer/A" unique_id=1312600823]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -21.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer/A/VBoxContainer" unique_id=1230823862]
+position = Vector2(25, 0)
+sprite_frames = SubResource("SpriteFrames_3wbul")
+animation = &"A"
+
+[node name="Label" type="Label" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer/A/VBoxContainer" unique_id=358868843]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_nglbq")
+theme_override_font_sizes/font_size = 16
+text = "IZQUIERDA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="S" type="Control" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=665510764]
+custom_minimum_size = Vector2(52, 58)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer/S" unique_id=1585626151]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -21.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer/S/VBoxContainer" unique_id=102273656]
+position = Vector2(25.23, 0)
+sprite_frames = SubResource("SpriteFrames_50gym")
+animation = &"S"
+
+[node name="Label" type="Label" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer/S/VBoxContainer" unique_id=953812755]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_v54v4")
+theme_override_font_sizes/font_size = 16
+text = "ABAJO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D" type="Control" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=526929195]
+custom_minimum_size = Vector2(52, 58)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer/D" unique_id=529294054]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -20.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer/D/VBoxContainer" unique_id=681074999]
+position = Vector2(28.29, 0)
+sprite_frames = SubResource("SpriteFrames_14skl")
+animation = &"D"
+
+[node name="Label" type="Label" parent="Control/LeftContainer/VBoxContainer/MarginContainer2/GridContainer/D/VBoxContainer" unique_id=732538172]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_t851j")
+theme_override_font_sizes/font_size = 16
+text = "DERECHA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1883118421]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.568
+anchor_top = 0.503
+anchor_right = 0.568
+anchor_bottom = 0.503
+offset_left = -47.792053
+offset_top = -83.565
+offset_right = 84.20795
+offset_bottom = 83.435
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_td246")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer" unique_id=1584589273]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 7
+
+[node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/VBoxContainer" unique_id=1245172962]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("9_e6yi5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=325551120]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_xtdvp")
+theme_override_font_sizes/font_size = 16
+text = "APUNTAR"
+horizontal_alignment = 1
+vertical_alignment = 1

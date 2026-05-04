@@ -19,6 +19,13 @@ func enter():
 	else:
 		push_error("CRÍTICO: No hay escena precargada en RecoveryState")
 		return
+	var keys_ui = scene_instance.get_node_or_null("Keys")
+
+	if keys_ui:
+		if GameManager.keys_mostradas:
+			keys_ui.queue_free()
+		else:
+			GameManager.keys_mostradas = true
 	
 	# 2. Buscamos la fuente DENTRO de la escena que acabamos de crear
 	var fountain = scene_instance.get_node_or_null("Fountain")

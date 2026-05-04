@@ -2,7 +2,7 @@
 extends Node
 
 enum FlowState { NONE, INTRO, RECOVERY_1, PHASE_1, RECOVERY_2, PHASE_2, BOSS, GOOD_ENDING }
-
+var keys_mostradas := false
 var current_level: LevelState = null
 var preguntas_completadas = false
 var player_position_before_questions: Vector2 = Vector2.ZERO
