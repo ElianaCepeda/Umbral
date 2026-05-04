@@ -180,7 +180,7 @@ func _perform_game_over():
 	if current_campaign != "":
 		var data = campaign_database[current_campaign]
 		current_flow = FlowState.NONE
-		change_level(StoryState.new(data["bad_ending"], true))
+		change_level(GameOverState.new(data["bad_ending"]))
 	else:
 		force_exit_to_main_menu()
 
