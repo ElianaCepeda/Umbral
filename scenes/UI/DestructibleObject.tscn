@@ -63,7 +63,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1jdf"]
 size = Vector2(55, 59)
 
-[node name="DestructibleObject" type="StaticBody2D" unique_id=814958098]
+[node name="DestructibleObject" type="StaticBody2D" unique_id=814958098 groups=["destructible_object"]]
 script = ExtResource("1_1sxrj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1561334793]

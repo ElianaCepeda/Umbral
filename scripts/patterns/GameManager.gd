@@ -1,7 +1,7 @@
 # scripts/GameManager.gd
 extends Node
 
-enum FlowState { NONE, INTRO, RECOVERY_1, PHASE_1, RECOVERY_2, PHASE_2, BOSS, GOOD_ENDING }
+enum FlowState { NONE, TUTORIAL, INTRO, RECOVERY_1, PHASE_1, RECOVERY_2, PHASE_2, BOSS, GOOD_ENDING }
 var keys_mostradas := false
 var current_level: LevelState = null
 var preguntas_completadas = false
@@ -85,6 +85,18 @@ func advance_campaign_flow() -> void:
 	
 	match current_flow:
 		FlowState.NONE:
+		
+			if not SaveManager.is_tutorial_completed():
+				# Si el perfil está limpio, lo mandamos al tutorial
+				current_flow = FlowState.TUTORIAL
+				change_level(TestLevelState.new()) 
+			else:
+				# Si ya lo pasó antes, va directo a la historia
+				current_flow = FlowState.INTRO
+				change_level(StoryState.new(data["intro"]))
+				
+		FlowState.TUTORIAL:
+			SaveManager.mark_tutorial_completed()
 			current_flow = FlowState.INTRO
 			change_level(StoryState.new(data["intro"]))
 			
@@ -127,7 +139,7 @@ func advance_campaign_flow() -> void:
 			
 		FlowState.GOOD_ENDING:
 			SaveManager.set_preguntas_completadas(false)
-			force_exit_to_main_menu()
+			change_level(LevelMenuState.new())
 
 func _load_current_phase_enemy(phase_array: Array) -> void:
 	var enemy_level_class = phase_array[current_enemy_index]

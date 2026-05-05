@@ -7,6 +7,8 @@ extends Control
 @onready var btn_exit = $VBoxContainer/ContentGroup/BtnRow/BtnExit
 @onready var btn_re = $BtnRe
 @onready var music_menu =$MenuMusic
+
+
 func _ready() -> void:
 	if music_menu:
 		music_menu.play()
@@ -14,6 +16,7 @@ func _ready() -> void:
 	btn_family.pressed.connect(_go_to_recovery)
 	btn_sympt.pressed.connect(_go_to_levels)
 	btn_exit.pressed.connect(_exit_game)
+	btn_re.pressed.connect(_clean_data)
 
 	_config_hover(btn_family)
 	_config_hover(btn_sympt)
@@ -35,6 +38,8 @@ func _hover_off(btn: TextureButton) -> void:
 	btn.get_node("NinePatchRect").modulate = Color(1, 1, 1)
 	btn.scale = Vector2(1, 1)
 
+func _clean_data()-> void:
+	SaveManager.clear_save_data()
 
 func _go_to_game() -> void:
 	if music_menu:

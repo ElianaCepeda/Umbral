@@ -1555,10 +1555,6 @@ bg_color = Color(0.16642791, 0.6923337, 0.58923954, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqkch"]
 bg_color = Color(0.12156863, 0.12156863, 0.12156863, 0.92941177)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5uixd"]
 atlas = ExtResource("29_md1ol")
@@ -1719,19 +1715,18 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD" unique_id=1992137610]
-offset_left = 30.0
-offset_top = 30.0
-offset_right = 330.0
+offset_left = 44.0
+offset_top = 28.0
+offset_right = 341.0
 offset_bottom = 50.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qlg0r")
 
 [node name="ConsciousnessBar" type="ProgressBar" parent="HUD/PanelContainer" unique_id=876025860 groups=["player"]]
 z_index = 10
-custom_minimum_size = Vector2(253.06, 18.435)
+custom_minimum_size = Vector2(297, 23)
 layout_direction = 2
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_g2els")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qhqgy")
 value = 50.0
@@ -1739,14 +1734,16 @@ show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="Panel" parent="HUD/PanelContainer" unique_id=726128747]
-visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dqkch")
 
-[node name="BarFrame" type="NinePatchRect" parent="HUD/PanelContainer" unique_id=1971070290]
+[node name="BarFrame" type="NinePatchRect" parent="HUD" unique_id=1971070290]
 z_index = 10
 custom_minimum_size = Vector2(42.6, 28.925)
-layout_mode = 2
+offset_left = 16.0
+offset_top = 22.0
+offset_right = 368.63614
+offset_bottom = 56.0
 texture = ExtResource("28_t4otl")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD" unique_id=716075460]

@@ -9,6 +9,7 @@ var preloaded_scene: PackedScene = null
 var is_gameplay_active: bool = false
 var _win_check_timer: float = 0.0
 var is_door_open: bool = false
+var target_group: String = "enemy"
 
 # --- VARIABLES DE CONFIGURACIÓN (Los hijos deben llenarlas) ---
 var scene_path: String = ""
@@ -148,7 +149,7 @@ func _process(delta: float) -> void:
 
 func _check_win_condition() -> void:
 	# Buscamos cuántos enemigos quedan vivos en la escena
-	var enemies = get_tree().get_nodes_in_group("enemy")
+	var enemies = get_tree().get_nodes_in_group(target_group)
 	
 	if enemies.size() == 0:
 		# ¡Ya no quedan enemigos! Apagamos el monitoreo y ejecutamos la victoria

@@ -75,3 +75,16 @@ func reset_phase_state() -> void:
 	
 	_save_disk()
 	print("Vida máxima restaurada y habilidades limpiadas para la nueva fase.")
+	
+func is_tutorial_completed() -> bool:
+	return _current_profile.tutorial_completado
+
+# Marca el tutorial como hecho y guarda en el disco duro
+func mark_tutorial_completed() -> void:
+	_current_profile.tutorial_completado = true
+	_save_disk()
+	
+func clear_save_data() -> void:
+	_current_profile = PlayerProfile.new()
+	_save_disk()
+	print("Memoria limpiada: El progreso del jugador ha sido reiniciado desde cero.")
