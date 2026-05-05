@@ -5,6 +5,7 @@ extends Control
 @onready var btn_family = $VBoxContainer/ContentGroup/BtnRow/BtnFamily
 @onready var btn_sympt = $VBoxContainer/ContentGroup/BtnRow/BtnSympt
 @onready var btn_exit = $VBoxContainer/ContentGroup/BtnRow/BtnExit
+@onready var btn_re = $BtnRe
 @onready var music_menu =$MenuMusic
 func _ready() -> void:
 	if music_menu:
@@ -17,6 +18,7 @@ func _ready() -> void:
 	_config_hover(btn_family)
 	_config_hover(btn_sympt)
 	_config_hover(btn_exit)
+	_config_hover(btn_re)
 
 
 func _config_hover(btn: TextureButton) -> void:
