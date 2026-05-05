@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://ctibey8ts4cil" path="res://scenes/player.tscn" id="4_c8y2e"]
 [ext_resource type="Script" uid="uid://cas7hatho5sbn" path="res://scenes/spawner.gd" id="5_mk1d7"]
 [ext_resource type="AudioStream" uid="uid://cjxocur0isnu2" path="res://assets/audio/music/pause.mp3" id="6_pjn82"]
-[ext_resource type="PackedScene" uid="uid://bnork7ioumeg5" path="res://scenes/level_menu/keys.tscn" id="8_2erat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjn82"]
 size = Vector2(68.5, 76)
@@ -145,7 +144,5 @@ color = Color(0, 0, 0, 0.7921569)
 stream = ExtResource("6_pjn82")
 autoplay = true
 parameters/looping = true
-
-[node name="Keys" parent="." unique_id=4580112 instance=ExtResource("8_2erat")]
 
 [connection signal="body_entered" from="Fountain" to="." method="_on_fountain_body_entered"]

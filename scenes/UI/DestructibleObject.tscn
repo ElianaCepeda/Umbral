@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cq2hd6j1ta8nr"]
+
+[ext_resource type="Script" uid="uid://bri2ixmvv8jmo" path="res://scenes/UI/destructible_object.gd" id="1_1sxrj"]
+[ext_resource type="Texture2D" uid="uid://dbkbvur1k8n27" path="res://assets/ui/Destructible Objects Sprite Sheet.png" id="2_l1jdf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysk4e"]
+atlas = ExtResource("2_l1jdf")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frccr"]
+atlas = ExtResource("2_l1jdf")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcfb4"]
+atlas = ExtResource("2_l1jdf")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45hib"]
+atlas = ExtResource("2_l1jdf")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43pvg"]
+atlas = ExtResource("2_l1jdf")
+region = Rect2(256, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8abif"]
+atlas = ExtResource("2_l1jdf")
+region = Rect2(320, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14wcy"]
+atlas = ExtResource("2_l1jdf")
+region = Rect2(384, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_414cx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysk4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frccr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcfb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45hib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43pvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8abif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14wcy")
+}],
+"loop": false,
+"name": &"destroy",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1jdf"]
+size = Vector2(55, 59)
+
+[node name="DestructibleObject" type="StaticBody2D" unique_id=814958098]
+script = ExtResource("1_1sxrj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1561334793]
+position = Vector2(-8, -7)
+scale = Vector2(3.1679692, 2.7996008)
+sprite_frames = SubResource("SpriteFrames_414cx")
+animation = &"destroy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1136458000]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_l1jdf")

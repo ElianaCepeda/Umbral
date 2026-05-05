@@ -1,6 +1,6 @@
-extends CanvasLayer
+extends Control
 
-var key_names := ["MouseClick", "Number1", "Number2", "W", "A", "S", "D"]
+var key_names := ["MouseClick", "1", "Number2", "W", "A", "S", "D", "space"]
 var running := false
 
 func _ready() -> void:
@@ -21,7 +21,7 @@ func _repetir_animaciones() -> void:
 				if anim_sprite and anim_sprite.sprite_frames.has_animation(key_name):
 					anim_sprite.play(key_name)
 
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.5).timeout
 
 
 func _find_animated_sprite(node: Node) -> AnimatedSprite2D:
