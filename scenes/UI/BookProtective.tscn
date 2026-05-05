@@ -1,0 +1,489 @@
+[gd_scene format=3 uid="uid://8fw6kxc74s0y"]
+
+[ext_resource type="Texture2D" uid="uid://boqtuyvxvunys" path="res://assets/ui/Book.png" id="1_icimv"]
+[ext_resource type="Script" uid="uid://bmsqfvwhmqnt7" path="res://scripts/UI/book_protective.gd" id="1_m7qfb"]
+[ext_resource type="Texture2D" uid="uid://dkr2fcmowmooa" path="res://assets/questions/AnwersHolder.png" id="2_4irje"]
+[ext_resource type="FontFile" uid="uid://d0u6kv0akue8f" path="res://assets/fonts/Ruler 9.ttf" id="2_by1j4"]
+[ext_resource type="Texture2D" uid="uid://ciivh3cfyhval" path="res://assets/ui/Separator.png" id="3_8lnhq"]
+[ext_resource type="FontFile" uid="uid://b0aw82t50urpw" path="res://assets/fonts/Silver.ttf" id="3_rnqbc"]
+[ext_resource type="Texture2D" uid="uid://bo2jnvmnumcix" path="res://assets/ui/bordd.png" id="6_m7qfb"]
+[ext_resource type="Texture2D" uid="uid://huy7vmlagmhn" path="res://assets/ui/2.png" id="7_8lnhq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lnhq"]
+atlas = ExtResource("1_icimv")
+region = Rect2(0, 0, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7qfb"]
+atlas = ExtResource("1_icimv")
+region = Rect2(501, 0, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_504qs"]
+atlas = ExtResource("1_icimv")
+region = Rect2(1002, 0, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dss4t"]
+atlas = ExtResource("1_icimv")
+region = Rect2(0, 554, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aohx"]
+atlas = ExtResource("1_icimv")
+region = Rect2(501, 554, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8i4j"]
+atlas = ExtResource("1_icimv")
+region = Rect2(1002, 554, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65ekl"]
+atlas = ExtResource("1_icimv")
+region = Rect2(0, 1108, 501, 554)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn600"]
+atlas = ExtResource("1_icimv")
+region = Rect2(501, 1108, 501, 554)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dss4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lnhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7qfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_504qs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dss4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aohx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8i4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65ekl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn600")
+}],
+"loop": false,
+"name": &"pass",
+"speed": 10.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_504qs"]
+base_font = ExtResource("2_by1j4")
+
+[sub_resource type="FontVariation" id="FontVariation_l1dm5"]
+base_font = ExtResource("3_rnqbc")
+
+[sub_resource type="FontVariation" id="FontVariation_dss4t"]
+base_font = ExtResource("2_by1j4")
+
+[node name="BookProtective" type="CanvasLayer" unique_id=1253118151]
+script = ExtResource("1_m7qfb")
+
+[node name="Control" type="Control" parent="." unique_id=792986956]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=497431126]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.29803923)
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1717066170]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bookholder" type="Control" parent="Control/CenterContainer" unique_id=871875151]
+custom_minimum_size = Vector2(700, 400)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/CenterContainer/Bookholder" unique_id=1346071298]
+position = Vector2(367.375, 244.34192)
+scale = Vector2(1.3707585, 1.3982048)
+sprite_frames = SubResource("SpriteFrames_dss4t")
+animation = &"pass"
+frame = 7
+frame_progress = 1.0
+
+[node name="BookContent" type="Control" parent="Control/CenterContainer/Bookholder" unique_id=1318577340]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = 29.0
+offset_right = -21.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="VBoxContainer" parent="Control/CenterContainer/Bookholder/BookContent" unique_id=1163049648]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 8.0
+offset_right = 298.0
+offset_bottom = 368.0
+theme_override_constants/separation = 8
+
+[node name="ChapterLabel" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Left" unique_id=407706273]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.047058824, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_504qs")
+theme_override_font_sizes/font_size = 18
+text = "DESCRIPCIONES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer/Bookholder/BookContent/Left" unique_id=1920500818]
+layout_mode = 2
+texture = ExtResource("3_8lnhq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/Bookholder/BookContent/Left" unique_id=593473560]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Desc1" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer" unique_id=116696665]
+custom_minimum_size = Vector2(240, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc1" unique_id=1756837170]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4irje")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc1" unique_id=2002200605]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = -1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 5
+
+[node name="Description1" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc1/MarginContainer" unique_id=1335690045]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_l1dm5")
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 2
+
+[node name="Desc2" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer" unique_id=1885904325]
+custom_minimum_size = Vector2(240, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc2" unique_id=96246839]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4irje")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc2" unique_id=1847221910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = -1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 5
+
+[node name="Description2" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc2/MarginContainer" unique_id=1397694289]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_l1dm5")
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 2
+
+[node name="Desc3" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer" unique_id=48989305]
+custom_minimum_size = Vector2(240, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc3" unique_id=1175968763]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4irje")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc3" unique_id=832708704]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = -1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 5
+
+[node name="Description3" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc3/MarginContainer" unique_id=1159008594]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_l1dm5")
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 2
+
+[node name="Right" type="VBoxContainer" parent="Control/CenterContainer/Bookholder/BookContent" unique_id=1584143035]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 8.0
+offset_right = 625.0
+offset_bottom = 379.0
+theme_override_constants/separation = 8
+
+[node name="ChapterLabel" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Right" unique_id=1042174549]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.047058824, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_504qs")
+theme_override_font_sizes/font_size = 18
+text = "CONDUCTAS PROTECTORAS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer/Bookholder/BookContent/Right" unique_id=1194755237]
+layout_mode = 2
+texture = ExtResource("3_8lnhq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/Bookholder/BookContent/Right" unique_id=2109796065]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Cond1" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer" unique_id=936346601]
+custom_minimum_size = Vector2(240, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Control" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond1" unique_id=2146144792]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -4.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond1/Control" unique_id=915599736]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = 24.0
+offset_right = -4.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_m7qfb")
+patch_margin_right = 16
+
+[node name="Conducta1" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond1/Control/NinePatchRect" unique_id=2110744295]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 32.0
+theme_override_fonts/font = SubResource("FontVariation_dss4t")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Img1" type="TextureRect" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond1" unique_id=1276728518]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26700002
+anchor_top = 0.44400004
+anchor_right = 0.26700002
+anchor_bottom = 0.44400004
+offset_left = -20.080002
+offset_top = -27.960003
+offset_right = 51.92
+offset_bottom = 28.039997
+
+[node name="Cond2" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer" unique_id=405241113]
+custom_minimum_size = Vector2(240, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Control" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond2" unique_id=2054709816]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -4.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond2/Control" unique_id=2129646003]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = 24.0
+offset_right = -4.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_m7qfb")
+patch_margin_right = 16
+
+[node name="Conducta2" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond2/Control/NinePatchRect" unique_id=768060224]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 32.0
+theme_override_fonts/font = SubResource("FontVariation_dss4t")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Img2" type="TextureRect" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond2" unique_id=1024823660]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26700002
+anchor_top = 0.44400004
+anchor_right = 0.26700002
+anchor_bottom = 0.44400004
+offset_left = -20.080002
+offset_top = -27.960003
+offset_right = 51.92
+offset_bottom = 28.039997
+
+[node name="Cond3" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer" unique_id=399426703]
+custom_minimum_size = Vector2(240, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Control" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond3" unique_id=1558050679]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -4.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond3/Control" unique_id=1972526591]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = 24.0
+offset_right = -4.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_m7qfb")
+patch_margin_right = 16
+
+[node name="Conducta3" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond3/Control/NinePatchRect" unique_id=1308599262]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 32.0
+theme_override_fonts/font = SubResource("FontVariation_dss4t")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Img3" type="TextureRect" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond3" unique_id=509315451]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26700002
+anchor_top = 0.44400004
+anchor_right = 0.26700002
+anchor_bottom = 0.44400004
+offset_left = -20.080002
+offset_top = -27.960003
+offset_right = 51.92
+offset_bottom = 28.039997
+
+[node name="Control" type="Control" parent="Control/CenterContainer/Bookholder/BookContent" unique_id=1790195644]
+anchors_preset = 0
+offset_left = 618.0
+offset_top = -37.0
+offset_right = 645.0
+offset_bottom = -13.0
+
+[node name="Exit" type="TextureButton" parent="Control/CenterContainer/Bookholder/BookContent/Control" unique_id=1571720741]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_8lnhq")
+stretch_mode = 0

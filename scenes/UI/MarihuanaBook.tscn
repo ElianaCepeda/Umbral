@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://53fu332iqrgx"]
+
+[ext_resource type="PackedScene" uid="uid://8fw6kxc74s0y" path="res://scenes/UI/BookProtective.tscn" id="1_qawho"]
+[ext_resource type="Script" uid="uid://cisiddg5rlt7u" path="res://scripts/UI/marihuana_book_pro.gd" id="2_xp1lw"]
+
+[node name="BookProtective" unique_id=1253118151 instance=ExtResource("1_qawho")]
+script = ExtResource("2_xp1lw")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cq2hd6j1ta8nr"]
 
-[ext_resource type="Script" uid="uid://bri2ixmvv8jmo" path="res://scenes/UI/destructible_object.gd" id="1_1sxrj"]
+[ext_resource type="Script" uid="uid://bri2ixmvv8jmo" path="res://scripts/UI/destructible_object.gd" id="1_1sxrj"]
 [ext_resource type="Texture2D" uid="uid://dbkbvur1k8n27" path="res://assets/ui/Destructible Objects Sprite Sheet.png" id="2_l1jdf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysk4e"]
