@@ -1,6 +1,6 @@
 extends Node
 class_name BossFightController
-
+var spawn_timer: Timer
 # --- CONFIGURACIÓN DE SÍNTOMAS ---
 @export_group("Protector (Rodea al jefe)")
 @export var protector_scene: PackedScene
@@ -26,14 +26,27 @@ signal boss_defeated
 func _ready():
 	await get_tree().create_timer(0.5).timeout
 	_identify_boss()
-
+	spawn_timer = Timer.new()
+	spawn_timer.wait_time = 15.0
+	spawn_timer.autostart = false
+	spawn_timer.one_shot = false
+	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
+	add_child(spawn_timer)
+func _on_spawn_timer_timeout():
+	if not is_instance_valid(boss_node):
+		spawn_timer.stop()
+		return
+	
+	print("Spawneando nueva oleada")
+	
+	_spawn_minions()
 func _identify_boss():
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for e in enemies:
 		boss_node = e
 		boss_node.add_to_group("boss")
 		
-		boss_node.health = 5000
+		boss_node.health = 100
 		boss_node.speed = 60
 		boss_node.comportamiento = 3 
 		boss_node.z_index = 10 
@@ -51,6 +64,7 @@ func _spawn_minions():
 	_spawn_and_assign(support_scene, support_amount, "support")
 	
 	minions_spawned = true
+	spawn_timer.start()
 
 # NUEVA FUNCIÓN: Instancia la cantidad solicitada y les inyecta su rol
 func _spawn_and_assign(scene: PackedScene, amount: int, role: String):
@@ -94,7 +108,7 @@ func _process(_delta):
 		if enemy.is_in_group("boss"): boss_alive = true
 		else: minions_alive += 1
 			
-	if not boss_alive or minions_alive == 0:
+	if not boss_alive:
 		set_process(false) 
 		if boss_alive and is_instance_valid(boss_node):
 			if boss_node.has_method("take_damage"):

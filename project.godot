@@ -152,6 +152,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 player=""
 enemy_effects=""
 destructible_object=""
+boss=""
 
 [input]
 

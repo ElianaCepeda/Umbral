@@ -51,9 +51,6 @@ region = Rect2(0, 1108, 501, 554)
 atlas = ExtResource("4_jw3qw")
 region = Rect2(501, 1108, 501, 554)
 
-[sub_resource type="FontVariation" id="FontVariation_xr8l2"]
-base_font = ExtResource("8_35u8t")
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_qqymp"]
 animations = [{
 "frames": [{
@@ -91,6 +88,9 @@ base_font = ExtResource("6_qqymp")
 
 [sub_resource type="FontVariation" id="FontVariation_nsy7d"]
 base_font = ExtResource("4_4yaje")
+
+[sub_resource type="FontVariation" id="FontVariation_xr8l2"]
+base_font = ExtResource("8_35u8t")
 
 [sub_resource type="FontVariation" id="FontVariation_kvjpb"]
 base_font = ExtResource("4_4yaje")
@@ -300,7 +300,6 @@ text = "Fase 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-
 [node name="IconsRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel" unique_id=642355188]
 layout_mode = 2
 theme_override_constants/separation = 20
@@ -361,13 +360,13 @@ layout_mode = 2
 texture = ExtResource("11_ho8ji")
 expand_mode = 1
 
-[node name="TobaccoPanel" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage" unique_id=711842223]
+[node name="TabacoPanel" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage" unique_id=711842223]
 custom_minimum_size = Vector2(320, 200)
 layout_mode = 2
 theme_override_constants/separation = 5
 alignment = 1
 
-[node name="ChapterLabel" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel" unique_id=685110150]
+[node name="ChapterLabel" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel" unique_id=685110150]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.36078432, 0.21176471, 0.06666667, 1)
 theme_override_fonts/font = SubResource("FontVariation_dfng4")
@@ -376,7 +375,7 @@ text = "II"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SubsNameLabel" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel" unique_id=1835828300]
+[node name="SubsNameLabel" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel" unique_id=1835828300]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
 theme_override_fonts/font = SubResource("FontVariation_nsy7d")
@@ -385,19 +384,19 @@ text = "TABACO"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BtnRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel" unique_id=1412365202]
+[node name="BtnRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel" unique_id=1412365202]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 27
 
-[node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow" unique_id=2019385137]
+[node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/BtnRow" unique_id=2019385137]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 flat = true
 
-[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow/F1" unique_id=71524626]
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/BtnRow/F1" unique_id=71524626]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 15
@@ -407,7 +406,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_fv47d")
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow/F1" unique_id=1322168726]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/BtnRow/F1" unique_id=1322168726]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -421,13 +420,13 @@ text = "Fase 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow" unique_id=92081953]
+[node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/BtnRow" unique_id=92081953]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 flat = true
 
-[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow/F2" unique_id=851935056]
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/BtnRow/F2" unique_id=851935056]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 15
@@ -437,7 +436,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_fv47d")
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow/F2" unique_id=1471986858]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/BtnRow/F2" unique_id=1471986858]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -451,13 +450,13 @@ text = "Fase 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow" unique_id=1841562427]
+[node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/BtnRow" unique_id=1841562427]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 flat = true
 
-[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow/F3" unique_id=642838226]
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/BtnRow/F3" unique_id=642838226]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 15
@@ -467,7 +466,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_fv47d")
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/BtnRow/F3" unique_id=272657382]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/BtnRow/F3" unique_id=272657382]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -481,33 +480,33 @@ text = "Fase 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="IconsRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel" unique_id=208657871]
+[node name="IconsRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel" unique_id=208657871]
 custom_minimum_size = Vector2(90, 20)
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow" unique_id=741861067]
+[node name="MarginContainer" type="MarginContainer" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/IconsRow" unique_id=741861067]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 14
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 14
 
-[node name="TextureRect" type="TextureRect" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow/MarginContainer" unique_id=1808772173]
+[node name="TextureRect" type="TextureRect" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/IconsRow/MarginContainer" unique_id=1808772173]
 custom_minimum_size = Vector2(90, 20)
 layout_mode = 2
 texture = ExtResource("12_a2vxr")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow" unique_id=1100014034]
+[node name="Button" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/IconsRow" unique_id=1100014034]
 custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 flat = true
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow/Button" unique_id=144828836]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/IconsRow/Button" unique_id=144828836]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -526,17 +525,17 @@ text = "✦ JUGAR ✦"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Pad" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow" unique_id=1567074212]
+[node name="Pad" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/IconsRow" unique_id=1567074212]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow/Pad" unique_id=493674913]
+[node name="TextureRect2" type="TextureRect" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/IconsRow/Pad" unique_id=493674913]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("10_4jois")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow/Pad" unique_id=1718971015]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/IconsRow/Pad" unique_id=1718971015]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
 theme_override_fonts/font = SubResource("FontVariation_hf2qt")
@@ -551,13 +550,13 @@ offset_right = 1010.0
 offset_bottom = 566.0
 alignment = 1
 
-[node name="MarijuanaPanel" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage" unique_id=129137338]
+[node name="MarihuanaPanel" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage" unique_id=129137338]
 custom_minimum_size = Vector2(320, 200)
 layout_mode = 2
 theme_override_constants/separation = 5
 alignment = 1
 
-[node name="ChapterLabel" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel" unique_id=740772168]
+[node name="ChapterLabel" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel" unique_id=740772168]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.36078432, 0.21176471, 0.06666667, 1)
 theme_override_fonts/font = SubResource("FontVariation_dfng4")
@@ -566,7 +565,7 @@ text = "III"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SubsNameLabel" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel" unique_id=1174002277]
+[node name="SubsNameLabel" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel" unique_id=1174002277]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
 theme_override_fonts/font = SubResource("FontVariation_nsy7d")
@@ -575,19 +574,19 @@ text = "MARIHUANA"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BtnRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel" unique_id=155609038]
+[node name="BtnRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel" unique_id=155609038]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 27
 
-[node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow" unique_id=613736626]
+[node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/BtnRow" unique_id=613736626]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 flat = true
 
-[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow/F1" unique_id=965199133]
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/BtnRow/F1" unique_id=965199133]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 15
@@ -597,7 +596,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_fv47d")
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow/F1" unique_id=2058163796]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/BtnRow/F1" unique_id=2058163796]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -611,13 +610,13 @@ text = "Fase 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow" unique_id=22672960]
+[node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/BtnRow" unique_id=22672960]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 flat = true
 
-[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow/F2" unique_id=1539139112]
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/BtnRow/F2" unique_id=1539139112]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 15
@@ -627,7 +626,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_fv47d")
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow/F2" unique_id=189594955]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/BtnRow/F2" unique_id=189594955]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -641,13 +640,13 @@ text = "Fase 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow" unique_id=1238769717]
+[node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/BtnRow" unique_id=1238769717]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 flat = true
 
-[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow/F3" unique_id=1776247585]
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/BtnRow/F3" unique_id=1776247585]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 15
@@ -657,7 +656,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_fv47d")
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/BtnRow/F3" unique_id=1614067116]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/BtnRow/F3" unique_id=1614067116]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -671,26 +670,26 @@ text = "Fase 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="IconsRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel" unique_id=1546173050]
+[node name="IconsRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel" unique_id=1546173050]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow" unique_id=514947806]
+[node name="TextureRect" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/IconsRow" unique_id=514947806]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("13_2x002")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow" unique_id=441862919]
+[node name="Button" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/IconsRow" unique_id=441862919]
 custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 flat = true
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow/Button" unique_id=1510167001]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/IconsRow/Button" unique_id=1510167001]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -709,17 +708,17 @@ text = "✦ JUGAR ✦"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Pad" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow" unique_id=1524957978]
+[node name="Pad" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/IconsRow" unique_id=1524957978]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow/Pad" unique_id=871820708]
+[node name="TextureRect2" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/IconsRow/Pad" unique_id=871820708]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("10_4jois")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow/Pad" unique_id=1621949671]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/IconsRow/Pad" unique_id=1621949671]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
 theme_override_fonts/font = SubResource("FontVariation_hf2qt")
@@ -732,13 +731,13 @@ layout_mode = 2
 texture = ExtResource("11_ho8ji")
 expand_mode = 1
 
-[node name="CocainePanel" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage" unique_id=106543225]
+[node name="CocainaPanel" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage" unique_id=106543225]
 custom_minimum_size = Vector2(320, 200)
 layout_mode = 2
 theme_override_constants/separation = 5
 alignment = 1
 
-[node name="ChapterLabel" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel" unique_id=1495487526]
+[node name="ChapterLabel" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel" unique_id=1495487526]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.36078432, 0.21176471, 0.06666667, 1)
 theme_override_fonts/font = SubResource("FontVariation_dfng4")
@@ -747,7 +746,7 @@ text = "IV"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SubsNameLabel" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel" unique_id=568994691]
+[node name="SubsNameLabel" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel" unique_id=568994691]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
 theme_override_fonts/font = SubResource("FontVariation_nsy7d")
@@ -756,19 +755,19 @@ text = "COCAÍNA"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BtnRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel" unique_id=655262805]
+[node name="BtnRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel" unique_id=655262805]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 27
 
-[node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow" unique_id=1041900359]
+[node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/BtnRow" unique_id=1041900359]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 flat = true
 
-[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow/F1" unique_id=1192189506]
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/BtnRow/F1" unique_id=1192189506]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 15
@@ -778,7 +777,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_fv47d")
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow/F1" unique_id=1374334242]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/BtnRow/F1" unique_id=1374334242]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -792,13 +791,13 @@ text = "Fase 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow" unique_id=929437409]
+[node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/BtnRow" unique_id=929437409]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 flat = true
 
-[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow/F2" unique_id=1681738254]
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/BtnRow/F2" unique_id=1681738254]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 15
@@ -808,7 +807,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_fv47d")
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow/F2" unique_id=820624680]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/BtnRow/F2" unique_id=820624680]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -822,13 +821,13 @@ text = "Fase 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow" unique_id=695995457]
+[node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/BtnRow" unique_id=695995457]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 flat = true
 
-[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow/F3" unique_id=757700518]
+[node name="NinePatch" type="NinePatchRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/BtnRow/F3" unique_id=757700518]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 15
@@ -838,7 +837,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_fv47d")
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/BtnRow/F3" unique_id=96317846]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/BtnRow/F3" unique_id=96317846]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -852,30 +851,30 @@ text = "Fase 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="IconsRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel" unique_id=240307178]
+[node name="IconsRow" type="HBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel" unique_id=240307178]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow" unique_id=580006169]
+[node name="MarginContainer" type="MarginContainer" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/IconsRow" unique_id=580006169]
 layout_mode = 2
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="TextureRect" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow/MarginContainer" unique_id=589633582]
+[node name="TextureRect" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/IconsRow/MarginContainer" unique_id=589633582]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("14_xdurn")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow" unique_id=1426474098]
+[node name="Button" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/IconsRow" unique_id=1426474098]
 custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 flat = true
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow/Button" unique_id=1352592017]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/IconsRow/Button" unique_id=1352592017]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -894,17 +893,17 @@ text = "✦ JUGAR ✦"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Pad" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow" unique_id=208922914]
+[node name="Pad" type="VBoxContainer" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/IconsRow" unique_id=208922914]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow/Pad" unique_id=503475741]
+[node name="TextureRect2" type="TextureRect" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/IconsRow/Pad" unique_id=503475741]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("10_4jois")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow/Pad" unique_id=1246856020]
+[node name="Label" type="Label" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/IconsRow/Pad" unique_id=1246856020]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.11372549, 0.06666667, 0.019607844, 1)
 theme_override_fonts/font = SubResource("FontVariation_hf2qt")

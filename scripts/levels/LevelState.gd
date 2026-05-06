@@ -148,14 +148,31 @@ func _process(delta: float) -> void:
 		_check_win_condition()
 
 func _check_win_condition() -> void:
-	# Buscamos cuántos enemigos quedan vivos en la escena
-	var enemies = get_tree().get_nodes_in_group(target_group)
+	if not is_instance_valid(scene_instance):
+		return
 	
-	if enemies.size() == 0:
-		# ¡Ya no quedan enemigos! Apagamos el monitoreo y ejecutamos la victoria
+	var enemies := []
+	var bosses := []
+	
+	# Buscar SOLO dentro de la escena del nivel
+	for node in scene_instance.get_children():
+		_collect_nodes(node, enemies, bosses)
+	
+	print("Enemies:", enemies.size(), " | Bosses:", bosses.size())
+	
+	if enemies.size() == 0 and bosses.size() == 0:
+		print("¡Nivel completado!")
 		is_gameplay_active = false
-		print("¡Nivel completado! Todos los enemigos (" + level_name + ") fueron derrotados.")
 		_on_level_won()
+		
+func _collect_nodes(node: Node, enemies: Array, bosses: Array):
+	if node.is_in_group("enemy"):
+		enemies.append(node)
+	if node.is_in_group("boss"):
+		bosses.append(node)
+	
+	for child in node.get_children():
+		_collect_nodes(child, enemies, bosses)
 
 func _on_level_won() -> void:
 	is_gameplay_active = false

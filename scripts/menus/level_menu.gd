@@ -54,9 +54,9 @@ func enter() -> void:
 	book_content = scene_instance.get_node("BookArea/BookHolder/BookContent")
 
 	alcohol_panel = scene_instance.get_node("BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel")
-	tobacco_panel = scene_instance.get_node("BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel")
-	marijuana_panel = scene_instance.get_node("BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel")
-	cocaine_panel = scene_instance.get_node("BookArea/BookHolder/BookContent/RightPage/CocainePanel")
+	tobacco_panel = scene_instance.get_node("BookArea/BookHolder/BookContent/LeftPage/TabacoPanel")
+	marijuana_panel = scene_instance.get_node("BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel")
+	cocaine_panel = scene_instance.get_node("BookArea/BookHolder/BookContent/RightPage/CocainaPanel")
 
 	alcohol_color = scene_instance.get_node("ColorAlcohol")
 	tabaco_color = scene_instance.get_node("ColorTabaco")
@@ -64,9 +64,9 @@ func enter() -> void:
 	cocaina_color = scene_instance.get_node("ColorCocaina")
 	
 	play_alcohol = scene_instance.get_node("BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/IconsRow/Button")
-	play_tabaco = scene_instance.get_node("BookArea/BookHolder/BookContent/LeftPage/TobaccoPanel/IconsRow/Button")
-	play_cocaina = scene_instance.get_node("BookArea/BookHolder/BookContent/RightPage/CocainePanel/IconsRow/Button")
-	play_marihuana = scene_instance.get_node("BookArea/BookHolder/BookContent/RightPage/MarijuanaPanel/IconsRow/Button")
+	play_tabaco = scene_instance.get_node("BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/IconsRow/Button")
+	play_cocaina = scene_instance.get_node("BookArea/BookHolder/BookContent/RightPage/CocainaPanel/IconsRow/Button")
+	play_marihuana = scene_instance.get_node("BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/IconsRow/Button")
 
 	color_panels = [
 		alcohol_color,
