@@ -91,6 +91,7 @@ directories/dtl_directory={
 "euforiaDescription": "res://dialogues/illDescription/euforiaDescription.dtl",
 "fatigaDescription": "res://dialogues/illDescription/fatigaDescription.dtl",
 "gastritisDescription": "res://dialogues/illDescription/gastritisDescription.dtl",
+"hipertension2Description": "res://dialogues/illDescription/hipertensionAlcoholDescription.dtl",
 "hipertensionDescription": "res://dialogues/illDescription/hipertensionDescription.dtl",
 "insomnioDescription": "res://dialogues/illDescription/insomnioDescription.dtl",
 "memoriaDescription": "res://dialogues/illDescription/memoriaDescription.dtl",

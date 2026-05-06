@@ -4,6 +4,6 @@ class_name HipertensionLevel2
 func _init():
 	level_name = "Hipertensión"
 	scene_path = "res://scenes/levels/hipertension2.tscn"
-	timeline_name = "res://dialogues/illDescription/hipertensionDescription.dtl"
+	timeline_name = "res://dialogues/illDescription/hipertensionAlcoholDescription.dtl"
 	enemy_type = "hipertension"
-	macro_level = "tabaco"
+	macro_level = "alcohol"

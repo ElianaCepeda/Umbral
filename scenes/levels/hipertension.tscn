@@ -5,3 +5,12 @@
 
 [node name="NodoBaseFase1" unique_id=1029686040 instance=ExtResource("1_8afil")]
 script = ExtResource("2_ios13")
+<<<<<<< Updated upstream
+=======
+
+[node name="Spawner" parent="." index="5" unique_id=2048461648]
+cantidad_minima = 4
+
+[node name="door_sound2" type="AudioStreamPlayer" parent="." index="9" unique_id=2124316171]
+stream = ExtResource("3_y0rgf")
+>>>>>>> Stashed changes
