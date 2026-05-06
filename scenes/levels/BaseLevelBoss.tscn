@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bfks3buc8wlxq" path="res://assets/audio/music/Tension.ogg" id="4_ekqps"]
 [ext_resource type="AudioStream" uid="uid://dmo67k8nqv2ts" path="res://assets/audio/music/batalla.mp3" id="5_wt436"]
 [ext_resource type="Script" uid="uid://xhecs0xpm8pb" path="res://scripts/patterns/BossFightController.gd" id="6_2hmje"]
+[ext_resource type="AudioStream" uid="uid://dkswxsesos8p4" path="res://assets/audio/sounds/door.mp3" id="8_8j13r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekqps"]
 size = Vector2(60, 67)
@@ -98,3 +99,6 @@ parameters/looping = true
 
 [node name="BossFightController" type="Node" parent="." unique_id=164943435]
 script = ExtResource("6_2hmje")
+
+[node name="door_sound" type="AudioStreamPlayer" parent="." unique_id=1422426632]
+stream = ExtResource("8_8j13r")

@@ -1,4 +1,4 @@
-audio music "res://assets/audio/music/Final.ogg" [loop="true"]
+audio music "res://assets/audio/music/final.mp3" [volume="-10.100000000000001" loop="true"]
 [background arg="res://assets/backgrounds/coffee_shop_night1.png" fade="0.0"]
 join AndresAlcohol (Euforico) center
 AndresAlcohol: Todo sigue igual. El trabajo, la casa, las reuniones... la única diferencia es que ahora necesito más para sentir menos

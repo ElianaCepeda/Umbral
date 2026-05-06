@@ -6,12 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://c3dofnjcc3tgg" path="res://scenes/enemys/convulsiones.tscn" id="4_avk50"]
 [ext_resource type="PackedScene" uid="uid://xiiu10m2uhcp" path="res://scenes/enemys/necrosis.tscn" id="5_71ooq"]
 [ext_resource type="PackedScene" uid="uid://bsmxfoydofb33" path="res://scenes/enemys/taquicardia.tscn" id="6_c2i16"]
+[ext_resource type="AudioStream" uid="uid://dkswxsesos8p4" path="res://assets/audio/sounds/door.mp3" id="7_avk50"]
 
 [node name="NodoBaseBoss" unique_id=1029686040 instance=ExtResource("1_s35c2")]
 script = ExtResource("2_0r53m")
 
-[node name="BossFightController" parent="." index="8" unique_id=164943435]
+[node name="BossFightController" parent="." index="9" unique_id=164943435]
 protector_scene = ExtResource("3_c2i16")
 aggressor_scene = ExtResource("4_avk50")
 stalker_scene = ExtResource("5_71ooq")
 support_scene = ExtResource("6_c2i16")
+
+[node name="door_sound" type="AudioStreamPlayer" parent="." index="10" unique_id=94045861]
+stream = ExtResource("7_avk50")

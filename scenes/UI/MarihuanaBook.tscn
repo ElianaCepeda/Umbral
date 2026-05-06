@@ -2,6 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://8fw6kxc74s0y" path="res://scenes/UI/BookProtective.tscn" id="1_qawho"]
 [ext_resource type="Script" uid="uid://cisiddg5rlt7u" path="res://scripts/UI/marihuana_book_pro.gd" id="2_xp1lw"]
+[ext_resource type="AudioStream" uid="uid://ctuqf0ssbqt2v" path="res://assets/audio/sounds/book.mp3" id="3_y5e8q"]
 
 [node name="BookProtective" unique_id=1253118151 instance=ExtResource("1_qawho")]
 script = ExtResource("2_xp1lw")
+
+[node name="door_sound" type="AudioStreamPlayer" parent="." index="2" unique_id=1502568056]
+stream = ExtResource("3_y5e8q")
+autoplay = true

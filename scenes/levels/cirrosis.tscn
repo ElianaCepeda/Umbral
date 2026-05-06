@@ -2,8 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://76illrg3pfo" path="res://scenes/levels/BaseLevelFase2.tscn" id="1_oa80d"]
 [ext_resource type="Script" uid="uid://c55nrk8u20t5j" path="res://scripts/levels/cirrosisLevel.gd" id="2_gedb1"]
+[ext_resource type="AudioStream" uid="uid://dkswxsesos8p4" path="res://assets/audio/sounds/door.mp3" id="3_e0ir7"]
 
 [node name="Node2D" unique_id=1029686040 instance=ExtResource("1_oa80d")]
 script = ExtResource("2_gedb1")
 
 [node name="ContenedorManchas" type="Node2D" parent="." index="1" unique_id=1179771013]
+
+[node name="door_sound" type="AudioStreamPlayer" parent="." index="10" unique_id=890753066]
+stream = ExtResource("3_e0ir7")
