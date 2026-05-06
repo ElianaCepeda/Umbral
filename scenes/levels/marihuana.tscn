@@ -17,5 +17,5 @@ aggressor_scene = ExtResource("3_oxooh")
 stalker_scene = ExtResource("5_ix0c5")
 support_scene = ExtResource("6_esmdf")
 
-[node name="door_sound" type="AudioStreamPlayer" parent="." index="10" unique_id=1013431519]
+[node name="door_sound2" type="AudioStreamPlayer" parent="." index="10" unique_id=1013431519]
 stream = ExtResource("7_qpfrc")

@@ -1,0 +1,17 @@
+join Doctor left
+Doctor: Ten cuidado… lo que tienes enfrente no es un enemigo cualquiera. Este es el jefe, la manifestación de la sustancia que ha estado afectando todo el sistema.
+join jefeCocaina right
+Doctor: Este jefe es la cocaína\
+Actúa rápidamente
+leave jefeCocaina
+join perdidaApetito right
+Doctor: Primero… la pérdida de apetito
+leave perdidaApetito
+join convulsiones right
+Doctor: Ahora… las convulsiones
+leave convulsiones
+join necrosis right
+Doctor: Luego… la necrosis
+leave necrosis
+join taquicardia right
+Doctor: Y al final… la taquicardia

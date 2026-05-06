@@ -1,0 +1,18 @@
+join Doctor left
+Doctor: Ten cuidado… lo que tienes enfrente no es un enemigo cualquiera. Este es el jefe, la manifestación de la sustancia que ha estado afectando todo el sistema.
+join jefeAlcohol right
+Doctor: Cada sustancia desarrolla sus propios secuaces… síntomas que lo protegen y atacan sin piedad.
+Doctor: Este jefe representa el alcohol\
+Una sustancia que altera tus sentidos y te hace perder el control poco a poco
+leave jefeAlcohol
+join euforia right
+Doctor: Primero… la euforia
+leave euforia
+join retardo right
+Doctor: Ahora… el retardo
+leave retardo
+join gastritis right
+Doctor: Luego… la gastritis
+leave gastritis
+join borroso right
+Doctor: Y finalmente… la visión borrosa

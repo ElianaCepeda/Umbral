@@ -4,7 +4,7 @@ class_name AlcoholLevel
 func _init():
 	level_name = "Jefe Alcohol"
 	scene_path = "res://scenes/levels/alcohol.tscn"
-	timeline_name = ""
+	timeline_name = "res://dialogues/illDescription/jefeAlcoholDescription.dtl"
 	enemy_type = "alcohol" 
 	macro_level = "alcohol"
 

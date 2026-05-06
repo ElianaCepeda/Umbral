@@ -1,0 +1,17 @@
+join Doctor left
+Doctor: Ten cuidado… lo que tienes enfrente no es un enemigo cualquiera. Este es el jefe, la manifestación de la sustancia que ha estado afectando todo el sistema.
+join jefeTabaco right
+Doctor: Este jefe es el tabaco\
+Te consume lentamente
+leave jefeTabaco
+join ansiedadConsumo right
+Doctor: Primero… la ansiedad
+leave ansiedadConsumo
+join taquicardia right
+Doctor: Ahora… la taquicardia
+leave taquicardia
+join obstruccion right
+Doctor: Luego… la obstrucción
+leave obstruccion
+join asfixia right
+Doctor: Y al final… la asfixia
