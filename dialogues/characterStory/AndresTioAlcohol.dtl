@@ -1,7 +1,7 @@
 audio music "res://assets/audio/music/Idea 2 parte 1.ogg" [loop="true"]
 [background arg="res://assets/backgrounds/canteen_day1.png" fade="0.0"]
-join Doctor left
 join AndresAlcohol right
+join Doctor leftmost
 Doctor: Andrés siempre fue el alma de las reuniones familiares. Extrovertido, bromista y con una\
 habilidad natural para hacer sentir cómodos a los demás
 Doctor: trabajaba en ventas y destacaba por su facilidad para relacionarse.

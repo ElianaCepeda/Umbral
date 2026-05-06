@@ -33,6 +33,7 @@ SaveManager="*res://scripts/patterns/SaveManager.gd"
 directories/dch_directory={
 "AndresAlcohol": "res://characters/AndresAlcohol.dch",
 "Doctor": "res://characters/Doctor.dch",
+"EnriquePersonaje": "res://characters/Enrique.dch",
 "LucasMarihuana": "res://characters/LucasMarihuana.dch",
 "MateoCocaina": "res://characters/MateoCocaina.dch",
 "SofiaTabaco": "res://characters/SofiaTabaco.dch",
@@ -65,6 +66,7 @@ directories/dtl_directory={
 "AndresTioAlcoholFinalBueno": "res://dialogues/characterStory/AndresTioAlcoholFinalBueno.dtl",
 "AndresTioAlcoholFinalMalo": "res://dialogues/characterStory/AndresTioAlcoholFinalMalo.dtl",
 "AndresTioAlcoholPt2": "res://dialogues/characterStory/AndresTioAlcoholPt2.dtl",
+"HistoriaInicial": "res://dialogues/characterStory/HistoriaInicial.dtl",
 "LucasPrimoMarihuana": "res://dialogues/characterStory/LucasPrimoMarihuana.dtl",
 "LucasPrimoMarihuanaFinalBueno": "res://dialogues/characterStory/LucasPrimoMarihuanaFinalBueno.dtl",
 "LucasPrimoMarihuanaFinalMalo": "res://dialogues/characterStory/LucasPrimoMarihuanaFinalMalo.dtl",

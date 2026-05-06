@@ -84,6 +84,13 @@ base_font = ExtResource("2_by1j4")
 [node name="BookProtective" type="Node2D" unique_id=351976046]
 position = Vector2(547, 312)
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=167649978]
+offset_left = -547.0
+offset_top = -312.0
+offset_right = 605.0
+offset_bottom = 336.0
+color = Color(0.1567336, 0.08515007, 0.023559436, 1)
+
 [node name="Control" type="Control" parent="." unique_id=792986956]
 layout_mode = 3
 anchors_preset = 15
@@ -91,15 +98,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Control" unique_id=497431126]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.29803923)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1717066170]
 layout_mode = 1
