@@ -1,4 +1,5 @@
 audio music "res://assets/audio/music/Final.ogg" [loop="true"]
+[background arg="res://assets/backgrounds/coffee_shop_day1.png" fade="0.0"]
 join SofiaTabaco center
 SofiaTabaco: Toda mi vida pensé que el humo me ayudaba a cargar con el peso del mundo... pero me estaba quitando el aire para vivirlo
 yo: Respirar libremente empieza por soltar el peso que creemos deber cargar

@@ -27,7 +27,7 @@ scale = Vector2(1, 0.99999994)
 shape = SubResource("RectangleShape2D_asyqx")
 
 [node name="DisappearTimer" type="Timer" parent="." unique_id=1518775010 groups=["player"]]
-wait_time = 3.0
+wait_time = 2.0
 
 [node name="DamageTimer" type="Timer" parent="." unique_id=1453872524]
 wait_time = 0.5

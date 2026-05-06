@@ -46,7 +46,7 @@ func _identify_boss():
 		boss_node = e
 		boss_node.add_to_group("boss")
 		
-		boss_node.health = 100
+		boss_node.health = 350
 		boss_node.speed = 60
 		boss_node.comportamiento = 3 
 		boss_node.z_index = 10 
@@ -113,5 +113,11 @@ func _process(_delta):
 		if boss_alive and is_instance_valid(boss_node):
 			if boss_node.has_method("take_damage"):
 				boss_node.take_damage(999999)
-				
+		
+		for enemy in all_enemies:
+			if is_instance_valid(enemy):
+				if enemy.has_method("die"):
+					enemy.die()
+				else:
+					enemy.queue_free()
 		boss_defeated.emit()

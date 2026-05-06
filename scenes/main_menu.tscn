@@ -63,10 +63,10 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="FontVariation" id="FontVariation_tbmy8"]
+[sub_resource type="FontVariation" id="FontVariation_jk1qb"]
 base_font = ExtResource("3_8ln24")
 
-[sub_resource type="FontVariation" id="FontVariation_jk1qb"]
+[sub_resource type="FontVariation" id="FontVariation_tbmy8"]
 base_font = ExtResource("3_8ln24")
 
 [sub_resource type="FontVariation" id="FontVariation_5dd4i"]
@@ -213,6 +213,25 @@ offset_top = -57.0
 offset_right = 40.0
 offset_bottom = 50.0
 
+[node name="Symtpt" type="Label" parent="VBoxContainer/ContentGroup/Brainholder/Door" unique_id=334470432]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = 22.0
+offset_right = 46.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8862745, 0.8509804, 0.6313726, 1)
+theme_override_fonts/font = SubResource("FontVariation_jk1qb")
+theme_override_font_sizes/font_size = 25
+text = "JUGAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="BtnRow" type="HBoxContainer" parent="VBoxContainer/ContentGroup" unique_id=439488149]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -295,26 +314,6 @@ theme_override_colors/font_color = Color(0.8862745, 0.8509804, 0.6313726, 1)
 theme_override_fonts/font = SubResource("FontVariation_jk1qb")
 theme_override_font_sizes/font_size = 25
 text = "NIVELES"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Symtpt" type="Label" parent="VBoxContainer/ContentGroup/BtnRow/BtnSympt/Symtpt" unique_id=334470432]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -104.5
-offset_right = 53.0
-offset_bottom = -61.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.8862745, 0.8509804, 0.6313726, 1)
-theme_override_fonts/font = SubResource("FontVariation_jk1qb")
-theme_override_font_sizes/font_size = 25
-text = "JUGAR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
