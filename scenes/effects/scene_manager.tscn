@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfmwals4b236p" path="res://scripts/patterns/GameManager.gd" id="1_1tbb2"]
 [ext_resource type="Shader" uid="uid://b78u2qfk1jw8i" path="res://scenes/effects/scene_manager.gdshader" id="2_0vbjn"]
+[ext_resource type="AudioStream" uid="uid://dkswxsesos8p4" path="res://assets/audio/sounds/door.mp3" id="3_bdli4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bdli4"]
 shader = ExtResource("2_0vbjn")
@@ -58,3 +59,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=153475032]
 libraries/ = SubResource("AnimationLibrary_0vbjn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2018462042]
+stream = ExtResource("3_bdli4")
+autoplay = true

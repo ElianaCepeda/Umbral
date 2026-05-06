@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://7itg5vun3o65" path="res://assets/keys/normal/left.png" id="35_j2b1d"]
 [ext_resource type="AudioStream" uid="uid://cap5lhyehtoor" path="res://assets/audio/sounds/Hurt.mp3" id="36_jc3p3"]
 [ext_resource type="AudioStream" uid="uid://twkhblkjp7a4" path="res://assets/audio/sounds/Death.mp3" id="37_hax0n"]
+[ext_resource type="AudioStream" uid="uid://dkswxsesos8p4" path="res://assets/audio/sounds/door.mp3" id="39_j2b1d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
 atlas = ExtResource("2_oprun")
@@ -1819,3 +1820,6 @@ stream = ExtResource("36_jc3p3")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1332574148]
 stream = ExtResource("37_hax0n")
+
+[node name="door_sound" type="AudioStreamPlayer" parent="." unique_id=166325522]
+stream = ExtResource("39_j2b1d")

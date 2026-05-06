@@ -1,4 +1,4 @@
-audio music "res://assets/audio/music/Final.ogg" [loop="true"]
+audio music "res://assets/audio/music/final.mp3" [volume="-10.100000000000001" loop="true"]
 [background arg="res://assets/backgrounds/_emergency_staircase_4.jpg" fade="0.0"]
 join SofiaTabaco (Negacion) center
 SofiaTabaco: No es tan grave. He funcionado así veinte años. Ahora un cigarrito pal pecho, por lo bien que lo he hecho.

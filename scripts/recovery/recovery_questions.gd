@@ -567,9 +567,6 @@ func enter():
 	else:
 		push_error("CRÍTICO: No hay escena precargada en RecoveryState")
 		return
-	page_flip = scene_instance.get_node_or_null("PageFlip")
-	if page_flip:
-		page_flip.play()
 	correct_sound = scene_instance.get_node("CorrectSound")
 	wrong_sound = scene_instance.get_node("WrongSound")
 	var holder = scene_instance.get_node("CenterContainer/QuestionsHolder")
@@ -602,10 +599,13 @@ func enter():
 	ui_content.hide()
 	boton_terminado.hide()
 	mensaje_feedback.text = ""
-
+	page_flip = scene_instance.get_node_or_null("PageFlip")
 	await get_tree().create_timer(1.0).timeout
 
 	pergamino_anim.play("open")
+
+	if page_flip:
+		page_flip.play()
 	await pergamino_anim.animation_finished
 
 	ui_content.show()
@@ -809,6 +809,8 @@ func _on_boton_terminado_pressed():
 	)
 	
 	pergamino_anim.play_backwards("open")
+	if page_flip:
+		page_flip.play()
 	await pergamino_anim.animation_finished
 	await get_tree().create_timer(0.3).timeout
 	# Guardamos el estado globalmente antes de irnos
