@@ -211,8 +211,6 @@ func handle_skills():
 			)
 
 
-
-		
 func take_damage(amount: int, damage_color: Color = Color.RED):
 	if is_dead or is_invulnerable or not is_inside_tree():
 		return

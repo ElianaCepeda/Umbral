@@ -2,6 +2,8 @@ extends BookProtectiveBaseState
 class_name TabacoBookProtectiveState
 
 func _init() -> void:
+	level_name = "Book tabaco"
+	scene_path = "res://scenes/UI/TabacoBook.tscn"
 	page_data = {
 		"descriptions": [
 			"En esta conducta se evalúa el uso del chicle como estrategia para distraer el impulso de fumar, reducir la ansiedad momentánea por nicotina y darle al jugador una alternativa simbólica frente al deseo de consumir.",

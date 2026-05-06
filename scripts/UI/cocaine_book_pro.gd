@@ -2,6 +2,8 @@ extends BookProtectiveBaseState
 class_name CocainaBookProtectiveState
 
 func _init() -> void:
+	level_name = "Book cocaina"
+	scene_path = "res://scenes/UI/CocaineBook.tscn"
 	page_data = {
 		"descriptions": [
 			"En esta conducta se evalúa el control de la temperatura corporal, teniendo en cuenta que el calor excesivo puede aumentar el riesgo de deshidratación, sobrecarga física y complicaciones durante estados de alta activación.",

@@ -30,12 +30,12 @@ var correct_answer: int
 var questions = [
 	{
 		"number": 1,
-		"question": "El enemigo Retardo representa el alargamiento del tiempo de reacción. Andrés insiste en manejar tras beber porque 'se siente bien'. ¿Por qué Retardo lo hace peligroso aunque él no lo perciba?",
+		"question": "Retardo alarga el tiempo de reacción de Andrés. Insiste en manejar porque 'se siente bien'. ¿Por qué Retardo lo hace peligroso aunque él no lo perciba?",
 		"answers": [
 			"A)  El bienestar subjetivo solo dura las dos primeras copas.",
-			"B)  La confianza excesiva lo lleva a ignorar señales de tráfico.",
+			"B)  El alcohol solo altera la visión periférica, no el tiempo de reacción.",
 			"C)  El cerebelo ya procesa estímulos con retraso aunque Andrés no lo sienta.",
-			"D)  El alcohol solo altera la visión periférica, no el tiempo de reacción central."
+			"D)  La confianza excesiva lo lleva a ignorar señales de tráfico."
 		],
 		"correct": 3,
 		"substance": "Alcohol",
@@ -43,7 +43,7 @@ var questions = [
 	},
 	{
 		"number": 2,
-		"question": "Borroso representa la pérdida de agudeza visual. Después de varias copas Andrés dice que 'todo se ve raro'. ¿Qué le hace Borroso a sus ojos?",
+		"question": "Borroso representa la pérdida de agudeza visual. Andrés dice que 'todo se ve raro'. ¿Qué le hace Borroso a sus ojos?",
 		"answers": [
 			"A)  La retina reduce su sensibilidad a los fotorreceptores de cono.",
 			"B)  El alcohol altera los músculos extraoculares: los ojos no convergen y generan visión doble.",
@@ -56,33 +56,72 @@ var questions = [
 	},
 	{
 		"number": 3,
-		"question": "Euforia es el enemigo que representa la falsa sensación de bienestar. Andrés se siente invencible y toma decisiones impulsivas. ¿Cómo genera Euforia esa trampa en el cerebro?",
+		"question": "Euforia genera falsa invencibilidad en Andrés. Comer antes de beber es una conducta protectora. ¿Por qué reduce el efecto de Euforia?",
 		"answers": [
-			"A)  Potencia el GABA e inunda el núcleo accumbens de dopamina, inhibiendo la corteza prefrontal.",
-			"B)  Eleva endorfinas en el hipotálamo reduciendo el umbral de dolor.",
-			"C)  Activa los receptores 5-HT3 generando bienestar duradero.",
-			"D)  Reduce el cortisol de forma selectiva sin afectar otras funciones."
+			"A)  La comida elimina el alcohol del estómago antes de que se absorba.",
+			"B)  Protege la mucosa gástrica y ralentiza la absorción del alcohol, reduciendo el pico de intoxicación.",
+			"C)  La comida neutraliza el etanol convirtiéndolo en agua y CO₂.",
+			"D)  Solo funciona si se come después de beber, no antes."
 		],
-		"correct": 1,
+		"correct": 2,
 		"substance": "Alcohol",
-		"type": "Attack"
+		"type": "Defense"
 	},
 	{
 		"number": 4,
-		"question": "Retardo representa el alargamiento del tiempo de reacción. Andrés cree estar en perfectas condiciones tras tres tragos. ¿Por qué Retardo es especialmente crítico al volante?",
+		"question": "Retardo y Borroso afectan a Andrés al volante. Tomar agua mientras se bebe es una conducta protectora. ¿Qué efecto tiene sobre estos enemigos?",
 		"answers": [
-			"A)  El volante amplifica los temblores finos que el alcohol produce en la mano.",
-			"B)  Conducir activa más zonas cerebrales y el alcohol las afecta todas a la vez.",
-			"C)  La luz nocturna interactúa con la pupila dilatada creando un riesgo único.",
-			"D)  A 90 km/h, 200 ms de retraso equivalen a 5 metros sin reaccionar, y el alcohol puede duplicar ese retraso."
+			"A)  El agua elimina el alcohol del torrente sanguíneo más rápido.",
+			"B)  Hidratarse no tiene efecto real sobre los síntomas del alcohol.",
+			"C)  Reduce la velocidad de consumo y mantiene la hidratación, disminuyendo parcialmente la intoxicación.",
+			"D)  Solo ayuda con la resaca, no durante el consumo activo."
 		],
-		"correct": 4,
+		"correct": 3,
+		"substance": "Alcohol",
+		"type": "Defense"
+	},
+	{
+		"number": 5,
+		"question": "Euforia nubla el juicio de Andrés. No mezclar alcohol con medicamentos es una conducta protectora. ¿Por qué protege frente a este enemigo?",
+		"answers": [
+			"A)  Los medicamentos bloquean los receptores del alcohol en el cerebro.",
+			"B)  Solo aplica con antibióticos; con otros fármacos no hay interacción.",
+			"C)  Evita interacciones que potencian los efectos del alcohol y dañan el hígado y sistema nervioso.",
+			"D)  El alcohol anula los medicamentos pero no al revés."
+		],
+		"correct": 3,
+		"substance": "Alcohol",
+		"type": "Defense"
+	},
+	{
+		"number": 6,
+		"question": "Hipertensión sobrecarga el corazón de Andrés tras años de consumo. ¿Cómo genera Hipertensión ese daño cardiovascular crónico?",
+		"answers": [
+			"A)  Eleva triglicéridos que tapan las arterias y reducen su luz.",
+			"B)  El consumo crónico activa el simpático, endurece los vasos y fuerza al corazón a bombear con más presión.",
+			"C)  Estimula la aldosterona, retiene sodio y sube la presión de forma aguda.",
+			"D)  El daño hepático baja proteínas plasmáticas y paradójicamente sube la presión."
+		],
+		"correct": 2,
 		"substance": "Alcohol",
 		"type": "Attack"
 	},
 	{
-		"number": 5,
-		"question": "Cirrosis destruye el hígado de Andrés en silencio. ¿Cuál es el mecanismo celular por el que Cirrosis reemplaza el tejido sano por tejido inútil?",
+		"number": 7,
+		"question": "Gastritis erosiona el estómago de Andrés con cada trago. ¿Qué hace Gastritis que la distingue del ardor ocasional?",
+		"answers": [
+			"A)  Solo difieren en intensidad; el mecanismo de hipersecreción ácida es idéntico.",
+			"B)  Gastritis erosiona la mucosa y puede derivar en úlceras sangrantes; el ardor puntual no daña estructuralmente.",
+			"C)  El ardor ocasional es más grave porque el estómago no tiene tiempo de adaptarse.",
+			"D)  El alcohol eleva el pH gástrico, al contrario del ardor normal que lo baja."
+		],
+		"correct": 2,
+		"substance": "Alcohol",
+		"type": "Attack"
+	},
+	{
+		"number": 8,
+		"question": "Cirrosis destruye el hígado de Andrés en silencio. ¿Cuál es el mecanismo celular por el que reemplaza tejido sano por tejido inútil?",
 		"answers": [
 			"A)  El hígado prioriza el alcohol sobre la glucosa y acumula glucógeno tóxico.",
 			"B)  El acetaldehído genera estrés oxidativo que activa células estrelladas y deposita fibrosis irreversible.",
@@ -94,49 +133,23 @@ var questions = [
 		"type": "Defense"
 	},
 	{
-		"number": 6,
-		"question": "Hipertensión sobrecarga el corazón de Andrés. El médico relaciona su presión elevada con el consumo. ¿Cómo genera Hipertensión ese daño cardiovascular crónico?",
-		"answers": [
-			"A)  Eleva triglicéridos que tapan las arterias y reducen su luz.",
-			"B)  El consumo crónico activa el simpático de forma sostenida, endurece los vasos y fuerza al corazón a bombear con más presión.",
-			"C)  Estimula la aldosterona, retiene sodio y sube la presión de forma aguda.",
-			"D)  El daño hepático baja proteínas plasmáticas y paradójicamente sube la presión."
-		],
-		"correct": 2,
-		"substance": "Alcohol",
-		"type": "Defense"
-	},
-	{
-		"number": 7,
-		"question": "Gastritis erosiona el estómago de Andrés con cada trago. ¿Qué hace Gastritis que la distingue del ardor ocasional de cualquier persona?",
-		"answers": [
-			"A)  Solo difieren en intensidad; el mecanismo de hipersecreción ácida es idéntico.",
-			"B)  Gastritis erosiona la mucosa y puede derivar en úlceras sangrantes; el ardor puntual no daña estructuralmente.",
-			"C)  El ardor ocasional es más grave porque el estómago no tiene tiempo de adaptarse.",
-			"D)  El alcohol eleva el pH gástrico, al contrario del ardor normal que lo baja."
-		],
-		"correct": 2,
-		"substance": "Alcohol",
-		"type": "Defense"
-	},
-	{
-		"number": 8,
-		"question": "Gastritis acumula daño en el estómago de Andrés. ¿Cuál es la diferencia clínica clave entre el ardor que provoca Gastritis y el ardor estomacal ocasional?",
-		"answers": [
-			"A)  Gastritis genera daño estructural acumulado que puede progresar a gastritis erosiva o úlcera péptica.",
-			"B)  El ocasional es más peligroso porque aparece sin adaptación previa del tejido.",
-			"C)  No hay diferencia real; ambos responden igual al omeprazol.",
-			"D)  El crónico solo ocurre en la parte superior del estómago."
-		],
-		"correct": 1,
-		"substance": "Alcohol",
-		"type": "Defense"
-	},
-	{
 		"number": 9,
-		"question": "Cirrosis destruye el hígado de Andrés en silencio. ¿Por qué el daño que provoca Cirrosis es especialmente grave comparado con el de otros órganos?",
+		"question": "Cirrosis daña el hígado de Andrés independientemente del tipo de bebida. ¿Qué hace incorrecta la creencia de que la cerveza es más segura?",
 		"answers": [
-			"A)  Cuando Cirrosis destruye el hígado, las toxinas que filtrarían se acumulan en sangre y dañan en cascada todos los demás órganos.",
+			"A)  Las bebidas fermentadas contienen antioxidantes que protegen parcialmente los hepatocitos.",
+			"B)  Cirrosis responde al etanol total consumido; el hígado procesa el mismo compuesto sin distinción.",
+			"C)  La cerveza daña más porque el lúpulo potencia la toxicidad del etanol.",
+			"D)  Es parcialmente correcta: la cerveza no genera acetaldehído en cantidades tóxicas."
+		],
+		"correct": 2,
+		"substance": "Alcohol",
+		"type": "Defense"
+	},
+	{
+		"number": 10,
+		"question": "Cirrosis e Hipertensión avanzan en silencio. ¿Por qué el daño hepático por alcohol es especialmente grave comparado con el de otros órganos?",
+		"answers": [
+			"A)  Cuando Cirrosis destruye el hígado, las toxinas se acumulan en sangre y dañan en cascada todos los demás órganos.",
 			"B)  Porque el hígado es el órgano más grande y su tamaño lo hace más vulnerable.",
 			"C)  Porque está cerca del corazón y las toxinas pasan directo a la circulación coronaria.",
 			"D)  Porque el hígado no puede regenerarse en ningún caso, ni siquiera parcialmente."
@@ -146,21 +159,8 @@ var questions = [
 		"type": "Defense"
 	},
 	{
-		"number": 10,
-		"question": "Cirrosis daña el hígado independientemente del tipo de bebida. Andrés cree que la cerveza protege su hígado. ¿Qué hace incorrecta esa creencia frente a Cirrosis?",
-		"answers": [
-			"A)  Las bebidas fermentadas contienen antioxidantes que sí protegen parcialmente los hepatocitos.",
-			"B)  Cirrosis responde al etanol total consumido, no al tipo de bebida; el hígado procesa el mismo compuesto sin distinción.",
-			"C)  La cerveza daña más porque el lúpulo potencia la toxicidad del etanol.",
-			"D)  Es parcialmente correcta: la cerveza no genera acetaldehído en cantidades tóxicas."
-		],
-		"correct": 2,
-		"substance": "Alcohol",
-		"type": "Defense"
-	},
-	{
 		"number": 11,
-		"question": "Hipertensión contrae los vasos de Sofía apenas enciende un cigarrillo. Ella dice que fumar la 'relaja'. ¿Qué hace Hipertensión en su cuerpo en los primeros 30 segundos?",
+		"question": "Hipertensión contrae los vasos de Sofía al encender un cigarrillo. Ella dice que fumar la 'relaja'. ¿Qué hace Hipertensión en su cuerpo en los primeros 30 segundos?",
 		"answers": [
 			"A)  El efecto vasoconstrictor solo ocurre tras años de consumo.",
 			"B)  Activa receptores parasimpáticos que reducen el ritmo cardíaco.",
@@ -173,11 +173,11 @@ var questions = [
 	},
 	{
 		"number": 12,
-		"question": "Monóxido de Carbono es invisible y silencioso. ¿Por qué este enemigo es más dañino que otros componentes del humo para la oxigenación de Sofía?",
+		"question": "Monóxido de Carbono es invisible y silencioso. ¿Por qué es más dañino que otros componentes del humo para la oxigenación de Sofía?",
 		"answers": [
 			"A)  Se acumula en el pulmón y es la causa directa de la EPOC.",
 			"B)  Reacciona con el nitrógeno del aire y forma compuestos que irritan la mucosa.",
-			"C)  Tiene afinidad por la hemoglobina 200 veces mayor que el O₂, formando carboxihemoglobina que no transporta oxígeno.",
+			"C)  Tiene afinidad por la hemoglobina 200 veces mayor que el O₂, formando carboxihemoglobina.",
 			"D)  Es el principal causante del cáncer porque daña el ADN de las células bronquiales."
 		],
 		"correct": 3,
@@ -186,20 +186,59 @@ var questions = [
 	},
 	{
 		"number": 13,
-		"question": "Taquicardia fuerza el corazón de Sofía a trabajar más cada vez que fuma. ¿Por qué Taquicardia es una alerta real y no una adaptación normal?",
+		"question": "Taquicardia acelera el corazón de Sofía con cada cigarrillo. El ejercicio físico es una conducta protectora. ¿Cómo contrarresta a Taquicardia?",
 		"answers": [
-			"A)  Taquicardia ocurre con vasoconstricción simultánea, sobrecargando el corazón sin el beneficio adaptativo del ejercicio.",
+			"A)  El ejercicio elimina la nicotina del organismo más rápido.",
+			"B)  Disminuye el deseo de fumar, mejora la función pulmonar y contrarresta parte del daño cardiovascular.",
+			"C)  Solo ayuda si se hace justo después de fumar.",
+			"D)  El ejercicio y el tabaco tienen efectos opuestos que se cancelan mutuamente."
+		],
+		"correct": 2,
+		"substance": "Tabaco",
+		"type": "Defense"
+	},
+	{
+		"number": 14,
+		"question": "Hipertensión y Monóxido de Carbono dañan a Sofía en silencio. El parche de nicotina es una conducta protectora. ¿Por qué ayuda frente a estos enemigos?",
+		"answers": [
+			"A)  El parche tiene nicotina que bloquea los receptores del humo en el pulmón.",
+			"B)  Aporta nicotina controlada sin toxinas del humo, reduciendo la ansiedad sin exponer el organismo al CO.",
+			"C)  Solo funciona si se combina con medicación antidepresiva.",
+			"D)  El parche elimina la dependencia física en menos de una semana."
+		],
+		"correct": 2,
+		"substance": "Tabaco",
+		"type": "Defense"
+	},
+	{
+		"number": 15,
+		"question": "Taquicardia fuerza el corazón de Sofía a trabajar más. ¿Por qué Taquicardia es una alerta real y no una adaptación normal del cuerpo?",
+		"answers": [
+			"A)  Taquicardia ocurre con vasoconstricción simultánea, sobrecargando el corazón sin beneficio adaptativo.",
 			"B)  Es equivalente a la taquicardia del ejercicio y tiene el mismo efecto cardioprotector.",
 			"C)  Solo es alerta si supera 120 ppm sostenidas; por debajo es respuesta adaptativa normal.",
-			"D)  Cualquier taquicardia sostenida produce hipertrofia ventricular irreversible desde los primeros episodios."
+			"D)  Cualquier taquicardia sostenida produce hipertrofia ventricular irreversible desde el inicio."
 		],
 		"correct": 1,
+		"substance": "Tabaco",
+		"type": "Defense"
+	},
+	{
+		"number": 16,
+		"question": "Ansiedad se dispara cuando Sofía intenta pasar un día sin fumar. ¿Qué proceso cerebral explica la irritabilidad que genera Ansiedad en abstinencia?",
+		"answers": [
+			"A)  La ausencia de nicotina eleva el cortisol que activa la amígdala, similar al estrés postraumático.",
+			"B)  La nicotina ausente reduce serotonina límbica generando un episodio depresivo leve.",
+			"C)  Los receptores colinérgicos sobrexpresados quedan sin activar; el déficit dopaminérgico se siente como emergencia.",
+			"D)  Es solo hábito conductual; el cuerpo recuerda los momentos del día asociados al cigarrillo."
+		],
+		"correct": 3,
 		"substance": "Tabaco",
 		"type": "Attack"
 	},
 	{
-		"number": 14,
-		"question": "Fatiga agota a Sofía aunque no haga esfuerzo. Lleva 20 años fumando. ¿Cómo genera Fatiga ese agotamiento crónico en su cuerpo?",
+		"number": 17,
+		"question": "Fatiga agota a Sofía aunque no haga esfuerzo. Lleva 20 años fumando. ¿Cómo genera Fatiga ese agotamiento crónico?",
 		"answers": [
 			"A)  El monóxido deprime el sistema nervioso central; la fatiga es neurológica, no de oxigenación.",
 			"B)  El tabaco reduce los glóbulos rojos generando anemia crónica.",
@@ -211,12 +250,12 @@ var questions = [
 		"type": "Attack"
 	},
 	{
-		"number": 15,
+		"number": 18,
 		"question": "Ansiedad aparece cuando Sofía intenta dejar de fumar. ¿Por qué genera síntomas físicos tan intensos si el cigarrillo no es una 'droga dura'?",
 		"answers": [
-			"A)  Los síntomas de Ansiedad son psicológicos; la dependencia farmacológica de la nicotina es comparable a la de la cafeína.",
+			"A)  Los síntomas de Ansiedad son psicológicos; la dependencia de la nicotina es comparable a la de la cafeína.",
 			"B)  Ansiedad activa el sistema inmune, que ataca las células adaptadas a la nicotina.",
-			"C)  La nicotina reduce la densidad de receptores colinérgicos; al retirarla, el sistema queda en hiperexcitabilidad genuina.",
+			"C)  La nicotina reduce la densidad de receptores colinérgicos; al retirarla, el sistema queda en hiperexcitabilidad.",
 			"D)  El tabaco acumula sustancias en el tejido adiposo que se liberan al dejarlo."
 		],
 		"correct": 3,
@@ -224,21 +263,8 @@ var questions = [
 		"type": "Defense"
 	},
 	{
-		"number": 16,
-		"question": "Ansiedad se dispara cuando Sofía intenta pasar un día sin fumar. ¿Qué proceso cerebral explica la irritabilidad y angustia que genera Ansiedad en abstinencia?",
-		"answers": [
-			"A)  La ausencia de nicotina eleva el cortisol que activa la amígdala, similar al estrés postraumático.",
-			"B)  La nicotina ausente reduce serotonina límbica generando un episodio depresivo leve.",
-			"C)  Los receptores colinérgicos sobrexpresados quedan sin activar; el déficit dopaminérgico se siente como emergencia.",
-			"D)  Es solo hábito conductual; el cuerpo recuerda los momentos del día asociados al cigarrillo."
-		],
-		"correct": 3,
-		"substance": "Tabaco",
-		"type": "Defense"
-	},
-	{
-		"number": 17,
-		"question": "EPOC bloquea los pulmones de Sofía progresivamente. El médico dice que 'ya no se limpian solos'. ¿Qué estructura destruye EPOC para que eso ocurra?",
+		"number": 19,
+		"question": "EPOC bloquea los pulmones de Sofía progresivamente. El médico dice que 'ya no se limpian solos'. ¿Qué estructura destruye EPOC?",
 		"answers": [
 			"A)  El surfactante pulmonar, cuya degradación colapsa los alvéolos.",
 			"B)  Las células caliciformes, que producen el moco necesario para atrapar partículas.",
@@ -250,12 +276,12 @@ var questions = [
 		"type": "Defense"
 	},
 	{
-		"number": 18,
-		"question": "EPOC destruye los pulmones de Sofía de forma irreversible. ¿Por qué no tiene cura completa aunque ella deje de fumar?",
+		"number": 20,
+		"question": "EPOC destruye los pulmones de Sofía de forma irreversible. ¿Por qué no tiene cura completa aunque deje de fumar?",
 		"answers": [
 			"A)  Se necesitaría terapia génica; los fármacos solo alivian síntomas sin revertir el daño.",
 			"B)  El alquitrán acumulado en los bronquios es una barrera física que no puede disolverse.",
-			"C)  Los alvéolos destruidos por EPOC se reemplazan por espacios aéreos inservibles que no se regeneran aunque cese el daño.",
+			"C)  Los alvéolos destruidos por EPOC se reemplazan por espacios aéreos inservibles que no se regeneran.",
 			"D)  El sistema inmune queda sensibilizado y continúa atacando el pulmón."
 		],
 		"correct": 3,
@@ -263,38 +289,12 @@ var questions = [
 		"type": "Defense"
 	},
 	{
-		"number": 19,
-		"question": "EPOC fragmenta el descanso de Sofía aunque duerma 8 horas. ¿Cómo afecta EPOC la calidad de su sueño?",
-		"answers": [
-			"A)  La nicotina eleva la temperatura corporal nocturna e impide el sueño profundo.",
-			"B)  Los pulmones dañados por EPOC generan hipoxemia nocturna que fragmenta los ciclos de sueño sin que Sofía lo recuerde.",
-			"C)  La nicotina falta durante la noche y genera abstinencia leve que interrumpe el sueño REM.",
-			"D)  El CO sigue siendo eliminado durante la noche y mantiene el metabolismo cerebral activo."
-		],
-		"correct": 2,
-		"substance": "Tabaco",
-		"type": "Defense"
-	},
-	{
-		"number": 20,
-		"question": "EPOC obstruye las vías respiratorias de Sofía. A los 50 años tiene tos con flema persistente. ¿Qué proceso crónico produce EPOC en sus bronquios?",
-		"answers": [
-			"A)  Es causada principalmente por infecciones bacterianas recurrentes que el tabaco facilita.",
-			"B)  El alquitrán aumenta la viscosidad del moco, pero la tos solo aparece tras 30 años de consumo.",
-			"C)  La tos indica que el sistema inmune está activo eliminando residuos; es una señal positiva.",
-			"D)  EPOC sobreestimula las células caliciformes y destruye los cilios; la tos es el único recurso compensatorio restante."
-		],
-		"correct": 4,
-		"substance": "Tabaco",
-		"type": "Defense"
-	},
-	{
 		"number": 21,
-		"question": "Conjuntivitis representa el enrojecimiento ocular que delata el consumo de Lucas. ¿Cuál es el mecanismo por el que Conjuntivitis aparece incluso sin humo?",
+		"question": "Conjuntivitis representa el enrojecimiento ocular que delata a Lucas. ¿Cuál es el mecanismo por el que aparece incluso sin humo?",
 		"answers": [
 			"A)  El humo irrita la conjuntiva directamente, igual que la conjuntivitis alérgica.",
-			"B)  El nervio trigémino comparte inervación con los vasos oculares y se activa ante cualquier sustancia inhalada.",
-			"C)  El THC activa receptores CB1 en los vasos conjuntivales causando vasodilatación; ocurre incluso por vía oral.",
+			"B)  El nervio trigémino comparte inervación con los vasos oculares y se activa ante cualquier sustancia.",
+			"C)  El THC activa receptores CB1 en los vasos conjuntivales causando vasodilatación incluso por vía oral.",
 			"D)  La marihuana baja la presión intraocular y los capilares se dilatan como compensación."
 		],
 		"correct": 3,
@@ -303,12 +303,12 @@ var questions = [
 	},
 	{
 		"number": 22,
-		"question": "Apetito es el enemigo que impulsa a Lucas a comer compulsivamente solo cuando fuma. ¿Cómo genera Apetito hambre sin que el cuerpo tenga déficit calórico real?",
+		"question": "Apetito impulsa a Lucas a comer compulsivamente solo cuando fuma. ¿Cómo genera Apetito hambre sin déficit calórico real?",
 		"answers": [
 			"A)  La marihuana sube el metabolismo generando déficit calórico genuino en minutos.",
 			"B)  El THC baja la glucemia activando el hipotálamo para señalizar hambre real.",
 			"C)  El efecto es psicológico: la asociación repetida entre consumir y comer crea hambre condicionada.",
-			"D)  El THC activa receptores CB1 en el hipotálamo y el vago, amplificando el apetito sin importar las reservas energéticas."
+			"D)  El THC activa receptores CB1 en el hipotálamo y el vago, amplificando el apetito sin importar las reservas."
 		],
 		"correct": 4,
 		"substance": "Marihuana",
@@ -316,7 +316,33 @@ var questions = [
 	},
 	{
 		"number": 23,
-		"question": "Problemas respiratorios inflaman los pulmones de Lucas aunque él diga que 'no es tabaco'. ¿Qué tienen en común con el tabaco y qué los hace distintos?",
+		"question": "Problemas respiratorios inflaman los pulmones de Lucas. Dormir bien es una conducta protectora. ¿Cómo ayuda frente a este enemigo?",
+		"answers": [
+			"A)  El sueño no tiene relación directa con los síntomas respiratorios del cannabis.",
+			"B)  Dormir elimina el THC acumulado en los pulmones durante el día.",
+			"C)  El consumo más la falta de sueño elevan la ansiedad y el riesgo de crisis; descansar reduce esa carga.",
+			"D)  Solo ayuda si se duerme más de 10 horas consecutivas."
+		],
+		"correct": 3,
+		"substance": "Marihuana",
+		"type": "Defense"
+	},
+	{
+		"number": 24,
+		"question": "Conjuntivitis y Apetito afectan a Lucas visiblemente. Controlar la temperatura del entorno es una conducta protectora. ¿Por qué reduce estos efectos?",
+		"answers": [
+			"A)  El frío contrae los vasos oculares y neutraliza la vasodilatación de Conjuntivitis.",
+			"B)  El calor excesivo agrava la deshidratación y las complicaciones físicas; un entorno adecuado reduce ese riesgo.",
+			"C)  La temperatura no tiene efecto sobre los síntomas de la marihuana.",
+			"D)  Solo aplica en consumo por inhalación; por vía oral la temperatura es irrelevante."
+		],
+		"correct": 2,
+		"substance": "Marihuana",
+		"type": "Defense"
+	},
+	{
+		"number": 25,
+		"question": "Problemas respiratorios inflaman los pulmones de Lucas aunque diga que 'no es tabaco'. ¿Qué tienen en común con el tabaco y qué los diferencia?",
 		"answers": [
 			"A)  El humo de marihuana no contiene alquitrán; la irritación es temporal y reversible.",
 			"B)  Problemas respiratorios solo aparecen cuando la marihuana se mezcla con tabaco.",
@@ -325,23 +351,10 @@ var questions = [
 		],
 		"correct": 3,
 		"substance": "Marihuana",
-		"type": "Attack"
+		"type": "Defense"
 	},
 	{
-		"number": 24,
-		"question": "Ideación paranoide hace que Lucas sienta que todos lo juzgan justo después de fumar. ¿Qué circuito neurológico activa para producir esa experiencia?",
-		"answers": [
-			"A)  Sube serotonina en la corteza cingulada, que malinterpreta estímulos sociales neutros.",
-			"B)  Ideación paranoide sobreactiva la amígdala y reduce la corteza prefrontal reguladora; el miedo se amplifica sin freno racional.",
-			"C)  Genera hiperatención social por exceso de dopamina prefrontal, sin alterar la evaluación racional.",
-			"D)  Solo ocurre en personas con variante genética del gen COMT; en los demás el efecto es ansiolítico."
-		],
-		"correct": 2,
-		"substance": "Marihuana",
-		"type": "Attack"
-	},
-	{
-		"number": 25,
+		"number": 26,
 		"question": "Memoria corto plazo borra los recuerdos recientes de Lucas. ¿Qué estructura y mecanismo explican el daño que produce este enemigo?",
 		"answers": [
 			"A)  El THC activa receptores CB1 en el hipocampo, inhibiendo la LTP necesaria para consolidar memorias recientes.",
@@ -351,57 +364,44 @@ var questions = [
 		],
 		"correct": 1,
 		"substance": "Marihuana",
-		"type": "Defense"
-	},
-	{
-		"number": 26,
-		"question": "Memoria corto plazo deteriora a Lucas gradualmente. ¿Por qué su daño es tan difícil de detectar en los primeros meses de consumo frecuente?",
-		"answers": [
-			"A)  La marihuana mejora la memoria visual y espacial, compensando la pérdida verbal.",
-			"B)  El deterioro es gradual y el THC genera sensación subjetiva de agudeza mental que contradice el daño real.",
-			"C)  El daño real ocurre solo tras 5 años de consumo diario.",
-			"D)  El hipocampo solo muestra olvidos perceptibles cuando más del 50% de su capacidad está comprometida."
-		],
-		"correct": 2,
-		"substance": "Marihuana",
-		"type": "Defense"
+		"type": "Attack"
 	},
 	{
 		"number": 27,
-		"question": "Desbalance motor arruina la precisión de Lucas con la guitarra. ¿Qué región cerebral afecta Desbalance motor para deteriorar la coordinación fina?",
+		"question": "Ideación paranoide hace que Lucas sienta que todos lo juzgan justo después de fumar. ¿Qué circuito neurológico activa para producir esa experiencia?",
 		"answers": [
-			"A)  El efecto es periférico: actúa en las uniones neuromusculares distales, no en el SNC.",
-			"B)  Los ganglios basales gestionan la memoria procedimental; Lucas recuerda cómo tocar pero no puede ejecutarlo.",
-			"C)  Desbalance motor activa receptores CB1 en el cerebelo, alterando el timing motor y la coordinación entre grupos musculares.",
-			"D)  Daña la corteza motora primaria reduciendo la velocidad de conducción en los tractos corticoespinales."
+			"A)  Sube serotonina en la corteza cingulada, que malinterpreta estímulos sociales neutros.",
+			"B)  Ideación paranoide sobreactiva la amígdala y reduce la corteza prefrontal; el miedo se amplifica sin freno racional.",
+			"C)  Genera hiperatención social por exceso de dopamina prefrontal, sin alterar la evaluación racional.",
+			"D)  Solo ocurre en personas con variante genética del gen COMT; en los demás el efecto es ansiolítico."
 		],
-		"correct": 3,
+		"correct": 2,
 		"substance": "Marihuana",
-		"type": "Defense"
+		"type": "Attack"
 	},
 	{
 		"number": 28,
-		"question": "Ideación paranoide convierte situaciones cotidianas en amenazas para Lucas. ¿Cómo transforma este enemigo estímulos neutros en sospechas?",
+		"question": "Desbalance motor arruina la precisión de Lucas con la guitarra. ¿Qué región cerebral afecta para deteriorar la coordinación fina?",
 		"answers": [
-			"A)  Solo actúa a concentraciones de THC superiores al 20%.",
-			"B)  Sensibiliza los circuitos mesolímbicos, atribuyendo carga amenazante a estímulos neutros.",
-			"C)  Agudiza la percepción social; Lucas puede estar detectando señales reales que antes ignoraba.",
-			"D)  Ideación paranoide solo ocurre durante la intoxicación aguda; las sospechas persistentes de Lucas son de otra causa."
+			"A)  El efecto es periférico: actúa en las uniones neuromusculares distales, no en el SNC.",
+			"B)  Los ganglios basales gestionan la memoria procedimental; Lucas recuerda cómo tocar pero no puede ejecutarlo.",
+			"C)  Desbalance motor activa receptores CB1 en el cerebelo, alterando el timing motor y la coordinación.",
+			"D)  Daña la corteza motora primaria reduciendo la velocidad de conducción nerviosa."
 		],
-		"correct": 2,
+		"correct": 3,
 		"substance": "Marihuana",
 		"type": "Defense"
 	},
 	{
 		"number": 29,
-		"question": "Ideación paranoide atrapa a Lucas en un ciclo que él mismo reconoce pero no puede romper. ¿Por qué este enemigo es tan difícil de vencer?",
+		"question": "Ideación paranoide convierte situaciones cotidianas en amenazas para Lucas. ¿Cómo transforma estímulos neutros en sospechas?",
 		"answers": [
-			"A)  Los receptores CB1 paranoides son más densos que los de placer, por lo que ese efecto siempre supera al otro.",
-			"B)  El cuerpo desarrolla tolerancia al placer pero no a la paranoia; más dosis siempre significa más paranoia.",
-			"C)  El aislamiento que genera Ideación paranoide aumenta la ansiedad; fumar la alivia pero intensifica la paranoia, perpetuando el ciclo.",
-			"D)  Deja huella permanente en la amígdala que se reactiva ante cualquier estrés aunque ya no consuma."
+			"A)  Solo actúa a concentraciones de THC superiores al 20%.",
+			"B)  Sensibiliza los circuitos mesolímbicos, atribuyendo carga amenazante a estímulos neutros.",
+			"C)  Agudiza la percepción social; Lucas puede estar detectando señales reales que antes ignoraba.",
+			"D)  Solo ocurre durante la intoxicación aguda; las sospechas persistentes de Lucas son de otra causa."
 		],
-		"correct": 3,
+		"correct": 2,
 		"substance": "Marihuana",
 		"type": "Defense"
 	},
@@ -420,10 +420,10 @@ var questions = [
 	},
 	{
 		"number": 31,
-		"question": "Dependencia convierte el uso recreativo de Mateo en necesidad diaria en pocos meses. ¿Qué proceso neurobiológico explica esa transición tan rápida?",
+		"question": "Dependencia convierte el uso recreativo de Mateo en necesidad diaria. ¿Qué proceso neurobiológico explica esa transición tan rápida?",
 		"answers": [
 			"A)  La cocaína tiene vida media larga que acumula niveles plasmáticos que fuerzan a consumir más.",
-			"B)  Dependencia desensibiliza los receptores D2 con picos de dopamina extremos; sin cocaína, nada genera placer y la dependencia escala.",
+			"B)  Dependencia desensibiliza los receptores D2 con picos de dopamina extremos; sin cocaína, nada genera placer.",
 			"C)  La cocaína daña el hígado desde las primeras dosis, haciendo cada dosis siguiente más intensa.",
 			"D)  Dependencia es principalmente psicológica; la transición rápida refleja personalidad adictiva."
 		],
@@ -433,12 +433,12 @@ var questions = [
 	},
 	{
 		"number": 32,
-		"question": "Ideación paranoide hace que Mateo deje de confiar en sus amigos y colegas. ¿Cuál es el mecanismo neurológico que alimenta a este enemigo en el cerebro?",
+		"question": "Ideación paranoide hace que Mateo deje de confiar en sus amigos. ¿Cuál es el mecanismo neurológico que alimenta a este enemigo?",
 		"answers": [
-			"A)  Agota la serotonina del rafe, generando un estado depresivo que distorsiona la percepción del entorno.",
+			"A)  Agota la serotonina del rafe, generando un estado depresivo que distorsiona la percepción.",
 			"B)  Altera los receptores de oxitocina prefrontal reduciendo la capacidad de generar confianza.",
-			"C)  Es consecuencia del aislamiento social, no un efecto neurológico directo sobre los circuitos de amenaza.",
-			"D)  Sobreactiva el locus coeruleus y sensibiliza la amígdala; la hipervigilancia crónica deriva en sospecha patológica."
+			"C)  Es consecuencia del aislamiento social, no un efecto neurológico directo.",
+			"D)  Sobreactiva el locus coeruleus y sensibiliza la amígdala; la hipervigilancia deriva en sospecha patológica."
 		],
 		"correct": 4,
 		"substance": "Cocaína",
@@ -446,50 +446,76 @@ var questions = [
 	},
 	{
 		"number": 33,
-		"question": "Insomnio suprime la fatiga de Mateo aunque lleve días sin dormir bien. ¿Por qué esa ausencia de cansancio es una señal de peligro real?",
+		"question": "Insomnio suprime la fatiga de Mateo aunque lleve días sin dormir. Evitar consumir tras ejercicio intenso es una conducta protectora. ¿Por qué?",
 		"answers": [
-			"A)  Al no sentir cansancio consume más, acelerando tolerancia pero sin daño fisiológico directo.",
-			"B)  Insomnio bloquea la adenosina del descanso; neuronas, memoria e inmunidad se siguen deteriorando aunque Mateo no sienta nada.",
-			"C)  El umbral de cansancio elevado lo lleva a sobreexigirse físicamente.",
-			"D)  El cerebro en hiperactivación realiza funciones reparadoras equivalentes al sueño."
+			"A)  El ejercicio elimina la cocaína del organismo más rápido por sudoración.",
+			"B)  Después del ejercicio el corazón ya está acelerado; consumir en ese estado multiplica el riesgo cardiovascular.",
+			"C)  Solo aplica en personas con condiciones cardíacas previas.",
+			"D)  El ejercicio y la cocaína tienen efectos opuestos que se cancelan mutuamente."
 		],
 		"correct": 2,
 		"substance": "Cocaína",
-		"type": "Attack"
+		"type": "Defense"
 	},
 	{
 		"number": 34,
-		"question": "Convulsiones puede aparecer en Mateo incluso sin historial epiléptico. ¿Cuál es el mecanismo por el que dosis altas generan este enemigo?",
+		"question": "Convulsiones puede aparecer en Mateo sin historial epiléptico. No mezclar con alcohol es una conducta protectora. ¿Por qué reduce el riesgo?",
 		"answers": [
-			"A)  Convulsiones bloquea canales de sodio y dispara dopamina; supera el GABA y genera descargas eléctricas descontroladas.",
-			"B)  Solo ocurre al mezclar cocaína con alcohol; el cocaetileno es el único metabolito proconvulsivante.",
-			"C)  La cocaína baja la glucemia cerebral de forma aguda, desencadenando crisis por déficit energético.",
-			"D)  La vasoconstricción cerebral genera microinfartos que producen actividad eléctrica anormal."
+			"A)  El alcohol ralentiza la absorción de la cocaína y reduce su concentración en sangre.",
+			"B)  Ambas sustancias se neutralizan mutuamente en el hígado sin generar metabolitos.",
+			"C)  Evita la formación de cocaetileno, una sustancia que incrementa la toxicidad cardiovascular y el riesgo de crisis.",
+			"D)  Solo importa no mezclarlos en la misma hora; con más tiempo entre consumos no hay riesgo."
 		],
-		"correct": 1,
+		"correct": 3,
 		"substance": "Cocaína",
-		"type": "Attack"
+		"type": "Defense"
 	},
 	{
 		"number": 35,
-		"question": "Necrosis destruye silenciosamente el intestino de Mateo. ¿Por qué el efecto vasoconstrictor de la cocaína es especialmente peligroso en esa zona?",
+		"question": "Insomnio e Ideación paranoide deterioran a Mateo en silencio. Controlar la dosis es una conducta protectora. ¿Qué reduce exactamente?",
 		"answers": [
-			"A)  El daño solo ocurre por vía oral; por vía nasal no alcanza la circulación esplácnica.",
-			"B)  El intestino tiene alta demanda de O₂; la vasoconstricción interrumpe la absorción de forma reversible.",
-			"C)  El daño lo producen los adulterantes; la vasoconstricción mesentérica por cocaína pura es insignificante.",
-			"D)  La circulación mesentérica tiene poca red colateral; Necrosis puede avanzar a tejido muerto irreversible sin avisar."
+			"A)  Controlar la dosis elimina la dependencia física en pocas semanas.",
+			"B)  Solo reduce el riesgo de sobredosis aguda pero no los efectos crónicos.",
+			"C)  Espaciar y limitar el consumo reduce el riesgo de sobredosis y la intensidad de los efectos adversos.",
+			"D)  El control de dosis no tiene efecto sobre la dependencia una vez que esta se establece."
 		],
-		"correct": 4,
+		"correct": 3,
 		"substance": "Cocaína",
 		"type": "Defense"
 	},
 	{
 		"number": 36,
-		"question": "Necrosis convierte un dolor abdominal leve en una emergencia de vida. ¿Por qué este enemigo es tan grave aunque los síntomas iniciales sean leves?",
+		"question": "Necrosis destruye el intestino de Mateo en silencio. ¿Por qué el efecto vasoconstrictor de la cocaína es especialmente peligroso en esa zona?",
+		"answers": [
+			"A)  El daño solo ocurre por vía oral; por vía nasal no alcanza la circulación esplácnica.",
+			"B)  El intestino tiene alta demanda de O₂; la vasoconstricción interrumpe la absorción de forma reversible.",
+			"C)  El daño lo producen los adulterantes; la vasoconstricción por cocaína pura es insignificante.",
+			"D)  La circulación mesentérica tiene poca red colateral; Necrosis puede avanzar a tejido muerto irreversible sin avisar."
+		],
+		"correct": 4,
+		"substance": "Cocaína",
+		"type": "Attack"
+	},
+	{
+		"number": 37,
+		"question": "Arritmia desregula el corazón de Mateo, que siente latidos irregulares. ¿Qué proceso electrofisiológico desencadena Arritmia?",
+		"answers": [
+			"A)  Las palpitaciones son efecto de la ansiedad crónica sobre el nodo sinoatrial.",
+			"B)  Agota el potasio intracelular del miocardio, alterando la polarización de forma predecible.",
+			"C)  Solo genera taquicardia regular vía adrenalina; no afecta la conducción eléctrica.",
+			"D)  Arritmia bloquea canales de sodio cardíacos y eleva catecolaminas; puede generar hasta fibrilación ventricular."
+		],
+		"correct": 4,
+		"substance": "Cocaína",
+		"type": "Attack"
+	},
+	{
+		"number": 38,
+		"question": "Necrosis convierte un dolor leve en emergencia de vida. ¿Por qué este enemigo es tan grave aunque los síntomas iniciales sean leves?",
 		"answers": [
 			"A)  Solo es emergencia cuando afecta más del 30% del intestino; daños menores se recuperan.",
-			"B)  El intestino tiene alta capacidad regenerativa pero la cocaína inhibe ese proceso de reparación.",
-			"C)  Necrosis perfora la barrera mucosa; bacterias pasan al torrente y generan sepsis mortal en horas, y el tejido no se recupera.",
+			"B)  El intestino tiene alta capacidad regenerativa pero la cocaína inhibe ese proceso.",
+			"C)  Necrosis perfora la barrera mucosa; bacterias generan sepsis mortal en horas y el tejido no se recupera.",
 			"D)  El dolor lleva a urgencias donde se descubre el consumo y los anestésicos interactúan."
 		],
 		"correct": 3,
@@ -497,36 +523,10 @@ var questions = [
 		"type": "Defense"
 	},
 	{
-		"number": 37,
-		"question": "Arritmia desregula el corazón de Mateo, que siente latidos irregulares. ¿Qué proceso electrofisiológico desencadena Arritmia?",
-		"answers": [
-			"A)  Las palpitaciones son efecto de la ansiedad crónica sobre el nodo sinoatrial, no del fármaco directamente.",
-			"B)  Agota el potasio intracelular del miocardio, alterando la polarización de forma predecible.",
-			"C)  Solo genera taquicardia regular vía adrenalina; no afecta la conducción eléctrica.",
-			"D)  Arritmia bloquea canales de sodio cardíacos y eleva catecolaminas; puede generar desde extrasístoles hasta fibrilación ventricular."
-		],
-		"correct": 4,
-		"substance": "Cocaína",
-		"type": "Defense"
-	},
-	{
-		"number": 38,
-		"question": "Arritmia puede ser fatal incluso la primera vez que aparece en Mateo. ¿Por qué este enemigo es mortal sin señales previas?",
-		"answers": [
-			"A)  Solo son letales con defecto cardíaco previo; en corazones normales no genera arritmias fatales al inicio.",
-			"B)  El primer consumo genera la mayor concentración de cocaetileno, el metabolito más cardiotóxico.",
-			"C)  Arritmia puede inducir fibrilación ventricular brusca; sin desfibrilación inmediata el daño cerebral es irreversible en minutos.",
-			"D)  El cuerpo sin tolerancia produce inflamación pericárdica que comprime el corazón mecánicamente."
-		],
-		"correct": 3,
-		"substance": "Cocaína",
-		"type": "Defense"
-	},
-	{
 		"number": 39,
-		"question": "Pérdida de apetito hace que Mateo casi no coma aunque su cuerpo se deteriore. ¿Qué mecanismo neurológico usa este enemigo para suprimir el hambre?",
+		"question": "Pérdida de apetito hace que Mateo casi no coma aunque su cuerpo se deteriore. ¿Qué mecanismo neurológico usa para suprimir el hambre?",
 		"answers": [
-			"A)  Pérdida de apetito eleva dopamina y noradrenalina en el hipotálamo lateral, suprimiendo el hambre aunque glucemia y reservas se agoten.",
+			"A)  Eleva dopamina en el hipotálamo lateral, suprimiendo el hambre aunque las reservas energéticas se agoten.",
 			"B)  El efecto supresor dura solo la primera semana; la pérdida extrema de Mateo debe tener otra causa.",
 			"C)  Contrae el estómago reduciendo la motilidad; sin señales de vacío gástrico no hay hambre.",
 			"D)  Estimula los receptores de leptina en el hipotálamo, generando saciedad artificial permanente."
@@ -537,14 +537,14 @@ var questions = [
 	},
 	{
 		"number": 40,
-		"question": "Pérdida de apetito priva al cerebro de Mateo de los nutrientes que necesita durante meses. ¿Qué consecuencias tiene ese déficit sobre el cerebro específicamente?",
+		"question": "Arritmia puede ser fatal incluso la primera vez en Mateo. El cuidado nasal es una conducta protectora. ¿Qué protege exactamente?",
 		"answers": [
-			"A)  El cerebro se adapta a cuerpos cetónicos sin consecuencias cognitivas; el déficit afecta más hígado y corazón.",
-			"B)  El cerebro tiene prioridad metabólica; el resto se deteriora primero; solo se afecta en ayunos extremos.",
-			"C)  La desnutrición reduce neurotransmisores y deteriora la mielinización, amplificando el daño cognitivo de la cocaína.",
-			"D)  El cortisol elevado hace el metabolismo cerebral más eficiente, compensando parte del daño."
+			"A)  El suero nasal elimina la cocaína antes de que llegue al torrente sanguíneo.",
+			"B)  Mantener la higiene nasal reduce la inflamación, previene infecciones y disminuye el daño en el tabique.",
+			"C)  Solo aplica en consumidores de más de 5 años; antes el tabique no presenta daño.",
+			"D)  El cuidado nasal protege exclusivamente el sistema respiratorio, no el cardiovascular."
 		],
-		"correct": 3,
+		"correct": 2,
 		"substance": "Cocaína",
 		"type": "Defense"
 	}

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://8fw6kxc74s0y"]
 
 [ext_resource type="Texture2D" uid="uid://boqtuyvxvunys" path="res://assets/ui/Book.png" id="1_icimv"]
-[ext_resource type="Script" uid="uid://bmsqfvwhmqnt7" path="res://scripts/UI/book_protective.gd" id="1_m7qfb"]
 [ext_resource type="Texture2D" uid="uid://dkr2fcmowmooa" path="res://assets/questions/AnwersHolder.png" id="2_4irje"]
 [ext_resource type="FontFile" uid="uid://d0u6kv0akue8f" path="res://assets/fonts/Ruler 9.ttf" id="2_by1j4"]
 [ext_resource type="Texture2D" uid="uid://ciivh3cfyhval" path="res://assets/ui/Separator.png" id="3_8lnhq"]
@@ -82,8 +81,7 @@ base_font = ExtResource("3_rnqbc")
 [sub_resource type="FontVariation" id="FontVariation_dss4t"]
 base_font = ExtResource("2_by1j4")
 
-[node name="BookProtective" type="CanvasLayer" unique_id=1253118151]
-script = ExtResource("1_m7qfb")
+[node name="BookProtective" type="Node2D" unique_id=351976046]
 
 [node name="Control" type="Control" parent="." unique_id=792986956]
 layout_mode = 3

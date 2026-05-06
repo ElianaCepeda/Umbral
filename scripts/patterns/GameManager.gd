@@ -1,7 +1,7 @@
 # scripts/GameManager.gd
 extends Node
 
-enum FlowState { NONE, TUTORIAL, INTRO, RECOVERY_1, PHASE_1, RECOVERY_2, PHASE_2, BOSS, GOOD_ENDING }
+enum FlowState { NONE, TUTORIAL, BOOK, INTRO, RECOVERY_1, PHASE_1, RECOVERY_2, PHASE_2, BOSS, GOOD_ENDING }
 var keys_mostradas := false
 var current_level: LevelState = null
 var preguntas_completadas = false
@@ -20,6 +20,7 @@ func _ready() -> void:
 var campaign_database = {
 	"alcohol": {
 		"intro": "AndresTioAlcohol",
+		"book" : AlcoholBookProtectiveState,
 		"phase1": [RetardoLevel, BorrosoLevel, EuforiaLevel],
 		"phase2": [CirrosisLevel, HipertensionLevel2, GastritisLevel],
 		"boss": AlcoholLevel,
@@ -31,6 +32,7 @@ var campaign_database = {
 	},
 	"tabaco": {
 		"intro": "SofiaTiaTabaco",
+		"book" : TabacoBookProtectiveState,
 		"phase1": [HipertensionLevel, AsfixiaLevel, TaquicardiaLevel],
 		"phase2": [AnsiedadLevel, FatigaLevel, ObstruccionLevel],
 		"boss": TabacoLevel,
@@ -42,6 +44,7 @@ var campaign_database = {
 	},
 	"marihuana": {
 		"intro": "LucasPrimoMarihuana",
+		"book" : MarihuanaBookProtectiveState,
 		"phase1": [ConjuntivitisLevel, ApetitoLevel, AsfixiaLevel],
 		"phase2": [MemoriaLevel, DesbalanceLevel , ParanoideLevel],
 		"boss": MarihuanaLevel,
@@ -53,6 +56,7 @@ var campaign_database = {
 	},
 	"cocaina": {
 		"intro": "MateoHermanoCocaina",
+		"book" : CocainaBookProtectiveState,
 		"phase1": [ParanoideLevel, InsomnioLevel, ConvulsionesLevel],
 		"phase2": [NecrosisLevel, TaquicardiaLevel2, PerdidaApetitoLevel],
 		"boss": CocainaLevel,
@@ -103,8 +107,12 @@ func advance_campaign_flow() -> void:
 		FlowState.INTRO:
 			current_flow = FlowState.RECOVERY_1
 			change_level(RecoveryState.new())
-			
+		
 		FlowState.RECOVERY_1:
+			current_flow = FlowState.BOOK
+			change_level(data["book"].new())
+			
+		FlowState.BOOK:
 			current_flow = FlowState.PHASE_1
 			current_enemy_index = 0
 			_load_current_phase_enemy(data["phase1"])

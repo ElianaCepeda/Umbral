@@ -2,6 +2,8 @@ extends BookProtectiveBaseState
 class_name AlcoholBookProtectiveState
 
 func _init() -> void:
+	level_name = "Book alcohol"
+	scene_path = "res://scenes/UI/AlcoholBook.tscn"
 	page_data = {
 		"descriptions": [
 			"En esta conducta se evalúa el uso del agua como apoyo para mantener la hidratación, reducir parcialmente el malestar físico asociado al consumo de alcohol y evitar que la deshidratación aumente la sensación de mareo o deterioro.",

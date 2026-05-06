@@ -2,6 +2,8 @@ extends BookProtectiveBaseState
 class_name MarihuanaBookProtectiveState
 
 func _init() -> void:
+	level_name = "Book marihuana"
+	scene_path = "res://scenes/UI/MarihuanaBook.tscn"
 	page_data = {
 		"descriptions": [
 			"En esta conducta se evalúa la importancia de dormir y recuperar el descanso, porque la combinación entre consumo y falta de sueño puede aumentar la ansiedad, la paranoia y la dificultad para responder con claridad.",

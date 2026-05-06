@@ -38,6 +38,7 @@ func _on_exit_pressed() -> void:
 func _get_book_nodes() -> void:
 	book_sprite = scene_instance.get_node("Control/CenterContainer/Bookholder/AnimatedSprite2D")
 	book_content = scene_instance.get_node("Control/CenterContainer/Bookholder/BookContent")
+	exit_button = scene_instance.get_node("Control/CenterContainer/Bookholder/BookContent/Control/Exit")
 
 	description_labels = [
 		scene_instance.get_node("Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc1/MarginContainer/Description1"),
