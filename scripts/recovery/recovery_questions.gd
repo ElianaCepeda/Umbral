@@ -556,7 +556,7 @@ func _init(min_val: int = 1, max_val: int = 9):
 	timeline_name = ""
 	enemy_type = ""
 	first_question = min_val-1
-	last_question = max_val-1
+	last_question = max_val
 
 func enter():
 	print("Entrando al minijuego de recuperación...")

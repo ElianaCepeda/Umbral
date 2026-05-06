@@ -1,8 +1,6 @@
 extends CanvasLayer
 
 @onready var main_menu_btn = $CenterContainer/PausePanel/MarginContainer/Content/ButtonsContainer/MainMenu
-@onready var restart_phase_btn = $CenterContainer/PausePanel/MarginContainer/Content/ButtonsContainer/RePhase
-@onready var restart_level_btn = $CenterContainer/PausePanel/MarginContainer/Content/ButtonsContainer/ReLevel
 @onready var continue_btn = $CenterContainer/PausePanel/MarginContainer/Content/ButtonsContainer/Continue
 @onready var exit_btn = $CenterContainer/PausePanel/MarginContainer/Content/ButtonsContainer/Exit
 
@@ -11,12 +9,10 @@ func _ready():
 	hide()
 
 	main_menu_btn.pressed.connect(_on_main_menu_pressed)
-	restart_phase_btn.pressed.connect(_on_restart_phase_pressed)
-	restart_level_btn.pressed.connect(_on_restart_level_pressed)
 	continue_btn.pressed.connect(_on_continue_pressed)
 	exit_btn.pressed.connect(_on_exit_pressed)
 
-	for btn in [continue_btn, restart_phase_btn, restart_level_btn, main_menu_btn, exit_btn]:
+	for btn in [continue_btn, main_menu_btn, exit_btn]:
 		_config_hover(btn)
 
 func _config_hover(btn: Button) -> void:

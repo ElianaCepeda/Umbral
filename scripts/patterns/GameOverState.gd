@@ -3,6 +3,7 @@ class_name GameOverState
 
 var bad_ending_timeline: String = ""
 var _instance: CanvasLayer = null
+var advance : bool = false
 
 const MESSAGES = {
 	"alcohol":   "[shake]Andrés no pudo ver la realidad a tiempo...[/shake]",
@@ -11,10 +12,11 @@ const MESSAGES = {
 	"cocaina":   "[shake]Mateo creyó que podía solo. No podía.[/shake]"
 }
 
-func _init(ending_timeline: String) -> void:
+func _init(ending_timeline: String, advance2: bool) -> void:
 	level_name = "GameOver"
 	scene_path = "res://scenes/level_menu/End_game.tscn"
 	bad_ending_timeline = ending_timeline
+	advance = advance2
 
 func enter():
 	if preloaded_scene:
@@ -34,7 +36,7 @@ func enter():
 		await anim.animation_finished
 
 	await get_tree().create_timer(3.0).timeout
-	GameManager.change_level(StoryState.new(bad_ending_timeline, true))
+	GameManager.change_level(StoryState.new(bad_ending_timeline, advance))
 
 func exit():
 	if _instance and is_instance_valid(_instance):

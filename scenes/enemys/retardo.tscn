@@ -113,7 +113,7 @@ script = ExtResource("1_8skpd")
 effect_name = "input_delay"
 effect_duration = 3.0
 speed = 100
-health = 10
+points = 4
 collision_damage = 10
 tipo_movimiento = 1
 

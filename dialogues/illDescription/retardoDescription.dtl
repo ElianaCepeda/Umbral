@@ -1,9 +1,7 @@
 audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
-join Doctor center
-Doctor: Retardo es ese letargo pesado que te convence de que aún\
-eres rápido, cuando en realidad apenas te estás moviendo.,
+join Doctor left
 Doctor: En la vida real, el alcohol deprime el sistema nervioso central, bloqueando y ralentizando la comunicación eléctrica entre el cerebro y los músculos.
 Doctor: por eso, procesar un estímulo visual y reaccionar toma fracciones de segundo vitales que pueden causar un accidente.
 join retardo right
-Doctor: En el combate, esta figura gelatinosa de extremidades elásticas te lanzará proyectiles fraccionados que, al impactarte, generarán un molesto retraso temporal entre tu control y la acción de tu personaje en la pantalla.
+Doctor: En el combate, Retardo va a tratar de impactarte lo que generará un molesto retraso temporal entre tu control y la acción de tu personaje en la pantalla.
 leave retardo

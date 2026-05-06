@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var speed: float = 250.0
-@export var damage: int = 1
+@export var damage: int
 @export var effect_name: String = "random_speed_boost"
 @export var effect_duration: float = 2.0
 

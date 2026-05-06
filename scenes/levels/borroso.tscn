@@ -8,7 +8,8 @@
 script = ExtResource("2_8n4yk")
 
 [node name="Spawner" parent="." index="5" unique_id=2048461648]
-cantidad_minima = 4
+cantidad_minima = 6
+cantidad_maxima = 8
 tipo_enemigo_actual = "Borroso"
 
 [node name="Batalla2" type="AudioStreamPlayer" parent="." index="7" unique_id=823149326]

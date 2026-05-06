@@ -114,7 +114,7 @@ script = ExtResource("1_ooxyw")
 projectile_scene = ExtResource("2_h6mto")
 effect_duration = 3.0
 health = 10
-collision_damage = 10
+collision_damage = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1116094038]
 scale = Vector2(0.0325, 0.0325)

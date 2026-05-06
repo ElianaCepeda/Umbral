@@ -1,7 +1,7 @@
 # scripts/GameManager.gd
 extends Node
 
-enum FlowState { NONE, TUTORIAL, BOOK, INTRO, RECOVERY_1, PHASE_1, RECOVERY_2, PHASE_2, BOSS, GOOD_ENDING }
+enum FlowState { NONE, TUTORIAL, BOOK, INTRO, RECOVERY_1, PHASE_1, RECOVERY_2, PHASE_2, BOSS, GOOD_ENDING , DEATH}
 var keys_mostradas := false
 var current_level: LevelState = null
 var preguntas_completadas = false
@@ -138,9 +138,7 @@ func advance_campaign_flow() -> void:
 				_load_current_phase_enemy(data["phase2"])
 			else:
 				current_flow = FlowState.BOSS
-				change_level(data["boss"].new()) # Descomentar cuando tengas el jefe
-				# POR AHORA, pasamos directo a la evaluación final:
-				#_evaluate_ending(data)
+				change_level(data["boss"].new()) 
 				
 		FlowState.BOSS:
 			_evaluate_ending(data)
@@ -148,6 +146,9 @@ func advance_campaign_flow() -> void:
 		FlowState.GOOD_ENDING:
 			SaveManager.set_preguntas_completadas(false)
 			change_level(LevelMenuState.new())
+			
+		FlowState.DEATH:
+			force_exit_to_main_menu()
 
 func _load_current_phase_enemy(phase_array: Array) -> void:
 	var enemy_level_class = phase_array[current_enemy_index]
@@ -158,8 +159,8 @@ func _evaluate_ending(data: Dictionary) -> void:
 	
 	if vida_final < 30:
 		# Ganó, pero quedó destruido (Final Triste)
-		current_flow = FlowState.NONE
-		change_level(StoryState.new(data["bad_ending"], true))
+		current_flow = FlowState.GOOD_ENDING 
+		change_level(GameOverState.new(data["bad_ending"], true))
 	else:
 		# Ganó y mantuvo su conciencia (Final Bueno)
 		current_flow = FlowState.GOOD_ENDING
@@ -196,11 +197,10 @@ func _perform_game_over():
 	get_tree().paused = false
 	if Dialogic.current_timeline != null: Dialogic.end_timeline()
 	
-	# En lugar de ir al menú, lanzamos la cinemática de consumo/derrota
 	if current_campaign != "":
 		var data = campaign_database[current_campaign]
-		current_flow = FlowState.NONE
-		change_level(GameOverState.new(data["bad_ending"]))
+		current_flow = FlowState.DEATH 
+		change_level(GameOverState.new(data["bad_ending"], false))
 	else:
 		force_exit_to_main_menu()
 
@@ -239,3 +239,47 @@ func get_current_question_range() -> Array:
 		return data["phase2_q"]
 		
 	return [1, 9]
+	
+	
+# ==========================================
+# 🛠️ FUNCIONES DE DEBUG (ELIMINAR EN PRODUCCIÓN)
+# ==========================================
+
+# Esta función prepara el estado y salta directamente a la fase solicitada
+func debug_start_at_phase(substance: String, target_phase: String) -> void:
+	print("🛠️ DEBUG: Saltando directo a ", substance, " - ", target_phase)
+	
+	# 1. Limpiamos cualquier nivel anterior
+	if current_level:
+		current_level.exit()
+		remove_child(current_level)
+		current_level.queue_free()
+		current_level = null
+		
+	# 2. Configuramos la campaña
+	current_campaign = substance
+	current_enemy_index = 0
+	
+	# 3. Fingimos que ya pasamos todo lo anterior (Dar vida, habilidades, etc.)
+	# Como es un salto, le damos al jugador vida completa para que no muera al instante
+	SaveManager.sync_and_save_player_state(100, 100, 5, 1, 1) # Stats infladas para probar
+	
+	var data = campaign_database[current_campaign]
+	
+	# 4. Ajustamos el estado interno y cargamos la escena correcta
+	match target_phase:
+		"fase1":
+			current_flow = FlowState.RECOVERY_1
+			change_level(RecoveryState.new())
+		"fase2":
+			current_flow = FlowState.RECOVERY_2
+			SaveManager.set_preguntas_completadas(false)
+			preguntas_completadas = SaveManager.get_preguntas_completas()
+			change_level(RecoveryState.new())
+		"fase3": # En tu diseño, la fase 3 es el Boss
+			current_flow = FlowState.BOSS
+			change_level(data["boss"].new())
+		_:
+			push_error("Fase de debug no reconocida: " + target_phase)
+
+# ==========================================

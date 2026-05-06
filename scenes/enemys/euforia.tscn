@@ -115,7 +115,7 @@ script = ExtResource("1_fmhie")
 projectile_scene = ExtResource("2_wjxfc")
 health = 10
 points = 8
-collision_damage = 10
+collision_damage = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=730059669]
 position = Vector2(0, -4.7683716e-07)

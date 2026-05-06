@@ -165,6 +165,15 @@ func _config_panel(color_panel: Control, panel: Control, unlocked: bool) -> void
 	_config_phase_button(f1, Color("#D8C08A"))
 	_config_phase_button(f2, Color("#56C67F"))
 	_config_phase_button(f3, Color("#B84A4A"))
+	
+	# --- INICIO BLOQUE DEBUG ---
+	# Extraemos de qué sustancia es este panel usando su nombre (ej: "AlcoholPanel" -> "alcohol")
+	var substance_name = panel.name.replace("Panel", "").to_lower()
+	
+	f1.pressed.connect(func(): _debug_jump_to(substance_name, "fase1"))
+	f2.pressed.connect(func(): _debug_jump_to(substance_name, "fase2"))
+	f3.pressed.connect(func(): _debug_jump_to(substance_name, "fase3"))
+	# --- FIN BLOQUE DEBUG ---
 
 	#play_button.mouse_entered.connect(func(): _hover_play_on(play_button))
 	#play_button.mouse_exited.connect(func(): _hover_play_off(play_button))
@@ -226,3 +235,11 @@ func _go_to_Cocaina () -> void:
 
 func _go_to_Marihuana () -> void:
 	GameManager.start_campaign("marihuana")
+	
+# ==========================================
+# 🛠️ FUNCIONES DE DEBUG (ELIMINAR EN PRODUCCIÓN)
+# ==========================================
+func _debug_jump_to(substance: String, phase: String) -> void:
+	
+	# Llamamos al GameManager para que haga el salto mágico
+	GameManager.debug_start_at_phase(substance, phase)

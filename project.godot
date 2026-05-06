@@ -33,7 +33,7 @@ SaveManager="*res://scripts/patterns/SaveManager.gd"
 directories/dch_directory={
 "AndresAlcohol": "res://characters/AndresAlcohol.dch",
 "Doctor": "res://characters/Doctor.dch",
-"EnriquePersonaje": "res://characters/Enrique.dch",
+"Enrique": "res://characters/Enrique.dch",
 "LucasMarihuana": "res://characters/LucasMarihuana.dch",
 "MateoCocaina": "res://characters/MateoCocaina.dch",
 "SofiaTabaco": "res://characters/SofiaTabaco.dch",

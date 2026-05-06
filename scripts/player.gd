@@ -39,7 +39,7 @@ var is_paralyzed: bool = false
 var controls_inverted: bool = false
 var has_input_delay: bool = false
 var input_buffer: Array[Vector2] = []
-var delay_frames: int = 25 
+var delay_frames: int = 40 
 var base_vision_scale: float = 3
 var base_max_consciousness: int = 100 # El límite máximo original
 var max_consciousness: int = 100      # El límite actual, que Cirrosis va a encoger
@@ -490,8 +490,8 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 			)
 		
 		"random_speed_boost":
-			var random_increase = randi_range(80, 200)
-			var max_speed = 500 
+			var random_increase = randi_range(100, 250)
+			var max_speed = 800 
 			
 			var speed_before = speed
 			speed += random_increase

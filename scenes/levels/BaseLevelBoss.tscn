@@ -90,13 +90,11 @@ color = Color(0, 0, 0, 0.7921569)
 stream = ExtResource("4_ekqps")
 volume_db = -20.0
 
-<<<<<<< HEAD
 [node name="Batalla" type="AudioStreamPlayer" parent="." unique_id=1168158033]
 stream = ExtResource("5_wt436")
 volume_db = -9.609
 autoplay = true
 parameters/looping = true
-=======
+
 [node name="BossFightController" type="Node" parent="." unique_id=164943435]
 script = ExtResource("6_2hmje")
->>>>>>> origin/develop
