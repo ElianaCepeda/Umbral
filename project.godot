@@ -13,7 +13,7 @@ config_version=5
 config/name="umbral"
 run/main_scene="uid://ebgvj4cuo4ux"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://c41uglnxkbud8"
 
 [audio]
 

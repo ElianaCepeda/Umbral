@@ -1,4 +1,4 @@
-audio music "res://assets/audio/music/Idea 2 parte 1.ogg" [loop="true"]
+audio music "res://assets/audio/music/Idea 2 parte 1.ogg" [volume="-5.0" loop="true"]
 [background arg="res://assets/backgrounds/canteen_day1.png" fade="0.0"]
 join AndresAlcohol right
 join Doctor leftmost
