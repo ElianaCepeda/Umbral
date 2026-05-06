@@ -196,7 +196,7 @@ texture = ExtResource("3_wu84c")
 expand_mode = 1
 
 [node name="Door" type="Node2D" parent="VBoxContainer/ContentGroup/Brainholder" unique_id=562417345]
-position = Vector2(414, 74.5)
+position = Vector2(265, 74.5)
 script = ExtResource("5_tbmy8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/ContentGroup/Brainholder/Door" unique_id=1759941444]
@@ -221,6 +221,7 @@ theme_override_constants/separation = 80
 alignment = 1
 
 [node name="BtnFamily" type="TextureButton" parent="VBoxContainer/ContentGroup/BtnRow" unique_id=130403349]
+visible = false
 custom_minimum_size = Vector2(220, 72)
 layout_mode = 2
 

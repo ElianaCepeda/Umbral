@@ -210,6 +210,7 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 27
 
 [node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/BtnRow" unique_id=347874332]
+visible = false
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -241,6 +242,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/BtnRow" unique_id=1093464374]
+visible = false
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
@@ -271,6 +273,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/AlcoholPanel/BtnRow" unique_id=1150518219]
+visible = false
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
@@ -390,6 +393,7 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 27
 
 [node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/BtnRow" unique_id=2019385137]
+visible = false
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -421,6 +425,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/BtnRow" unique_id=92081953]
+visible = false
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
@@ -451,6 +456,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/LeftPage/TabacoPanel/BtnRow" unique_id=1841562427]
+visible = false
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
@@ -580,6 +586,7 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 27
 
 [node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/BtnRow" unique_id=613736626]
+visible = false
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -611,6 +618,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/BtnRow" unique_id=22672960]
+visible = false
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
@@ -641,6 +649,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="F3" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/MarihuanaPanel/BtnRow" unique_id=1238769717]
+visible = false
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
@@ -761,6 +770,7 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 27
 
 [node name="F1" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/BtnRow" unique_id=1041900359]
+visible = false
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -792,6 +802,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="F2" type="Button" parent="BookArea/BookHolder/BookContent/RightPage/CocainaPanel/BtnRow" unique_id=929437409]
+visible = false
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
