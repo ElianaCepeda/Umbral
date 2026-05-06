@@ -10,7 +10,7 @@ func _init() -> void:
 			"En esta conducta se evalúa el control de dosis como una forma de reconocer límites, disminuir la intensidad de efectos adversos y evitar que el consumo aumente la confusión, la alteración perceptiva o la pérdida de control.",
 			"En esta conducta se evalúa evitar mezclar con alcohol, ya que la combinación puede intensificar la alteración corporal y mental, aumentando riesgos como desorientación, náuseas, ansiedad o dificultad para tomar decisiones."
 		],
-		"titles": ["DORMIR", "CONTROL DE DOSIS", "NO MEZCLAR ALCOHOL"],
+		"titles": ["DORMIR", "DOSIS CONTROLADA", "NO MEZCLAR"],
 		"images": [
 			preload("res://assets/characterAttacks/Dormir.png"),
 			preload("res://assets/defenses/Dosis-Marihuana.png"),

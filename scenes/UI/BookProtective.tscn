@@ -82,6 +82,7 @@ base_font = ExtResource("3_rnqbc")
 base_font = ExtResource("2_by1j4")
 
 [node name="BookProtective" type="Node2D" unique_id=351976046]
+position = Vector2(547, 312)
 
 [node name="Control" type="Control" parent="." unique_id=792986956]
 layout_mode = 3
@@ -113,8 +114,8 @@ custom_minimum_size = Vector2(700, 400)
 layout_mode = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/CenterContainer/Bookholder" unique_id=1346071298]
-position = Vector2(367.375, 244.34192)
-scale = Vector2(1.3707585, 1.3982048)
+position = Vector2(410.50003, 254.00002)
+scale = Vector2(2.0499, 2.0049248)
 sprite_frames = SubResource("SpriteFrames_dss4t")
 animation = &"pass"
 frame = 7
@@ -134,10 +135,10 @@ grow_vertical = 2
 
 [node name="Left" type="VBoxContainer" parent="Control/CenterContainer/Bookholder/BookContent" unique_id=1163049648]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 8.0
-offset_right = 298.0
-offset_bottom = 368.0
+offset_left = -116.0
+offset_top = -105.0
+offset_right = 333.0
+offset_bottom = 454.0
 theme_override_constants/separation = 8
 
 [node name="ChapterLabel" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Left" unique_id=407706273]
@@ -145,7 +146,7 @@ custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.047058824, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_504qs")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 30
 text = "DESCRIPCIONES"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -156,10 +157,10 @@ texture = ExtResource("3_8lnhq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/Bookholder/BookContent/Left" unique_id=593473560]
 layout_mode = 2
-theme_override_constants/separation = 18
+theme_override_constants/separation = 50
 
 [node name="Desc1" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer" unique_id=116696665]
-custom_minimum_size = Vector2(240, 90)
+custom_minimum_size = Vector2(420, 130)
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -184,9 +185,9 @@ offset_right = -1.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 6
+theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 3
-theme_override_constants/margin_right = 4
+theme_override_constants/margin_right = 9
 theme_override_constants/margin_bottom = 5
 
 [node name="Description1" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc1/MarginContainer" unique_id=1335690045]
@@ -195,11 +196,11 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_l1dm5")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 22
 autowrap_mode = 2
 
 [node name="Desc2" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer" unique_id=1885904325]
-custom_minimum_size = Vector2(240, 90)
+custom_minimum_size = Vector2(420, 130)
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -224,9 +225,9 @@ offset_right = -1.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 6
+theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 3
-theme_override_constants/margin_right = 4
+theme_override_constants/margin_right = 9
 theme_override_constants/margin_bottom = 5
 
 [node name="Description2" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc2/MarginContainer" unique_id=1397694289]
@@ -235,11 +236,11 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_l1dm5")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 22
 autowrap_mode = 2
 
 [node name="Desc3" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer" unique_id=48989305]
-custom_minimum_size = Vector2(240, 90)
+custom_minimum_size = Vector2(420, 130)
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -264,9 +265,9 @@ offset_right = -1.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 6
+theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 3
-theme_override_constants/margin_right = 4
+theme_override_constants/margin_right = 9
 theme_override_constants/margin_bottom = 5
 
 [node name="Description3" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Left/VBoxContainer/Desc3/MarginContainer" unique_id=1159008594]
@@ -275,15 +276,15 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_l1dm5")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 22
 autowrap_mode = 2
 
 [node name="Right" type="VBoxContainer" parent="Control/CenterContainer/Bookholder/BookContent" unique_id=1584143035]
 layout_mode = 0
-offset_left = 330.0
-offset_top = 8.0
-offset_right = 625.0
-offset_bottom = 379.0
+offset_left = 378.0
+offset_top = -104.0
+offset_right = 826.0
+offset_bottom = 456.0
 theme_override_constants/separation = 8
 
 [node name="ChapterLabel" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Right" unique_id=1042174549]
@@ -291,7 +292,7 @@ custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.047058824, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_504qs")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 30
 text = "CONDUCTAS PROTECTORAS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -302,10 +303,10 @@ texture = ExtResource("3_8lnhq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/Bookholder/BookContent/Right" unique_id=2109796065]
 layout_mode = 2
-theme_override_constants/separation = 18
+theme_override_constants/separation = 50
 
 [node name="Cond1" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer" unique_id=936346601]
-custom_minimum_size = Vector2(240, 90)
+custom_minimum_size = Vector2(300, 130)
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -337,30 +338,38 @@ texture = ExtResource("6_m7qfb")
 patch_margin_right = 16
 
 [node name="Conducta1" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond1/Control/NinePatchRect" unique_id=2110744295]
+custom_minimum_size = Vector2(190, 65)
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 136.0
-offset_bottom = 32.0
+offset_right = 199.0
+offset_bottom = 73.0
 theme_override_fonts/font = SubResource("FontVariation_dss4t")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Img1" type="TextureRect" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond1" unique_id=1276728518]
+[node name="imageholder" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond1" unique_id=1704231740]
+custom_minimum_size = Vector2(80, 80)
+anchors_preset = 0
+offset_right = 113.0
+offset_bottom = 113.0
+
+[node name="Img1" type="TextureRect" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond1/imageholder" unique_id=1276728518]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.26700002
-anchor_top = 0.44400004
-anchor_right = 0.26700002
-anchor_bottom = 0.44400004
-offset_left = -20.080002
-offset_top = -27.960003
-offset_right = 51.92
-offset_bottom = 28.039997
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [node name="Cond2" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer" unique_id=405241113]
-custom_minimum_size = Vector2(240, 90)
+custom_minimum_size = Vector2(300, 130)
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -392,30 +401,36 @@ texture = ExtResource("6_m7qfb")
 patch_margin_right = 16
 
 [node name="Conducta2" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond2/Control/NinePatchRect" unique_id=768060224]
+custom_minimum_size = Vector2(190, 65)
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 136.0
 offset_bottom = 32.0
 theme_override_fonts/font = SubResource("FontVariation_dss4t")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Img2" type="TextureRect" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond2" unique_id=1024823660]
+[node name="imageholder" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond2" unique_id=158518883]
+custom_minimum_size = Vector2(80, 80)
+anchors_preset = 0
+offset_right = 113.0
+offset_bottom = 113.0
+
+[node name="Img2" type="TextureRect" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond2/imageholder" unique_id=1024823660]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.26700002
-anchor_top = 0.44400004
-anchor_right = 0.26700002
-anchor_bottom = 0.44400004
-offset_left = -20.080002
-offset_top = -27.960003
-offset_right = 51.92
-offset_bottom = 28.039997
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [node name="Cond3" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer" unique_id=399426703]
-custom_minimum_size = Vector2(240, 90)
+custom_minimum_size = Vector2(300, 130)
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -447,40 +462,52 @@ texture = ExtResource("6_m7qfb")
 patch_margin_right = 16
 
 [node name="Conducta3" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond3/Control/NinePatchRect" unique_id=1308599262]
+custom_minimum_size = Vector2(190, 65)
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 136.0
 offset_bottom = 32.0
 theme_override_fonts/font = SubResource("FontVariation_dss4t")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Img3" type="TextureRect" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond3" unique_id=509315451]
+[node name="imageholder" type="Control" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond3" unique_id=756041578]
+custom_minimum_size = Vector2(80, 80)
+anchors_preset = 0
+offset_left = -2.0
+offset_top = 6.0
+offset_right = 111.0
+offset_bottom = 119.0
+
+[node name="Img3" type="TextureRect" parent="Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond3/imageholder" unique_id=509315451]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.26700002
-anchor_top = 0.44400004
-anchor_right = 0.26700002
-anchor_bottom = 0.44400004
-offset_left = -20.080002
-offset_top = -27.960003
-offset_right = 51.92
-offset_bottom = 28.039997
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [node name="Control" type="Control" parent="Control/CenterContainer/Bookholder/BookContent" unique_id=1790195644]
 anchors_preset = 0
-offset_left = 618.0
-offset_top = -37.0
-offset_right = 645.0
-offset_bottom = -13.0
+offset_left = 808.0
+offset_top = -143.0
+offset_right = 867.85614
+offset_bottom = -88.9303
 
 [node name="Exit" type="TextureButton" parent="Control/CenterContainer/Bookholder/BookContent/Control" unique_id=1571720741]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 9.25
+offset_top = -4.0
+offset_right = 9.25
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("7_8lnhq")

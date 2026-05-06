@@ -10,7 +10,7 @@ func _init() -> void:
 			"En esta conducta se evalúa el cuidado nasal mediante higiene, descanso y reducción de irritación, ya que esto puede disminuir inflamación, prevenir infecciones y reducir el riesgo de daño estructural en el tabique.",
 			"En esta conducta se evalúa evitar el consumo después de ejercicio intenso, porque hacerlo con el pulso elevado incrementa la carga sobre el corazón y puede aumentar el riesgo de eventos cardiovasculares."
 		],
-		"titles": ["Temperatura", "Cuidado nasal", "Evitar tras ejercicio"],
+		"titles": ["TEMPERATURA", "CUIDADO NASAL", "EJERCICIO"],
 		"images": [
 			preload("res://assets/characterAttacks/Temperatura.png"),
 			preload("res://assets/defenses/Nasal-Cocaina.png"),

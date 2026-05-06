@@ -53,9 +53,9 @@ func _get_book_nodes() -> void:
 	]
 
 	image_rects = [
-		scene_instance.get_node("Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond1/Img1"),
-		scene_instance.get_node("Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond2/Img2"),
-		scene_instance.get_node("Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond3/Img3")
+		scene_instance.get_node("Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond1/imageholder/Img1"),
+		scene_instance.get_node("Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond2/imageholder/Img2"),
+		scene_instance.get_node("Control/CenterContainer/Bookholder/BookContent/Right/VBoxContainer/Cond3/imageholder/Img3")
 	]
 
 

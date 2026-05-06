@@ -10,7 +10,7 @@ func _init() -> void:
 			"En esta conducta se evalúa el uso del parche de nicotina como una forma controlada de disminuir la ansiedad y los síntomas de abstinencia, evitando la exposición directa a las sustancias tóxicas presentes en el humo.",
 			"En esta conducta se evalúa la importancia del ejercicio para disminuir el deseo de fumar, mejorar la función pulmonar y apoyar la circulación, contrarrestando parte del deterioro físico asociado al tabaco."
 		],
-		"titles": ["Chicle", "Parche de nicotina", "Ejercicio"],
+		"titles": ["CHICLE", "NICOTINA", "EJERCICIO"],
 		"images": [
 			preload("res://assets/characterAttacks/gumAttack_single.png"),
 			preload("res://assets/defenses/Parche-Tabaco.png"),
