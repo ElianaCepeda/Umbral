@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cas7hatho5sbn" path="res://scenes/spawner.gd" id="3_un7fv"]
 [ext_resource type="AudioStream" uid="uid://bfks3buc8wlxq" path="res://assets/audio/music/Tension.ogg" id="4_kvkrj"]
 [ext_resource type="AudioStream" uid="uid://dmo67k8nqv2ts" path="res://assets/audio/music/batalla.mp3" id="5_wbl8v"]
+[ext_resource type="AudioStream" uid="uid://dkswxsesos8p4" path="res://assets/audio/sounds/door.mp3" id="7_kvkrj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvkrj"]
 size = Vector2(62, 95)
@@ -90,3 +91,6 @@ stream = ExtResource("5_wbl8v")
 volume_db = -9.609
 autoplay = true
 parameters/looping = true
+
+[node name="door_sound" type="AudioStreamPlayer" parent="." unique_id=875350298]
+stream = ExtResource("7_kvkrj")

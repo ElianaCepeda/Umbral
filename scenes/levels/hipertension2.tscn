@@ -2,17 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://76illrg3pfo" path="res://scenes/levels/BaseLevelFase2.tscn" id="1_ugvjc"]
 [ext_resource type="Script" uid="uid://bonrp6q23i2jw" path="res://scripts/levels/hipertensionLevel2.gd" id="2_ugvjc"]
+[ext_resource type="AudioStream" uid="uid://dkswxsesos8p4" path="res://assets/audio/sounds/door.mp3" id="3_6v7ov"]
 
 [node name="NodoBaseFase2" unique_id=1029686040 instance=ExtResource("1_ugvjc")]
 script = ExtResource("2_ugvjc")
 
 [node name="ContenedorAtaques" type="Node2D" parent="." index="1" unique_id=2075359442]
-<<<<<<< Updated upstream
-=======
+
 
 [node name="Spawner" parent="." index="6" unique_id=2048461648]
 cantidad_minima = 4
 
-[node name="door_sound2" type="AudioStreamPlayer" parent="." index="10" unique_id=556556955]
+[node name="door_sound" type="AudioStreamPlayer" parent="." index="10" unique_id=556556955]
 stream = ExtResource("3_6v7ov")
->>>>>>> Stashed changes

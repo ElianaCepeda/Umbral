@@ -4,7 +4,7 @@ class_name MarihuanaLevel
 func _init():
 	level_name = "Jefe Marihuana"
 	scene_path = "res://scenes/levels/marihuana.tscn"
-	timeline_name = ""
+	timeline_name = "res://dialogues/illDescription/jefeMarihuanaDescription.dtl"
 	enemy_type = "marihuana" 
 	macro_level = "marihuana"
 

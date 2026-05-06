@@ -1,4 +1,4 @@
-audio music "res://assets/audio/music/Final.ogg" [loop="true"]
+audio music "res://assets/audio/music/final.mp3" [volume="-10.100000000000001" loop="true"]
 [background arg="res://assets/backgrounds/_ruined_room_2.jpg" fade="0.0"]
 join MateoCocaina center
 MateoCocaina: Esto no es un problema, es un estilo de vida. Una raya más para un tigre como yo no es nada.

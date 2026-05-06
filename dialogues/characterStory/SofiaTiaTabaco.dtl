@@ -1,4 +1,4 @@
-audio music "res://assets/audio/music/Idea 2 parte 1.ogg" [loop="true"]
+audio music "res://assets/audio/music/Historia.mp3" [loop="true"]
 [background arg="res://assets/backgrounds/university.jpg" fade="0.0"]
 join Doctor left
 join SofiaTabaco right

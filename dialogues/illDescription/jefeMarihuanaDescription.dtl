@@ -1,0 +1,17 @@
+join Doctor left
+Doctor: Ten cuidado… lo que tienes enfrente no es un enemigo cualquiera. Este es el jefe, la manifestación de la sustancia que ha estado afectando todo el sistema.
+join jefeMarihuana right
+Doctor: Este jefe es la marihuana\
+Distorsiona la realidad
+leave jefeMarihuana
+join desbalance right
+Doctor: Primero… el desbalance
+leave desbalance
+join paranoide right
+Doctor: Ahora… la paranoia
+leave paranoide
+join conjuntivitis right
+Doctor: Luego… la conjuntivitis
+leave conjuntivitis
+join asfixia right
+Doctor: Y finalmente… la asfixia

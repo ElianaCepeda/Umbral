@@ -1,4 +1,4 @@
-audio music "res://assets/audio/music/Final.ogg" [loop="true"]
+audio music "res://assets/audio/music/final.mp3" [volume="-10.0" loop="true"]
 [background arg="res://assets/backgrounds/coffee_shop_day1.png" fade="0.0"]
 join AndresAlcohol (Decepcionado) center
 AndresAlcohol: Estoy tan cansado de fingir que siempre estoy bien. Ya no quiero ser\

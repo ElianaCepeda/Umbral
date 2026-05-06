@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://b0aw82t50urpw" path="res://assets/fonts/Silver.ttf" id="3_rnqbc"]
 [ext_resource type="Texture2D" uid="uid://bo2jnvmnumcix" path="res://assets/ui/bordd.png" id="6_m7qfb"]
 [ext_resource type="Texture2D" uid="uid://huy7vmlagmhn" path="res://assets/ui/2.png" id="7_8lnhq"]
+[ext_resource type="AudioStream" uid="uid://ctuqf0ssbqt2v" path="res://assets/audio/sounds/book.mp3" id="8_m7qfb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8lnhq"]
 atlas = ExtResource("1_icimv")
@@ -512,3 +513,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("7_8lnhq")
 stretch_mode = 0
+
+[node name="door_sound" type="AudioStreamPlayer" parent="." unique_id=2084090652]
+stream = ExtResource("8_m7qfb")
+autoplay = true

@@ -5,7 +5,7 @@ var level_manager: Node
 var scene_instance: Node2D
 var fondo_custom: Node
 var preloaded_scene: PackedScene = null
-
+var door_sound: AudioStreamPlayer
 var is_gameplay_active: bool = false
 var _win_check_timer: float = 0.0
 var is_door_open: bool = false
@@ -196,12 +196,15 @@ func _on_level_won() -> void:
 			
 			# 3. Cuando llega, abrimos la puerta
 			tween.tween_callback(func():
+				
+				
 				var puerta_cerrada = exit_door.get_node_or_null("PuertaCerrada")
 				var puerta_abierta = exit_door.get_node_or_null("PuertaAbierta")
-				
 				if puerta_cerrada: puerta_cerrada.hide()
 				if puerta_abierta: puerta_abierta.show()
-				
+				door_sound = scene_instance.get_node_or_null("door_sound")
+				if door_sound: door_sound.play()
+				print(door_sound)
 				is_door_open = true
 				print("¡Puerta abierta visualmente!")
 			)
