@@ -1549,56 +1549,48 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2els"]
-bg_color = Color(0.88575643, 0.45362788, 0.42540243, 1)
+bg_color = Color(0.8392157, 0.27058825, 0.27058825, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
-bg_color = Color(0.16642791, 0.6923337, 0.58923954, 1)
+bg_color = Color(0.12156863, 0.7490196, 0.45882353, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqkch"]
 bg_color = Color(0.12156863, 0.12156863, 0.12156863, 0.92941177)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5uixd"]
-atlas = ExtResource("29_md1ol")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rsyo"]
+atlas = ExtResource("35_j2b1d")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p6pc0"]
-atlas = ExtResource("29_md1ol")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ddhv"]
+atlas = ExtResource("35_j2b1d")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_god42"]
-atlas = ExtResource("29_md1ol")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypfsk"]
+atlas = ExtResource("35_j2b1d")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m4v07"]
-atlas = ExtResource("29_md1ol")
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8fhv"]
+atlas = ExtResource("35_j2b1d")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3rsyo"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1776x"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5uixd")
+"texture": SubResource("AtlasTexture_3rsyo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p6pc0")
+"texture": SubResource("AtlasTexture_8ddhv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_god42")
+"texture": SubResource("AtlasTexture_ypfsk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m4v07")
+"texture": SubResource("AtlasTexture_h8fhv")
 }],
 "loop": true,
-"name": &"not_pressed",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("30_bj30b")
-}],
-"loop": true,
-"name": &"pressed",
-"speed": 5.0
+"name": &"default",
+"speed": 6.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5lhw1"]
@@ -1645,40 +1637,48 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3rsyo"]
-atlas = ExtResource("35_j2b1d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uixd"]
+atlas = ExtResource("29_md1ol")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ddhv"]
-atlas = ExtResource("35_j2b1d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6pc0"]
+atlas = ExtResource("29_md1ol")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ypfsk"]
-atlas = ExtResource("35_j2b1d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_god42"]
+atlas = ExtResource("29_md1ol")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h8fhv"]
-atlas = ExtResource("35_j2b1d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4v07"]
+atlas = ExtResource("29_md1ol")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1776x"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rsyo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3rsyo")
+"texture": SubResource("AtlasTexture_5uixd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8ddhv")
+"texture": SubResource("AtlasTexture_p6pc0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ypfsk")
+"texture": SubResource("AtlasTexture_god42")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h8fhv")
+"texture": SubResource("AtlasTexture_m4v07")
 }],
 "loop": true,
-"name": &"default",
-"speed": 6.0
+"name": &"not_pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_bj30b")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1786594462 groups=["player"]]
@@ -1757,65 +1757,95 @@ offset_right = 368.63614
 offset_bottom = 56.0
 texture = ExtResource("28_t4otl")
 
-[node name="Sprite2D" type="Sprite2D" parent="HUD/Container" unique_id=716075460]
-position = Vector2(127.548904, 95.25)
-scale = Vector2(0.37771738, 0.37771738)
+[node name="InventoryHUD" type="Control" parent="HUD" unique_id=1682930860]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = -93.0
+offset_right = 310.0
+offset_bottom = -12.0
+grow_vertical = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HUD/InventoryHUD" unique_id=1040291128]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("28_wqfne")
 
-[node name="TextureRect2" type="TextureRect" parent="HUD/Container" unique_id=301551369]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/InventoryHUD" unique_id=1729820027]
 layout_mode = 0
-offset_left = 165.0
-offset_top = 74.0
-offset_right = 206.0
-offset_bottom = 118.0
+offset_top = 1.0
+offset_right = 269.0
+offset_bottom = 82.0
+
+[node name="Slot1" type="Control" parent="HUD/InventoryHUD/HBoxContainer" unique_id=341322674]
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="HUD/InventoryHUD/HBoxContainer/Slot1" unique_id=113237576]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 19.0
+offset_right = 81.0
+offset_bottom = 61.0
 expand_mode = 4
 stretch_mode = 4
 
-[node name="key2" type="AnimatedSprite2D" parent="HUD/Container" unique_id=333776003]
-z_index = 3
-position = Vector2(197, 112)
-scale = Vector2(1.3125, 1.3125)
-sprite_frames = SubResource("SpriteFrames_3rsyo")
-animation = &"not_pressed"
-frame_progress = 0.54547733
+[node name="mouse" type="AnimatedSprite2D" parent="HUD/InventoryHUD/HBoxContainer/Slot1" unique_id=843458031]
+position = Vector2(82.5, 63.500027)
+scale = Vector2(1.9374998, 1.8125015)
+sprite_frames = SubResource("SpriteFrames_1776x")
+frame_progress = 0.75551873
 
-[node name="TextureRect" type="TextureRect" parent="HUD/Container" unique_id=276899150]
+[node name="Slot2" type="Control" parent="HUD/InventoryHUD/HBoxContainer" unique_id=837774139]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/InventoryHUD/HBoxContainer/Slot2" unique_id=255653186]
 layout_mode = 0
-offset_left = 109.0
-offset_top = 74.0
-offset_right = 150.0
-offset_bottom = 119.0
+offset_left = 105.0
+offset_top = 19.0
+offset_right = 152.0
+offset_bottom = 60.0
 expand_mode = 4
 stretch_mode = 4
 
-[node name="key1" type="AnimatedSprite2D" parent="HUD/Container" unique_id=1169591107]
+[node name="key1" type="AnimatedSprite2D" parent="HUD/InventoryHUD/HBoxContainer/Slot2" unique_id=1169591107]
 z_index = 3
-position = Vector2(147, 113)
-scale = Vector2(1.3125, 1.3125)
+position = Vector2(149.5, 61.499992)
+scale = Vector2(1.6875001, 1.8124969)
 sprite_frames = SubResource("SpriteFrames_8ddhv")
 animation = &"not_pressed"
 frame_progress = 0.92419714
 
-[node name="TextureRect3" type="TextureRect" parent="HUD/Container" unique_id=113237576]
+[node name="Slot3" type="Control" parent="HUD/InventoryHUD/HBoxContainer" unique_id=1191230514]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/InventoryHUD/HBoxContainer/Slot3" unique_id=1690282190]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 75.0
-offset_right = 93.0
-offset_bottom = 115.0
+offset_left = 175.0
+offset_top = 19.0
+offset_right = 224.0
+offset_bottom = 60.0
 expand_mode = 4
 stretch_mode = 4
 
-[node name="mouse" type="AnimatedSprite2D" parent="HUD/Container" unique_id=843458031]
-position = Vector2(86, 111)
-scale = Vector2(1.5625, 1.5625)
-sprite_frames = SubResource("SpriteFrames_1776x")
-frame_progress = 0.75551873
+[node name="key2" type="AnimatedSprite2D" parent="HUD/InventoryHUD/HBoxContainer/Slot3" unique_id=333776003]
+z_index = 3
+position = Vector2(221, 59.999973)
+scale = Vector2(1.750001, 1.7500011)
+sprite_frames = SubResource("SpriteFrames_3rsyo")
+animation = &"not_pressed"
+frame_progress = 0.54547733
 
 [node name="DashTimer" type="Timer" parent="." unique_id=1653543775]
 wait_time = 0.1
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1902501392]
-position = Vector2(34.000004, -2)
+position = Vector2(26.666664, 18.666668)
 scale = Vector2(3, 3)
 texture = ExtResource("3_qhqgy")
 texture_scale = 4.74

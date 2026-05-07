@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ciivh3cfyhval" path="res://assets/ui/Separator.png" id="3_8lnhq"]
 [ext_resource type="FontFile" uid="uid://b0aw82t50urpw" path="res://assets/fonts/Silver.ttf" id="3_rnqbc"]
 [ext_resource type="Texture2D" uid="uid://bo2jnvmnumcix" path="res://assets/ui/bordd.png" id="6_m7qfb"]
-[ext_resource type="Texture2D" uid="uid://huy7vmlagmhn" path="res://assets/ui/2.png" id="7_8lnhq"]
+[ext_resource type="Texture2D" uid="uid://bkpjxgt1iih3s" path="res://assets/ui/Boton2.png" id="7_m7qfb"]
 [ext_resource type="AudioStream" uid="uid://ctuqf0ssbqt2v" path="res://assets/audio/sounds/book.mp3" id="8_m7qfb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8lnhq"]
@@ -82,6 +82,9 @@ base_font = ExtResource("3_rnqbc")
 [sub_resource type="FontVariation" id="FontVariation_dss4t"]
 base_font = ExtResource("2_by1j4")
 
+[sub_resource type="FontVariation" id="FontVariation_3aohx"]
+base_font = ExtResource("2_by1j4")
+
 [node name="BookProtective" type="Node2D" unique_id=351976046]
 position = Vector2(547, 312)
 
@@ -115,8 +118,8 @@ custom_minimum_size = Vector2(700, 400)
 layout_mode = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/CenterContainer/Bookholder" unique_id=1346071298]
-position = Vector2(410.50003, 254.00002)
-scale = Vector2(2.0499, 2.0049248)
+position = Vector2(410.50003, 263.31793)
+scale = Vector2(2.0499, 2.0385637)
 sprite_frames = SubResource("SpriteFrames_dss4t")
 animation = &"pass"
 frame = 7
@@ -495,24 +498,38 @@ expand_mode = 1
 
 [node name="Control" type="Control" parent="Control/CenterContainer/Bookholder/BookContent" unique_id=1790195644]
 anchors_preset = 0
-offset_left = 808.0
-offset_top = -143.0
-offset_right = 867.85614
-offset_bottom = -88.9303
+offset_left = 235.0
+offset_top = 451.0
+offset_right = 473.0
+offset_bottom = 495.0
 
 [node name="Exit" type="TextureButton" parent="Control/CenterContainer/Bookholder/BookContent/Control" unique_id=1571720741]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 9.25
-offset_top = -4.0
-offset_right = 9.25
-offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("7_8lnhq")
+texture_normal = ExtResource("7_m7qfb")
+ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Label" type="Label" parent="Control/CenterContainer/Bookholder/BookContent/Control" unique_id=964136077]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_top = 9.0
+offset_right = -39.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_3aohx")
+theme_override_font_sizes/font_size = 35
+text = "SIGUIENTE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="door_sound" type="AudioStreamPlayer" parent="." unique_id=2084090652]
 stream = ExtResource("8_m7qfb")
