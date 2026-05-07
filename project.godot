@@ -152,6 +152,11 @@ audio/channel_defaults={
 text/input_action="dialogic_default_action"
 variables={}
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")

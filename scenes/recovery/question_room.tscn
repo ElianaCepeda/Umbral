@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b4xya4ecfovgi" path="res://assets/questions/TitleBackground.png" id="3_ssjy6"]
 [ext_resource type="FontFile" uid="uid://d0u6kv0akue8f" path="res://assets/fonts/Ruler 9.ttf" id="4_nd764"]
 [ext_resource type="Texture2D" uid="uid://dkr2fcmowmooa" path="res://assets/questions/AnwersHolder.png" id="4_ssjy6"]
-[ext_resource type="Texture2D" uid="uid://cexjl7ms66xvg" path="res://assets/questions/arrow.png" id="4_swdjc"]
+[ext_resource type="Texture2D" uid="uid://c41uglnxkbud8" path="res://assets/ui/Brain.png" id="5_m88yp"]
 [ext_resource type="FontFile" uid="uid://b0aw82t50urpw" path="res://assets/fonts/Silver.ttf" id="7_n88l6"]
 [ext_resource type="Texture2D" uid="uid://c7nr8pndk68pb" path="res://assets/questions/Space.png" id="8_r1aac"]
 [ext_resource type="AudioStream" uid="uid://ktybig4yq4n" path="res://assets/audio/music/preguntas.mp3" id="9_ygqfj"]
@@ -77,28 +77,22 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="FontVariation" id="FontVariation_n88l6"]
-base_font = ExtResource("4_nd764")
-
 [sub_resource type="FontVariation" id="FontVariation_m88yp"]
 base_font = ExtResource("7_n88l6")
 
 [sub_resource type="FontVariation" id="FontVariation_r1aac"]
 base_font = ExtResource("7_n88l6")
 
-[sub_resource type="FontVariation" id="FontVariation_8p1kn"]
-base_font = ExtResource("7_n88l6")
-
-[sub_resource type="FontVariation" id="FontVariation_ygqfj"]
-base_font = ExtResource("7_n88l6")
-
-[sub_resource type="FontVariation" id="FontVariation_7fdu0"]
-base_font = ExtResource("7_n88l6")
-
 [sub_resource type="FontVariation" id="FontVariation_xfulm"]
 base_font = ExtResource("7_n88l6")
 
 [sub_resource type="FontVariation" id="FontVariation_cwvhf"]
+base_font = ExtResource("7_n88l6")
+
+[sub_resource type="FontVariation" id="FontVariation_n88l6"]
+base_font = ExtResource("4_nd764")
+
+[sub_resource type="FontVariation" id="FontVariation_1d4n0"]
 base_font = ExtResource("7_n88l6")
 
 [sub_resource type="FontVariation" id="FontVariation_8i30n"]
@@ -125,24 +119,316 @@ position = Vector2(556.00006, 304.00003)
 scale = Vector2(2.7494035, 2.057143)
 sprite_frames = SubResource("SpriteFrames_xfulm")
 animation = &"open"
+frame = 7
+frame_progress = 1.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/QuestionsHolder" unique_id=1493220947]
+[node name="VBoxQuestions" type="VBoxContainer" parent="CenterContainer/QuestionsHolder" unique_id=1493220947]
+visible = false
 layout_mode = 0
-offset_left = 115.0
-offset_top = 12.0
-offset_right = 962.0
-offset_bottom = 601.0
+offset_left = 34.0
+offset_top = 2.0
+offset_right = 1078.0
+offset_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 12
+theme_override_constants/separation = 14
 alignment = 1
 
-[node name="TitleHolder" type="Control" parent="CenterContainer/QuestionsHolder/VBoxContainer" unique_id=1497269019]
+[node name="LabelFeedback" type="Label" parent="CenterContainer/QuestionsHolder/VBoxQuestions" unique_id=1827101356]
+custom_minimum_size = Vector2(600, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_n88l6")
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnswersContainer" type="VBoxContainer" parent="CenterContainer/QuestionsHolder/VBoxQuestions" unique_id=634929711]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer" unique_id=2102229709]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 135
+theme_override_constants/margin_right = 135
+theme_override_constants/margin_bottom = 6
+
+[node name="QuestionLabel" type="Label" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/MarginContainer" unique_id=1800814583]
+custom_minimum_size = Vector2(730, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.13750193, 0.10861001, 0.087588795, 1)
+theme_override_fonts/font = SubResource("FontVariation_m88yp")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnswersContainer" type="GridContainer" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer" unique_id=1207712991]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/h_separation = -95
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="Empty" type="Control" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer" unique_id=2009160049]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Answer1" type="Button" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer" unique_id=1709436512]
+custom_minimum_size = Vector2(350, 120)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+flat = true
+autowrap_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer/Answer1" unique_id=111540064]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ssjy6")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer/Answer1" unique_id=1660696376]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer/Answer1/MarginContainer" unique_id=1044192916]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_r1aac")
+theme_override_font_sizes/font_size = 21
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Empty2" type="Control" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer" unique_id=1294606760]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Answer2" type="Button" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer" unique_id=1425984350]
+custom_minimum_size = Vector2(350, 120)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+flat = true
+autowrap_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer/Answer2" unique_id=1890271726]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ssjy6")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer/Answer2" unique_id=1616459003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer/Answer2/MarginContainer" unique_id=1948850054]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_r1aac")
+theme_override_font_sizes/font_size = 21
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer" unique_id=254472407]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_m88yp")
+expand_mode = 1
+
+[node name="Answer3" type="Button" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer" unique_id=1816679597]
+custom_minimum_size = Vector2(350, 120)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+flat = true
+autowrap_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer/Answer3" unique_id=2037832791]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ssjy6")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer/Answer3" unique_id=1750372730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer/Answer3/MarginContainer" unique_id=1073171303]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_r1aac")
+theme_override_font_sizes/font_size = 21
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Empty3" type="Control" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer" unique_id=321749763]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Answer4" type="Button" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer" unique_id=595312973]
+custom_minimum_size = Vector2(350, 120)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+flat = true
+autowrap_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer/Answer4" unique_id=1099053174]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ssjy6")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer/Answer4" unique_id=682280390]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer/Answer4/MarginContainer" unique_id=1112049376]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_r1aac")
+theme_override_font_sizes/font_size = 21
+text = " "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Empty4" type="Control" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/AnswersContainer" unique_id=256934438]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/QuestionsHolder/VBoxQuestions" unique_id=724328503]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="LabelAtack" type="Label" parent="CenterContainer/QuestionsHolder/VBoxQuestions/HBoxContainer" unique_id=984111147]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23529412, 0.19215687, 0.16078432, 1)
+theme_override_fonts/font = ExtResource("7_n88l6")
+theme_override_font_sizes/font_size = 28
+text = "Puntos ataque:"
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/QuestionsHolder/VBoxQuestions/HBoxContainer" unique_id=165571923]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_r1aac")
+
+[node name="LabelDefense1" type="Label" parent="CenterContainer/QuestionsHolder/VBoxQuestions/HBoxContainer" unique_id=1384638314]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23529412, 0.19215687, 0.16078432, 1)
+theme_override_fonts/font = SubResource("FontVariation_xfulm")
+theme_override_font_sizes/font_size = 28
+text = "Puntos defensa 1:"
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CenterContainer/QuestionsHolder/VBoxQuestions/HBoxContainer" unique_id=1040924529]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_r1aac")
+
+[node name="LabelDefense2" type="Label" parent="CenterContainer/QuestionsHolder/VBoxQuestions/HBoxContainer" unique_id=1192519760]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23529412, 0.19215687, 0.16078432, 1)
+theme_override_fonts/font = SubResource("FontVariation_cwvhf")
+theme_override_font_sizes/font_size = 28
+text = "Puntos defensa 2:"
+vertical_alignment = 1
+
+[node name="VBoxDescription" type="VBoxContainer" parent="CenterContainer/QuestionsHolder" unique_id=1112251568]
+layout_mode = 0
+offset_left = 56.0
+offset_right = 1082.0
+offset_bottom = 588.0
+theme_override_constants/separation = 63
+alignment = 1
+
+[node name="TitleHolder" type="Control" parent="CenterContainer/QuestionsHolder/VBoxDescription" unique_id=1497269019]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="TitleBackground" type="TextureRect" parent="CenterContainer/QuestionsHolder/VBoxContainer/TitleHolder" unique_id=1855752144]
+[node name="TitleBackground" type="TextureRect" parent="CenterContainer/QuestionsHolder/VBoxDescription/TitleHolder" unique_id=1855752144]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -152,7 +438,7 @@ grow_vertical = 2
 texture = ExtResource("3_ssjy6")
 expand_mode = 1
 
-[node name="Title" type="Label" parent="CenterContainer/QuestionsHolder/VBoxContainer/TitleHolder" unique_id=402571852]
+[node name="Title" type="Label" parent="CenterContainer/QuestionsHolder/VBoxDescription/TitleHolder" unique_id=402571852]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,298 +452,30 @@ text = "Archivo Mental"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LabelFeedback" type="Label" parent="CenterContainer/QuestionsHolder/VBoxContainer" unique_id=1827101356]
-custom_minimum_size = Vector2(0, 25)
+[node name="DescriptionContainer" type="VBoxContainer" parent="CenterContainer/QuestionsHolder/VBoxDescription" unique_id=1565877121]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("7_n88l6")
+theme_override_constants/separation = 42
+
+[node name="Label" type="Label" parent="CenterContainer/QuestionsHolder/VBoxDescription/DescriptionContainer" unique_id=913392130]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = SubResource("FontVariation_1d4n0")
 theme_override_font_sizes/font_size = 28
+text = "El Archivo Mental es el espacio donde tu conocimiento se convierte en poder. Antes de cada combate, serás evaluado con preguntas sobre los síntomas y las conductas protectoras asociadas a la sustancia que enfrenta tu familiar. Cada respuesta correcta fortalece tu arsenal: si aciertas una pregunta de ataque, ganas proyectiles que generan el doble de daño sobre los enemigos; si aciertas una de defensa, puedes obtener un escudo que reduce el tiempo de los efectos negativos que te causan los enemigos, o una barrera que te protege completamente del daño durante un tiempo. Pero cuidado: equivocarte tiene consecuencias. Las respuestas incorrectas te quitan recursos del mismo tipo. Lo que sabes determina con qué llegas al combate."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="AnswersContainer" type="VBoxContainer" parent="CenterContainer/QuestionsHolder/VBoxContainer" unique_id=634929711]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer" unique_id=2102229709]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="QuestionLabel" type="Label" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/MarginContainer" unique_id=1800814583]
-custom_minimum_size = Vector2(800, 50)
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.13750193, 0.10861001, 0.087588795, 1)
-theme_override_fonts/font = SubResource("FontVariation_m88yp")
-theme_override_font_sizes/font_size = 30
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="AnswersContainer" type="VBoxContainer" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer" unique_id=238842054]
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
-theme_override_constants/separation = 19
-alignment = 1
-
-[node name="Answer1Row" type="HBoxContainer" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer" unique_id=1187310036]
-layout_mode = 2
-
-[node name="Arrow" type="TextureRect" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer1Row" unique_id=1578960882]
-visible = false
-custom_minimum_size = Vector2(45, 0)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("4_swdjc")
-
-[node name="Answer1" type="Button" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer1Row" unique_id=1709436512]
-custom_minimum_size = Vector2(0, 55)
-layout_mode = 2
-size_flags_horizontal = 3
-flat = true
-autowrap_mode = 2
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer1Row/Answer1" unique_id=111540064]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_ssjy6")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer1Row/Answer1" unique_id=1660696376]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 4
-
-[node name="Label" type="Label" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer1Row/Answer1/MarginContainer" unique_id=1044192916]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_r1aac")
-theme_override_font_sizes/font_size = 21
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="Answer2Row" type="HBoxContainer" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer" unique_id=964834294]
-layout_mode = 2
-
-[node name="Arrow" type="TextureRect" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer2Row" unique_id=1843986890]
-visible = false
-custom_minimum_size = Vector2(45, 0)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("4_swdjc")
-
-[node name="Answer2" type="Button" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer2Row" unique_id=389339505]
-custom_minimum_size = Vector2(0, 55)
-layout_mode = 2
-size_flags_horizontal = 3
-flat = true
-autowrap_mode = 2
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer2Row/Answer2" unique_id=1713915796]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_ssjy6")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer2Row/Answer2" unique_id=1745900558]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 4
-
-[node name="Label" type="Label" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer2Row/Answer2/MarginContainer" unique_id=8304204]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_8p1kn")
-theme_override_font_sizes/font_size = 21
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="Answer3Row" type="HBoxContainer" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer" unique_id=1702152741]
-layout_mode = 2
-
-[node name="Arrow" type="TextureRect" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer3Row" unique_id=1160648154]
-visible = false
-custom_minimum_size = Vector2(45, 0)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("4_swdjc")
-
-[node name="Answer3" type="Button" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer3Row" unique_id=1492852012]
-custom_minimum_size = Vector2(0, 55)
-layout_mode = 2
-size_flags_horizontal = 3
-flat = true
-autowrap_mode = 2
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer3Row/Answer3" unique_id=1957003680]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_ssjy6")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer3Row/Answer3" unique_id=2063555340]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 4
-
-[node name="Label" type="Label" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer3Row/Answer3/MarginContainer" unique_id=422560458]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_ygqfj")
-theme_override_font_sizes/font_size = 21
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="Answer4Row" type="HBoxContainer" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer" unique_id=802453854]
-layout_mode = 2
-
-[node name="Arrow" type="TextureRect" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer4Row" unique_id=200917970]
-visible = false
-custom_minimum_size = Vector2(45, 0)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("4_swdjc")
-
-[node name="Answer4" type="Button" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer4Row" unique_id=1152732231]
-custom_minimum_size = Vector2(0, 55)
-layout_mode = 2
-size_flags_horizontal = 3
-flat = true
-autowrap_mode = 2
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer4Row/Answer4" unique_id=1740848810]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_ssjy6")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer4Row/Answer4" unique_id=184061740]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 4
-
-[node name="Label" type="Label" parent="CenterContainer/QuestionsHolder/VBoxContainer/AnswersContainer/AnswersContainer/Answer4Row/Answer4/MarginContainer" unique_id=1629568719]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_7fdu0")
-theme_override_font_sizes/font_size = 21
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/QuestionsHolder/VBoxContainer" unique_id=724328503]
-layout_direction = 2
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 50
-
-[node name="LabelAtack" type="Label" parent="CenterContainer/QuestionsHolder/VBoxContainer/HBoxContainer" unique_id=984111147]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23529412, 0.19215687, 0.16078432, 1)
-theme_override_fonts/font = ExtResource("7_n88l6")
-theme_override_font_sizes/font_size = 28
-text = "Puntos ataque:"
-
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/QuestionsHolder/VBoxContainer/HBoxContainer" unique_id=165571923]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("8_r1aac")
-
-[node name="LabelDefense1" type="Label" parent="CenterContainer/QuestionsHolder/VBoxContainer/HBoxContainer" unique_id=1384638314]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23529412, 0.19215687, 0.16078432, 1)
-theme_override_fonts/font = SubResource("FontVariation_xfulm")
-theme_override_font_sizes/font_size = 28
-text = "Puntos defensa 1:"
-vertical_alignment = 1
-
-[node name="TextureRect2" type="TextureRect" parent="CenterContainer/QuestionsHolder/VBoxContainer/HBoxContainer" unique_id=1040924529]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("8_r1aac")
-
-[node name="LabelDefense2" type="Label" parent="CenterContainer/QuestionsHolder/VBoxContainer/HBoxContainer" unique_id=1192519760]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.23529412, 0.19215687, 0.16078432, 1)
-theme_override_fonts/font = SubResource("FontVariation_cwvhf")
-theme_override_font_sizes/font_size = 28
-text = "Puntos defensa 2:"
-vertical_alignment = 1
-
-[node name="Terminado" type="Button" parent="CenterContainer/QuestionsHolder/VBoxContainer" unique_id=1747946140]
+[node name="Siguiente" type="Button" parent="CenterContainer/QuestionsHolder/VBoxDescription/DescriptionContainer" unique_id=1747946140]
 custom_minimum_size = Vector2(320, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = SubResource("FontVariation_8i30n")
 theme_override_font_sizes/font_size = 22
-text = "Cerrar"
+text = "SIGUIENTE"
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=990829100]
 stream = ExtResource("9_ygqfj")
