@@ -21,9 +21,9 @@ var skill3_name: String = ""
 var can_dash: bool = true
 @export var dash_cooldown: float = 1.8
 
-@onready var skill1_icon = $HUD/TextureRect
-@onready var skill2_icon = $HUD/TextureRect2
-@onready var skill3_icon = $HUD/TextureRect3
+@onready var skill1_icon = $HUD/Container/TextureRect
+@onready var skill2_icon = $HUD/Container/TextureRect2
+@onready var skill3_icon = $HUD/Container/TextureRect3
 @onready var hurt_sound = $HurtSound
 @onready var death_sound = $DeathSound
 @export var default_icon: Texture2D
@@ -59,9 +59,9 @@ var fatigue_time_left: float = 0.0
 var skill1_used := false
 var skill2_used := false
 
-@onready var key1_sprite = $HUD/key1
-@onready var key2_sprite = $HUD/key2
-@onready var mouse_sprite = $HUD/mouse
+@onready var key1_sprite = $HUD/Container/key1
+@onready var key2_sprite = $HUD/Container/key2
+@onready var mouse_sprite = $HUD/Container/mouse
 @onready var shield = $Shield
 
 @onready var vision_light = $PointLight2D
@@ -70,8 +70,8 @@ var skill2_used := false
 
 @onready var shoot_timer = $ShootTimer
 @onready var shoot_position = $bullet_pos
-@onready var consciousness_bar = $HUD/PanelContainer/ConsciousnessBar
-@onready var back_consciousness_bar = $HUD/PanelContainer/ColorRect
+@onready var consciousness_bar = $HUD/Container/PanelContainer/ConsciousnessBar
+@onready var back_consciousness_bar = $HUD/Container/PanelContainer/ColorRect
 @onready var hud = $HUD
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var dash_timer = $DashTimer
