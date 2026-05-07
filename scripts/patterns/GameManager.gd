@@ -1,7 +1,7 @@
 # scripts/GameManager.gd
 extends Node
 
-enum FlowState { NONE, TUTORIAL, BOOK, INTRO, RECOVERY_1, PHASE_1, RECOVERY_2, PHASE_2, BOSS, GOOD_ENDING , DEATH}
+enum FlowState { NONE, PRE_TUTORIAL, TUTORIAL, BOOK, INTRO, RECOVERY_1, PHASE_1, RECOVERY_2, PHASE_2, BOSS, GOOD_ENDING, DEATH }
 var keys_mostradas := false
 var current_level: LevelState = null
 var preguntas_completadas = false
@@ -89,16 +89,19 @@ func advance_campaign_flow() -> void:
 	
 	match current_flow:
 		FlowState.NONE:
-		
 			if not SaveManager.is_tutorial_completed():
-				# Si el perfil está limpio, lo mandamos al tutorial
-				current_flow = FlowState.TUTORIAL
-				change_level(TestLevelState.new()) 
-			else:
-				# Si ya lo pasó antes, va directo a la historia
+				# 1. Si el perfil está limpio, lanzamos la cinemática inicial
+				current_flow = FlowState.PRE_TUTORIAL
+				change_level(StoryState.new("HistoriaInicial")) 
+				# Si ya lo pasó antes, va directo a la intro de la sustancia
+			else :
 				current_flow = FlowState.INTRO
 				change_level(StoryState.new(data["intro"]))
 				
+		FlowState.PRE_TUTORIAL:
+			current_flow = FlowState.TUTORIAL
+			change_level(TestLevelState.new()) 
+			
 		FlowState.TUTORIAL:
 			SaveManager.mark_tutorial_completed()
 			current_flow = FlowState.INTRO
