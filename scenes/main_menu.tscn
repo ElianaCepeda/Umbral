@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cdnyyt55yg0vn" path="res://assets/ui/Door 7_spritesheet.png" id="5_oa1go"]
 [ext_resource type="Texture2D" uid="uid://d1ut4unr3msif" path="res://assets/ui/btn.png" id="5_rtw2f"]
 [ext_resource type="Script" uid="uid://drxebsvcycp3k" path="res://scenes/door.gd" id="5_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://bkpjxgt1iih3s" path="res://assets/ui/Boton2.png" id="8_5dd4i"]
 [ext_resource type="AudioStream" uid="uid://cw0qk8sfnfiet" path="res://assets/audio/music/menu.mp3" id="9_jk1qb"]
 
 [sub_resource type="FontVariation" id="FontVariation_oa1go"]
@@ -174,7 +175,7 @@ vertical_alignment = 1
 
 [node name="ContentGroup" type="VBoxContainer" parent="VBoxContainer" unique_id=489557909]
 layout_mode = 2
-theme_override_constants/separation = 170
+theme_override_constants/separation = 205
 
 [node name="Brainholder" type="Control" parent="VBoxContainer/ContentGroup" unique_id=693207210]
 layout_mode = 2
@@ -200,7 +201,7 @@ position = Vector2(265, 74.5)
 script = ExtResource("5_tbmy8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/ContentGroup/Brainholder/Door" unique_id=1759941444]
-position = Vector2(-1.0000305, -4.999981)
+position = Vector2(-1, -4.9999695)
 scale = Vector2(1.8154757, 1.135714)
 sprite_frames = SubResource("SpriteFrames_1ajci")
 animation = &"open"
@@ -213,16 +214,33 @@ offset_top = -57.0
 offset_right = 40.0
 offset_bottom = 50.0
 
-[node name="Symtpt" type="Label" parent="VBoxContainer/ContentGroup/Brainholder/Door" unique_id=334470432]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -57.0
-offset_top = 22.0
-offset_right = 46.0
-offset_bottom = 65.0
+[node name="Control" type="Control" parent="VBoxContainer/ContentGroup/Brainholder/Door" unique_id=1760267415]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -43.0
+offset_top = 46.5
+offset_right = 37.0
+offset_bottom = 86.5
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="VBoxContainer/ContentGroup/Brainholder/Door/Control" unique_id=858327599]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_5dd4i")
+patch_margin_left = 117
+patch_margin_top = 21
+patch_margin_right = 52
+patch_margin_bottom = 49
+
+[node name="Symtpt" type="Label" parent="VBoxContainer/ContentGroup/Brainholder/Door/Control" unique_id=334470432]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8862745, 0.8509804, 0.6313726, 1)
@@ -245,7 +263,6 @@ custom_minimum_size = Vector2(220, 72)
 layout_mode = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/ContentGroup/BtnRow/BtnFamily" unique_id=1921047697]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -259,7 +276,6 @@ patch_margin_right = 50
 patch_margin_bottom = 50
 
 [node name="Family" type="Label" parent="VBoxContainer/ContentGroup/BtnRow/BtnFamily" unique_id=1748283675]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -284,14 +300,18 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(220, 72)
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/ContentGroup/BtnRow/BtnSympt" unique_id=1342222416]
+[node name="NinePatchRect2" type="NinePatchRect" parent="VBoxContainer/ContentGroup/BtnRow/BtnSympt" unique_id=90665677]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -15.5
+offset_right = -3.0
+offset_bottom = 12.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_rtw2f")
+texture = ExtResource("8_5dd4i")
 patch_margin_left = 50
 patch_margin_top = 50
 patch_margin_right = 50
@@ -328,7 +348,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_rtw2f")
+texture = ExtResource("8_5dd4i")
 patch_margin_left = 50
 patch_margin_top = 50
 patch_margin_right = 50
@@ -375,7 +395,7 @@ offset_top = -5.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_rtw2f")
+texture = ExtResource("8_5dd4i")
 patch_margin_left = 50
 patch_margin_top = 50
 patch_margin_right = 50

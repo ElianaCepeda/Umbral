@@ -18,25 +18,25 @@ func _ready() -> void:
 	btn_exit.pressed.connect(_exit_game)
 	btn_re.pressed.connect(_clean_data)
 
-	_config_hover(btn_family)
-	_config_hover(btn_sympt)
-	_config_hover(btn_exit)
-	_config_hover(btn_re)
+	#_config_hover(btn_family)
+	#_config_hover(btn_sympt)
+	#_config_hover(btn_exit)
+	#_config_hover(btn_re)
 
 
-func _config_hover(btn: TextureButton) -> void:
+"""func _config_hover(btn: TextureButton) -> void:
 	btn.mouse_entered.connect(func(): _hover_on(btn))
-	btn.mouse_exited.connect(func(): _hover_off(btn))
+	btn.mouse_exited.connect(func(): _hover_off(btn))"""
 
 
-func _hover_on(btn: TextureButton) -> void:
+"""func _hover_on(btn: TextureButton) -> void:
 	btn.get_node("NinePatchRect").modulate = Color(1.15, 1.10, 0.85)
-	btn.scale = Vector2(1.04, 1.04)
+	btn.scale = Vector2(1.04, 1.04)"""
 
 
-func _hover_off(btn: TextureButton) -> void:
+"""func _hover_off(btn: TextureButton) -> void:
 	btn.get_node("NinePatchRect").modulate = Color(1, 1, 1)
-	btn.scale = Vector2(1, 1)
+	btn.scale = Vector2(1, 1)"""
 
 func _clean_data()-> void:
 	SaveManager.clear_save_data()
