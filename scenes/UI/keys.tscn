@@ -627,9 +627,9 @@ anchors_preset = -1
 anchor_top = 0.503
 anchor_bottom = 0.503
 offset_left = 849.0
-offset_top = 426.0
+offset_top = 434.0
 offset_right = 982.0
-offset_bottom = 521.0
+offset_bottom = 532.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_td246")
@@ -643,26 +643,32 @@ theme_override_constants/separation = 7
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/VBoxContainer" unique_id=1245172962]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("9_e6yi5")
 expand_mode = 1
+stretch_mode = 4
 
 [node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=325551120]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_xtdvp")
 theme_override_font_sizes/font_size = 16
-text = "APUNTAR"
+text = "MOVER EL MOUSE
+PARA APUNTAR"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="PanelContainer2" type="PanelContainer" parent="Control" unique_id=1272321359]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.503
 anchor_bottom = 0.503
-offset_left = 848.0
-offset_top = 520.0
-offset_right = 981.0
-offset_bottom = 601.0
+offset_left = 850.0
+offset_top = 539.0
+offset_right = 983.0
+offset_bottom = 620.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_td246")
