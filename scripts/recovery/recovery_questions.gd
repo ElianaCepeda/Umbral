@@ -3,10 +3,7 @@ class_name RecoveryQuestions
 
 var permitir_hover := true
 var pergamino_anim: AnimatedSprite2D
-
-# CAMBIO: era ui_content: VBoxContainer, ahora:
 var vbox_questions: VBoxContainer
-
 var question_label: Label
 var answer1: Button
 var answer2: Button
@@ -16,9 +13,6 @@ var scoreattack_label: Label
 var scoredefense1_label: Label
 var scoredefense2_label: Label
 var mensaje_feedback: Label
-
-# ELIMINADA: var boton_terminado: Button
-
 var attackpoints: int = 0
 var defense1points: int = 0
 var defense2points: int = 0
@@ -27,11 +21,9 @@ var last_question: int = 9
 var current_question_index: int = 0
 var correct_sound: AudioStreamPlayer
 var wrong_sound: AudioStreamPlayer
-var page_flip: AudioStreamPlayer  # se mantiene igual
+var page_flip: AudioStreamPlayer 
 var type: String
 var correct_answer: int
-
-# NUEVA: música de fondo
 var music: AudioStreamPlayer
 
 

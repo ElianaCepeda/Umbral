@@ -119,11 +119,9 @@ position = Vector2(556.00006, 304.00003)
 scale = Vector2(2.7494035, 2.057143)
 sprite_frames = SubResource("SpriteFrames_xfulm")
 animation = &"open"
-frame = 7
-frame_progress = 1.0
+frame = 1
 
 [node name="VBoxQuestions" type="VBoxContainer" parent="CenterContainer/QuestionsHolder" unique_id=1493220947]
-visible = false
 layout_mode = 0
 offset_left = 34.0
 offset_top = 2.0
@@ -131,7 +129,6 @@ offset_right = 1078.0
 offset_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 14
 alignment = 1
 
 [node name="LabelFeedback" type="Label" parent="CenterContainer/QuestionsHolder/VBoxQuestions" unique_id=1827101356]
@@ -139,7 +136,7 @@ custom_minimum_size = Vector2(600, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("7_n88l6")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -148,14 +145,14 @@ autowrap_mode = 2
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer" unique_id=2102229709]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_constants/margin_left = 135
 theme_override_constants/margin_right = 135
 theme_override_constants/margin_bottom = 6
 
 [node name="QuestionLabel" type="Label" parent="CenterContainer/QuestionsHolder/VBoxQuestions/AnswersContainer/MarginContainer" unique_id=1800814583]
-custom_minimum_size = Vector2(730, 120)
+custom_minimum_size = Vector2(730, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.13750193, 0.10861001, 0.087588795, 1)
@@ -216,7 +213,8 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_r1aac")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 23
+horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -264,7 +262,8 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_r1aac")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 23
+horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -315,7 +314,8 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_r1aac")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 23
+horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -363,8 +363,7 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_r1aac")
-theme_override_font_sizes/font_size = 21
-text = " "
+theme_override_font_sizes/font_size = 23
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -416,6 +415,7 @@ text = "Puntos defensa 2:"
 vertical_alignment = 1
 
 [node name="VBoxDescription" type="VBoxContainer" parent="CenterContainer/QuestionsHolder" unique_id=1112251568]
+visible = false
 layout_mode = 0
 offset_left = 56.0
 offset_right = 1082.0
