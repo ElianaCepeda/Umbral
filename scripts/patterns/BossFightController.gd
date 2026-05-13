@@ -24,14 +24,37 @@ var minions_spawned: bool = false
 signal boss_defeated
 
 func _ready():
-	await get_tree().create_timer(0.5).timeout
-	_identify_boss()
+	call_deferred("_setup_boss")
+
+func _setup_boss():
+	print("Esperando aparición del boss...")
+
+	while not boss_node:
+		_identify_boss()
+
+		if not boss_node:
+			await get_tree().process_frame
+
+	print("Boss encontrado correctamente")
+
 	spawn_timer = Timer.new()
 	spawn_timer.wait_time = 15.0
 	spawn_timer.autostart = false
 	spawn_timer.one_shot = false
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
+
 	add_child(spawn_timer)
+
+	print("Spawneando minions")
+
+	_spawn_minions()
+
+	minions_spawned = true
+
+	spawn_timer.start()
+
+	print("Sistema del boss iniciado")
+
 func _on_spawn_timer_timeout():
 	if not is_instance_valid(boss_node):
 		spawn_timer.stop()
@@ -42,19 +65,22 @@ func _on_spawn_timer_timeout():
 	_spawn_minions()
 func _identify_boss():
 	var enemies = get_tree().get_nodes_in_group("enemy")
-	for e in enemies:
-		boss_node = e
-		boss_node.add_to_group("boss")
-		
-		boss_node.health = 350
-		boss_node.speed = 60
-		boss_node.comportamiento = 3 
-		boss_node.z_index = 10 
-		break
-		
-	if boss_node:
-		await get_tree().create_timer(2.0).timeout
-		_spawn_minions()
+
+	print("Enemigos encontrados: ", enemies.size())
+
+	if enemies.is_empty():
+		return
+
+	boss_node = enemies[0]
+
+	boss_node.add_to_group("boss")
+
+	boss_node.health = 350
+	boss_node.speed = 60
+	boss_node.comportamiento = 3
+	boss_node.z_index = 10
+
+	print("Boss configurado")
 
 func _spawn_minions():
 	# Llamamos a nuestra nueva función por cada rol
@@ -76,10 +102,7 @@ func _spawn_and_assign(scene: PackedScene, amount: int, role: String):
 		var offset = Vector2(randf_range(-100, 100), randf_range(-100, 100))
 		minion.global_position = boss_node.global_position + offset
 		
-		get_parent().call_deferred("add_child", minion)
-		
-		# Esperamos un frame para que Godot cargue el nodo antes de hackear su cerebro
-		await get_tree().process_frame
+		get_parent().add_child(minion)
 		
 		match role:
 			"protector":
