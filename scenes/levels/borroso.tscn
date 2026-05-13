@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://doqn4hplyhcbc" path="res://scenes/levels/BaseLevelFase1.tscn" id="1_taurh"]
 [ext_resource type="Script" uid="uid://cwv4yswhei3q" path="res://scripts/levels/borrosoLevel.gd" id="2_8n4yk"]
 [ext_resource type="AudioStream" uid="uid://dmo67k8nqv2ts" path="res://assets/audio/music/batalla.mp3" id="3_3dnaw"]
-[ext_resource type="AudioStream" uid="uid://dkswxsesos8p4" path="res://assets/audio/sounds/door.mp3" id="4_kpiag"]
 
 [node name="BorrosoLevel" unique_id=1029686040 instance=ExtResource("1_taurh")]
 script = ExtResource("2_8n4yk")
@@ -18,6 +17,3 @@ stream = ExtResource("3_3dnaw")
 volume_db = -9.609
 autoplay = true
 parameters/looping = true
-
-[node name="door_sound" type="AudioStreamPlayer" parent="." index="10" unique_id=1132946811]
-stream = ExtResource("4_kpiag")

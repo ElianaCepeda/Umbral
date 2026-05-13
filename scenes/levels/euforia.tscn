@@ -2,13 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d2twvnxdiho5q" path="res://scripts/levels/euforiaLevel.gd" id="1_4ndgs"]
 [ext_resource type="PackedScene" uid="uid://doqn4hplyhcbc" path="res://scenes/levels/BaseLevelFase1.tscn" id="1_6s3lb"]
-[ext_resource type="AudioStream" uid="uid://dkswxsesos8p4" path="res://assets/audio/sounds/door.mp3" id="3_720of"]
 
 [node name="euforiaLevel" unique_id=1029686040 instance=ExtResource("1_6s3lb")]
 script = ExtResource("1_4ndgs")
 
 [node name="Spawner" parent="." index="5" unique_id=2048461648]
 tipo_enemigo_actual = "euforia"
-
-[node name="door_sound" type="AudioStreamPlayer" parent="." index="9" unique_id=298111331]
-stream = ExtResource("3_720of")

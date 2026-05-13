@@ -2,7 +2,6 @@ audio music "res://assets/audio/music/Historia.mp3" [volume="-5.0" loop="true"]
 [background arg="res://assets/backgrounds/canteen_day1.png" fade="0.0"]
 join AndresAlcohol right
 join Doctor leftmost
-audio music "res://assets/audio/music/FinBueno.mp3" [volume="-11.1" loop="true"]
 Doctor: Andrés siempre fue el alma de las reuniones familiares. Extrovertido, bromista y con una\
 habilidad natural para hacer sentir cómodos a los demás
 Doctor: trabajaba en ventas y destacaba por su facilidad para relacionarse.

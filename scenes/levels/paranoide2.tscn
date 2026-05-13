@@ -2,10 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://76illrg3pfo" path="res://scenes/levels/BaseLevelFase2.tscn" id="1_sr7e0"]
 [ext_resource type="Script" uid="uid://bsks1gmakts1b" path="res://scripts/levels/paranoideLevel2.gd" id="2_27wbu"]
-[ext_resource type="AudioStream" uid="uid://dkswxsesos8p4" path="res://assets/audio/sounds/door.mp3" id="3_g04cd"]
 
 [node name="NodoBaseFase2" unique_id=1029686040 instance=ExtResource("1_sr7e0")]
 script = ExtResource("2_27wbu")
-
-[node name="door_sound" type="AudioStreamPlayer" parent="." index="9" unique_id=1927102235]
-stream = ExtResource("3_g04cd")

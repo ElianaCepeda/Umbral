@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://doqn4hplyhcbc" path="res://scenes/levels/BaseLevelFase1.tscn" id="1_b84cq"]
 [ext_resource type="Script" uid="uid://35j8qewgd5ab" path="res://scripts/levels/taquicardiaLevel2.gd" id="2_0wtsn"]
-[ext_resource type="AudioStream" uid="uid://dkswxsesos8p4" path="res://assets/audio/sounds/door.mp3" id="3_2ps00"]
 
 [node name="NodoBaseFase1" unique_id=1029686040 instance=ExtResource("1_b84cq")]
 script = ExtResource("2_0wtsn")
@@ -10,7 +9,3 @@ script = ExtResource("2_0wtsn")
 [node name="Spawner" parent="." index="5" unique_id=2048461648]
 cantidad_minima = 5
 cantidad_maxima = 7
-
-[node name="door_sound" type="AudioStreamPlayer" parent="." index="9" unique_id=1596673643]
-stream = ExtResource("3_2ps00")
-
