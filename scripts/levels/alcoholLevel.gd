@@ -13,6 +13,7 @@ func _start_gameplay():
 	
 	# Buscamos el componente desacoplado en la escena instanciada
 	var boss_controller = scene_instance.get_node_or_null("BossFightController")
+	print("Boss controller encontrado: ", boss_controller)
 	if boss_controller:
 		# Apagamos el chequeo normal del LevelState para que no interfiera
 		is_gameplay_active = false 

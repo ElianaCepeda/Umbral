@@ -12,10 +12,7 @@ script = ExtResource("2_u324c")
 
 [node name="BossFightController" parent="." index="9" unique_id=164943435]
 protector_scene = ExtResource("4_tjk0i")
-protector_amount = 2
 aggressor_scene = ExtResource("3_eqs0g")
-aggressor_amount = 2
 stalker_scene = ExtResource("5_wqkqo")
-stalker_amount = 2
 support_scene = ExtResource("6_0eucp")
-support_amount = 3
+support_amount = 2

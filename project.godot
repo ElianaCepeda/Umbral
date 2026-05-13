@@ -156,6 +156,7 @@ variables={}
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
+mouse_cursor/custom_image="uid://lfdopb23aygg"
 
 [editor_plugins]
 
