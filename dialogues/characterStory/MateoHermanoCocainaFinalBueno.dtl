@@ -1,5 +1,5 @@
-audio music "res://assets/audio/music/final.mp3" [volume="-10.100000000000001" loop="true"]
+audio music "res://assets/audio/music/final.mp3" [volume="-10.1" loop="true"]
 [background arg="res://assets/backgrounds/_ruined_room_1.jpg" fade="0.0"]
-join MateoCocaina center
-MateoCocaina: No puedo mas, pensé que me hacía fuerte, pero me estaba rompiendo, no puedo hacer esto solo.”
+join MateoCocaina (normal) center
+MateoCocaina: No puedo mas, pensé que me hacía fuerte, pero me estaba rompiendo, no puedo hacer esto solo.
 yo: La verdadera fuerza comienza cuando aceptas que no puedes solo.

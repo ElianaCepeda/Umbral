@@ -4,4 +4,6 @@ Doctor: La Urgencia es esa voz desesperada que no acepta un "no" por respuesta, 
 Doctor: Representa el pico del síndrome de abstinencia\: cuando el cerebro se queda sin nicotina, envía señales de pánico que provocan irritabilidad extrema y temblores incontrolables.
 join ansiedadConsumo right
 Doctor: Encarnada en una figura nerviosa y espasmódica, se lanzará agresivamente hacia ti para desestabilizar tu mira y hacer temblar violentamente tus controles.
+Doctor (PODER): ¡La batalla está por comenzar! ¡Prepárate!
+[wait time="1.5"]
 leave ansiedadConsumo

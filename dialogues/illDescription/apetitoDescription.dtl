@@ -4,4 +4,6 @@ Doctor: Voraces representa el hambre artificial que no proviene del cuerpo, sino
 Doctor: El THC estimula los receptores del sistema endocannabinoide responsables del apetito, activando un deseo constante de consumir sin necesidad real.
 join apetito right
 Doctor: Esta criatura avanzará sin descanso seguiendo al jugador, devorando objetos del escenario. Si toca al jugador, se reducirán la barra de conciencia.
+Doctor (PODER): ¡Tu enfrentamiento inicia ahora! ¡Alístate!
+[wait time="1.5"]
 leave apetito

@@ -1,5 +1,8 @@
-audio music "res://assets/audio/music/final.mp3" [volume="-10.100000000000001" loop="true"]
+audio music "res://assets/audio/music/final.mp3" [volume="-10.1" loop="true"]
 [background arg="res://assets/backgrounds/_ruined_room_2.jpg" fade="0.0"]
-join MateoCocaina center
+join MateoCocaina (normal) center
 MateoCocaina: Esto no es un problema, es un estilo de vida. Una raya más para un tigre como yo no es nada.
-yo: La ilusión de control es la última mentira.
+[wait time="1.0"]
+MateoCocaina (serio): ...
+MateoCocaina: ...Mi mamá me llamó ayer. No le contesté.
+MateoCocaina: Le iba a decir que estaba bien. Pero no sé si todavía sé mentirle.

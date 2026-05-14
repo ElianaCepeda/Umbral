@@ -4,4 +4,6 @@ Doctor: El consumo de cannabis provoca vasodilatación en los vasos sanguíneos 
 join conjuntivitis right
 Doctor: En combate, estos ojos flotarán lentamente alrededor del escenario, dejando tras de sí un rastro viscoso de lágrimas que ralentiza los movimientos del jugador.
 Doctor: Si Bloodshot alcanza al personaje, distorsionarán temporalmente los colores de la pantalla, saturándolos y alterando la percepción visual.
+Doctor (PODER): ¡Todo está listo para la batalla!
+[wait time="1.5"]
 leave conjuntivitis

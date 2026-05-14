@@ -4,4 +4,6 @@ Doctor: Desaliento es una sombra que pesa toneladas, haciendo que las tareas má
 Doctor: Tras años de daño pulmonar y falta de oxígeno en la sangre, el cuerpo pierde por completo su resistencia física y vive en un estado de agotamiento crónico.
 join fatiga right
 En la mente, será una pesada sombra que se arrastra por el suelo; su aura tóxica te dejará sin energía, impidiendo totalmente el uso de tus conductas protectoras durante varios segundos.
+Doctor (PODER): ¡Cruzarás al combate! ¡Prepárate!
+[wait time="1.5"]
 leave fatiga

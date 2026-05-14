@@ -1,8 +1,8 @@
 [background arg="res://assets/backgrounds/_ruined_room_2.jpg" fade="0.0"]
 join MateoCocaina center
-MateoCocaina: Ana me dijo que era una "fiesta del vicio", que así le decían, que todo el mundo iba. Que me lo merecía después de tanto trabajo.
+MateoCocaina (serio): Ana me dijo que era una "fiesta del vicio", que así le decían, que todo el mundo iba. Que me lo merecía después de tanto trabajo.
 MateoCocaina: Lo que no me dijo es que ella no iba a celebrar con nosotros, sino a trabajar.
 MateoCocaina: Nosotros éramos su negocio. Y yo fui el cliente más fácil que tuvo esa noche.
-yo: Entré al apartamento y había espejos rotos por todas partes. Me dijo que "Era decoración minimalista" pero sabía que era porque no soportaba verse.
-yo: Los relojes estaban todos detenidos. Me dijo que había perdido la noción del tiempo.
-yo: Lo que no me dijo es que también había perdido todo lo demás.
+MateoCocaina (serio): Entré al apartamento y había espejos rotos por todas partes. Me dijo que "Era decoración minimalista" pero sabía que era porque no soportaba verse.
+MateoCocaina: Los relojes estaban todos detenidos. Me dijo que había perdido la noción del tiempo.
+MateoCocaina (ojerass): Lo que no me dijo es que también había perdido todo lo demás.

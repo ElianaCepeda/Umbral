@@ -1,29 +1,57 @@
 [background arg="res://assets/backgrounds/doctor_consultory.png" fade="0.0"]
 join Doctor (Normal) leftmost
 join Enrique right
+
 Doctor: Pasa, Enrique. Sabía que vendrías hoy.
 Enrique: ¿Cómo sabía que era yo, doctor?
 Doctor: Porque llevas tres semanas mirando por la ventana de este consultorio cada vez que pasas por el pasillo. Siéntate.
 Doctor: He tratado a tu familia por mucho tiempo, Enrique. A Andrés, a Sofía, a Lucas... a Mateo. Los conozco bien. Y sé que tú también los conoces. Mejor que nadie, probablemente.
-Enrique: No sé cómo ayudarlos, doctor. Les hablo y no me escuchan. O finjen que todo está bien.
-Doctor: Eso es lo que hace la adicción, muchacho. No destruye de golpe. Lo hace despacito, hasta que la persona deja de ver la diferencia entre lo que era y lo que se está convirtiendo.\
-Por eso no basta con hablarles desde afuera.
+
+Enrique: No sé cómo ayudarlos, doctor. Les hablo y no me escuchan. O fingen que todo está bien.
+
+Doctor: Eso es lo que hace la adicción, muchacho. No destruye de golpe. Lo hace despacito, hasta que la persona deja de ver la diferencia entre lo que era y lo que se está convirtiendo.
+Doctor: Por eso no basta con hablarles desde afuera.
+
 Enrique: ¿Qué quiere decir con "desde afuera"?
+
 Doctor: Quiero decir que hay otra manera. Una que yo mismo descubrí hace muchos años y que todavía no entiendo del todo... pero funciona.
 Doctor: Lo que voy a pedirte que hagas no tiene explicación lógica, Enrique. Pero tampoco la tiene ver a tu tío Andrés llegar a una reunión familiar oliendo a trago desde las diez de la mañana. Algunas cosas simplemente son como son.
-Doctor: SERÁ un portal de conciencia. Cuando entres, serás transportado directamente a la mente de tu familiar. No a sus recuerdos, no a sus sueños... sino a su conciencia. El lugar donde se libra la verdadera batalla.
+
+Enrique: ¿Por qué me cuenta esto a mí? No soy médico, no soy nadie.
+Doctor: Porque eres familia. Y a veces eso vale más que cualquier título.
+
+Doctor: Será un portal de conciencia. Cuando entres, serás transportado directamente a la mente de tu familiar. No a sus recuerdos, no a sus sueños... sino a su conciencia. El lugar donde se libra la verdadera batalla.
+
+[background arg="res://assets/backgrounds/doctor_portal.png" fade="0.0"]
+
 Enrique: ¿Y qué se supone que haga yo ahí adentro?
 Doctor: Buena pregunta. Escúchame con atención porque solo te lo explico una vez.
-Doctor: Dentro de la mente de cada familiar existe lo que yo llamo la Barra de Conciencia. Imagínatela como una balanza. Del lado verde está la claridad, la lucidez, la capacidad de tomar decisiones reales. Del lado rojo está el consumo, la negación, el deterioro. Tú tienes que mantener esa balanza inclinada hacia el verde.
+Doctor: Dentro de la mente de cada familiar existe lo que yo llamo la Barra de Conciencia. Imagínatela como una balanza. Del lado verde está la claridad, la lucidez, la capacidad de tomar decisiones reales.
+Doctor: Del lado rojo está el consumo, la negación, el deterioro. Tú tienes que mantener esa balanza inclinada hacia el verde.
+
 Enrique: ¿Y cómo se inclina hacia el rojo?
-Doctor: Los síntomas. Dentro de la mente de tu familiar hay manifestaciones de todo lo que la sustancia le está haciendo al cuerpo y a la cabeza. Cosas que se mueven, que atacan, que nublan. Cada vez que uno de esos síntomas te golpea, la conciencia cae un poco más hacia el lado oscuro. Si llega a cero...\
-tu familiar elige el camino equivocado. Y tendrás que volver a intentarlo.
+
+Doctor: Los síntomas. Dentro de la mente de tu familiar hay manifestaciones de todo lo que la sustancia le está haciendo al cuerpo y a la cabeza. Cosas que se mueven, que atacan, que nublan.
+Doctor: Cada vez que uno de esos síntomas te golpea, la conciencia cae un poco más hacia el lado oscuro. Si llega a cero...
+Doctor: Tu familiar elige el camino equivocado. Y tendrás que volver a intentarlo.
+
 Enrique: Entonces no puedo dejar que baje a cero.
-Doctor: Exactamente. Y no basta con sobrevivir, Enrique. Tienes que derrotar los síntomas. Hay dos fases en cada mente\: primero enfrentarás los efectos más inmediatos de la sustancia, los que ya se ven en el día a día. Luego vendrán las consecuencias profundas, las que se están formando en silencio. Y al final de todo... hay un jefe. Una manifestación central de todo lo que esa adicción representa para ese familiar.
+
+Doctor: Exactamente. Y no basta con sobrevivir, Enrique. Tienes que derrotar los síntomas. Hay dos fases en cada mente: primero enfrentarás los efectos más inmediatos de la sustancia, los que ya se ven en el día a día. Luego vendrán las consecuencias profundas, las que se están formando en silencio.
+Doctor: Y al final de todo... hay un jefe. Una manifestación central de todo lo que esa adicción representa para ese familiar.
 Doctor: Si lo derrotas, la conciencia de tu familiar alcanza un punto de claridad real. Podrá ver las cosas como son. Ese es el verdadero objetivo.
+
+Enrique: ¿Y si hago todo bien y aun así no es suficiente?
+Doctor: Esa posibilidad existe. Pero no hacer nada tiene la misma respuesta, solo que sin haber intentado.
+
 Enrique: ¿Y cómo se supone que yo voy a pelear contra... eso? No soy ningún héroe, doctor.
-Doctor (PODER): Es una espada de conductas protectoras. Cada golpe que das con ella no es un ataque... es un acto. Un vaso de agua a tiempo. Dormir bien. Evitar mezclas peligrosas. Cosas reales que protegen a las personas reales de verdad. Dentro de la conciencia de tu familiar, esas cosas se convierten en tu fuerza.
-Doctor (PODER): Pero son limitadas. Antes de cada batalla tendrás la oportunidad de responder preguntas, de aprender. Cada respuesta correcta te da más con qué pelear. Cada error... te quita un poco
-Enrique: Entonces entre más sepa, más puedo ayudar
+Doctor: No hay nadie mejor, Enrique. Hay alguien que los quiere. Eso eres tú.
+
+Doctor (PODER): Es una espada de conductas protectoras. Cada golpe que das con ella no es un ataque... es un acto. Un vaso de agua a tiempo.
+Doctor (PODER): Dormir bien. Evitar mezclas peligrosas. Cosas reales que protegen a las personas reales de verdad. Dentro de la conciencia de tu familiar, esas cosas se convierten en tu fuerza.
+Doctor (PODER): Pero son limitadas. Antes de cada batalla tendrás la oportunidad de responder preguntas, de aprender. Cada respuesta correcta te da más con qué pelear. Cada error... te quita un poco.
+
+Enrique: Entonces entre más sepa, más puedo ayudar.
+
 Doctor: También habrá momentos de pausa entre fases. Salas de recuperación, las llamo yo. Ahí podrás curar el daño recibido y conseguir nuevas conductas. No las desperdicies.
-Doctor: Empecemos con una sesión de práctica para que te familiarices con los movimientos, ¡ Destruye todas las cajas para poder seguir !
+Doctor: Empecemos con una sesión de práctica para que te familiarices con los movimientos, ¡Destruye todas las cajas para poder seguir!

@@ -10,16 +10,34 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "New portrait",
+&"default_portrait": "normal",
 &"description": "",
 &"display_name": "Mateo",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(100, 0),
 &"portraits": {
-"New portrait": {
+"normal": {
 "export_overrides": {
 "image": "\"res://assets/characters/Hermano.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"ojerass": {
+"export_overrides": {
+"image": "\"res://assets/characters/hermano - ojeras.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"serio": {
+"export_overrides": {
+"image": "\"res://assets/characters/hermano - serio.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

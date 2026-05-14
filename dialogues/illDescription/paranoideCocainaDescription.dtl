@@ -3,4 +3,6 @@ join Doctor left
 Doctor: La cocaína incrementa la dopamina y noradrenalina, intensificando el sentido de alerta, convirtiendola en sospecha constante.
 join paranoide right
 Doctor: Al contacto, se invertirá temporalmente los controles y se añadirá sombras ilusorias en pantalla, generando enemigos falsos que desaparecerán al ser atacados, haciendo que el personaje desperdicie sus defensas atacando ilusiones.
+Doctor (PODER):¡La lucha te espera! ¡Alístate!
+[wait time="1.5"]
 leave paranoide

@@ -3,4 +3,6 @@ join Doctor center
 Doctor: La cocaína puede provocar vasoconstricción severa, reduciendo el flujo sanguíneo hacia órganos vitales, incluyendo los intestinos, generando necrosis e isquemia.
 join necrosis right
 Doctor: Este personaje camina dejando un rastro tóxico en el suelo, que, al pisarlo, recibe un daño continuo tipo veneno que ignora parcialmente las defensas.
+Doctor (PODER):¡La lucha te espera! ¡Alístate!
+[wait time="1.5"]
 leave necrosis

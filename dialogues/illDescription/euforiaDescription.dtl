@@ -4,4 +4,6 @@ Doctor: Euforia parece tu mejor amigo en la fiesta. Te llena de energía y te ha
 Doctor: Los primeros tragos engañan al cerebro liberando picos artificiales de dopamina, una falsa felicidad que nubla tu juicio crítico y te empuja a tomar decisiones impulsivas.
 join euforia right
 Doctor: Por eso, cuando esta brillante figura dorada te atrae y te impacta, aumentará tu velocidad temporalmente para hacerte sentir poderoso, pero en silencio drenará tu barra de conciencia sin que te des cuenta.
+Doctor (PODER): ¡Ha iniciado la batalla! ¡Resiste!
+[wait time="1.5"]
 leave euforia

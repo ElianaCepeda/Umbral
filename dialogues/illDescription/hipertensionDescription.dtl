@@ -4,3 +4,5 @@ Doctor: Hipertensión es como el estrés acumulado latiendo en tus sienes, oblig
 Doctor: Al fumar, la nicotina actúa como un vasoconstrictor inmediato, estrechando bruscamente los vasos sanguíneos y disparando la presión arterial en cuestión de segundos.
 join hipertension right
 Doctor: En el juego, esta criatura lanzará ondas circulares que acelerarán caóticamente el ritmo del combate y aumentarán todo el daño que recibas.
+Doctor (PODER): ¡El combate está cerca! No bajes la guardia
+[wait time="1.5"]
