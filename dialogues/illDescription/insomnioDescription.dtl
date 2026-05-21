@@ -4,5 +4,4 @@ Doctor: La cocaína estimula el sistema nervioso central, suprimiendo la necesid
 join insomnio right
 Doctor: Este personaje se moverán rápidamente en patrones erráticos sin detenerse jamás. Al contacto, provocará un parpadeo agresivo de pantalla y reducirán la visibilidad durante varios segundos.
 Doctor (PODER): ¡Ha comenzado el enfrentamiento! 
-[wait time="1.5"]
 leave insomnio

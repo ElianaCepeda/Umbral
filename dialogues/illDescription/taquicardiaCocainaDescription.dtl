@@ -3,4 +3,5 @@ join Doctor left
 Doctor: La cocaína eleva peligrosamente la frecuencia cardíaca y puede desencadenar arritmias letales.
 join taquicardia right
 Doctor: Este personaje, se acercarán en ráfagas veloces y luego se detendrán abruptamente. Si toca al jugador, aumentarán temporalmente la velocidad del juego, volviendo caóticos los patrones de ataque enemigos.
+Doctor (PODER): ¡Cruzarás al combate! ¡Prepárate!
 leave taquicardia

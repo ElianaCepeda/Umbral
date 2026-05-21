@@ -5,4 +5,4 @@ Doctor: El alcohol endurece los vasos sanguíneos y sobrecarga el sistema cardio
 join hipertension right
 Doctor: En el juego, esta criatura lanzará ondas circulares que acelerarán caóticamente el ritmo del combate y aumentarán todo el daño que recibas.
 Doctor (PODER): ¡Prepárate! Lo desconocido está al otro lado
-[wait time="1.5"]
+leave hipertension

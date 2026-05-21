@@ -4,6 +4,5 @@ Doctor: En la vida real, el alcohol deprime el sistema nervioso central, bloquea
 Doctor: por eso, procesar un estímulo visual y reaccionar toma fracciones de segundo vitales que pueden causar un accidente.
 join retardo right
 Doctor: En el combate, Retardo va a tratar de impactarte lo que generará un molesto retraso temporal entre tu control y la acción de tu personaje en la pantalla.
-Doctor (PODER):¡Cruzarás al combate! ¡Prepárate!
-[wait time="1.5"]
+Doctor (PODER): ¡Cruzarás al combate! ¡Prepárate!
 leave retardo

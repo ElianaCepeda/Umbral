@@ -75,7 +75,7 @@ func _identify_boss():
 
 	boss_node.add_to_group("boss")
 
-	boss_node.health = 350
+	boss_node.health = 200
 	boss_node.speed = 60
 	boss_node.comportamiento = 3
 	boss_node.z_index = 10

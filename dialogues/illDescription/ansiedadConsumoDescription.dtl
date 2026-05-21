@@ -5,5 +5,4 @@ Doctor: Representa el pico del síndrome de abstinencia\: cuando el cerebro se q
 join ansiedadConsumo right
 Doctor: Encarnada en una figura nerviosa y espasmódica, se lanzará agresivamente hacia ti para desestabilizar tu mira y hacer temblar violentamente tus controles.
 Doctor (PODER): ¡La batalla está por comenzar! ¡Prepárate!
-[wait time="1.5"]
 leave ansiedadConsumo

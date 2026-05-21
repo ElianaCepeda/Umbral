@@ -38,5 +38,5 @@ static func create_enemy(enemy_type: String, spawn_position: Vector2) -> Node2D:
 		enemy_instance.position = spawn_position
 		return enemy_instance
 	else:
-		push_error("El tipo de enemigo '" + enemy_type + "' no existe en el Factory.")
+		push_warning("El tipo de enemigo '" + enemy_type + "' no existe en el Factory.")
 		return null

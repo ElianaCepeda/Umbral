@@ -4,5 +4,4 @@ Doctor: El cannabis afecta el cerebelo, alterando el equilibrio y la coordinaci�
 join desbalance right
 Doctor: Este personaje invertirán o distorsionarán tus controles de movimiento durante varios segundos, obligándote a reaprender tu propio desplazamiento.
 Doctor (PODER): ¡Ha iniciado la batalla! ¡Resiste!
-[wait time="1.5"]
 leave desbalance

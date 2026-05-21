@@ -160,7 +160,7 @@ mouse_cursor/custom_image="uid://lfdopb23aygg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gut/plugin.cfg")
 
 [global_group]
 

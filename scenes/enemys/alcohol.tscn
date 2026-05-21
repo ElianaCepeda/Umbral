@@ -84,6 +84,7 @@ collision_layer = 4
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_u4q8o")
+comportamiento = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1401683923]
 position = Vector2(5.4999933, 11.74999)

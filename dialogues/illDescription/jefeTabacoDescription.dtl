@@ -16,4 +16,4 @@ leave obstruccion
 join asfixia right
 Doctor: Y al final… la asfixia
 Doctor (PODER):¡Frente a ti se abre un camino peligroso y desconocido! Mantén la calma y prepárate para combatir.
-[wait time="1.5"]
+leave asfixia

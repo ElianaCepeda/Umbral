@@ -67,7 +67,6 @@ var skill2_used := false
 @onready var vision_light = $PointLight2D
 @export var speed: int = 100
 @export var consciousness: int = base_max_consciousness
-
 @onready var shoot_timer = $ShootTimer
 @onready var shoot_position = $bullet_pos
 @onready var consciousness_bar = $HUD/Container/PanelContainer/ConsciousnessBar

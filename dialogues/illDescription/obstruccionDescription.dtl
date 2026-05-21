@@ -5,5 +5,4 @@ Doctor: Médicamente, es la Enfermedad Pulmonar Obstructiva Crónica (EPOC)\: a�
 join obstruccion right
 Doctor: En el combate, estas viscosas masas de alquitrán crearán muros impenetrables; si las tocas, quedarás pegado y totalmente vulnerable a otros ataques.
 Doctor (PODER):¡La lucha te espera! ¡Alístate!
-[wait time="1.5"]
 leave obstruccion

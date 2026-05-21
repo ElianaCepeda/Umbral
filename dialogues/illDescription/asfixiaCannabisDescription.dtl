@@ -5,4 +5,4 @@ Doctor: Este personaje expulsará nubes densas de humo  que se expanden lentamen
 join asfixia right
 Doctor: Si el personaje entra en una zona con humo se reducirá la visión y por estar dentro de esa zona habrá un daño constante por segundo.
 Doctor (PODER): ¡Entrarás en batalla! ¡Mantente firme!
-[wait time="1.5"]
+leave asfixia

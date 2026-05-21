@@ -5,4 +5,4 @@ Doctor: Al fumar, la nicotina actúa como un vasoconstrictor inmediato, estrecha
 join hipertension right
 Doctor: En el juego, esta criatura lanzará ondas circulares que acelerarán caóticamente el ritmo del combate y aumentarán todo el daño que recibas.
 Doctor (PODER): ¡El combate está cerca! No bajes la guardia
-[wait time="1.5"]
+leave hipertension
