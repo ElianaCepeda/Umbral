@@ -1,7 +1,7 @@
 audio music "res://assets/audio/music/Enfermedad.mp3" [loop="true"]
-join Doctor center
+join Doctor left
 Doctor: El consumo prolongado de cannabis puede afectar la memoria inmediata y la capacidad de retener información reciente, alterando la función del hipocampo.
 join memoria right
 Doctor: En el juego, se manifestará como una figura translúcida que aparecen y desaparecen sin patrón fijo. Si toca al personaje, eliminarán temporalmente los indicadores, obligando al jugador a avanzar en incertidumbre.
-Doctor (PODER):¡El combate está a punto de iniciar!
+Doctor (PODER): ¡El combate está a punto de iniciar!
 leave memoria

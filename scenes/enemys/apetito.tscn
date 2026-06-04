@@ -67,7 +67,7 @@ motion_mode = 1
 script = ExtResource("1_uxpen")
 bullet_scene = ExtResource("2_yyg6j")
 damage_color = Color(0, 0, 0, 1)
-comportamiento = 3
+comportamiento = 0
 tipo_movimiento = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1600962519]
