@@ -113,6 +113,9 @@ collision_layer = 4
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_ekvuo")
+effect_name = "blink_screen"
+collision_damage = 3
+tipo_movimiento = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2072795003]
 scale = Vector2(0.24437627, 0.24437629)

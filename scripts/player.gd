@@ -52,7 +52,10 @@ var normal_friction: float = 1500.0
 var anxiety_acceleration: float = 80.0 # Cuesta arrancar
 var anxiety_friction: float = 20.0     # Cuesta frenar
 var is_anxious: bool = false
+var is_saturated: bool = false
 var is_attacking: bool = false
+var is_blinking: bool = false
+var blink_tween: Tween
 var can_shoot: bool = true
 var fatigue_time_left: float = 0.0
 
@@ -75,6 +78,8 @@ var skill2_used := false
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var dash_timer = $DashTimer
 @onready var blur_rect = $HUD/EfectoBorroso
+@onready var saturate_rect = $HUD/EfectoSaturado
+@onready var blink_rect = $HUD/EfectoParpadeo
 @onready var original_bar_width: float = consciousness_bar.size.x
 
 var is_dashing: bool = false
@@ -514,6 +519,32 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 							modulate = Color.WHITE
 				)
 			
+		"saturate_colors":
+			if saturate_rect == null: return
+			
+			if not is_saturated:
+				is_saturated = true
+				saturate_rect.visible = true
+				
+				# Animamos la aparición del efecto
+				var tween_in = create_tween()
+				# Ajusta el 0.5 (la intensidad) según lo fuerte que quieras el efecto. 
+				# 1.0 será máximo, 0.5 es un buen punto de partida si usaste Blend Mode Add.
+				tween_in.tween_property(saturate_rect, "modulate:a", 0.5, 0.5) 
+				
+			# Reiniciamos el temporizador si vuelve a recibir el efecto
+			var timer = get_tree().create_timer(final_duration)
+			timer.timeout.connect(func():
+				if is_instance_valid(self):
+					var tween_out = create_tween()
+					tween_out.tween_property(saturate_rect, "modulate:a", 0.0, 1.0)
+					
+					tween_out.finished.connect(func(): 
+						saturate_rect.visible = false
+						is_saturated = false
+					)
+			)	
+			
 		"paralyze":
 				if is_paralyzed: return
 				
@@ -636,3 +667,34 @@ func apply_effect(effect_name: String, _value: float, duration: float = 0.0):
 				can_shoot = false
 				speed = 50
 				modulate = get_target_color()
+				
+		"blink_screen":
+			if blink_rect == null: return
+			
+			if not is_blinking:
+				is_blinking = true
+				blink_rect.visible = true
+				
+				# Creamos un tween que se repite infinitamente
+				blink_tween = create_tween().set_loops()
+				
+				# Tiempo en oscurecerse (0.1 segundos)
+				blink_tween.tween_property(blink_rect, "modulate:a", 1.0 , 0.1)
+				
+				# Tiempo en volver a aclararse (0.1 segundos)
+				blink_tween.tween_property(blink_rect, "modulate:a", 0.0, 0.1)
+				
+			# Temporizador para detener el efecto
+			var timer = get_tree().create_timer(final_duration)
+			timer.timeout.connect(func():
+				if is_instance_valid(self):
+					is_blinking = false
+					
+					# Detenemos el bucle infinito
+					if blink_tween:
+						blink_tween.kill() 
+						
+					# Forzamos que quede invisible y transparente al terminar
+					blink_rect.visible = false
+					blink_rect.modulate.a = 0.0 
+			)

@@ -20,6 +20,9 @@ func _ready():
 		$MovementTimer.timeout.connect(choose_random_direction)
 
 func shoot():
+	if is_recoiling or is_preparing_charge:
+		return
+		
 	if is_instance_valid(player):
 		var new_bullet = bullet_scene.instantiate()
 		new_bullet.global_position = global_position

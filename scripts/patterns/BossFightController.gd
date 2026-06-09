@@ -118,6 +118,7 @@ func _spawn_and_assign(scene: PackedScene, amount: int, role: String):
 				minion.target_distance = 180.0 
 				minion.turn_penalty = 0.0 
 			"support":
+				minion.speed = 50
 				pass
 
 func _process(_delta):

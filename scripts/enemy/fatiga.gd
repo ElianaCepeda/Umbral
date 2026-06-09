@@ -6,9 +6,6 @@ extends EnemyBase
 # Variable para el reloj que crearemos por código
 var drop_timer: Timer 
 
-@export var drop_time: float = 3.0
-@export var wait_time: float = 2.0
-
 func _ready():
 	# Definimos atributos específicos del enemigo
 	speed = 120
@@ -17,7 +14,7 @@ func _ready():
 	collision_damage = 1
 	damage_color = Color.DIM_GRAY 
 	
-	super._ready() # Inicializa la lógica base (Rebotar por el mapa)
+	super._ready() # Inicializa la lógica base
 	add_to_group("fatigue")
 	
 	# CREAMOS EL TIMER
@@ -25,24 +22,19 @@ func _ready():
 	add_child(drop_timer)
 	drop_timer.timeout.connect(leave_trail)
 	
-	start_fatigue_cycle()
-
-func start_fatigue_cycle():
-	# Deja caer una gota cada cierto tiempo
+	# Iniciamos el temporizador de forma permanente
 	drop_timer.start(0.06) 
-	
-	await get_tree().create_timer(drop_time).timeout
-	drop_timer.stop()
-	
-	await get_tree().create_timer(wait_time).timeout
-	start_fatigue_cycle()
 
 func leave_trail() -> void:
+	# Si está preparándose o embistiendo, no deja rastro
+	if is_preparing_charge or is_charging:
+		return
+
 	if fatigue_scene:
 		var new_trail = fatigue_scene.instantiate()
 		new_trail.global_position = global_position
 
-		# Pintamos el rastro de color gris oscuro para diferenciarlo del veneno
+		# Pintamos el rastro de color gris oscuro
 		for child in new_trail.get_children():
 			if child is Sprite2D:
 				child.modulate = Color.DARK_SLATE_GRAY 

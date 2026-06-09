@@ -46,7 +46,7 @@ var campaign_database = {
 		"intro": "LucasPrimoMarihuana",
 		"book" : MarihuanaBookProtectiveState,
 		"phase1": [ConjuntivitisLevel, ApetitoLevel, AsfixiaLevel],
-		"phase2": [MemoriaLevel, DesbalanceLevel , ParanoideLevel],
+		"phase2": [MemoriaLevel, DesbalanceLevel , ParanoideLevel2],
 		"boss": MarihuanaLevel,
 		"good_ending": "LucasPrimoMarihuanaFinalBueno",
 		"bad_ending": "LucasPrimoMarihuanaFinalMalo",

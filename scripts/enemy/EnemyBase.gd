@@ -63,7 +63,7 @@ func _physics_process(_delta):
 		
 	var actual_speed = speed
 	
-	if comportamiento == 1 and is_charging:
+	if (comportamiento == 1 or comportamiento == 0) and is_charging:
 		actual_speed = speed * 4
 		
 	velocity = movement_direction * actual_speed
@@ -90,7 +90,11 @@ func decide_direction():
 	if is_recoiling or is_preparing_charge : return
 	
 	if comportamiento == 0:
-		movement_direction = calculate_heuristic_direction()
+		if randf() < charge_probability:
+			prepare_charge()
+		else:
+			is_charging = false
+			movement_direction = calculate_heuristic_direction()
 	elif comportamiento == 1:
 		hunt_player()
 	elif comportamiento == 2:

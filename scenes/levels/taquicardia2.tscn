@@ -5,3 +5,6 @@
 
 [node name="NodoBaseFase2" unique_id=1029686040 instance=ExtResource("1_d6dc3")]
 script = ExtResource("2_m3cnm")
+
+[node name="Spawner" parent="." index="5" unique_id=2048461648]
+cantidad_maxima = 5

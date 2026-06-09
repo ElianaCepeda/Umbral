@@ -7,5 +7,4 @@
 script = ExtResource("2_gnbrf")
 
 [node name="Spawner" parent="." index="5" unique_id=2048461648]
-cantidad_minima = 10
-cantidad_maxima = 12
+cantidad_minima = 4

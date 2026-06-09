@@ -4,6 +4,7 @@ extends Node2D
 @export var cantidad_minima: int = 3
 @export var cantidad_maxima: int = 6
 @export var tipo_enemigo_actual: String = "" 
+@export var margen_seguridad: float = 80.0
 
 func generar_oleada():
 	var cantidad = randi_range(cantidad_minima, cantidad_maxima)
@@ -16,8 +17,8 @@ func aparecer_enemigo():
 		return
 		
 	var rect_size = area.size 
-	var x_local = randf_range(0, rect_size.x)
-	var y_local = randf_range(0, rect_size.y)
+	var x_local = randf_range(0, rect_size.x - margen_seguridad)
+	var y_local = randf_range(0, rect_size.y - margen_seguridad)
 	
 	var posicion_mundo = area.global_position + Vector2(x_local, y_local)
 	

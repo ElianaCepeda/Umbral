@@ -112,6 +112,7 @@ z_index = 1
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_ydvs6")
+effect_name = "fatigue"
 comportamiento = 0
 tipo_movimiento = 1
 

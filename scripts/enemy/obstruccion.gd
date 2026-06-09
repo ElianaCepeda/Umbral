@@ -155,3 +155,7 @@ func leave_wall() -> void:
 		new_wall.is_horizontal = is_horizontal
 		
 		get_parent().call_deferred("add_child", new_wall)
+		
+		
+func decide_direction():
+	pass

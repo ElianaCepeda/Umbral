@@ -7,5 +7,4 @@
 script = ExtResource("2_jkgdr")
 
 [node name="Spawner" parent="." index="5" unique_id=2048461648]
-cantidad_minima = 7
-cantidad_maxima = 10
+cantidad_minima = 4

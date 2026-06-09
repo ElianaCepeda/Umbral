@@ -1537,6 +1537,9 @@ animations = [{
 radius = 5.5
 height = 29.0
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j2b1d"]
+blend_mode = 3
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qlg0r"]
 shader = ExtResource("3_dqkch")
 shader_parameter/blur_amount = 0.0
@@ -1705,6 +1708,25 @@ one_shot = true
 position = Vector2(9, 0)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=589603040]
+
+[node name="EfectoParpadeo" type="ColorRect" parent="HUD" unique_id=892714397]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+
+[node name="EfectoSaturado" type="ColorRect" parent="HUD" unique_id=1149583607]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("CanvasItemMaterial_j2b1d")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.8326125, 0.7290569, 1)
 
 [node name="EfectoBorroso" type="ColorRect" parent="HUD" unique_id=913854058]
 visible = false
