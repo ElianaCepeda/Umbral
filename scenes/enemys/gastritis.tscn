@@ -67,6 +67,7 @@ script = ExtResource("1_fk00c")
 health = 10
 collision_damage = 5
 comportamiento = 0
+tipo_movimiento = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1485172588]
 sprite_frames = SubResource("SpriteFrames_3xaw2")

@@ -4,7 +4,7 @@ extends EnemyBase
 @onready var poison_timer: Timer = $PoisonTimer
 
 @export var drop_time: float = 3.0
-@export var wait_time: float = 2.0
+@export var wait_time: float = 0.5
 
 func _ready():
 	damage_color = Color.RED
